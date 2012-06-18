@@ -15,13 +15,12 @@ Java 作为技术体系包含多个部分：
 * Java 虚拟机
 * JDK, API 等
 
-##　第一章 走进Java
+##第一章 走进Java
 关于OpenJDK 和JDK的关系请参考: http://en.wikipedia.org/wiki/OpenJDK
 
-### 自己编译JDK
+###自己编译JDK
 
-1. 下载源码 
-> 下载地址: http://download.java.net/openjdk/jdk7/
+1. 下载源码 　地址: http://download.java.net/openjdk/jdk7/
 2. 准备编译环境
 3. 编译
 
