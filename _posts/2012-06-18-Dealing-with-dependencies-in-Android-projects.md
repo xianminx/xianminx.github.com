@@ -5,8 +5,8 @@ tags: [android, adt, eclipse]
 ---
 <small class="meta final">
 3月9日下午02:35，2012年 ，来自Xavier Ducrohet <br/>
-原文：[Dealing with dependencies in Android projects](http://tools.android.com/recent/dealingwithdependenciesinandroidprojects) by [Xavier Ducrohet](http://tools.android.com/recent/dealingwithdependenciesinandroidprojects) 
-<br/>翻译： [Lucas Xu](http://xianminx.github.com/)  
+原文：<a href="http://tools.android.com/recent/dealingwithdependenciesinandroidprojects">Dealing with dependencies in Android projects</a> by <a href = "http://tools.android.com/recent/dealingwithdependenciesinandroidprojects" > Xavier Ducrohet </a>
+<br/>翻译： <a href = "http://xianminx.github.com/">Lucas Xu</a>  
 </small>
 
 在Android SDK Tools和Eclipse ADT 插件的第17版本 (revision 17)中，我们对Android项目的依赖关系管理做了很多改变。 
