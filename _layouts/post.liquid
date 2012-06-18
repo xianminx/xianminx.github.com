@@ -4,15 +4,7 @@ layout: default
 ---
 <div class="post">
   <h3>{{page.title}}</h3>
-  {{ content }}
-</div>
 
-<small class="meta final">
-  {{ page.date | date:"%d %b %Y" }}
-  {% for t in page.tags %}
-  {% if forloop.first == true %} | {% endif %}
-  <a href='/tags#{{ t | escape }}'>{{ t }}</a>{% if forloop.last == false %}, {% endif %}
-  {% endfor %}
 <br/>
 <br/>
 <!-- JiaThis Button BEGIN -->
@@ -32,5 +24,17 @@ layout: default
 <!-- UJian Button BEGIN -->
 	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide"></script>
 <!-- UJian Button END -->
+
+
+  {{ content }}
+</div>
+
+<small class="meta final">
+  {{ page.date | date:"%d %b %Y" }}
+  {% for t in page.tags %}
+  {% if forloop.first == true %} | {% endif %}
+  <a href='/tags#{{ t | escape }}'>{{ t }}</a>{% if forloop.last == false %}, {% endif %}
+  {% endfor %}
+
 </small>
 
