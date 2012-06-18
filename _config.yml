@@ -1,3 +1,11 @@
+title : Lucas Xu
+
+author :
+  name : Lucas Xu
+  email : xianminx  gmail com
+  github : xianminx
+  twitter : xianminx
+
 destination: ./_site
 auto:        false
 lsi:         false
