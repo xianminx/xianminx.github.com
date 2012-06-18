@@ -51,6 +51,9 @@ Android 项目包含源代码文件夹，以及对库项目 (android library pro
 下图介绍了如何将Java项目和jar类库标记为"exported"（Android Dependencies 容器不必被标为"exported"，反正它总是会被导出）：
 
 
+![Mark references as exported in Eclipse](/graphics/ae6d0505e0138e239f8e7715fddf57ac.png "Mark references as exported in Eclipse")
+
+
 再次强调一下， 重复的引用（包括引用的项目和 jar 文件）会被自动发现并且删除掉。 
 
 ## 依赖解析
