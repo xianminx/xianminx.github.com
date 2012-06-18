@@ -1,0 +1,30 @@
+---
+layout: default
+title:  About
+---
+
+### This site ###{: class="vlist"}
+
+Born out of necessity (to get github project pages working), I figured
+blogging may even prove a useful means of noting things that would otherwise
+get buried in mailing lists.
+
+### About me ###{: class="vlist"}
+Lucas Xu
+
+I am an android evangelist.
+ 
+### Disclaimers ###{: class="vlist"}
+
+
+<small class="meta final">
+The site borrowed the template and theme from 
+<a href="http://github.com/olesenm/olesenm.github.com">olesenm</a>. 
+<br/>
+
+
+<br/>The site layout can be reused with (cc)
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">some rights reserved</a>.
+Some layout elements are borrowed from <a href="http://www.yaml.de/en/">YAML</a>.
+</small>
+

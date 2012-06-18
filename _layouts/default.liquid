@@ -1,0 +1,104 @@
+---
+# -*- html -*- mode
+topnav:
+  - text: About
+    href: /about/
+  - text: Blog
+    href: /
+  - text: Archives
+    href: /archives/
+  - text: Categories
+    href: /tags/
+  - text: Other
+    href: /other/
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Mark Olesen : {{ page.title }} </title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link rel="stylesheet" type="text/css" href="/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+</head>
+
+{% assign navTitle = 'Blog' %}
+{% for t in page.topnav %}
+{% if t.text == page.title %}{% assign navTitle = page.title %}{% endif %}
+{% endfor %}
+
+<body>
+<div class="page_margins">
+  <div id="header">
+    <h2><a href="http://xianminx.github.com">Lucas Xu   徐仙明</a></h2>
+    <div class="clear"></div>
+
+    <!-- begin: main navigation #nav -->
+    <div id="nav">
+      <div class="hlist">
+        <ul>
+          {% for t in page.topnav %}
+          <li{% if t.text == navTitle %} class="active"{% endif %}>
+          <a href="{{ t.href }}"{% if t.title %} title="{{ t.title }}"{% endif %}>{{ t.text }}</a>
+          </li>
+          {% endfor %}
+          <li><a href="http://github.com/xianminx">Repositories</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- end: main navigation -->
+  </div>
+
+  <!-- begin: main content area #main -->
+  <div id="main">
+    <div id="col1">
+      <div id="col1_content">
+        {{ content }}
+      </div>
+    </div>
+    <div id="col3">
+      <div id="col3_content">
+        <h6 class="vlist">GitHub projects</h6>
+        <ul class="vlist">
+        	<li>
+			<a href="https://github.com/xianminx/PullToRefresh-ListView" >PullToRefresh-ListView</a>
+		</li>
+	</ul>
+        <h6 class="vlist">Misc. Links</h6>
+        <ul class="vlist">
+          <li>
+            <a
+              href="http://www.google.com/"
+              >Google</a>
+          </li>
+          </ul>
+        <br/>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!-- end: #main -->
+
+  <!-- begin: #footer -->
+  <div id="footer">
+    <div class="hlist">
+      <ul>
+        {% for t in page.topnav %}
+        <li{% if t.text == navTitle %} class="active"{% endif %}>
+        <a href="{% if t.http %}{{ t.http }}{% else %}{{ t.href }}{% endif %}"
+        {% if t.title %} title="{{ t.title }}"{% endif %}
+        >{{ t.text }}</a>
+        {% if forloop.last == false %} | {% endif %}
+        </li>
+        {% endfor %}
+        <li>&ndash; updated {{ site.time | date:"%Y-%m-%d" }}</li>
+      </ul>
+    </div>
+  </div>
+  <!-- end: #footer -->
+
+</div>
+
+</body>
+</html>
