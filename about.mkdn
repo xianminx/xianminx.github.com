@@ -3,6 +3,16 @@ layout: default
 title:  About
 ---
 
+
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?uid=1336370704363698" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<!-- UJian Button BEGIN -->
+ <script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide"></script>
+<!-- UJian Button END -->
+
+
 ### This site ###{: class="vlist"}
 
 Born out of necessity (to get github project pages working), I figured
@@ -27,11 +37,3 @@ The site borrowed the template and theme from
 <a href="http://creativecommons.org/licenses/by-sa/3.0/">some rights reserved</a>.
 Some layout elements are borrowed from <a href="http://www.yaml.de/en/">YAML</a>.
 </small>
-
-<!-- JiaThis Button BEGIN -->
-<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?uid=1336370704363698" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-<!-- UJian Button BEGIN -->
- <script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide"></script>
-<!-- UJian Button END -->
