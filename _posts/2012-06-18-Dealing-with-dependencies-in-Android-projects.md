@@ -25,7 +25,7 @@ Android 项目包含源代码文件夹，以及对库项目 (android library pro
 
 下面介绍了系统如何发现重复引用。 
 
-**重要的变化** 我们已经改变了库项目生成和打包R类的方式： 
+<font color="red">重要的变化</font> 我们已经改变了库项目生成和打包R类的方式： 
 
    * R类不再被打包到库项目的输出 jar 包中。
    * 库项目不再为其所依赖的库项目生成R类。 只有主应用项目才会在生成本身R类的同时为所依赖的库项目生成R类。
@@ -38,11 +38,13 @@ Android 项目包含源代码文件夹，以及对库项目 (android library pro
 
 现在被库项目引用的纯 Java 项目也可以填充classpath容器。 如果这些Java项目也引用其他 Java 项目或 jar 文件，它们将被自动添加（现在也支持通过 user libraries引用的jar文件）。 
 
-**重要：** 仅当被引用的项被标记为"exported"时这才起作用。 请注意，默认情况下，当一个项目或jar文件被添加到项目的build path 中时是不会被标记为"exported"。 
+
+<font color="red">重要:</font> 仅当被引用的项被标记为"exported"时这才起作用。 请注意，默认情况下，当一个项目或jar文件被添加到项目的build path 中时是不会被标记为"exported"。 
 
 库项目（ 以及它们所引用的lib/*.jar文件）总是会被标记为"exported"。
 
-**重要：** 如果你还在手动引用jar类库，而不是把他们放在libs目录下， 注意以下几点：
+
+<font color="red">重要:</font> 如果你还在手动引用jar类库，而不是把他们放在libs目录下， 注意以下几点：
 
    * 如果该项目是一个 library project，应用项目默认情况下看不见这些jar 类库。 你必须把这些类库挪到"libs"子目录下。
    * 如果该项目是一个应用程序项目，你可以这样做，但你必须确保把引用的jar文件标记为"exported"。
