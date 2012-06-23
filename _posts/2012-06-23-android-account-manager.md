@@ -98,9 +98,36 @@ root      29444 29439 980    364   00000000 400ed578 R ps
 
 比如， 用户注册了Google账户，使用这个账户可以登陆Google+,Google Play, Gmail, 也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。 由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。 甚至处理不好， 会带来很大的安全隐患。 现在好了，Android在系统级别提供了账户管理功能， 用户只要去账户管理中心登陆账户， 不同应用就可以想账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。
 
+## Android Account 管理类库介绍
+Android中和账户相关的API都在[android.accounts](http://developer.android.com/reference/android/accounts/package-summary.html)包下。 
+
+重要的接口和类有：
+
+### Interfaces
+* `AccountManagerCallback<V>` 包含回调函数。 类似于我们经常写的Listener	 
+* `AccountManagerFuture<V>`	异步调用`AccountManager`的结果。
+* `OnAccountsUpdateListener` AccountMonitor用到的回调接口。 
+
+ ### Classes 
+* AbstractAccountAuthenticator	Abstract base class for creating AccountAuthenticators. 
+* Account 表示我们的账户
+* AccountAuthenticatorActivity	Base class for implementing an Activity that is used to help implement an AbstractAccountAuthenticator. 
+* AccountAuthenticatorResponse	Object used to communicate responses back to the AccountManager  
+* AccountManager	This class provides access to a centralized registry of the user's online accounts. 
+* AuthenticatorDescription	A Parcelable value type that contains information about an account authenticator. 
+
+
 ## 使用[AccountManager]访问已经支持的账户
+
 Android 系统默认支持Google账户， Microsoft Exchange账户，和普通邮件账户。  
-现在，假如你开发了一个应用 
+
+现在，假如你开发了一个应用,会使用到用户的Google账户， 比如， 类似于[SMS Backup](https://play.google.com/store/apps/details?id=com.zegoggles.smssync&hl=en)这种应用， 可以把手机端的短信同步到GMail邮箱当中。 当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利， 如同下图所示： 
+，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利， 如同下图所示： 
+![Request Account Access from SMS Backup](/graphics/ae6d0505e0138e239f8e7715fddf57ac.png "Reqeust Account Access Permission")
+
+
+将如何实现呢？
+
 
 
 ## 扩展[AccountManager]支持自定义的账户
