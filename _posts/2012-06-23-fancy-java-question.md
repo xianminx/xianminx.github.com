@@ -9,7 +9,7 @@ tags: [java]
 
 问题 Challenge: can you write code that invokes `foo()`?
 
-```java
+{% highlight java linenos %}
 class Impossible {
 	 public Impossible() {
 		 throw new AssertionError("you cannot instantiate me"); 
@@ -18,7 +18,8 @@ class Impossible {
 		System.out.println("The impossible is possible!"); 
 	}
 }
-```
+{% endhighlight %}
+
 
 这是来自Android team 的几位工程师的博客。 众志成城， 他们想出了很多解法。大家发挥一下想象力，看是不是可以找到解法。
 
