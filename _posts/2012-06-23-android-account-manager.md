@@ -11,7 +11,7 @@ tags: [android]
 Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 实际上对于android操作系统来讲， 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 `ps` 命令来查看。
 如下：
 
-```java
+```
 root      117   2     0      0     c01839a4 00000000 S ext4-dio-unwrit
 system    133   1     17020  4296  c052d258 400307b0 S /system/bin/servicemanager
 root      134   1     6040   996   ffffffff ffff0520 S /system/bin/vold
