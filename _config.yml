@@ -11,10 +11,10 @@ auto:        false
 lsi:         false
 server_port: 4000
 pygments:    true
-#markdown:    maruku
-markdown: redcarpet2
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+markdown:    maruku
+#markdown: redcarpet2
+#redcarpet:
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
 #permalink:   date
 permalink:   pretty
 paginate:    5
