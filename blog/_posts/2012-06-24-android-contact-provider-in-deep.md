@@ -86,8 +86,12 @@ CREATE TRIGGER data_updated AFTER UPDATE ON data BEGIN    UPDATE data     SET da
 To visiualize the table, here is the screen short from Eclipse SQlite Plugin:
 
 ![contacts table](/graphics/8c440d12df2a8bb8a7b680760caa1fc5.jpeg "contacts table")
+
+
 ![raw_contacts table](/graphics/1f4498dfd10cb507e2f1675cf81d393d.jpeg "raw_contacts table")
-![data table](/graphics/756d755e09fc682fe5f6814f73edb0ca.jpg"data table")
+
+
+![data table](/graphics/756d755e09fc682fe5f6814f73edb0ca.jpeg"data table")
 
 
 
