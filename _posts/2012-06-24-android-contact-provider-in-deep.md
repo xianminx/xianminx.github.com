@@ -2,14 +2,13 @@
 layout: post
 title: "Android Contacts Provider In Deep"
 tags: [android]
-draft: true
 ---
 
 
 
 Android contact API uses Content Provider to provide data for application. The service is provided by `com.android.providers.contacts`. All the contact data are stored in SQLite database. You can find all the data under `/data/data/com.android.providers.contacts/databases`, as following:
 
-{% highlight linenos %}
+```bash 
 # adb shell 
 root@android:/data/data/com.android.providers.contacts/databases # ls
 contacts2.db
@@ -17,8 +16,7 @@ contacts2.db-journal
 contacts2.db-mj6E07C4A4
 profile.db
 profile.db-journal
-
-{% endhighlight %}
+```
 
 The most important and the central database here is `contacts2.db`. To view what's in this database, you can utilize the tool called `sqlite3` provided by Google. This is the [link](http://developer.android.com/tools/help/sqlite3.html) to the official description of the tool.  This tool is under /system/bin/ by default in Android. But in case you cannot find it on you device, you can use Eclipse SQLite Plugin to visualize the table structure and data. See this article [Browse an Android Emulator SQLite Database in Eclipse](http://www.tylerfrankenstein.com/browse-android-emulator-sqlite-database-eclipse)for help. 
 
