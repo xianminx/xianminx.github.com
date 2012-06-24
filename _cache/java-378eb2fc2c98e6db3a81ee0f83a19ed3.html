@@ -1,0 +1,8 @@
+<div class="highlight"><pre><code class="java">    <span class="n">mAccountManager</span> <span class="o">=</span> <span class="n">AccountManager</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+        <span class="n">Account</span><span class="o">[]</span> <span class="n">accounts</span> <span class="o">=</span> <span class="n">mAccountManager</span><span class="o">.</span><span class="na">getAccounts</span><span class="o">();</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Account</span> <span class="n">account</span> <span class="o">:</span> <span class="n">accounts</span><span class="o">){</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;account.name={0}, type={1}, content={2}&quot;</span><span class="o">,</span><span class="n">account</span><span class="o">.</span><span class="na">name</span><span class="o">,</span> <span class="n">account</span><span class="o">.</span><span class="na">type</span><span class="o">,</span> <span class="n">account</span><span class="o">.</span><span class="na">describeContents</span><span class="o">()));</span>
+        <span class="o">}</span>
+</code></pre>
+</div>

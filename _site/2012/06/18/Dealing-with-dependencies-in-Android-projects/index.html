@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<title>Lucas Xu : Android项目的依赖关系 </title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link rel="stylesheet" type="text/css" href="/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+<meta property="wb:webmaster" content="85ada6b02f0f02d5" />
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4064321344" type="text/javascript" charset="utf-8"></script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+<div class="page_margins">
+  <div id="header">
+    <h2><a href="http://xianminx.github.com">Lucas Xu   徐仙明</a></h2>
+    <div class="clear"></div>
+
+    <!-- begin: main navigation #nav -->
+    <div id="nav">
+      <div class="hlist">
+        <ul>
+          
+          <li>
+          <a href="/about/">About</a>
+          </li>
+          
+          <li class="active">
+          <a href="/">Blog</a>
+          </li>
+          
+          <li>
+          <a href="/archives/">Archives</a>
+          </li>
+          
+          <li>
+          <a href="/tags/">Categories</a>
+          </li>
+          
+          <li>
+          <a href="/other/">Other</a>
+          </li>
+          
+          <li><a href="http://github.com/xianminx">Repositories</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- end: main navigation -->
+  </div>
+
+  <!-- begin: main content area #main -->
+  <div id="main">
+    <div id="col1">
+      <div id="col1_content">
+        <div class="post">
+  <h3>Android项目的依赖关系</h3>
+
+
+<!-- JiaThis Button BEGIN -->
+<div id="ckepop">
+  <span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_tsina">新浪微博</a>
+	<a class="jiathis_button_googleplus">Google+</a>
+	<a class="jiathis_button_fb">Facebook</a>
+	<a class="jiathis_button_evernote">EverNote</a>
+	<a class="jiathis_button_tqq">腾讯微博</a>
+	<a href="http://www.jiathis.com/share?uid=1633146" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1336370704363698" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<!-- UJian Button BEGIN -->
+	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide"></script>
+<!-- UJian Button END -->
+
+<script type="text/javascript">
+var jiathis_config = {
+    shareImg:{
+        "showType":"ALL",
+        "bgColor":"",
+        "txtColor":"",
+        "text":"",
+        "services":"",
+        "position":"",
+        "imgwidth":"",
+        "imgheight":"",
+        "divname":""
+    }
+}
+</script>
+<script type='text/javascript' src='http://v2.jiathis.com/code/jia.js?uid=1336370704363698' charset='utf-8'></script>
+
+
+
+<br/>
+
+  <p><small class="meta final">
+3月9日下午02:35，2012年 ，来自Xavier Ducrohet <br/>
+原文：<a href="http://tools.android.com/recent/dealingwithdependenciesinandroidprojects">Dealing with dependencies in Android projects</a> by <a href = "http://tools.android.com/recent/dealingwithdependenciesinandroidprojects" > Xavier Ducrohet </a>
+<br/>翻译： <a href = "http://xianminx.github.com/">Lucas Xu</a><br>
+</small></p>
+
+<p>在Android SDK Tools和Eclipse ADT 插件的第17版本 (revision 17)中，我们对Android项目的依赖关系管理做了很多改变。 </p>
+
+<p>我们所做的第一个改变是调整基于 Ant 的编译系统和 Eclipse ADT 插件，使他们具有相同的行为。 </p>
+
+<p>Android 项目包含源代码文件夹，以及对库项目 (android library projects) 和 jar 文件的依赖。 不需要其他多余的设置，只需要在project.properties中添加对于库项目的依赖，Android项目就会在动在 classpath 中添加以下依赖项： </p>
+
+<ul>
+<li>libs/*.jar 的内容</li>
+<li>库项目(library project)的输出。</li>
+<li>库项目的 libs/*.jar 的内容。</li>
+</ul>
+
+<p>这些依赖项，加上项目自身源代码编译的结果，被一起交给DEX工具，然后被转化成字节码从而打包到最终的APK当中。 </p>
+
+<p>因为一个项目可能依赖于好几个使用相同的 jar 文件的库项目，Android 编译系统会检查所有所需的 jar 文件，检测出来自不同的库项目的重复 jar 文件，并删除这些重复的jar引用。这会防止可怕的&quot;already added&quot; DX错误。 </p>
+
+<p>下面介绍了系统如何发现重复引用。 </p>
+
+<p><strong>重要的变化</strong>  我们已经改变了库项目生成和打包R类的方式： </p>
+
+<ul>
+<li>R类不再被打包到库项目的输出 jar 包中。</li>
+<li>库项目不再为其所依赖的库项目生成R类。 只有主应用项目才会在生成本身R类的同时为所依赖的库项目生成R类。</li>
+</ul>
+
+<p>这意味着库项目不能导入(import)另一个库项目的R类。 其实这是没有必要的，因为它们自身的R类包含所有必要的资源。 </p>
+
+<p>请注意，应用程序的项目仍然可以导入所引用的库项目的R类，但是重申一遍，其实没有必要这么做， 因为他们本身的R类包括所有的资源。 </p>
+
+<h2 id="toc_0">Eclipse的具体变化</h2>
+
+<p>由于不光包含库项目，被称为&quot;Library Projects&quot;的动态class path容器 (dynamic class path container) 已更名为“Android Dependancies”。 </p>
+
+<p>现在被库项目引用的纯 Java 项目也可以填充classpath容器。 如果这些Java项目也引用其他 Java 项目或 jar 文件，它们将被自动添加（现在也支持通过 user libraries引用的jar文件）。 </p>
+
+<p><strong>重要:</strong> 仅当被引用的项被标记为&quot;exported&quot;时这才起作用。 请注意，默认情况下，当一个项目或jar文件被添加到项目的build path 中时是不会被标记为&quot;exported&quot;。 </p>
+
+<p>库项目（ 以及它们所引用的lib/*.jar文件）总是会被标记为&quot;exported&quot;。</p>
+
+<p><strong>重要:</strong> 如果你还在手动引用jar类库，而不是把他们放在libs目录下， 注意以下几点：</p>
+
+<ul>
+<li>如果该项目是一个 library project，应用项目默认情况下看不见这些jar 类库。 你必须把这些类库挪到&quot;libs&quot;子目录下。</li>
+<li>如果该项目是一个应用程序项目，你可以这样做，但你必须确保把引用的jar文件标记为&quot;exported&quot;。</li>
+</ul>
+
+<p>下图介绍了如何将Java项目和jar类库标记为&quot;exported&quot;（Android Dependencies 容器不必被标为&quot;exported&quot;，反正它总是会被导出）：</p>
+
+<p><img src="/graphics/ae6d0505e0138e239f8e7715fddf57ac.png" alt="Mark references as exported in Eclipse" title="Mark references as exported in Eclipse"></p>
+
+<p>再次强调一下， 重复的引用（包括引用的项目和 jar 文件）会被自动发现并且删除掉。 </p>
+
+<h2 id="toc_1">依赖解析</h2>
+
+<p>当一个项目引用了两个库项目，都需要相同的jar文件，编译系统需要检测和解决这种重复。 </p>
+
+<p>一个完整的依赖系统会将每个jar文件关联到一个完全限定名 (fully qualified name) 和一个版本号，以决定使用哪个版本。 </p>
+
+<p>不幸的是，Android编译系统暂时还没有一个完整的依赖解析系统。 在此期间，我们按照下列规则实现了一个简单的系统： </p>
+
+<p>** 严格按照文件名来识别 jar 文件 **</p>
+
+<blockquote>
+<p>这意味着 mylib.jar 和 mylib-v2.jar 是不同的两个文件，虽然它们实际上是不同版本的同一个类库， 他们都将被打包，从而可能导致 dx &quot;already added&quot; 错误。</p>
+</blockquote>
+
+<p>对于具有相同文件名的 jar 文件，“相同版本”是指完全相同的文件。 </p>
+
+<blockquote>
+<p>目前，我们的检测是非常基本的，只检查这些文件是不是有相同的大小和sha1 值。</p>
+
+<p>如果两个库都包含在他们的libs文件夹名为mylib.jar文件，但是这两个文件是不同的，编译系统将不能指出这种依赖错误。</p>
+
+<p>解决的办法: 如果它们是相同的类库，确保两个jar文件实际上是同一个。 如果是不同的两个类库，把他们重新命名为不同的jar包。</p>
+</blockquote>
+
+<h4 id="toc_2">特殊情况: android-support-v4.jar 和 android-support-v13.jar</h4>
+
+<p>我们把这两个库当作特殊情况来处理， 因为-V13里面包含一个完整-V4的版本。 如果发现两者同时存在，只有V13被使用。</p>
+
+<p>请注意，我们不能保证-V13中使用的-V4版本和其他老的类库使用到的-V4版本是相同的。 我们建议，当您更新您的项目与新版本的support library，你在同一时间更新您的所有项目，无论他们使用-V4还是-V13。</p>
+
+</div>
+
+<small class="meta final">
+  18 Jun 2012
+  
+   | 
+  <a href='/tags#android'>android</a>, 
+  
+  
+  <a href='/tags#adt'>adt</a>, 
+  
+  
+  <a href='/tags#eclipse'>eclipse</a>
+  
+
+</small>
+
+
+      </div>
+    </div>
+    <div id="col3">
+      <div id="col3_content">
+        <h6 class="vlist">GitHub projects</h6>
+        <ul class="vlist">
+        	<li>
+			<a href="https://github.com/xianminx/PullToRefresh-ListView" >PullToRefresh-ListView</a>
+		</li>
+	</ul>
+        <h6 class="vlist">Misc. Links</h6>
+        <ul class="vlist">
+          <li>
+            <a
+              href="http://www.google.com/"
+              >Google</a>
+          </li>
+          </ul>
+
+<!-- AddThis Follow BEGIN -->
+<h6 class="vlist">Follow Me</h6>
+<br/>
+<div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+<a class="addthis_button_google_follow" addthis:userid="101226668323584222394"></a>
+<a class="addthis_button_facebook_follow" addthis:userid="xianminx"></a>
+<a class="addthis_button_linkedin_follow" addthis:userid="xianminx"></a>
+<a class="addthis_button_twitter_follow" addthis:userid="xianminx"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fdf49b46dac2571"></script>
+<!-- AddThis Follow END -->
+
+<br/>
+
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=300&skin=1&isTitle=1&noborder=0&isWeibo=1&isFans=1&uid=2063991842&verifier=e0e8dc08&dpc=1"></iframe>
+
+
+</div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!-- end: #main -->
+
+  <!-- begin: #footer -->
+  <div id="footer">
+    <div class="hlist">
+      <ul>
+        
+        <li>
+        <a href="/about/"
+        
+        >About</a>
+         | 
+        </li>
+        
+        <li class="active">
+        <a href="/"
+        
+        >Blog</a>
+         | 
+        </li>
+        
+        <li>
+        <a href="/archives/"
+        
+        >Archives</a>
+         | 
+        </li>
+        
+        <li>
+        <a href="/tags/"
+        
+        >Categories</a>
+         | 
+        </li>
+        
+        <li>
+        <a href="/other/"
+        
+        >Other</a>
+        
+        </li>
+        
+        <li>&ndash; updated 2012-06-24</li>
+      </ul>
+    </div>
+  </div>
+  <!-- end: #footer -->
+
+</div>
+
+</body>
+</html>
