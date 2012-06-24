@@ -9,7 +9,7 @@ Android系统本身提供了多用户账户的支持。 这里的多用户账户
  对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 `ps` 命令来查看。
 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如`com.baidu.input`的UID为`app_67`
 
-{% highlight java linenos %}
+```java
 root      117   2     0      0     c01839a4 00000000 S ext4-dio-unwrit
 system    133   1     17020  4296  c052d258 400307b0 S /system/bin/servicemanager
 root      134   1     6040   996   ffffffff ffff0520 S /system/bin/vold
@@ -90,8 +90,7 @@ app_26    29345 139   460068 36716 ffffffff 4008e4c4 S com.google.android.apps.m
 app_14    29386 139   454912 34484 ffffffff 4008e4c4 S android.process.media
 root      29439 166   804    432   c01090a8 400d6f94 S /system/bin/sh
 root      29444 29439 980    364   00000000 400ed578 R ps
-{% endhighlight %}
-
+```
 
 由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。 Android的解决方案是提供[AccountManager](http://developer.android.com/reference/android/accounts/AccountManager.html)来管理不同服务的账户。 [AccountManager](http://developer.android.com/reference/android/accounts/AccountManager.html)是由系统提供的服务([AccountManagerService])， 从而很好的在系统层面解决不同应用共享服务账户的问题。 
 
@@ -130,23 +129,20 @@ Android 系统默认支持Google账户， Microsoft Exchange账户，和普通�
 Google 提供了一个很好的例子， 在Google Task API 下。 [](link)
 简单的使用如下： 
 
-{% hightlight java linenos%}
-        mAccountManager = AccountManager.get(this);
+        
+```java
+	mAccountManager = AccountManager.get(this);
 
     	Account[] accounts = mAccountManager.getAccounts();
     	for(Account account : accounts){
     		Log.i(TAG, String.format("account.name={0}, type={1}, content={2}",account.name, account.type, account.describeContents()));
     	}
-    
-{% endlightlight %}
+```    
 
 
 
 ## 扩展[AccountManager]支持自定义的账户
 既然系统的AccountManager提供了这么多的便利， 你开始考虑把自己的在线服务加到Android系统中去了， 比如你有类似人人或者新浪微博， 想要把账户管理加到系统中去， 该怎么做呢？
-
-* 
- 
 
 
 
