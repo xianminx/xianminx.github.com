@@ -16,4 +16,6 @@ gen/
 local.properties
 
 #This is where the generated site will be placed once Jekyll is done transforming it.
+blog/_site
+blog/_cache
 
