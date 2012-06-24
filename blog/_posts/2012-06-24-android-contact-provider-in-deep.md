@@ -91,7 +91,7 @@ To visiualize the table, here is the screen short from Eclipse SQlite Plugin:
 ![raw_contacts table](/graphics/1f4498dfd10cb507e2f1675cf81d393d.jpeg "raw_contacts table")
 
 
-![data table](/graphics/756d755e09fc682fe5f6814f73edb0ca.jpeg"data table")
+![data table](/graphics/756d755e09fc682fe5f6814f73edb0ca.jpeg "data table")
 
 
 
