@@ -6,8 +6,8 @@ As github Jekyll does not support redcarpet2(! Really, although sounds rediculou
 Thus I created `blog` directory under `xianminx.github.com`. This is used to hold all source files used by Jekyll to generate result files. 
 
 1. Locally, `cd xianminx.github.com/blog/` 
-2. Use `jekyll --server` to generate `\_site` directory
-3. Copy the generated files to the root directory: `cp -r \_site/\* ../`
+2. Use `jekyll --server` to generate `_site` directory
+3. Copy the generated files to the root directory: `cp -r xianminx.github.com/blog/_site/* xianminx.github.com/`
 
 ## Prerequesites: 
 
