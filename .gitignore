@@ -19,5 +19,5 @@ local.properties
 blog/_site/
 blog/_cache/
 
-
+./blog/_site/
 
