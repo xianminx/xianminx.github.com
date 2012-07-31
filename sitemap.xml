@@ -7,56 +7,91 @@
 
 <url>
   <loc>http://xianminx.github.com/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>1.0</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/about/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/archives/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/tags/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/other/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 </url>
   <loc>http://xianminx.github.com/page2/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page3/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page4/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page5/</loc>
-  <lastmod>2012-01-07</lastmod>
+  <lastmod>2012-48-31</lastmod>
   <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/31/android-emulator-internet-access/</loc>
+  <lastmod>2012-00-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/26/push-tech/</loc>
+  <lastmod>2012-00-26</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/26/java-aio/</loc>
+  <lastmod>2012-00-26</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/16/ioc/</loc>
+  <lastmod>2012-00-16</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/11/android-dependency-injection/</loc>
+  <lastmod>2012-00-11</lastmod>
+  <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://xianminx.github.com/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>1.0</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/about/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/archives/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/tags/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/other/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+</url>
+  <loc>http://xianminx.github.com/page2/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/page3/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/page4/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://xianminx.github.com/page5/</loc>
+  <lastmod>2012-47-31</lastmod>
+  <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/31/android-emulator-internet-access/</loc>
+  <lastmod>2012-00-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/26/push-tech/</loc>
+  <lastmod>2012-00-26</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/26/java-aio/</loc>
+  <lastmod>2012-00-26</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/16/ioc/</loc>
+  <lastmod>2012-00-16</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/11/android-dependency-injection/</loc>
+  <lastmod>2012-00-11</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/06/sim-card-explain/</loc>
+  <lastmod>2012-00-06</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/07/06/android-get-phone-number/</loc>
+  <lastmod>2012-00-06</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/29/android-service-debugging/</loc>
+  <lastmod>2012-00-29</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/28/android-test-ui-thread-looper/</loc>
+  <lastmod>2012-00-28</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/26/android-service-bug/</loc>
+  <lastmod>2012-00-26</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/26/android-emulator-acceleration/</loc>
+  <lastmod>2012-00-26</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/24/vimqrc/</loc>
+  <lastmod>2012-00-24</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/24/videos-rest-android-google-api/</loc>
+  <lastmod>2012-00-24</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/</loc>
+  <lastmod>2012-00-24</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/24/android-contact-provider-in-deep/</loc>
+  <lastmod>2012-00-24</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/23/fancy-java-question/</loc>
+  <lastmod>2012-00-23</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/23/android-account-manager/</loc>
+  <lastmod>2012-00-23</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/22/android-content-provider/</loc>
+  <lastmod>2012-00-22</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/21/oauth/</loc>
+  <lastmod>2012-00-21</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/18/Understanding-jvm/</loc>
+  <lastmod>2012-00-18</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/06/18/Dealing-with-dependencies-in-Android-projects/</loc>
+  <lastmod>2012-00-18</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
