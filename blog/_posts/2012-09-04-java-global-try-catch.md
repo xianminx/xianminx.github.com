@@ -45,15 +45,8 @@ Java 程序员被要求在所有可能发生问题的代码段都要加上`try c
 
 这就是Global Exeption Handler 的作用。 
 
-Java 对于线程提供了2个方法
-
-* [setDefaultUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setDefaultUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
-
-This is static method and sets for all threads. 
- 
-* [setUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
-
-set for a single thread.
+Java 对于线程提供了一个方法
+ [setDefaultUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setDefaultUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
 
 下面是其说明
 >
@@ -74,6 +67,7 @@ SecurityException - if a security manager is present and it denies RuntimePermis
 Since:
 1.5
 >
+
 
 The following [code](http://www.nomachetejuggling.com/2006/06/13/java-5-global-exception-handling/) illustrates an example:
 
@@ -111,10 +105,36 @@ class SomeThread implements Runnable {
 }
 ```
 
-## Migrate to Android 
 
+## Migrate to Android 
+There are already many threads discussing the topic on StackOverflow:
+
+* [Ideal way to set global uncaught exception Handler in Android](http://stackoverflow.com/questions/2764394/ideal-way-to-set-global-uncaught-exception-handler-in-android)
+* [Android Global Error Handling and Reporting Activity](http://stackoverflow.com/questions/5740843/android-global-error-handling-and-reporting-activity)
+
+The steps to take are quite similar to those of Java. 
+
+[Something](http://stackoverflow.com/questions/5740843/android-global-error-handling-and-reporting-activity?answertab=votes#tab-top) to take care: 
+> 
+When implementing ACRA, I have never been able to start a new Activity after receiving an uncaught exception. It looks like the whole process is switched by the system to a special state preventing him from allowing any new resource.
+>
+The only option I have found for the moment is to send a status bar notification which is kept by the system after the application being restarted. The notification then triggers an intent for a dialog activity when the user selects it.
+>
+Alexey Yakovlev studied in much more details this issue and came to the conclusion that there could be a chance of triggering a new activity when the crash occurs on a thread which is not the UI thread. Though we did not find a simple enough workaround to start directly an activity in all cases.
+>
+I got rid of the default force close dialog by killing the process myself without invoking the orginial default uncaught exception handler.
+>
 
 
 ## Trap, Be careful
 
+
+
+
+
+
+
+## References
+
+* [global exception handling in Java](http://metatations.com/2011/11/20/global-exception-handling-in-java/)
 
