@@ -1,164 +1,75 @@
 ---
 layout: post
-title: "Jetty Configuration"
-tags: [java, jetty]
+title: "Java Global Try Catch"
+tags: [java, exception]
 ---
 
-## Jetty Configuration Files
+Java 为程序员提供了非常方便的错误处理。当有某段代码可能会发生错误， 比如读文件不存在， 所写的代码就不能正常工作。 这种情况下， 通常需要附加的逻辑来处理错误情况。 直接的方式是将可能会发生错误的代码段用`try {}`包起来。 在`catch` 中处理错误发生之后的逻辑， 使得整体程序不至于崩溃。 
 
-There are a number of locations to configure settings for Jetty and web applciations running on it. 
-
-A number of configuration files can be found at ${jetty.home}/start.ini. 
-
-```
-$java -jar start.jar --help
-
-Available Configurations:
-  By convention, configuration files are kept in $JETTY_HOME/etc.
-  The known configuration files are:
-  
-    etc/jetty-ajp.xml
-    etc/jetty-annotations.xml
-    etc/jetty-bio-ssl.xml
-    etc/jetty-bio.xml
-    etc/jetty-contexts.xml
-    etc/jetty-debug.xml
-    etc/jetty-deploy.xml
-    etc/jetty-fileserver.xml
-    etc/jetty-ipaccess.xml
-    etc/jetty-jmx.xml
-    etc/jetty-logging.xml
-    etc/jetty-monitor.xml
-    etc/jetty-overlay.xml
-    etc/jetty-plus.xml
-    etc/jetty-policy.xml
-    etc/jetty-proxy.xml
-    etc/jetty-requestlog.xml
-    etc/jetty-rewrite.xml
-    etc/jetty-spdy-proxy.xml
-    etc/jetty-spdy.xml
-    etc/jetty-ssl.xml
-    etc/jetty-stats.xml
-    etc/jetty-testrealm.xml
-    etc/jetty-webapps.xml
-    etc/jetty-xinetd.xml
-    etc/jetty.xml
-
-
-Defaults:
-  A start.ini file may be used to specify default arguments to start.jar,
-  which are used if no command line arguments are provided and override 
-  the defaults in the start.config file. If the directory jetty.home/start.d
-  exists, then multiple *.ini files will be read from that directory in 
-  alphabetical order. If --ini options are provided on  the command line,
-  then start.ini and start.d will NOT be read. 
-  
-  The current start.ini arguments are:
-
-    OPTIONS=Server,jsp,jmx,resources,websocket,ext,plus,annotations
-    etc/jetty.xml
-    etc/jetty-annotations.xml
-    etc/jetty-deploy.xml
-    etc/jetty-webapps.xml
-    etc/jetty-contexts.xml
-    etc/jetty-testrealm.xml
-
+## Java Exception Handling
+Java 提供`try  catch` 机制来捕获异常，方便程序员处理。
+```java
+try {
+  // code that may break
+  //...
+}
+catch (Exception e){
+  // to handle the exception here. 
+  // Usaually, just print out the exception stacktrace. 
+  e.printStackTrace();
+}
 ```
 
+### 一个简单的例子
 
-### Contexts
-An important concept in Jetty is *Context*. A web application is a context. Thus each xml file configured under ./contexts directorty represents a web application. 
+下面的代码演示了`try catch` 的简单使用：
 
-
-* ./contexts/test.xml 
-    The applicaiton configure file, using format of jetty. Jetty uses its own IOC mechanism to read and inject components to the server. The root element of the file is *Server*, representing a server. 
-
-* web.xml  
-    `[webapp_name]/WEB-INF/web.xml`. This file is located under a web app WEB-INF directory. The directory name `WEB-INF` and file name `web.xml` is regulated by Serverlet web app standards. 
-
-* jetty.xml
-
- 
-
-
-
-
-
-
-
-
+```java
+String filename = "/nosuchdir/myfilename";
+try {
+    // Create the file
+    new File(filename).createNewFile();
+} catch (IOException e) {
+    // Print out the exception that occurred
+    System.out.println("Unable to create "+filename+": "+e.getMessage());
+}
 ```
-mac:jetty-distribution-8.1.5.v20120716 user1$ cat start.
-cat: start.: No such file or directory
-lucas-mac:jetty-distribution-8.1.5.v20120716 lucas$ cat start.ini 
-#===========================================================
-# Jetty start.jar arguments
-# Each line of this file is prepended to the command line 
-# arguments # of a call to:
-#    java -jar start.jar [arg...]
-#===========================================================
 
+## Global try catch? 
+Java 程序员被要求在所有可能发生问题的代码段都要加上`try catch`. 幸好编译器有时会提醒你哪里需要添加。 对于一个不那么自信的程序员， 是不是需要在所有的代码块都加上`try catch` 呢？ 天哪， 那样的代码还能用吗？能用的话， 即使程序不会崩溃， 也不能完成正常的功能吧。 
 
+在某些情况下， 你可能希望有一个全局的错误处理机制。 如果发生了某个你不能预料的错误，比如你的程序本来运行的好好的， 但是被某些杀毒软件强行夺取了某个文件的访问权限， 这时使得你的程序处于一个不稳定的状态，然后程序崩溃了。 这怎么办？ 你会难道要责怪用户吗？ 
+或许有更好的选择。 
 
-#===========================================================
-# If the arguements in this file include JVM arguments 
-# (eg -Xmx512m) or JVM System properties (eg com.sun.???),
-# then these will not take affect unless the --exec 
-# parameter is included or if the output from --dry-run
-# is executed like:
-#   eval $(java -jar start.jar --dry-run)
-#
-# Below are some recommended options for Sun's JRE
-#-----------------------------------------------------------
-# --exec
-# -Dorg.apache.jasper.compiler.disablejsr199=true
-# -Dcom.sun.management.jmxremote
-# -Dorg.eclipse.jetty.util.log.IGNORED=true
-# -Dorg.eclipse.jetty.LEVEL=DEBUG
-# -Dorg.eclipse.jetty.util.log.stderr.SOURCE=true
-# -Xmx2000m
-# -Xmn512m
-# -verbose:gc
-# -XX:+PrintGCDateStamps
-# -XX:+PrintGCTimeStamps
-# -XX:+PrintGCDetails
-# -XX:+PrintTenuringDistribution
-# -XX:+PrintCommandLineFlags
-# -XX:+DisableExplicitGC
-# -XX:+UseConcMarkSweepGC
-# -XX:ParallelCMSThreads=2
-# -XX:+CMSClassUnloadingEnabled  
-# -XX:+UseCMSCompactAtFullCollection
-# -XX:CMSInitiatingOccupancyFraction=80
-#-----------------------------------------------------------
+当这种不能预料的错误发生时， 你希望能有一个全局的默认的错误处理机制，让程序在错误发生时依然可以做些恢复工作， 至少可以提醒用户为什么出错了。 
 
+这就是Global Exeption Handler 的作用。 
 
-#===========================================================
-# Start classpath OPTIONS.
-# These control what classes are on the classpath
-# for a full listing do
-#   java -jar start.jar --list-options
-#-----------------------------------------------------------
-OPTIONS=Server,jsp,jmx,resources,websocket,ext,plus,annotations
-#-----------------------------------------------------------
+Java 对于线程提供了一个方法
+ [setDefaultUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setDefaultUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
 
+下面是其说明
+>
+>public static void setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler eh)
 
-#===========================================================
-# Configuration files.
-# For a full list of available configuration files do
-#   java -jar start.jar --help
-#-----------------------------------------------------------
-#etc/jetty-jmx.xml
-etc/jetty.xml
-etc/jetty-annotations.xml
-# etc/jetty-ssl.xml
-# etc/jetty-requestlog.xml
-etc/jetty-deploy.xml
-#etc/jetty-overlay.xml
-etc/jetty-webapps.xml
-etc/jetty-contexts.xml
-etc/jetty-testrealm.xml
-#===========================================================
-``` 
+>Set the default handler invoked when a thread abruptly terminates due to an uncaught exception, and no other handler has been defined for that thread.
+Uncaught exception handling is controlled first by the thread, then by the thread's ThreadGroup object and finally by the default uncaught exception handler. If the thread does not have an explicit uncaught exception handler set, and the thread's thread group (including parent thread groups) does not specialize its uncaughtException method, then the default handler's uncaughtException method will be invoked.
+>
+By setting the default uncaught exception handler, an application can change the way in which uncaught exceptions are handled (such as logging to a specific device, or file) for those threads that would already accept whatever "default" behavior the system provided.
+>
+Note that the default uncaught exception handler should not usually defer to the thread's ThreadGroup object, as that could cause infinite recursion.
+>
+Parameters:
+eh - the object to use as the default uncaught exception handler. If null then there is no default handler.
+>
+Throws:
+SecurityException - if a security manager is present and it denies RuntimePermission ("setDefaultUncaughtExceptionHandler")
+Since:
+1.5
+>
+
+## Migrate to Android 
+
+## Trap, Be careful
 
 
