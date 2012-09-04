@@ -45,8 +45,15 @@ Java 程序员被要求在所有可能发生问题的代码段都要加上`try c
 
 这就是Global Exeption Handler 的作用。 
 
-Java 对于线程提供了一个方法
- [setDefaultUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setDefaultUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
+Java 对于线程提供了2个方法
+
+* [setDefaultUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setDefaultUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
+
+This is static method and sets for all threads. 
+ 
+* [setUncaughtExceptionHandler](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#setUncaughtExceptionHandler\(java.lang.Thread.UncaughtExceptionHandler\))
+
+set for a single thread.
 
 下面是其说明
 >
@@ -68,7 +75,45 @@ Since:
 1.5
 >
 
+The following [code](http://www.nomachetejuggling.com/2006/06/13/java-5-global-exception-handling/) illustrates an example:
+
+```
+//ExceptionHandlerExample.java
+package com.air0day.machetejuggling;
+
+public class ExceptionHandlerExample {
+  public static void main(String[] args) throws Exception {
+
+    Handler handler = new Handler();
+    Thread.setDefaultUncaughtExceptionHandler(handler);
+
+    Thread t = new Thread(new SomeThread(), "Some Thread");
+    t.start();
+
+    Thread.sleep(100);
+
+    throw new RuntimeException("Thrown from Main");
+  }
+
+}
+
+class Handler implements Thread.UncaughtExceptionHandler {
+  public void uncaughtException(Thread t, Throwable e) {
+    System.out.println("Throwable: " + e.getMessage());
+    System.out.println(t.toString());
+  }
+}
+
+class SomeThread implements Runnable {
+  public void run() {
+    throw new RuntimeException("Thrown From Thread");
+  }
+}
+```
+
 ## Migrate to Android 
+
+
 
 ## Trap, Be careful
 
