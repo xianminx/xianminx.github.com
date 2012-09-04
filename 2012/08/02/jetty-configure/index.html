@@ -2,7 +2,7 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
-<title>Lucas Xu : Inversion of Control </title>
+<title>Lucas Xu : Jetty Configuration </title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
 <link rel="stylesheet" type="text/css" href="/css/default.css" />
@@ -81,7 +81,7 @@
     <div id="col1">
       <div id="col1_content">
         <div class="post">
-  <h3>Inversion of Control</h3>
+  <h3>Jetty Configuration</h3>
 
 
 <!-- JiaThis Button BEGIN -->
@@ -123,79 +123,160 @@ var jiathis_config = {
 
 <br/>
 
-  <p>Inversion of Control (IoC)</p>
+  <h2 id="toc_39">Jetty Configuration Files</h2>
 
-<p>Hollywood Principle:
-&gt; Don&#39;t call us, we&#39;ll call you. </p>
+<p>There are a number of locations to configure settings for Jetty and web applciations running on it. </p>
 
-<h3 id="toc_27">Framework v.s. Library</h3>
+<p>A number of configuration files can be found at ${jetty.home}/start.ini. </p>
+<div class="highlight"><pre><code class="text">$java -jar start.jar --help
 
-<blockquote>
-<p>One important characteristic of a framework is that the methods defined by the user to tailor the framework will often be called from within the framework itself, rather than from the user&#39;s application code. The framework often plays the role of the main program in coordinating and sequencing application activity. This inversion of control gives frameworks the power to serve as extensible skeletons. The methods supplied by the user tailor the generic algorithms defined in the framework for a particular application.</p>
+Available Configurations:
+  By convention, configuration files are kept in $JETTY_HOME/etc.
+  The known configuration files are:
 
-<p>-- Ralph Johnson and Brian Foote</p>
-</blockquote>
+    etc/jetty-ajp.xml
+    etc/jetty-annotations.xml
+    etc/jetty-bio-ssl.xml
+    etc/jetty-bio.xml
+    etc/jetty-contexts.xml
+    etc/jetty-debug.xml
+    etc/jetty-deploy.xml
+    etc/jetty-fileserver.xml
+    etc/jetty-ipaccess.xml
+    etc/jetty-jmx.xml
+    etc/jetty-logging.xml
+    etc/jetty-monitor.xml
+    etc/jetty-overlay.xml
+    etc/jetty-plus.xml
+    etc/jetty-policy.xml
+    etc/jetty-proxy.xml
+    etc/jetty-requestlog.xml
+    etc/jetty-rewrite.xml
+    etc/jetty-spdy-proxy.xml
+    etc/jetty-spdy.xml
+    etc/jetty-ssl.xml
+    etc/jetty-stats.xml
+    etc/jetty-testrealm.xml
+    etc/jetty-webapps.xml
+    etc/jetty-xinetd.xml
+    etc/jetty.xml
 
-<h3 id="toc_28">Example</h3>
 
-<p>JUnit Framework
-<code>setUp</code> and <code>tearDown</code></p>
+Defaults:
+  A start.ini file may be used to specify default arguments to start.jar,
+  which are used if no command line arguments are provided and override 
+  the defaults in the start.config file. If the directory jetty.home/start.d
+  exists, then multiple *.ini files will be read from that directory in 
+  alphabetical order. If --ini options are provided on  the command line,
+  then start.ini and start.d will NOT be read. 
 
-<h3 id="toc_29">Lightweight containers</h3>
+  The current start.ini arguments are:
 
-<p>J2EE</p>
-
-<h3 id="toc_30">Dependency Injection</h3>
-
-<ul>
-<li>Constructor Injection</li>
-<li>Setter Injection</li>
-<li>Interface Injection</li>
-</ul>
-<div class="highlight"><pre><code class="java">    <span class="kd">private</span> <span class="n">MutablePicoContainer</span> <span class="nf">configureContainer</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">MutablePicoContainer</span> <span class="n">pico</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultPicoContainer</span><span class="o">();</span>
-        <span class="n">Parameter</span><span class="o">[]</span> <span class="n">finderParams</span> <span class="o">=</span>  <span class="o">{</span><span class="k">new</span> <span class="n">ConstantParameter</span><span class="o">(</span><span class="s">&quot;movies1.txt&quot;</span><span class="o">)};</span>
-        <span class="n">pico</span><span class="o">.</span><span class="na">registerComponentImplementation</span><span class="o">(</span><span class="n">MovieFinder</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">ColonMovieFinder</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">finderParams</span><span class="o">);</span>
-        <span class="n">pico</span><span class="o">.</span><span class="na">registerComponentImplementation</span><span class="o">(</span><span class="n">MovieLister</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">pico</span><span class="o">;</span>
-    <span class="o">}</span>
+    OPTIONS=Server,jsp,jmx,resources,websocket,ext,plus,annotations
+    etc/jetty.xml
+    etc/jetty-annotations.xml
+    etc/jetty-deploy.xml
+    etc/jetty-webapps.xml
+    etc/jetty-contexts.xml
+    etc/jetty-testrealm.xml
 </code></pre>
 </div>
 
-<p>PicoContainer
-NanoContainer: XML configure mapping</p>
+<h3 id="toc_40">Contexts</h3>
 
-<h3 id="toc_31">PicoContainer</h3>
+<p>An important concept in Jetty is <em>Context</em>. A web application is a context. Thus each xml file configured under ./contexts directorty represents a web application. </p>
 
-<h3 id="toc_32">Spring</h3>
+<ul>
+<li><p>./contexts/test.xml 
+The applicaiton configure file, using format of jetty. Jetty uses its own IOC mechanism to read and inject components to the server. The root element of the file is <em>Server</em>, representing a server. </p></li>
+<li><p>web.xml<br>
+<code>[webapp_name]/WEB-INF/web.xml</code>. This file is located under a web app WEB-INF directory. The directory name <code>WEB-INF</code> and file name <code>web.xml</code> is regulated by Serverlet web app standards. </p></li>
+<li><p>jetty.xml</p></li>
+</ul>
+<div class="highlight"><pre><code class="text">mac:jetty-distribution-8.1.5.v20120716 user1$ cat start.
+cat: start.: No such file or directory
+lucas-mac:jetty-distribution-8.1.5.v20120716 lucas$ cat start.ini 
+#===========================================================
+# Jetty start.jar arguments
+# Each line of this file is prepended to the command line 
+# arguments # of a call to:
+#    java -jar start.jar [arg...]
+#===========================================================
 
-<h3 id="toc_33">Avalon</h3>
 
-<p>Interface Injection</p>
 
-<h2 id="toc_34">References</h2>
+#===========================================================
+# If the arguements in this file include JVM arguments 
+# (eg -Xmx512m) or JVM System properties (eg com.sun.???),
+# then these will not take affect unless the --exec 
+# parameter is included or if the output from --dry-run
+# is executed like:
+#   eval $(java -jar start.jar --dry-run)
+#
+# Below are some recommended options for Sun&#39;s JRE
+#-----------------------------------------------------------
+# --exec
+# -Dorg.apache.jasper.compiler.disablejsr199=true
+# -Dcom.sun.management.jmxremote
+# -Dorg.eclipse.jetty.util.log.IGNORED=true
+# -Dorg.eclipse.jetty.LEVEL=DEBUG
+# -Dorg.eclipse.jetty.util.log.stderr.SOURCE=true
+# -Xmx2000m
+# -Xmn512m
+# -verbose:gc
+# -XX:+PrintGCDateStamps
+# -XX:+PrintGCTimeStamps
+# -XX:+PrintGCDetails
+# -XX:+PrintTenuringDistribution
+# -XX:+PrintCommandLineFlags
+# -XX:+DisableExplicitGC
+# -XX:+UseConcMarkSweepGC
+# -XX:ParallelCMSThreads=2
+# -XX:+CMSClassUnloadingEnabled  
+# -XX:+UseCMSCompactAtFullCollection
+# -XX:CMSInitiatingOccupancyFraction=80
+#-----------------------------------------------------------
 
-<ol>
-<li><p><a href="http://martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection pattern</a>, Martin Fowler</p></li>
-<li></li>
-</ol>
+
+#===========================================================
+# Start classpath OPTIONS.
+# These control what classes are on the classpath
+# for a full listing do
+#   java -jar start.jar --list-options
+#-----------------------------------------------------------
+OPTIONS=Server,jsp,jmx,resources,websocket,ext,plus,annotations
+#-----------------------------------------------------------
+
+
+#===========================================================
+# Configuration files.
+# For a full list of available configuration files do
+#   java -jar start.jar --help
+#-----------------------------------------------------------
+#etc/jetty-jmx.xml
+etc/jetty.xml
+etc/jetty-annotations.xml
+# etc/jetty-ssl.xml
+# etc/jetty-requestlog.xml
+etc/jetty-deploy.xml
+#etc/jetty-overlay.xml
+etc/jetty-webapps.xml
+etc/jetty-contexts.xml
+etc/jetty-testrealm.xml
+#===========================================================
+</code></pre>
+</div>
 
 </div>
 
 <small class="meta final">
-  16 Jul 2012
+  02 Aug 2012
   
    | 
-  <a href='/tags#android'>android</a>, 
-  
-  
   <a href='/tags#java'>java</a>, 
   
   
-  <a href='/tags#design pattern'>design pattern</a>, 
-  
-  
-  <a href='/tags#framework'>framework</a>
+  <a href='/tags#jetty'>jetty</a>
   
 
 </small>

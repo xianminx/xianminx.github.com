@@ -81,6 +81,97 @@
     <div id="col1">
       <div id="col1_content">
         
+  <h3 class="excerpt"><a href="/2012/07/26/push-tech/">Push Technology</a></h3>
+  <p class="excerpt">
+     &nbsp;
+    <a href="/2012/07/26/push-tech/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    26 Jul 2012
+    
+     | 
+    <a href="/tags#push">push</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/07/26/java-aio/">Java Aio</a></h3>
+  <p class="excerpt">
+    Java Async IO
+
+AIO
+NIO
+
+Background
+
+Linux AIO
+poll
+select 
+epoll
+
+Windows
+event driven
+
+Asynchronous NetworkProgramming
+
+File Descriptors
+
+Kernel
+
+Framework
+
+
+MINA
+Jetty
+Netty
+
+ &nbsp;
+    <a href="/2012/07/26/java-aio/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    26 Jul 2012
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/07/16/ioc/">Inversion of Control</a></h3>
+  <p class="excerpt">
+    Inversion of Control (IoC) Hollywood Principle: &gt; Don&#39;t call us, we&#39;ll call you. Framework v.s. Library One important characteristic of a framework is that the methods defined by the user to tailor the framework will often be called from within the framework itself, rather than from the user&#39;s application code. The framework often plays the role of the main program in coordinating and sequencing application activity. This inversion of control gives frameworks the power to serve as extensible skeletons. The methods supplied by the user tailor the generic algorithms defined in the framework for a particular application. -- Ralph Johnson... &nbsp;
+    <a href="/2012/07/16/ioc/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    16 Jul 2012
+    
+     | 
+    <a href="/tags#android">android</a>, 
+    
+    
+    <a href="/tags#java">java</a>, 
+    
+    
+    <a href="/tags#design pattern">design pattern</a>, 
+    
+    
+    <a href="/tags#framework">framework</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/07/11/android-dependency-injection/">Android Dependency Injection</a></h3>
+  <p class="excerpt">
+    Andoid ioc https://github.com/socialize/android-ioc/
+
+RoboGuice
+
+Tiny Spring
+ &nbsp;
+    <a href="/2012/07/11/android-dependency-injection/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    11 Jul 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
   <h3 class="excerpt"><a href="/2012/07/06/sim-card-explain/">SIM card for dummy</a></h3>
   <p class="excerpt">
     Android开发者在开发应用是总会遇到很多的电话相关的名词， 如IMEI, IMSI等，百度文库的这篇文章比较清晰的解释了这些名词。 
@@ -96,61 +187,6 @@ SIM卡号码 详解
     
      | 
     <a href="/tags#phone">phone</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/07/06/android-get-phone-number/">Android 手机API获取手机号码</a></h3>
-  <p class="excerpt">
-    之前在网上经常听到开发者传言Android平台中可以通过API接口获取SIM卡的ISDN(MSISDN)号码，即大众所受的手机号码。实际上在Android系统设置里面用户去查看这一项的时候是空白。 说明两个问题： OS提供API获取这个号码 OSAPI无法从SIM卡中获取到这个号码 也就是说， 这个API的获取结果和SIM卡相关， 即和运营商相关。 如果使用API可以获取这个号码的话， 对用户隐私将是一个非常大的威胁。 我用下面的代码在移动的动感地带和联通SIM卡上都没有得到手机号码。 松一口气。 说明暂时在中国移动和中国联通SIM卡上是无法获取这个号码的。 import android.app.Activity; import android.content.Context; import android.os.Bundle; import android.telephony.TelephonyManager; import android.util.Log; public class AndroidNumberActivity extends Activity { private static final String TAG = &quot;AndroidNumberActivity&quot;; /** Called when the activity is first created. */ @Override public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.main); // 创建电话管理 TelephonyManager tm = (TelephonyManager) // 与手机建立连接 getSystemService(Context.TELEPHONY_SERVICE); // 获取手机号码 String phoneNo = tm.getLine1Number(); Log.d(TAG, &quot;phnone NO: &quot; + phoneNo); } } 注意， 要在AndroidManifest.xml中添加权限android.permission.READ_PHONE_STATE. 如下： &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; package=&quot;com.number&quot; android:versionCode=&quot;1&quot; android:versionName=&quot;1.0&quot; &gt; &lt;uses-sdk android:minSdkVersion=&quot;4&quot; android:targetSdkVersion=&quot;15&quot;/&gt; &lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot; /&gt; &lt;application android:icon=&quot;@drawable/ic_launcher&quot; android:label=&quot;@string/app_name&quot; &gt; &lt;activity android:name=&quot;.AndroidNumberActivity&quot; android:label=&quot;@string/app_name&quot;... &nbsp;
-    <a href="/2012/07/06/android-get-phone-number/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    06 Jul 2012
-    
-     | 
-    <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/29/android-service-debugging/">How does an Android developer fix a bug?</a></h3>
-  <p class="excerpt">
-    Day and day ago, I wrote a DownloadingService for Android application. The service is provided in an Android SDK, which ill be utilized by other android apps. Some app developers wrote their code in such as way that when user press BACK button on Android, the app will kill itself in such a way: @Override public boolean onKeyDown(int keyCode, KeyEvent event) { if ((keyCode == KeyEvent.KEYCODE_BACK)) { android.os.Process.killProcess(android.os.Process.myPid()) ; return true; } return super.onKeyDown(keyCode, event); } As an advanced Android developer, you may think how this could be stupid and violate the design principle of Android Framework, i.e., &quot;Activity&quot; should... &nbsp;
-    <a href="/2012/06/29/android-service-debugging/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    29 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>, 
-    
-    
-    <a href="/tags#debug">debug</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/28/android-test-ui-thread-looper/">Android Test For UI Thread Listeners</a></h3>
-  <p class="excerpt">
-    The other day I wrote an Android downloading service running in a separate process. The main application process will send command/message to the downloading process asking it to download item. The downloading process is supposed to post back the downloading process and status to the main applicaiton process by sending messages. Everything works fine: the application process can send command and downloading process can receive the command and then start downloading the item. Also the application process can also receives the process update messages from the donwloading process. For the sake of recursive testing, namely, I wrote the following test... &nbsp;
-    <a href="/2012/06/28/android-test-ui-thread-looper/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    28 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/26/android-service-bug/">Android Account Manager</a></h3>
-  <p class="excerpt">
-    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
-    <a href="/2012/06/26/android-service-bug/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    26 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>
     
   </small>
 
@@ -275,7 +311,7 @@ SIM卡号码 详解
         
         </li>
         
-        <li>&ndash; updated 2012-07-31</li>
+        <li>&ndash; updated 2012-09-04</li>
       </ul>
     </div>
   </div>

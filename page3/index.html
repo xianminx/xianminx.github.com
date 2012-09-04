@@ -81,10 +81,52 @@
     <div id="col1">
       <div id="col1_content">
         
-  <h3 class="excerpt"><a href="/2012/06/26/android-emulator-acceleration/">Android Account Manager</a></h3>
+  <h3 class="excerpt"><a href="/2012/07/06/android-get-phone-number/">Android 手机API获取手机号码</a></h3>
+  <p class="excerpt">
+    之前在网上经常听到开发者传言Android平台中可以通过API接口获取SIM卡的ISDN(MSISDN)号码，即大众所受的手机号码。实际上在Android系统设置里面用户去查看这一项的时候是空白。 说明两个问题： OS提供API获取这个号码 OSAPI无法从SIM卡中获取到这个号码 也就是说， 这个API的获取结果和SIM卡相关， 即和运营商相关。 如果使用API可以获取这个号码的话， 对用户隐私将是一个非常大的威胁。 我用下面的代码在移动的动感地带和联通SIM卡上都没有得到手机号码。 松一口气。 说明暂时在中国移动和中国联通SIM卡上是无法获取这个号码的。 import android.app.Activity; import android.content.Context; import android.os.Bundle; import android.telephony.TelephonyManager; import android.util.Log; public class AndroidNumberActivity extends Activity { private static final String TAG = &quot;AndroidNumberActivity&quot;; /** Called when the activity is first created. */ @Override public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.main); // 创建电话管理 TelephonyManager tm = (TelephonyManager) // 与手机建立连接 getSystemService(Context.TELEPHONY_SERVICE); // 获取手机号码 String phoneNo = tm.getLine1Number(); Log.d(TAG, &quot;phnone NO: &quot; + phoneNo); } } 注意， 要在AndroidManifest.xml中添加权限android.permission.READ_PHONE_STATE. 如下： &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; package=&quot;com.number&quot; android:versionCode=&quot;1&quot; android:versionName=&quot;1.0&quot; &gt; &lt;uses-sdk android:minSdkVersion=&quot;4&quot; android:targetSdkVersion=&quot;15&quot;/&gt; &lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot; /&gt; &lt;application android:icon=&quot;@drawable/ic_launcher&quot; android:label=&quot;@string/app_name&quot; &gt; &lt;activity android:name=&quot;.AndroidNumberActivity&quot; android:label=&quot;@string/app_name&quot;... &nbsp;
+    <a href="/2012/07/06/android-get-phone-number/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    06 Jul 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/29/android-service-debugging/">How does an Android developer fix a bug?</a></h3>
+  <p class="excerpt">
+    Day and day ago, I wrote a DownloadingService for Android application. The service is provided in an Android SDK, which ill be utilized by other android apps. Some app developers wrote their code in such as way that when user press BACK button on Android, the app will kill itself in such a way: @Override public boolean onKeyDown(int keyCode, KeyEvent event) { if ((keyCode == KeyEvent.KEYCODE_BACK)) { android.os.Process.killProcess(android.os.Process.myPid()) ; return true; } return super.onKeyDown(keyCode, event); } As an advanced Android developer, you may think how this could be stupid and violate the design principle of Android Framework, i.e., &quot;Activity&quot; should... &nbsp;
+    <a href="/2012/06/29/android-service-debugging/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    29 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>, 
+    
+    
+    <a href="/tags#debug">debug</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/28/android-test-ui-thread-looper/">Android Test For UI Thread Listeners</a></h3>
+  <p class="excerpt">
+    The other day I wrote an Android downloading service running in a separate process. The main application process will send command/message to the downloading process asking it to download item. The downloading process is supposed to post back the downloading process and status to the main applicaiton process by sending messages. Everything works fine: the application process can send command and downloading process can receive the command and then start downloading the item. Also the application process can also receives the process update messages from the donwloading process. For the sake of recursive testing, namely, I wrote the following test... &nbsp;
+    <a href="/2012/06/28/android-test-ui-thread-looper/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    28 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/26/android-service-bug/">Android Account Manager</a></h3>
   <p class="excerpt">
     Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
-    <a href="/2012/06/26/android-emulator-acceleration/" class="read-more">read more</a>
+    <a href="/2012/06/26/android-service-bug/" class="read-more">read more</a>
   </p>
   <small class="meta">
     26 Jun 2012
@@ -94,63 +136,13 @@
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/06/24/vimqrc/">VIM QUICK REFERENCE CARD</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/26/android-emulator-acceleration/">Android Account Manager</a></h3>
   <p class="excerpt">
-    VIM Quick Reference Card origin:http://tnerual.eriogerg.free.fr/vimqrc.html VIM QUICK REFERENCE CARD Basic movement h l k jcharacter left, right; line up, down b wword/token left, right ge eend of word/token left, right {&nbsp; }beginning of previous, next paragraph ( )beginning of previous, next sentence 0 gmbeginning, middle of line ^&nbsp; $first, last character of line nG nggline n, default the last, first n%percentage n of the file (n must be provided) n|column n of current line %match of next brace, bracket, comment, #define nH nLline n from start, bottom of window Mmiddle line of window Insertion &amp; replace → insert mode i... &nbsp;
-    <a href="/2012/06/24/vimqrc/" class="read-more">read more</a>
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
+    <a href="/2012/06/26/android-emulator-acceleration/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    24 Jun 2012
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/24/videos-rest-android-google-api/">Videos on REST, Android, and Google API</a></h3>
-  <p class="excerpt">
-    Intro to REST
-
-
-
-Google I/O 2010 - Android REST client applications
-
-
-
-Google I/O 2011: Best Practices for Accessing Google APIs on Android
-
-
- &nbsp;
-    <a href="/2012/06/24/videos-rest-android-google-api/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    24 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/">github视通的jekyll真的很不给力</a></h3>
-  <p class="excerpt">
-    一直以来想找一个简单的可以写技术博客的站点，要求很简单， 不需要什么酷的界面，也不需要什么炫的皮肤，只需要能够不错的展示代码和图片就可以了。 
-
-github falvored markdown 对code block 很不错， 所谓的&quot;fancy code block&quot;。 看似简单的东西， 在实际的系统里面没有几个做得好的。 Github提供pages服务， 可以供写技术博客用。 背后使用的引擎是Jekyll， 这个东西是ruby写的， 以非常简单的方式来管理博客。 虽然Github使用的是Jekyll, Jekyll也主要是用markdown格式来写博客的， 要命的是， Jekyll不支持GFM， 使用什么所谓的maruku引擎渲染， 而不是github 所用的redcarpet. Ridiculous!估计这就是开源所带来的后果吧。  这就造成了使用GFM写的markdown post不能被Jekyll在Github pages上很好的展示出来。 
- &nbsp;
-    <a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    24 Jun 2012
-    
-     | 
-    <a href="/tags#github">github</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/24/android-contact-provider-in-deep/">Android Contacts Provider In Deep</a></h3>
-  <p class="excerpt">
-    Android contact API uses Content Provider to provide data for application. The service is provided by com.android.providers.contacts. All the contact data are stored in SQLite database. You can find all the data under /data/data/com.android.providers.contacts/databases, as following: # adb shell root@android:/data/data/com.android.providers.contacts/databases # ls contacts2.db contacts2.db-journal contacts2.db-mj6E07C4A4 profile.db profile.db-journal The most important and the central database here is contacts2.db. To view what&#39;s in this database, you can utilize the tool called sqlite3 provided by Google. This is the link to the official description of the tool. This tool is under /system/bin/ by default in Android. But in case you cannot find it... &nbsp;
-    <a href="/2012/06/24/android-contact-provider-in-deep/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    24 Jun 2012
+    26 Jun 2012
     
      | 
     <a href="/tags#android">android</a>
@@ -278,7 +270,7 @@ github falvored markdown 对code block 很不错， 所谓的&quot;fancy code bl
         
         </li>
         
-        <li>&ndash; updated 2012-07-31</li>
+        <li>&ndash; updated 2012-09-04</li>
       </ul>
     </div>
   </div>
