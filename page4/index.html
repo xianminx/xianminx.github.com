@@ -81,6 +81,32 @@
     <div id="col1">
       <div id="col1_content">
         
+  <h3 class="excerpt"><a href="/2012/06/26/android-service-bug/">Android Account Manager</a></h3>
+  <p class="excerpt">
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
+    <a href="/2012/06/26/android-service-bug/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    26 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/26/android-emulator-acceleration/">Android Account Manager</a></h3>
+  <p class="excerpt">
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
+    <a href="/2012/06/26/android-emulator-acceleration/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    26 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
   <h3 class="excerpt"><a href="/2012/06/24/vimqrc/">VIM QUICK REFERENCE CARD</a></h3>
   <p class="excerpt">
     VIM Quick Reference Card origin:http://tnerual.eriogerg.free.fr/vimqrc.html VIM QUICK REFERENCE CARD Basic movement h l k jcharacter left, right; line up, down b wword/token left, right ge eend of word/token left, right {&nbsp; }beginning of previous, next paragraph ( )beginning of previous, next sentence 0 gmbeginning, middle of line ^&nbsp; $first, last character of line nG nggline n, default the last, first n%percentage n of the file (n must be provided) n|column n of current line %match of next brace, bracket, comment, #define nH nLline n from start, bottom of window Mmiddle line of window Insertion &amp; replace → insert mode i... &nbsp;
@@ -128,50 +154,6 @@ github falvored markdown 对code block 很不错， 所谓的&quot;fancy code bl
     
      | 
     <a href="/tags#github">github</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/24/android-contact-provider-in-deep/">Android Contacts Provider In Deep</a></h3>
-  <p class="excerpt">
-    Android contact API uses Content Provider to provide data for application. The service is provided by com.android.providers.contacts. All the contact data are stored in SQLite database. You can find all the data under /data/data/com.android.providers.contacts/databases, as following: # adb shell root@android:/data/data/com.android.providers.contacts/databases # ls contacts2.db contacts2.db-journal contacts2.db-mj6E07C4A4 profile.db profile.db-journal The most important and the central database here is contacts2.db. To view what&#39;s in this database, you can utilize the tool called sqlite3 provided by Google. This is the link to the official description of the tool. This tool is under /system/bin/ by default in Android. But in case you cannot find it... &nbsp;
-    <a href="/2012/06/24/android-contact-provider-in-deep/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    24 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/23/fancy-java-question/">一道很考验java功底的题目</a></h3>
-  <p class="excerpt">
-    
-Lucas Xu
-
-
-问题 Challenge: can you write code that invokes foo()?
-
-1 class Impossible {
-2    public Impossible() {
-3        throw new AssertionError(&quot;you cannot instantiate me&quot;); 
-4    }
-5    public void foo() { 
-6       System.out.println(&quot;The impossible is possible!&quot;); 
-7   }
-8 }
-
-
-
-这是来自Android team 的几位工程师的博客。 众志成城， 他们想出了很多解法。大家发挥一下想象力，看是不是可以找到解法。
- &nbsp;
-    <a href="/2012/06/23/fancy-java-question/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    23 Jun 2012
-    
-     | 
-    <a href="/tags#java">java</a>
     
   </small>
 
@@ -296,7 +278,7 @@ Lucas Xu
         
         </li>
         
-        <li>&ndash; updated 2012-09-04</li>
+        <li>&ndash; updated 2012-09-20</li>
       </ul>
     </div>
   </div>
