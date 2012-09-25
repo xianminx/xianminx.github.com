@@ -81,6 +81,19 @@
     <div id="col1">
       <div id="col1_content">
         
+  <h3 class="excerpt"><a href="/2012/09/21/chrome-privacy-protection/">Chrome: 保护你的隐私， 骚年</a></h3>
+  <p class="excerpt">
+    用Chrome 的用户， 你们的使用数据， 浏览了什么网站， 点击了什么链接， 在搜索引擎里搜索了什么， 全都被Google, baidu, 等收集了。 醒醒吧，骚年。 Chrome 的插件 AdBlock AdBlock for Chrome! Block all advertisements on all web pages, even Facebook, Youtube, and Hulu. It works automatically: just click &quot;Add to Chrome,&quot; then visit your favorite website and see the ads disappear! Google Analytics Opt-out Browser Add-on To provide website visitors more choice on how their data is collected by Google Analytics, we have developed the Google Analytics Opt-out Browser Add-on. The add-on communicates with the Google Analytics JavaScript to indicate that information about the website visit should not be sent to Google Analytics. If you... &nbsp;
+    <a href="/2012/09/21/chrome-privacy-protection/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    21 Sep 2012
+    
+     | 
+    <a href="/tags#隐私">隐私</a>
+    
+  </small>
+
   <h3 class="excerpt"><a href="/2012/09/20/mac-mountain-lion-git/">git not found after upgrading to mountain lion</a></h3>
   <p class="excerpt">
     After updating to Mountain Lion, many command line tools disappeared. The solution is described here: 
@@ -140,7 +153,7 @@ But is it really free to use these softwares?
 
   <h3 class="excerpt"><a href="/2012/09/04/java-global-try-catch/">Java Global Try Catch</a></h3>
   <p class="excerpt">
-    Java 为程序员提供了非常方便的错误处理。当有某段代码可能会发生错误， 比如读文件不存在， 所写的代码就不能正常工作。 这种情况下， 通常需要附加的逻辑来处理错误情况。 直接的方式是将可能会发生错误的代码段用try {}包起来。 在catch 中处理错误发生之后的逻辑， 使得整体程序不至于崩溃。 Java Exception Handling Java 提供try catch 机制来捕获异常，方便程序员处理。 java try { // code that may break //... } catch (Exception e){ // to handle the exception here. // Usaually, just print out the exception stacktrace. e.printStackTrace(); } 一个简单的例子 下面的代码演示了try catch 的简单使用： String filename = &quot;/nosuchdir/myfilename&quot;; try { // Create the file new File(filename).createNewFile(); } catch (IOException e) { // Print out the exception that occurred System.out.println(&quot;Unable to create &quot;+filename+&quot;: &quot;+e.getMessage()); } Global try catch? Java 程序员被要求在所有可能发生问题的代码段都要加上try catch. 幸好编译器有时会提醒你哪里需要添加。 对于一个不那么自信的程序员， 是不是需要在所有的代码块都加上try catch 呢？ 天哪， 那样的代码还能用吗？能用的话， 即使程序不会崩溃， 也不能完成正常的功能吧。 在某些情况下， 你可能希望有一个全局的错误处理机制。 如果发生了某个你不能预料的错误，比如你的程序本来运行的好好的， 但是被某些杀毒软件强行夺取了某个文件的访问权限，... &nbsp;
+    Java 为程序员提供了非常方便的错误处理。当有某段代码可能会发生错误， 比如读文件不存在， 所写的代码就不能正常工作。 这种情况下， 通常需要附加的逻辑来处理错误情况。 直接的方式是将可能会发生错误的代码段用try {}包起来。 在catch 中处理错误发生之后的逻辑， 使得整体程序不至于崩溃。 Java Exception Handling Java 提供try catch 机制来捕获异常，方便程序员处理。 java try { // code that may break //... } catch (Exception e){ // to handle the exception here. // Usaually, just print out the exception stacktrace. e.printStackTrace(); } 一个简单的例子 下面的代码演示了try catch 的简单使用： Global try catch? Java 程序员被要求在所有可能发生问题的代码段都要加上try catch. 幸好编译器有时会提醒你哪里需要添加。 对于一个不那么自信的程序员， 是不是需要在所有的代码块都加上try catch 呢？ 天哪， 那样的代码还能用吗？能用的话， 即使程序不会崩溃， 也不能完成正常的功能吧。 在某些情况下， 你可能希望有一个全局的错误处理机制。 如果发生了某个你不能预料的错误，比如你的程序本来运行的好好的， 但是被某些杀毒软件强行夺取了某个文件的访问权限， 这时使得你的程序处于一个不稳定的状态，然后程序崩溃了。 这怎么办？ 你会难道要责怪用户吗？ 或许有更好的选择。 当这种不能预料的错误发生时， 你希望能有一个全局的默认的错误处理机制，让程序在错误发生时依然可以做些恢复工作， 至少可以提醒用户为什么出错了。 这就是Global Exeption Handler 的作用。 Java 对于线程提供了一个方法 setDefaultUncaughtExceptionHandler 下面是其说明 &gt; &gt;public static void setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler eh) Set the default handler invoked when a thread abruptly... &nbsp;
     <a href="/2012/09/04/java-global-try-catch/" class="read-more">read more</a>
   </p>
   <small class="meta">
@@ -167,22 +180,6 @@ But is it really free to use these softwares?
     
     
     <a href="/tags#logging">logging</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/08/02/jetty-configure/">Jetty Configuration</a></h3>
-  <p class="excerpt">
-    Jetty Configuration Files There are a number of locations to configure settings for Jetty and web applciations running on it. A number of configuration files can be found at ${jetty.home}/start.ini. $java -jar start.jar --help Available Configurations: By convention, configuration files are kept in $JETTY_HOME/etc. The known configuration files are: etc/jetty-ajp.xml etc/jetty-annotations.xml etc/jetty-bio-ssl.xml etc/jetty-bio.xml etc/jetty-contexts.xml etc/jetty-debug.xml etc/jetty-deploy.xml etc/jetty-fileserver.xml etc/jetty-ipaccess.xml etc/jetty-jmx.xml etc/jetty-logging.xml etc/jetty-monitor.xml etc/jetty-overlay.xml etc/jetty-plus.xml etc/jetty-policy.xml etc/jetty-proxy.xml etc/jetty-requestlog.xml etc/jetty-rewrite.xml etc/jetty-spdy-proxy.xml etc/jetty-spdy.xml etc/jetty-ssl.xml etc/jetty-stats.xml etc/jetty-testrealm.xml etc/jetty-webapps.xml etc/jetty-xinetd.xml etc/jetty.xml Defaults: A start.ini file may be used to specify default arguments to start.jar, which are used if no command line arguments are provided and override... &nbsp;
-    <a href="/2012/08/02/jetty-configure/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    02 Aug 2012
-    
-     | 
-    <a href="/tags#java">java</a>, 
-    
-    
-    <a href="/tags#jetty">jetty</a>
     
   </small>
 
@@ -303,7 +300,7 @@ But is it really free to use these softwares?
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>

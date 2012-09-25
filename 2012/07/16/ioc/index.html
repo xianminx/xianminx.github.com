@@ -152,15 +152,6 @@ var jiathis_config = {
 <li>Setter Injection</li>
 <li>Interface Injection</li>
 </ul>
-<div class="highlight"><pre><code class="java">    <span class="kd">private</span> <span class="n">MutablePicoContainer</span> <span class="nf">configureContainer</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">MutablePicoContainer</span> <span class="n">pico</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultPicoContainer</span><span class="o">();</span>
-        <span class="n">Parameter</span><span class="o">[]</span> <span class="n">finderParams</span> <span class="o">=</span>  <span class="o">{</span><span class="k">new</span> <span class="n">ConstantParameter</span><span class="o">(</span><span class="s">&quot;movies1.txt&quot;</span><span class="o">)};</span>
-        <span class="n">pico</span><span class="o">.</span><span class="na">registerComponentImplementation</span><span class="o">(</span><span class="n">MovieFinder</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">ColonMovieFinder</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">finderParams</span><span class="o">);</span>
-        <span class="n">pico</span><span class="o">.</span><span class="na">registerComponentImplementation</span><span class="o">(</span><span class="n">MovieLister</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">pico</span><span class="o">;</span>
-    <span class="o">}</span>
-</code></pre>
-</div>
 
 <p>PicoContainer
 NanoContainer: XML configure mapping</p>
@@ -323,7 +314,7 @@ window.WBComment.init({
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>

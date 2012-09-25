@@ -81,6 +81,19 @@
     <div id="col1">
       <div id="col1_content">
         
+  <h3 class="excerpt"><a href="/2012/06/28/android-test-ui-thread-looper/">Android Test For UI Thread Listeners</a></h3>
+  <p class="excerpt">
+    The other day I wrote an Android downloading service running in a separate process. The main application process will send command/message to the downloading process asking it to download item. The downloading process is supposed to post back the downloading process and status to the main applicaiton process by sending messages. Everything works fine: the application process can send command and downloading process can receive the command and then start downloading the item. Also the application process can also receives the process update messages from the donwloading process. For the sake of recursive testing, namely, I wrote the following test... &nbsp;
+    <a href="/2012/06/28/android-test-ui-thread-looper/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    28 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
   <h3 class="excerpt"><a href="/2012/06/26/android-service-bug/">Android Account Manager</a></h3>
   <p class="excerpt">
     Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
@@ -138,22 +151,6 @@ Google I/O 2011: Best Practices for Accessing Google APIs on Android
     
      | 
     <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/">github视通的jekyll真的很不给力</a></h3>
-  <p class="excerpt">
-    一直以来想找一个简单的可以写技术博客的站点，要求很简单， 不需要什么酷的界面，也不需要什么炫的皮肤，只需要能够不错的展示代码和图片就可以了。 
-
-github falvored markdown 对code block 很不错， 所谓的&quot;fancy code block&quot;。 看似简单的东西， 在实际的系统里面没有几个做得好的。 Github提供pages服务， 可以供写技术博客用。 背后使用的引擎是Jekyll， 这个东西是ruby写的， 以非常简单的方式来管理博客。 虽然Github使用的是Jekyll, Jekyll也主要是用markdown格式来写博客的， 要命的是， Jekyll不支持GFM， 使用什么所谓的maruku引擎渲染， 而不是github 所用的redcarpet. Ridiculous!估计这就是开源所带来的后果吧。  这就造成了使用GFM写的markdown post不能被Jekyll在Github pages上很好的展示出来。 
- &nbsp;
-    <a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    24 Jun 2012
-    
-     | 
-    <a href="/tags#github">github</a>
     
   </small>
 
@@ -278,7 +275,7 @@ github falvored markdown 对code block 很不错， 所谓的&quot;fancy code bl
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>

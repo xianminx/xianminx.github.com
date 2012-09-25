@@ -127,139 +127,8 @@ var jiathis_config = {
 
 <p>For the sake of recursive testing, namely, I wrote the following test case, following the direction specified by <a href="http://developer.android.com/tools/testing/testing_android.html">Android SDK documentation</a>. 
 Then run in Eclipse, everything worked fine, and I didnot put much effort on it, it got into the source depot.   </p>
-<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DownloadAgentTest</span> <span class="kd">extends</span>
-        <span class="n">ActivityInstrumentationTestCase2</span><span class="o">&lt;</span><span class="n">UtActivity</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">LOG_TAG</span> <span class="o">=</span> <span class="n">DownloadAgentTest</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
-    <span class="kd">public</span> <span class="nf">DownloadAgentTest</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="s">&quot;com.example&quot;</span><span class="o">,</span> <span class="n">com</span><span class="o">.</span><span class="na">ut</span><span class="o">.</span><span class="na">UtActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">();</span>
-        <span class="n">mActivity</span> <span class="o">=</span> <span class="n">getActivity</span><span class="o">();</span>
-        <span class="n">mContext</span> <span class="o">=</span> <span class="n">mActivity</span><span class="o">.</span><span class="na">getBaseContext</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="n">UtActivity</span> <span class="n">mActivity</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Context</span> <span class="n">mContext</span><span class="o">;</span>
-
-    <span class="nd">@Test</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testDownloadAgent</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">final</span> <span class="n">CountDownLatch</span> <span class="n">signal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-
-        <span class="n">IDownloadListener</span> <span class="n">listener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IDownloadListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
-                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onStart&quot;</span><span class="o">);</span>
-            <span class="o">}</span>
-
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onProgressUpdate</span><span class="o">(</span><span class="kt">int</span> <span class="n">progress</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onProgressUpdate(&quot;</span><span class="o">+</span><span class="n">progress</span> <span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">);</span>
-            <span class="o">}</span>
-
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEnd</span><span class="o">(</span><span class="kt">int</span> <span class="n">result</span><span class="o">,</span> <span class="n">String</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onEnd(&quot;</span><span class="o">+</span><span class="n">result</span> <span class="o">+</span><span class="s">&quot;, &quot;</span><span class="o">+</span> <span class="n">file</span> <span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">);</span>
-                <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">result</span> <span class="o">==</span><span class="mi">1</span><span class="o">);</span>
-                <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;/sdcard/&quot;</span><span class="o">));</span>
-                <span class="n">signal</span><span class="o">.</span><span class="na">countDown</span><span class="o">();</span>
-            <span class="o">}</span>
-
-        <span class="o">};</span>
-        <span class="n">DownloadAgent</span> <span class="n">agent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DownloadAgent</span><span class="o">(</span>
-                <span class="n">mContext</span><span class="o">,</span>
-                <span class="s">&quot;xp&quot;</span><span class="o">,</span>
-                <span class="s">&quot;App_name&quot;</span><span class="o">,</span>
-                <span class="s">&quot;http://www.google.com/some.apk&quot;</span><span class="o">,</span>
-                <span class="n">listener</span><span class="o">);</span>
-        <span class="n">agent</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">signal</span><span class="o">.</span><span class="na">await</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <p>Days later, one of my collegues read that code, run it, but asked: &quot;How do you know functions <code>onProgressUpdate</code> and <code>onEnd</code> are called?&quot;. Inspired by his question, I updated the code as：</p>
-<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DownloadAgentTest</span> <span class="kd">extends</span>
-        <span class="n">ActivityInstrumentationTestCase2</span><span class="o">&lt;</span><span class="n">UtActivity</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">LOG_TAG</span> <span class="o">=</span> <span class="n">DownloadAgentTest</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
-
-    <span class="kt">boolean</span> <span class="n">onStartTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="kt">boolean</span> <span class="n">onProgressUpdateTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="kt">boolean</span> <span class="n">onEndTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">DownloadAgentTest</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="s">&quot;com.example&quot;</span><span class="o">,</span> <span class="n">com</span><span class="o">.</span><span class="na">ut</span><span class="o">.</span><span class="na">UtActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">();</span>
-        <span class="n">mActivity</span> <span class="o">=</span> <span class="n">getActivity</span><span class="o">();</span>
-        <span class="n">mContext</span> <span class="o">=</span> <span class="n">mActivity</span><span class="o">.</span><span class="na">getBaseContext</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="n">UtActivity</span> <span class="n">mActivity</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Context</span> <span class="n">mContext</span><span class="o">;</span>
-
-    <span class="nd">@Test</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testDownloadAgent</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">final</span> <span class="n">CountDownLatch</span> <span class="n">signal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-
-        <span class="n">onStartTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="n">onProgressUpdateTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="n">onEndTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-
-        <span class="n">IDownloadListener</span> <span class="n">listener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IDownloadListener</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
-                            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onStart&quot;</span><span class="o">);</span>
-                            <span class="n">onStartTriggered</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                        <span class="o">}</span>
-
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onProgressUpdate</span><span class="o">(</span><span class="kt">int</span> <span class="n">progress</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onProgressUpdate(&quot;</span><span class="o">+</span><span class="n">progress</span> <span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">);</span>
-                            <span class="n">onProgressUpdateTriggered</span> <span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-                        <span class="o">}</span>
-
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEnd</span><span class="o">(</span><span class="kt">int</span> <span class="n">result</span><span class="o">,</span> <span class="n">String</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">onEndTriggered</span> <span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-                            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onEnd(&quot;</span><span class="o">+</span><span class="n">result</span> <span class="o">+</span><span class="s">&quot;, &quot;</span><span class="o">+</span> <span class="n">file</span> <span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">);</span>
-                            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">result</span> <span class="o">==</span><span class="mi">1</span><span class="o">);</span>
-                            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;/sdcard/&quot;</span><span class="o">));</span>
-                            <span class="n">signal</span><span class="o">.</span><span class="na">countDown</span><span class="o">();</span>
-                        <span class="o">}</span>
-            <span class="o">};</span>  
-
-        <span class="n">DownloadAgent</span> <span class="n">agent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DownloadAgent</span><span class="o">(</span>
-                <span class="n">mContext</span><span class="o">,</span>
-                <span class="s">&quot;xp&quot;</span><span class="o">,</span>
-                <span class="s">&quot;App_name&quot;</span><span class="o">,</span>
-                <span class="s">&quot;http://www.google.com/some.apk&quot;</span><span class="o">,</span>
-                <span class="n">listener</span><span class="o">);</span>
-        <span class="n">agent</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">signal</span><span class="o">.</span><span class="na">await</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
-            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">onStartTriggered</span><span class="o">);</span>
-            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">onProgressUpdateTriggered</span><span class="o">);</span>
-            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">onEndTriggered</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <p>Here I add 3 class variables <code>onStartTriggered</code>, <code>onProgressUpdateTriggered</code>, <code>onEndTriggered</code> to track whether each method is successfully called. And in <code>try catch</code> block, use <code>Assert.assertTrue</code> to make sure these variables were accessed by correspondent methods after <code>signal.await</code> call. But unfortunately, this time I am not lucky enough. The test case failed. 
 After digging into the code, I found these 3 methods were not called at all. That was tricky, they can be successfuly called in the applicaiton code, but not in the test!
@@ -275,85 +144,6 @@ The test runner is running in a sparate thread than the UI thread. What this hin
 <p>But then how can we test that code? The solution is simple, move the listener code to UI thread. In fact, Android Test framework does support this. <a href="http://developer.android.com/tools/testing/activity_testing.html#RunOnUIThread">Testing on the UI thread</a>. </p>
 
 <p>As illustrated in the following code snippet: </p>
-<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DownloadAgentTest</span> <span class="kd">extends</span>
-        <span class="n">ActivityInstrumentationTestCase2</span><span class="o">&lt;</span><span class="n">UtActivity</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">LOG_TAG</span> <span class="o">=</span> <span class="n">DownloadAgentTest</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
-
-    <span class="kt">boolean</span> <span class="n">onStartTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="kt">boolean</span> <span class="n">onProgressUpdateTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="kt">boolean</span> <span class="n">onEndTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">DownloadAgentTest</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="s">&quot;com.example&quot;</span><span class="o">,</span> <span class="n">com</span><span class="o">.</span><span class="na">ut</span><span class="o">.</span><span class="na">UtActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">();</span>
-        <span class="n">mActivity</span> <span class="o">=</span> <span class="n">getActivity</span><span class="o">();</span>
-        <span class="n">mContext</span> <span class="o">=</span> <span class="n">mActivity</span><span class="o">.</span><span class="na">getBaseContext</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="n">UtActivity</span> <span class="n">mActivity</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Context</span> <span class="n">mContext</span><span class="o">;</span>
-
-    <span class="nd">@Test</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testDownloadAgent</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">final</span> <span class="n">CountDownLatch</span> <span class="n">signal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-
-        <span class="n">onStartTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="n">onProgressUpdateTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="n">onEndTriggered</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-
-        <span class="n">mActivity</span><span class="o">.</span><span class="na">runOnUiThread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
-              <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="n">IDownloadListener</span> <span class="n">listener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IDownloadListener</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
-                            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onStart&quot;</span><span class="o">);</span>
-                            <span class="n">onStartTriggered</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                        <span class="o">}</span>
-
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onProgressUpdate</span><span class="o">(</span><span class="kt">int</span> <span class="n">progress</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onProgressUpdate(&quot;</span><span class="o">+</span><span class="n">progress</span> <span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">);</span>
-                            <span class="n">onProgressUpdateTriggered</span> <span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-                        <span class="o">}</span>
-
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEnd</span><span class="o">(</span><span class="kt">int</span> <span class="n">result</span><span class="o">,</span> <span class="n">String</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">onEndTriggered</span> <span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-                            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onEnd(&quot;</span><span class="o">+</span><span class="n">result</span> <span class="o">+</span><span class="s">&quot;, &quot;</span><span class="o">+</span> <span class="n">file</span> <span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">);</span>
-                            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">result</span> <span class="o">==</span><span class="mi">1</span><span class="o">);</span>
-                            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;/sdcard/&quot;</span><span class="o">));</span>
-                            <span class="n">signal</span><span class="o">.</span><span class="na">countDown</span><span class="o">();</span>
-                        <span class="o">}</span>
-                    <span class="o">};</span>
-
-                <span class="n">DownloadAgent</span> <span class="n">agent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DownloadAgent</span><span class="o">(</span>
-                        <span class="n">mContext</span><span class="o">,</span>
-                        <span class="s">&quot;xp&quot;</span><span class="o">,</span>
-                        <span class="s">&quot;App_name&quot;</span><span class="o">,</span>
-                        <span class="s">&quot;http://www.google.com/some.apk&quot;</span><span class="o">,</span>
-                        <span class="n">listener</span><span class="o">);</span>
-                <span class="n">agent</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-              <span class="o">}</span>
-          <span class="o">});</span>
-
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">signal</span><span class="o">.</span><span class="na">await</span><span class="o">(</span><span class="mi">300</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
-            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">onStartTriggered</span><span class="o">);</span>
-            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">onProgressUpdateTriggered</span><span class="o">);</span>
-            <span class="n">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">onEndTriggered</span><span class="o">);</span>
-
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <p>This time it works fine. </p>
 
@@ -501,7 +291,7 @@ window.WBComment.init({
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>

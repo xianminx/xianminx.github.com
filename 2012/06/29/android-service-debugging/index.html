@@ -124,18 +124,6 @@ var jiathis_config = {
 <br/>
 
   <p>Day and day ago, I wrote a <code>DownloadingService</code> for Android application. The service is provided in an Android SDK, which ill be utilized by other android apps. Some app developers wrote their code in such as way that when user press BACK button on Android, the app will <em>kill</em> itself in such a way: </p>
-<div class="highlight"><pre><code class="java"><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onKeyDown</span><span class="o">(</span><span class="kt">int</span> <span class="n">keyCode</span><span class="o">,</span> <span class="n">KeyEvent</span> <span class="n">event</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">if</span> <span class="o">((</span><span class="n">keyCode</span> <span class="o">==</span> <span class="n">KeyEvent</span><span class="o">.</span><span class="na">KEYCODE_BACK</span><span class="o">))</span>
-    <span class="o">{</span>
-       <span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Process</span><span class="o">.</span><span class="na">killProcess</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Process</span><span class="o">.</span><span class="na">myPid</span><span class="o">())</span> <span class="o">;</span>
-       <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onKeyDown</span><span class="o">(</span><span class="n">keyCode</span><span class="o">,</span> <span class="n">event</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <p>As an advanced Android developer, you may think how this could be stupid and violate the design principle of Android Framework, i.e., &quot;Activity&quot; should follow it&#39;s own <a href="http://developer.android.com/reference/android/app/Activity.html">lifecycle</a>.</p>
 
@@ -143,13 +131,6 @@ var jiathis_config = {
 
 <p>Though the phenomenon is expected, the novice developer does not think so. They want the DownloadingService to continue download files from the Internet even though they killed the main app process. To make a concession, I changed the &quot;DownloadingSercie&quot; so it runs in a separate process. 
 This is fair easy. Developer only has to mark the service as &quot;exported&quot; in &quot;AndroidManifest.xml&quot;. </p>
-<div class="highlight"><pre><code class="xml"><span class="nt">&lt;service</span>
-    <span class="na">android:name=</span><span class="s">&quot;com.example.net.DownloadingService&quot;</span>
-    <span class="na">android:exported=</span><span class="s">&quot;true&quot;</span>
-    <span class="na">android:process=</span><span class="s">&quot;:DownloadingService&quot;</span> <span class="nt">&gt;</span>
-<span class="nt">&lt;/service&gt;</span>
-</code></pre>
-</div>
 
 <blockquote>
 <p>Everything goes well until one day.</p>
@@ -167,65 +148,18 @@ The first download task is still excuting (from the notification bar). </li>
 <p>This is absolutely unexpected, as I added code for this kind of duplicate check. If the url is in downloaing task list, it will not be downloaded again. DownloadingService generates a file name based on url (MD5 hash of the url) along with the file extension, plus suffix &quot;.tmp&quot;, then saves it to SD card. After the file is complete downloaded, the file will be renamed to remove suffix &quot;.tmp&quot;. Here the duplicate check code did not work!</p>
 
 <p>Here it is: </p>
-<div class="highlight"><pre><code class="java">    <span class="cm">/**</span>
-<span class="cm">     * Check if the download request is already processed and is in downloading.</span>
-<span class="cm">     * </span>
-<span class="cm">     * @param item</span>
-<span class="cm">     * @return</span>
-<span class="cm">     */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isInDownloadList</span><span class="o">(</span><span class="n">DownloadItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">mClients</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">DownloadItem</span> <span class="n">d</span> <span class="o">:</span> <span class="n">mClients</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">d</span><span class="o">.</span><span class="na">mUrl</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">mUrl</span><span class="o">))</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-</code></pre>
-</div>
 
 <p>mClients is declared as DownloadingService&#39;s class member:</p>
-<div class="highlight"><pre><code class="java">    <span class="c1">// The clients connected to the service. Messenger references the client,</span>
-    <span class="c1">// where DownloadItem specifies the information required by this service.</span>
-    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">DownloadAgent</span><span class="o">.</span><span class="na">DownloadItem</span><span class="o">,</span> <span class="n">Messenger</span><span class="o">&gt;</span> <span class="n">mClients</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">DownloadAgent</span><span class="o">.</span><span class="na">DownloadItem</span><span class="o">,</span> <span class="n">Messenger</span><span class="o">&gt;();</span>
-</code></pre>
-</div>
 
 <p><code>mClient</code> as a <code>Map</code> records all downloading url. If a url is in downloading, it can&#39;t be downloaded again. So no reason that a duplicate url can be added to <code>mClients</code>. It is so strange. </p>
 
 <p>Each single line of code looks fine to me. </p>
 
 <p>Then I launch the debug mode, for both the main process and DownloadingService process. </p>
-<div class="highlight"><pre><code class="java">    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&quot;onCreate &quot;</span><span class="o">);</span>
-        <span class="c1">// uncomment the following line to enable inter-process debug.</span>
-        <span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Debug</span><span class="o">.</span><span class="na">waitForDebugger</span><span class="o">();</span>
-        <span class="c1">// ...</span>
-    <span class="o">}</span>
-</code></pre>
-</div>
 
 <p>The trace tells that in Step 3, <code>mClients</code> is empty: no elements is added before. This is so abnormal. What happened?</p>
 
 <p>Obviously the Process is still living there, otherwise, the first task cannot continue executing. Recalling from Android API description, the service runs in the main thread of its process. I doubt if the service was destroyed and re-created. After adding log information in it&#39;s <code>onCreate</code>  and <code>onDestroy</code> method, yes! The service was destroyed and re-created again. But the process id and thread id are the same. </p>
-<div class="highlight"><pre><code class="java">    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isInDownloadList</span><span class="o">(</span><span class="n">DownloadItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;pid = &quot;</span> <span class="o">+</span> <span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Process</span><span class="o">.</span><span class="na">myPid</span><span class="o">());</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;threadid = &quot;</span> <span class="o">+</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getId</span><span class="o">());</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">mClients</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">DownloadItem</span> <span class="n">d</span> <span class="o">:</span> <span class="n">mClients</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">d</span><span class="o">.</span><span class="na">mUrl</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">mUrl</span><span class="o">))</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-</code></pre>
-</div>
 
 <p><code>threadid</code> shows &#39;1&#39; for both Step 1 and Step 3.</p>
 
@@ -233,14 +167,6 @@ The first download task is still excuting (from the notification bar). </li>
 Hinted by the number &#39;1&#39;, I guess the thread might be killed and re-created, but the thread number was reused as OS find the number can be re-allocated the second time as it realize that no other thread is using this id. </p>
 
 <p>So to make the intestigation a further step, I added a member </p>
-<div class="highlight"><pre><code class="java"><span class="kd">class</span> <span class="nc">DownloadingService</span> <span class="kd">extends</span> <span class="n">Service</span><span class="o">{</span>
-    <span class="c1">// generate an random id each time a class instance is created. In this case, it means a new thread is created.  </span>
-    <span class="kt">int</span> <span class="n">thread_random_id</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">10000</span><span class="o">);</span>
-
-    <span class="c1">// ....</span>
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <p>A-ha, <code>thread_random_id</code> is different for the 2 cases!</p>
 
@@ -248,9 +174,6 @@ Hinted by the number &#39;1&#39;, I guess the thread might be killed and re-crea
 The first task is still downloading because the task was launched in a different thread other than the Service thread itself.</p>
 
 <p>To resolve the issue, simply make <code>mClient</code> <code>static</code>. </p>
-<div class="highlight"><pre><code class="java">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">DownloadAgent</span><span class="o">.</span><span class="na">DownloadItem</span><span class="o">,</span> <span class="n">Messenger</span><span class="o">&gt;</span> <span class="n">mClients</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">DownloadAgent</span><span class="o">.</span><span class="na">DownloadItem</span><span class="o">,</span> <span class="n">Messenger</span><span class="o">&gt;();</span>
-</code></pre>
-</div>
 
 <p>To be continued: why Service thread is killed and re-created?</p>
 
@@ -391,7 +314,7 @@ window.WBComment.init({
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>

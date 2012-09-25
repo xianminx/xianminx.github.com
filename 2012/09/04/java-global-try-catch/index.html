@@ -143,16 +143,6 @@ catch (Exception e){
 <h3 id="toc_42">一个简单的例子</h3>
 
 <p>下面的代码演示了<code>try catch</code> 的简单使用：</p>
-<div class="highlight"><pre><code class="java"><span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&quot;/nosuchdir/myfilename&quot;</span><span class="o">;</span>
-<span class="k">try</span> <span class="o">{</span>
-    <span class="c1">// Create the file</span>
-    <span class="k">new</span> <span class="nf">File</span><span class="o">(</span><span class="n">filename</span><span class="o">).</span><span class="na">createNewFile</span><span class="o">();</span>
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// Print out the exception that occurred</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Unable to create &quot;</span><span class="o">+</span><span class="n">filename</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <h2 id="toc_43">Global try catch?</h2>
 
@@ -190,39 +180,6 @@ Since:
 </blockquote>
 
 <p>The following <a href="http://www.nomachetejuggling.com/2006/06/13/java-5-global-exception-handling/">code</a> illustrates an example:</p>
-<div class="highlight"><pre><code class="text">//ExceptionHandlerExample.java
-package com.air0day.machetejuggling;
-
-public class ExceptionHandlerExample {
-  public static void main(String[] args) throws Exception {
-
-    Handler handler = new Handler();
-    Thread.setDefaultUncaughtExceptionHandler(handler);
-
-    Thread t = new Thread(new SomeThread(), &quot;Some Thread&quot;);
-    t.start();
-
-    Thread.sleep(100);
-
-    throw new RuntimeException(&quot;Thrown from Main&quot;);
-  }
-
-}
-
-class Handler implements Thread.UncaughtExceptionHandler {
-  public void uncaughtException(Thread t, Throwable e) {
-    System.out.println(&quot;Throwable: &quot; + e.getMessage());
-    System.out.println(t.toString());
-  }
-}
-
-class SomeThread implements Runnable {
-  public void run() {
-    throw new RuntimeException(&quot;Thrown From Thread&quot;);
-  }
-}
-</code></pre>
-</div>
 
 <h2 id="toc_44">Migrate to Android</h2>
 
@@ -391,7 +348,7 @@ window.WBComment.init({
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>

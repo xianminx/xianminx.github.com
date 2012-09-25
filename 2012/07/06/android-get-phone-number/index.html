@@ -139,62 +139,8 @@ var jiathis_config = {
 <blockquote>
 <p>说明暂时在中国移动和中国联通SIM卡上是无法获取这个号码的。</p>
 </blockquote>
-<div class="highlight"><pre><code class="java"><span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.telephony.TelephonyManager</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AndroidNumberActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">&quot;AndroidNumberActivity&quot;</span><span class="o">;</span>
-
-    <span class="cm">/** Called when the activity is first created. */</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">main</span><span class="o">);</span>
-
-        <span class="c1">// 创建电话管理</span>
-        <span class="n">TelephonyManager</span> <span class="n">tm</span> <span class="o">=</span> <span class="o">(</span><span class="n">TelephonyManager</span><span class="o">)</span>
-        <span class="c1">// 与手机建立连接</span>
-        <span class="n">getSystemService</span><span class="o">(</span><span class="n">Context</span><span class="o">.</span><span class="na">TELEPHONY_SERVICE</span><span class="o">);</span>
-        <span class="c1">// 获取手机号码</span>
-        <span class="n">String</span> <span class="n">phoneNo</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="na">getLine1Number</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;phnone NO: &quot;</span> <span class="o">+</span> <span class="n">phoneNo</span><span class="o">);</span>
-
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
 
 <p>注意， 要在<code>AndroidManifest.xml</code>中添加权限<code>android.permission.READ_PHONE_STATE</code>. 如下： </p>
-<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-    <span class="na">package=</span><span class="s">&quot;com.number&quot;</span>
-    <span class="na">android:versionCode=</span><span class="s">&quot;1&quot;</span>
-    <span class="na">android:versionName=</span><span class="s">&quot;1.0&quot;</span> <span class="nt">&gt;</span>
-
-    <span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">&quot;4&quot;</span> <span class="na">android:targetSdkVersion=</span><span class="s">&quot;15&quot;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.READ_PHONE_STATE&quot;</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;application</span>
-        <span class="na">android:icon=</span><span class="s">&quot;@drawable/ic_launcher&quot;</span>
-        <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span> <span class="nt">&gt;</span>
-        <span class="nt">&lt;activity</span>
-            <span class="na">android:name=</span><span class="s">&quot;.AndroidNumberActivity&quot;</span>
-            <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span> <span class="nt">&gt;</span>
-            <span class="nt">&lt;intent-filter&gt;</span>
-                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span> <span class="nt">/&gt;</span>
-
-                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/intent-filter&gt;</span>
-        <span class="nt">&lt;/activity&gt;</span>
-    <span class="nt">&lt;/application&gt;</span>
-
-<span class="nt">&lt;/manifest&gt;</span>
-</code></pre>
-</div>
 
 </div>
 
@@ -330,7 +276,7 @@ window.WBComment.init({
         
         </li>
         
-        <li>&ndash; updated 2012-09-20</li>
+        <li>&ndash; updated 2012-09-25</li>
       </ul>
     </div>
   </div>
