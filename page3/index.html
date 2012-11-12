@@ -81,108 +81,77 @@
     <div id="col1">
       <div id="col1_content">
         
-  <h3 class="excerpt"><a href="/2012/07/16/ioc/">Inversion of Control</a></h3>
+  <h3 class="excerpt"><a href="/2012/08/12/logging/">Logging</a></h3>
   <p class="excerpt">
-    Inversion of Control (IoC) Hollywood Principle: &gt; Don&#39;t call us, we&#39;ll call you. Framework v.s. Library One important characteristic of a framework is that the methods defined by the user to tailor the framework will often be called from within the framework itself, rather than from the user&#39;s application code. The framework often plays the role of the main program in coordinating and sequencing application activity. This inversion of control gives frameworks the power to serve as extensible skeletons. The methods supplied by the user tailor the generic algorithms defined in the framework for a particular application. -- Ralph Johnson... &nbsp;
-    <a href="/2012/07/16/ioc/" class="read-more">read more</a>
+     &nbsp;
+    <a href="/2012/08/12/logging/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    16 Jul 2012
+    12 Aug 2012
     
      | 
-    <a href="/tags#android">android</a>, 
-    
-    
     <a href="/tags#java">java</a>, 
     
     
-    <a href="/tags#design pattern">design pattern</a>, 
-    
-    
-    <a href="/tags#framework">framework</a>
+    <a href="/tags#logging">logging</a>
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/07/11/android-dependency-injection/">Android Dependency Injection</a></h3>
+  <h3 class="excerpt"><a href="/2012/08/02/jetty-configure/">Jetty Configuration</a></h3>
   <p class="excerpt">
-    Andoid ioc https://github.com/socialize/android-ioc/
-
-RoboGuice
-
-Tiny Spring
- &nbsp;
-    <a href="/2012/07/11/android-dependency-injection/" class="read-more">read more</a>
+    Jetty Configuration Files There are a number of locations to configure settings for Jetty and web applciations running on it. A number of configuration files can be found at ${jetty.home}/start.ini. Contexts An important concept in Jetty is Context. A web application is a context. Thus each xml file configured under ./contexts directorty represents a web application. ./contexts/test.xml The applicaiton configure file, using format of jetty. Jetty uses its own IOC mechanism to read and inject components to the server. The root element of the file is Server, representing a server. web.xml [webapp_name]/WEB-INF/web.xml. This file is located under a web app... &nbsp;
+    <a href="/2012/08/02/jetty-configure/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    11 Jul 2012
+    02 Aug 2012
+    
+     | 
+    <a href="/tags#java">java</a>, 
+    
+    
+    <a href="/tags#jetty">jetty</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/07/31/jetty-intro/">Jetty Introduction</a></h3>
+  <p class="excerpt">
+    For one of my project, it took long time for me to choose which technology stack I would use for the server. Finally I did not choose popular frameworks like ruby, scala, etc. I chose Java/ JSP soly because the technology is mature and I was lucky to have some experience playing with it. Though not a experienced Java server developer, I think my knowledge of Java should be sufficent to kick off. Surfing the internet, I prefer Jetty + nginx over tomcat as the previous compostion provides much better concurrency performance. Things get complex when I start to write... &nbsp;
+    <a href="/2012/07/31/jetty-intro/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    31 Jul 2012
+    
+     | 
+    <a href="/tags#java">java</a>, 
+    
+    
+    <a href="/tags#jetty">jetty</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/07/31/android-emulator-internet-access/">Android Emulator Internet Access</a></h3>
+  <p class="excerpt">
+    Ocassionally we find our android emulators cannot connect to the internet. May it be working yesterday but not today. Damn it! The explanation stated by this post reveils the underlying cause. On some WI-FI network, the emulator could not get DNS configuration automatically. My experience shows this not only happenes to wifi netowrk, but also to cable network. Solution There are 2 solutions: Manually set DNS, set DNS when emulator starts up. set DNS after emulator starts up. The IP 8.8.8.8 and 8.8.4.4 are provided by Google freely. Toggle the Internet access to your emulator with F8 (on Windows) and... &nbsp;
+    <a href="/2012/07/31/android-emulator-internet-access/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    31 Jul 2012
     
      | 
     <a href="/tags#android">android</a>
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/07/06/sim-card-explain/">SIM card for dummy</a></h3>
+  <h3 class="excerpt"><a href="/2012/07/26/push-tech/">Push Technology</a></h3>
   <p class="excerpt">
-    Android开发者在开发应用是总会遇到很多的电话相关的名词， 如IMEI, IMSI等，百度文库的这篇文章比较清晰的解释了这些名词。 
-
-SIM卡号码 详解
-
-      
- &nbsp;
-    <a href="/2012/07/06/sim-card-explain/" class="read-more">read more</a>
+     &nbsp;
+    <a href="/2012/07/26/push-tech/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    06 Jul 2012
+    26 Jul 2012
     
      | 
-    <a href="/tags#phone">phone</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/07/06/android-get-phone-number/">Android 手机API获取手机号码</a></h3>
-  <p class="excerpt">
-    之前在网上经常听到开发者传言Android平台中可以通过API接口获取SIM卡的ISDN(MSISDN)号码，即大众所受的手机号码。实际上在Android系统设置里面用户去查看这一项的时候是空白。 说明两个问题：
-
-
-OS提供API获取这个号码
-OSAPI无法从SIM卡中获取到这个号码
-
-
-也就是说， 这个API的获取结果和SIM卡相关， 即和运营商相关。 
-
-如果使用API可以获取这个号码的话， 对用户隐私将是一个非常大的威胁。
-
-我用下面的代码在移动的动感地带和联通SIM卡上都没有得到手机号码。 松一口气。 
-
-
-说明暂时在中国移动和中国联通SIM卡上是无法获取这个号码的。
-
-
-注意， 要在AndroidManifest.xml中添加权限android.permission.READ_PHONE_STATE. 如下： 
- &nbsp;
-    <a href="/2012/07/06/android-get-phone-number/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    06 Jul 2012
-    
-     | 
-    <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/29/android-service-debugging/">How does an Android developer fix a bug?</a></h3>
-  <p class="excerpt">
-    Day and day ago, I wrote a DownloadingService for Android application. The service is provided in an Android SDK, which ill be utilized by other android apps. Some app developers wrote their code in such as way that when user press BACK button on Android, the app will kill itself in such a way: As an advanced Android developer, you may think how this could be stupid and violate the design principle of Android Framework, i.e., &quot;Activity&quot; should follow it&#39;s own lifecycle. But as the old saying said, customer is our God. SDK users, some could be novice android develoeprs,... &nbsp;
-    <a href="/2012/06/29/android-service-debugging/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    29 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>, 
-    
-    
-    <a href="/tags#debug">debug</a>
+    <a href="/tags#push">push</a>
     
   </small>
 
@@ -307,7 +276,7 @@ OSAPI无法从SIM卡中获取到这个号码
         
         </li>
         
-        <li>&ndash; updated 2012-09-25</li>
+        <li>&ndash; updated 2012-11-12</li>
       </ul>
     </div>
   </div>

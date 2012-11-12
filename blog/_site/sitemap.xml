@@ -7,56 +7,98 @@
 
 <url>
   <loc>http://xianminx.github.com/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>1.0</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/about/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/archives/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/tags/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/other/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 </url>
   <loc>http://xianminx.github.com/page2/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page3/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page4/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page5/</loc>
-  <lastmod>2012-48-25</lastmod>
+  <lastmod>2012-24-12</lastmod>
   <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/11/12/android-maven/</loc>
+  <lastmod>2012-00-12</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/11/10/mobile-web/</loc>
+  <lastmod>2012-00-10</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/11/08/android-push-ads/</loc>
+  <lastmod>2012-00-08</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/11/05/osgi/</loc>
+  <lastmod>2012-00-05</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/10/19/android-adb/</loc>
+  <lastmod>2012-00-19</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2012/09/25/android-ui-patterns/</loc>
+  <lastmod>2012-00-25</lastmod>
+  <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 

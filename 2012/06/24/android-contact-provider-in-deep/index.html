@@ -124,15 +124,6 @@ var jiathis_config = {
 <br/>
 
   <p>Android contact API uses Content Provider to provide data for application. The service is provided by <code>com.android.providers.contacts</code>. All the contact data are stored in SQLite database. You can find all the data under <code>/data/data/com.android.providers.contacts/databases</code>, as following:</p>
-<div class="highlight"><pre><code class="bash"><span class="c"># adb shell </span>
-root@android:/data/data/com.android.providers.contacts/databases <span class="c"># ls</span>
-contacts2.db
-contacts2.db-journal
-contacts2.db-mj6E07C4A4
-profile.db
-profile.db-journal
-</code></pre>
-</div>
 
 <p>The most important and the central database here is <code>contacts2.db</code>. To view what&#39;s in this database, you can utilize the tool called <code>sqlite3</code> provided by Google. This is the <a href="http://developer.android.com/tools/help/sqlite3.html">link</a> to the official description of the tool.  This tool is under /system/bin/ by default in Android. But in case you cannot find it on you device, you can use Eclipse SQLite Plugin to visualize the table structure and data. See this article <a href="http://www.tylerfrankenstein.com/browse-android-emulator-sqlite-database-eclipse">Browse an Android Emulator SQLite Database in Eclipse</a>for help. </p>
 
@@ -286,7 +277,7 @@ window.WBComment.init({
         
         </li>
         
-        <li>&ndash; updated 2012-09-25</li>
+        <li>&ndash; updated 2012-11-12</li>
       </ul>
     </div>
   </div>

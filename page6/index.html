@@ -81,95 +81,96 @@
     <div id="col1">
       <div id="col1_content">
         
-  <h3 class="excerpt"><a href="/2012/06/21/oauth/">OAuth 认证</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/24/videos-rest-android-google-api/">Videos on REST, Android, and Google API</a></h3>
+  <p class="excerpt">
+    Intro to REST
+
+
+
+Google I/O 2010 - Android REST client applications
+
+
+
+Google I/O 2011: Best Practices for Accessing Google APIs on Android
+
+
+ &nbsp;
+    <a href="/2012/06/24/videos-rest-android-google-api/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    24 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/">github视通的jekyll真的很不给力</a></h3>
+  <p class="excerpt">
+    一直以来想找一个简单的可以写技术博客的站点，要求很简单， 不需要什么酷的界面，也不需要什么炫的皮肤，只需要能够不错的展示代码和图片就可以了。 
+
+github falvored markdown 对code block 很不错， 所谓的&quot;fancy code block&quot;。 看似简单的东西， 在实际的系统里面没有几个做得好的。 Github提供pages服务， 可以供写技术博客用。 背后使用的引擎是Jekyll， 这个东西是ruby写的， 以非常简单的方式来管理博客。 虽然Github使用的是Jekyll, Jekyll也主要是用markdown格式来写博客的， 要命的是， Jekyll不支持GFM， 使用什么所谓的maruku引擎渲染， 而不是github 所用的redcarpet. Ridiculous!估计这就是开源所带来的后果吧。  这就造成了使用GFM写的markdown post不能被Jekyll在Github pages上很好的展示出来。 
+ &nbsp;
+    <a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    24 Jun 2012
+    
+     | 
+    <a href="/tags#github">github</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/24/android-contact-provider-in-deep/">Android Contacts Provider In Deep</a></h3>
+  <p class="excerpt">
+    Android contact API uses Content Provider to provide data for application. The service is provided by com.android.providers.contacts. All the contact data are stored in SQLite database. You can find all the data under /data/data/com.android.providers.contacts/databases, as following: The most important and the central database here is contacts2.db. To view what&#39;s in this database, you can utilize the tool called sqlite3 provided by Google. This is the link to the official description of the tool. This tool is under /system/bin/ by default in Android. But in case you cannot find it on you device, you can use Eclipse SQLite Plugin to visualize... &nbsp;
+    <a href="/2012/06/24/android-contact-provider-in-deep/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    24 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/23/fancy-java-question/">一道很考验java功底的题目</a></h3>
   <p class="excerpt">
     
 Lucas Xu
 
 
-我们开发各种应用和网站是给用户用的， 用户登陆之后就会积攒各种各样的数据。 但是现在的世界被几个用户大户所统治了， 如google， facebook， tencent， 人人等 大平台。用户在不同平台上注册不同账户， 进行不同的登录。小网站或者应用也需要有自己的用户系统。 这给用户带来了极大的麻烦。同时不同用户平台之间共享数据也非常不方便。 记得原来开心网为了进行病毒营销找你要邮箱账户密码的痛苦吗？其实世界不需要这么混乱的。
+问题 Challenge: can you write code that invokes foo()?
 
-假如如果有你只需要在一家网站注册，在其他网站都可用， 那怎么样，是不是感觉世界很美好？ 比如现实世界中的身份证， 只需要公安机关给你发一张， 你可以拿着去住宾馆， 也可以那个买菜刀和住院， 是不是方便很多。 这里， 公安机关是一个权威机构， 他出具的文件其他机构都会承认。 如果你的身份证丢了， 去公安机关开个证明，盖个戳也好使。 
-
-网络情况下， 事情变得混乱了，因为没有公安机关。 不过人人也都可以充当公安机关， 你只要在我的系统中注册为我的用户， 我就可以帮你在别的地方认证。 
-比如作为google的用户， Google可以帮你告诉Facebook说， 这个人是我的用户， 这是他的信息， 给你。 这样Facebook就可以从Google那里拿到你的信息。 这个过程中间有一些授权问题了。 
-
-首先， google不能在你不知情的情况下把你的信息告诉Facebook， （谁知道私下里会怎么样， 不过表面上还是需要文明一些的）. 所以当Facebook想从google那里知道你的信息的时候， 一种方式是找你要在google那里的用户名和密码， 然后假冒你登陆google的系统，从而得到这些信息。 另外一种方式就是让你写个条子，“我授予Facebook访问我信息的权利”，然后签上你的大名，盖上你的戳，把条子交给Facebook， Facebook拿着这个条子去找Google， 说这是刘文彩同学给我的条子， 你看， 他授权我从你那儿访问他的数据了。 Google验证过签名之后发现是真的， 于是就让facebook把你的信息拿走了。 
-
-在网络世界里，你当然不可能真的去写张条子交给facebook， 那该怎么办呢？
+这是来自Android team 的几位工程师的博客。 众志成城， 他们想出了很多解法。大家发挥一下想象力，看是不是可以找到解法。
  &nbsp;
-    <a href="/2012/06/21/oauth/" class="read-more">read more</a>
+    <a href="/2012/06/23/fancy-java-question/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    21 Jun 2012
+    23 Jun 2012
     
      | 
     <a href="/tags#java">java</a>
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/06/18/Understanding-jvm/">Understanding the JVM Advanced Features and Best Practices</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/23/android-account-manager/">Android Account Manager</a></h3>
   <p class="excerpt">
-    
-Lucas Xu
-
-
-读《深入理解Java 虚拟机 - JVM 高级特性与最佳实践》by 周志明
-
-Java 作为技术体系包含多个部分：
-
-
-Java 语言
-Java 虚拟机
-JDK, API 等
-
-
-第一章 走进Java
-
-关于OpenJDK 和JDK的关系请参考: http://en.wikipedia.org/wiki/OpenJDK
-
-自己编译JDK
-
-
-下载源码 　地址: http://download.java.net/openjdk/jdk7/
-准备编译环境
-编译
-
- &nbsp;
-    <a href="/2012/06/18/Understanding-jvm/" class="read-more">read more</a>
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。 Android的解决方案是提供AccountManager来管理不同服务的账户。 AccountManager是由系统提供的服务([AccountManagerService])， 从而很好的在系统层面解决不同应用共享服务账户的问题。 比如， 用户注册了Google账户，使用这个账户可以登陆Google+,Google Play, Gmail, 也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。 由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。 甚至处理不好， 会带来很大的安全隐患。 现在好了，Android在系统级别提供了账户管理功能， 用户只要去账户管理中心登陆账户， 不同应用就可以想账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。 Android Account 管理类库介绍 Android中和账户相关的API都在android.accounts包下。 重要的接口和类有： Interfaces AccountManagerCallback&lt;V&gt; 包含回调函数。 类似于我们经常写的Listener AccountManagerFuture&lt;V&gt; 异步调用AccountManager的结果。 OnAccountsUpdateListener AccountMonitor用到的回调接口。 Classes AbstractAccountAuthenticator 如果开发者需要实现自己的认证方式， 可以通过继承这个类来实现 Account 表示我们的账户 AccountAuthenticatorActivity Base class for implementing an Activity that is used to help implement an AbstractAccountAuthenticator. AccountAuthenticatorResponse Object used to communicate responses back to the AccountManager AccountManager 账户管理的核心类,是访问账户的入口。 AuthenticatorDescription A Parcelable value type that contains information about an account authenticator. 使用[AccountManager]访问已经支持的账户 Android 系统默认支持Google账户， Microsoft Exchange账户，和普通邮件账户。 现在，假如你开发了一个应用,会使用到用户的Google账户， 比如， 类似于SMS Backup这种应用， 可以把手机端的短信同步到GMail邮箱当中。 当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利，... &nbsp;
+    <a href="/2012/06/23/android-account-manager/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    18 Jun 2012
+    23 Jun 2012
     
      | 
-    <a href="/tags#java">java</a>, 
-    
-    
-    <a href="/tags#jvm">jvm</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/18/Dealing-with-dependencies-in-Android-projects/">Android项目的依赖关系</a></h3>
-  <p class="excerpt">
-    3月9日下午02:35，2012年 ，来自Xavier Ducrohet 原文：Dealing with dependencies in Android projects by Xavier Ducrohet 翻译： Lucas Xu 在Android SDK Tools和Eclipse ADT 插件的第17版本 (revision 17)中，我们对Android项目的依赖关系管理做了很多改变。 我们所做的第一个改变是调整基于 Ant 的编译系统和 Eclipse ADT 插件，使他们具有相同的行为。 Android 项目包含源代码文件夹，以及对库项目 (android library projects) 和 jar 文件的依赖。 不需要其他多余的设置，只需要在project.properties中添加对于库项目的依赖，Android项目就会在动在 classpath 中添加以下依赖项： libs/*.jar 的内容 库项目(library project)的输出。 库项目的 libs/*.jar 的内容。 这些依赖项，加上项目自身源代码编译的结果，被一起交给DEX工具，然后被转化成字节码从而打包到最终的APK当中。 因为一个项目可能依赖于好几个使用相同的 jar 文件的库项目，Android 编译系统会检查所有所需的 jar 文件，检测出来自不同的库项目的重复 jar 文件，并删除这些重复的jar引用。这会防止可怕的&quot;already added&quot; DX错误。 下面介绍了系统如何发现重复引用。 重要的变化 我们已经改变了库项目生成和打包R类的方式： R类不再被打包到库项目的输出 jar 包中。 库项目不再为其所依赖的库项目生成R类。 只有主应用项目才会在生成本身R类的同时为所依赖的库项目生成R类。 这意味着库项目不能导入(import)另一个库项目的R类。 其实这是没有必要的，因为它们自身的R类包含所有必要的资源。 请注意，应用程序的项目仍然可以导入所引用的库项目的R类，但是重申一遍，其实没有必要这么做， 因为他们本身的R类包括所有的资源。 Eclipse的具体变化 由于不光包含库项目，被称为&quot;Library Projects&quot;的动态class path容器 (dynamic class path container) 已更名为“Android Dependancies”。 现在被库项目引用的纯 Java 项目也可以填充classpath容器。 如果这些Java项目也引用其他 Java 项目或 jar 文件，它们将被自动添加（现在也支持通过 user libraries引用的jar文件）。 重要: 仅当被引用的项被标记为&quot;exported&quot;时这才起作用。 请注意，默认情况下，当一个项目或jar文件被添加到项目的build path 中时是不会被标记为&quot;exported&quot;。 库项目（ 以及它们所引用的lib/*.jar文件）总是会被标记为&quot;exported&quot;。 重要: 如果你还在手动引用jar类库，而不是把他们放在libs目录下， 注意以下几点： 如果该项目是一个... &nbsp;
-    <a href="/2012/06/18/Dealing-with-dependencies-in-Android-projects/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    18 Jun 2012
-    
-     | 
-    <a href="/tags#android">android</a>, 
-    
-    
-    <a href="/tags#adt">adt</a>, 
-    
-    
-    <a href="/tags#eclipse">eclipse</a>
+    <a href="/tags#android">android</a>
     
   </small>
 
 
 <div class="paging">
+  
+    <a href="/page7" class="older">Older Posts</a>
   
 
   
@@ -287,7 +288,7 @@ JDK, API 等
         
         </li>
         
-        <li>&ndash; updated 2012-09-25</li>
+        <li>&ndash; updated 2012-11-12</li>
       </ul>
     </div>
   </div>

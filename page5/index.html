@@ -81,78 +81,68 @@
     <div id="col1">
       <div id="col1_content">
         
-  <h3 class="excerpt"><a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/">github视通的jekyll真的很不给力</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/29/android-service-debugging/">How does an Android developer fix a bug?</a></h3>
   <p class="excerpt">
-    一直以来想找一个简单的可以写技术博客的站点，要求很简单， 不需要什么酷的界面，也不需要什么炫的皮肤，只需要能够不错的展示代码和图片就可以了。 
-
-github falvored markdown 对code block 很不错， 所谓的&quot;fancy code block&quot;。 看似简单的东西， 在实际的系统里面没有几个做得好的。 Github提供pages服务， 可以供写技术博客用。 背后使用的引擎是Jekyll， 这个东西是ruby写的， 以非常简单的方式来管理博客。 虽然Github使用的是Jekyll, Jekyll也主要是用markdown格式来写博客的， 要命的是， Jekyll不支持GFM， 使用什么所谓的maruku引擎渲染， 而不是github 所用的redcarpet. Ridiculous!估计这就是开源所带来的后果吧。  这就造成了使用GFM写的markdown post不能被Jekyll在Github pages上很好的展示出来。 
- &nbsp;
-    <a href="/2012/06/24/terrible-jekyll-engine-for-github-syntax-highlight/" class="read-more">read more</a>
+    Day and day ago, I wrote a DownloadingService for Android application. The service is provided in an Android SDK, which ill be utilized by other android apps. Some app developers wrote their code in such as way that when user press BACK button on Android, the app will kill itself in such a way: As an advanced Android developer, you may think how this could be stupid and violate the design principle of Android Framework, i.e., &quot;Activity&quot; should follow it&#39;s own lifecycle. But as the old saying said, customer is our God. SDK users, some could be novice android develoeprs,... &nbsp;
+    <a href="/2012/06/29/android-service-debugging/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    24 Jun 2012
+    29 Jun 2012
     
      | 
-    <a href="/tags#github">github</a>
+    <a href="/tags#android">android</a>, 
+    
+    
+    <a href="/tags#debug">debug</a>
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/06/24/android-contact-provider-in-deep/">Android Contacts Provider In Deep</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/28/android-test-ui-thread-looper/">Android Test For UI Thread Listeners</a></h3>
   <p class="excerpt">
-    Android contact API uses Content Provider to provide data for application. The service is provided by com.android.providers.contacts. All the contact data are stored in SQLite database. You can find all the data under /data/data/com.android.providers.contacts/databases, as following: # adb shell root@android:/data/data/com.android.providers.contacts/databases # ls contacts2.db contacts2.db-journal contacts2.db-mj6E07C4A4 profile.db profile.db-journal The most important and the central database here is contacts2.db. To view what&#39;s in this database, you can utilize the tool called sqlite3 provided by Google. This is the link to the official description of the tool. This tool is under /system/bin/ by default in Android. But in case you cannot find it... &nbsp;
-    <a href="/2012/06/24/android-contact-provider-in-deep/" class="read-more">read more</a>
+    The other day I wrote an Android downloading service running in a separate process. The main application process will send command/message to the downloading process asking it to download item. The downloading process is supposed to post back the downloading process and status to the main applicaiton process by sending messages. Everything works fine: the application process can send command and downloading process can receive the command and then start downloading the item. Also the application process can also receives the process update messages from the donwloading process. For the sake of recursive testing, namely, I wrote the following test... &nbsp;
+    <a href="/2012/06/28/android-test-ui-thread-looper/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    24 Jun 2012
+    28 Jun 2012
     
      | 
     <a href="/tags#android">android</a>
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/06/23/fancy-java-question/">一道很考验java功底的题目</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/26/android-service-bug/">Android Account Manager</a></h3>
   <p class="excerpt">
-    
-Lucas Xu
-
-
-问题 Challenge: can you write code that invokes foo()?
-
-这是来自Android team 的几位工程师的博客。 众志成城， 他们想出了很多解法。大家发挥一下想象力，看是不是可以找到解法。
- &nbsp;
-    <a href="/2012/06/23/fancy-java-question/" class="read-more">read more</a>
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。 Android的解决方案是提供AccountManager来管理不同服务的账户。 AccountManager是由系统提供的服务([AccountManagerService])， 从而很好的在系统层面解决不同应用共享服务账户的问题。 比如， 用户注册了Google账户，使用这个账户可以登陆Google+,Google Play, Gmail, 也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。 由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。 甚至处理不好， 会带来很大的安全隐患。 现在好了，Android在系统级别提供了账户管理功能， 用户只要去账户管理中心登陆账户， 不同应用就可以想账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。 Android Account 管理类库介绍 Android中和账户相关的API都在android.accounts包下。 重要的接口和类有： Interfaces AccountManagerCallback&lt;V&gt; 包含回调函数。 类似于我们经常写的Listener AccountManagerFuture&lt;V&gt; 异步调用AccountManager的结果。 OnAccountsUpdateListener AccountMonitor用到的回调接口。 Classes AbstractAccountAuthenticator 如果开发者需要实现自己的认证方式， 可以通过继承这个类来实现 Account 表示我们的账户 AccountAuthenticatorActivity Base class for implementing an Activity that is used to help implement an AbstractAccountAuthenticator. AccountAuthenticatorResponse Object used to communicate responses back to the AccountManager AccountManager 账户管理的核心类,是访问账户的入口。 AuthenticatorDescription A Parcelable value type that contains information about an account authenticator. 使用[AccountManager]访问已经支持的账户 Android 系统默认支持Google账户， Microsoft Exchange账户，和普通邮件账户。 现在，假如你开发了一个应用,会使用到用户的Google账户， 比如， 类似于SMS Backup这种应用， 可以把手机端的短信同步到GMail邮箱当中。 当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利，... &nbsp;
+    <a href="/2012/06/26/android-service-bug/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    23 Jun 2012
-    
-     | 
-    <a href="/tags#java">java</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/23/android-account-manager/">Android Account Manager</a></h3>
-  <p class="excerpt">
-    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 root 117 2 0 0 c01839a4 00000000 S ext4-dio-unwrit system 133 1 17020 4296 c052d258 400307b0 S /system/bin/servicemanager root 134 1 6040 996 ffffffff ffff0520 S /system/bin/vold system 138 1 64424 11408 ffffffff 400c17b0 S /system/bin/surfaceflinger root 139 1 445988 40160 ffffffff 4008d8d4 S zygote drm 140 1 18912 4340 ffffffff 400507b0 S /system/bin/drmserver media 141 1 49032 8836 ffffffff 400207b0 S /system/bin/mediaserver bluetooth 142 1 1368 820 c01fad68 ffff0520 S /system/bin/dbus-daemon root 143 1 5692 992 ffffffff 400ac578 S /system/bin/installd keystore 144 1 1764... &nbsp;
-    <a href="/2012/06/23/android-account-manager/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    23 Jun 2012
+    26 Jun 2012
     
      | 
     <a href="/tags#android">android</a>
     
   </small>
 
-  <h3 class="excerpt"><a href="/2012/06/22/android-content-provider/">Android Content Provider</a></h3>
+  <h3 class="excerpt"><a href="/2012/06/26/android-emulator-acceleration/">Android Account Manager</a></h3>
   <p class="excerpt">
-    Lucas Xu ContactProvider Table ContactsContract.RawContacts | Column Name | example |description | |:-----------|:-----------|:------------:| |long _ID ||Row ID. Sync adapters should try to preserve row IDs during updates. In other words, it is much better for a sync adapter to update a raw contact rather than to delete and re-insert it. |CONTACT_ID || read-only The ID of the row in the ContactsContract.Contacts table that this raw contact belongs to. Raw contacts are linked to contacts by the aggregation process, which can be controlled by the AGGREGATION_MODE field and ContactsContract.AggregationExceptions. int AGGREGATION_MODE read/write A mechanism that allows programmatic control of the aggregation... &nbsp;
-    <a href="/2012/06/22/android-content-provider/" class="read-more">read more</a>
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。 Android的解决方案是提供AccountManager来管理不同服务的账户。 AccountManager是由系统提供的服务([AccountManagerService])， 从而很好的在系统层面解决不同应用共享服务账户的问题。 比如， 用户注册了Google账户，使用这个账户可以登陆Google+,Google Play, Gmail, 也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。 由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。 甚至处理不好， 会带来很大的安全隐患。 现在好了，Android在系统级别提供了账户管理功能， 用户只要去账户管理中心登陆账户， 不同应用就可以想账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。 Android Account 管理类库介绍 Android中和账户相关的API都在android.accounts包下。 重要的接口和类有： Interfaces AccountManagerCallback&lt;V&gt; 包含回调函数。 类似于我们经常写的Listener AccountManagerFuture&lt;V&gt; 异步调用AccountManager的结果。 OnAccountsUpdateListener AccountMonitor用到的回调接口。 Classes AbstractAccountAuthenticator 如果开发者需要实现自己的认证方式， 可以通过继承这个类来实现 Account 表示我们的账户 AccountAuthenticatorActivity Base class for implementing an Activity that is used to help implement an AbstractAccountAuthenticator. AccountAuthenticatorResponse Object used to communicate responses back to the AccountManager AccountManager 账户管理的核心类,是访问账户的入口。 AuthenticatorDescription A Parcelable value type that contains information about an account authenticator. 使用[AccountManager]访问已经支持的账户 Android 系统默认支持Google账户， Microsoft Exchange账户，和普通邮件账户。 现在，假如你开发了一个应用,会使用到用户的Google账户， 比如， 类似于SMS Backup这种应用， 可以把手机端的短信同步到GMail邮箱当中。 当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利，... &nbsp;
+    <a href="/2012/06/26/android-emulator-acceleration/" class="read-more">read more</a>
   </p>
   <small class="meta">
-    22 Jun 2012
+    26 Jun 2012
     
      | 
-    <a href="/tags#java">java</a>
+    <a href="/tags#android">android</a>
+    
+  </small>
+
+  <h3 class="excerpt"><a href="/2012/06/24/vimqrc/">VIM QUICK REFERENCE CARD</a></h3>
+  <p class="excerpt">
+    VIM Quick Reference Card origin:http://tnerual.eriogerg.free.fr/vimqrc.html VIM QUICK REFERENCE CARD Basic movement h l k jcharacter left, right; line up, down b wword/token left, right ge eend of word/token left, right {&nbsp; }beginning of previous, next paragraph ( )beginning of previous, next sentence 0 gmbeginning, middle of line ^&nbsp; $first, last character of line nG nggline n, default the last, first n%percentage n of the file (n must be provided) n|column n of current line %match of next brace, bracket, comment, #define nH nLline n from start, bottom of window Mmiddle line of window Insertion &amp; replace → insert mode i... &nbsp;
+    <a href="/2012/06/24/vimqrc/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    24 Jun 2012
     
   </small>
 
@@ -277,7 +267,7 @@ Lucas Xu
         
         </li>
         
-        <li>&ndash; updated 2012-09-25</li>
+        <li>&ndash; updated 2012-11-12</li>
       </ul>
     </div>
   </div>
