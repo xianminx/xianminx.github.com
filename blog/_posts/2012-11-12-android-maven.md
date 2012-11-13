@@ -28,6 +28,7 @@ tags: [android,maven]
 3. [maven-android-sdk-deployer](https://github.com/mosabua/maven-android-sdk-deployer) 如果已经安装过ADT等，这个项目帮助将原来下载的android.jar包copy到maven 的目录下。(~/.m2/repository)
 随着 maven-android-plugin 项目的成熟， 第3个项目逐渐被deprecate。 
 
+4. 选择安装 [m2e-android](http://rgladwell.github.com/m2e-android/), 如果你想使用Eclipse 来开发。
 
 ### Reference Book Chapters: 
 [Maven: The Complete Reference Chapter 14. Android Application Development with Maven](http://www.sonatype.com/books/mvnref-book/reference/android-dev.html) 
