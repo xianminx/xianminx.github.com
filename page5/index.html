@@ -81,6 +81,37 @@
     <div id="col1">
       <div id="col1_content">
         
+  <h3 class="excerpt"><a href="/2012/07/06/android-get-phone-number/">Android 手机API获取手机号码</a></h3>
+  <p class="excerpt">
+    之前在网上经常听到开发者传言Android平台中可以通过API接口获取SIM卡的ISDN(MSISDN)号码，即大众所受的手机号码。实际上在Android系统设置里面用户去查看这一项的时候是空白。 说明两个问题：
+
+
+OS提供API获取这个号码
+OSAPI无法从SIM卡中获取到这个号码
+
+
+也就是说， 这个API的获取结果和SIM卡相关， 即和运营商相关。 
+
+如果使用API可以获取这个号码的话， 对用户隐私将是一个非常大的威胁。
+
+我用下面的代码在移动的动感地带和联通SIM卡上都没有得到手机号码。 松一口气。 
+
+
+说明暂时在中国移动和中国联通SIM卡上是无法获取这个号码的。
+
+
+注意， 要在AndroidManifest.xml中添加权限android.permission.READ_PHONE_STATE. 如下： 
+ &nbsp;
+    <a href="/2012/07/06/android-get-phone-number/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    06 Jul 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
   <h3 class="excerpt"><a href="/2012/06/29/android-service-debugging/">How does an Android developer fix a bug?</a></h3>
   <p class="excerpt">
     Day and day ago, I wrote a DownloadingService for Android application. The service is provided in an Android SDK, which ill be utilized by other android apps. Some app developers wrote their code in such as way that when user press BACK button on Android, the app will kill itself in such a way: As an advanced Android developer, you may think how this could be stupid and violate the design principle of Android Framework, i.e., &quot;Activity&quot; should follow it&#39;s own lifecycle. But as the old saying said, customer is our God. SDK users, some could be novice android develoeprs,... &nbsp;
@@ -133,16 +164,6 @@
     
      | 
     <a href="/tags#android">android</a>
-    
-  </small>
-
-  <h3 class="excerpt"><a href="/2012/06/24/vimqrc/">VIM QUICK REFERENCE CARD</a></h3>
-  <p class="excerpt">
-    VIM Quick Reference Card origin:http://tnerual.eriogerg.free.fr/vimqrc.html VIM QUICK REFERENCE CARD Basic movement h l k jcharacter left, right; line up, down b wword/token left, right ge eend of word/token left, right {&nbsp; }beginning of previous, next paragraph ( )beginning of previous, next sentence 0 gmbeginning, middle of line ^&nbsp; $first, last character of line nG nggline n, default the last, first n%percentage n of the file (n must be provided) n|column n of current line %match of next brace, bracket, comment, #define nH nLline n from start, bottom of window Mmiddle line of window Insertion &amp; replace → insert mode i... &nbsp;
-    <a href="/2012/06/24/vimqrc/" class="read-more">read more</a>
-  </p>
-  <small class="meta">
-    24 Jun 2012
     
   </small>
 
@@ -267,7 +288,7 @@
         
         </li>
         
-        <li>&ndash; updated 2012-11-12</li>
+        <li>&ndash; updated 2013-01-14</li>
       </ul>
     </div>
   </div>

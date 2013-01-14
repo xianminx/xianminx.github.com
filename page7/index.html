@@ -81,6 +81,19 @@
     <div id="col1">
       <div id="col1_content">
         
+  <h3 class="excerpt"><a href="/2012/06/23/android-account-manager/">Android Account Manager</a></h3>
+  <p class="excerpt">
+    Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。 对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 ps 命令来查看。 如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如com.baidu.input的UID为app_67 由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。 Android的解决方案是提供AccountManager来管理不同服务的账户。 AccountManager是由系统提供的服务([AccountManagerService])， 从而很好的在系统层面解决不同应用共享服务账户的问题。 比如， 用户注册了Google账户，使用这个账户可以登陆Google+,Google Play, Gmail, 也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。 由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。 甚至处理不好， 会带来很大的安全隐患。 现在好了，Android在系统级别提供了账户管理功能， 用户只要去账户管理中心登陆账户， 不同应用就可以想账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。 Android Account 管理类库介绍 Android中和账户相关的API都在android.accounts包下。 重要的接口和类有： Interfaces AccountManagerCallback&lt;V&gt; 包含回调函数。 类似于我们经常写的Listener AccountManagerFuture&lt;V&gt; 异步调用AccountManager的结果。 OnAccountsUpdateListener AccountMonitor用到的回调接口。 Classes AbstractAccountAuthenticator 如果开发者需要实现自己的认证方式， 可以通过继承这个类来实现 Account 表示我们的账户 AccountAuthenticatorActivity Base class for implementing an Activity that is used to help implement an AbstractAccountAuthenticator. AccountAuthenticatorResponse Object used to communicate responses back to the AccountManager AccountManager 账户管理的核心类,是访问账户的入口。 AuthenticatorDescription A Parcelable value type that contains information about an account authenticator. 使用[AccountManager]访问已经支持的账户 Android 系统默认支持Google账户， Microsoft Exchange账户，和普通邮件账户。 现在，假如你开发了一个应用,会使用到用户的Google账户， 比如， 类似于SMS Backup这种应用， 可以把手机端的短信同步到GMail邮箱当中。 当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利，... &nbsp;
+    <a href="/2012/06/23/android-account-manager/" class="read-more">read more</a>
+  </p>
+  <small class="meta">
+    23 Jun 2012
+    
+     | 
+    <a href="/tags#android">android</a>
+    
+  </small>
+
   <h3 class="excerpt"><a href="/2012/06/22/android-content-provider/">Android Content Provider</a></h3>
   <p class="excerpt">
     Lucas Xu ContactProvider Table ContactsContract.RawContacts | Column Name | example |description | |:-----------|:-----------|:------------:| |long _ID ||Row ID. Sync adapters should try to preserve row IDs during updates. In other words, it is much better for a sync adapter to update a raw contact rather than to delete and re-insert it. |CONTACT_ID || read-only The ID of the row in the ContactsContract.Contacts table that this raw contact belongs to. Raw contacts are linked to contacts by the aggregation process, which can be controlled by the AGGREGATION_MODE field and ContactsContract.AggregationExceptions. int AGGREGATION_MODE read/write A mechanism that allows programmatic control of the aggregation... &nbsp;
@@ -300,7 +313,7 @@ JDK, API 等
         
         </li>
         
-        <li>&ndash; updated 2012-11-12</li>
+        <li>&ndash; updated 2013-01-14</li>
       </ul>
     </div>
   </div>
