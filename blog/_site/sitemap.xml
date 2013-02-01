@@ -7,56 +7,91 @@
 
 <url>
   <loc>http://xianminx.github.com/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>1.0</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/about/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/archives/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/tags/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/other/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 </url>
   <loc>http://xianminx.github.com/page2/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page3/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page4/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.1</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://xianminx.github.com/page5/</loc>
-  <lastmod>2013-03-14</lastmod>
+  <lastmod>2013-29-02</lastmod>
   <priority>0.1</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2013/02/01/what-is-dark-time/</loc>
+  <lastmod>2013-00-01</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2013/02/01/dark-time-reading-list/</loc>
+  <lastmod>2013-00-01</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2013/01/31/java-collections-framework/</loc>
+  <lastmod>2013-00-31</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2013/01/25/android-permission-opt-out/</loc>
+  <lastmod>2013-00-25</lastmod>
+  <priority>0.5</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://xianminx.github.com/2013/01/21/big-user-era/</loc>
+  <lastmod>2013-00-21</lastmod>
+  <priority>0.5</priority>
   <changefreq>weekly</changefreq>
 </url>
 
