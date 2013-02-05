@@ -1,0 +1,14 @@
+---
+layout: default
+title:  Archives
+---
+
+<h3 class="vlist">Archives</h3>
+<ul>
+  {% for post in site.posts %}
+    <li style="list-style-type: none; padding: 2px">
+      <span>{{ post.date | date:"%d %b %Y" }}</span> &nbsp;
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
