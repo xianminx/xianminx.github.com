@@ -1,0 +1,22 @@
+/* CSS for MindMap expand/collapse.
+ */
+.mindmap {
+margin: 0;
+padding: 0;
+width: 100%;
+}
+ 
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:#EEEEEE;
+}
+.content {
+padding: 5px 10px;
+background-color:#fafafa;
+}
+p { padding: 5px 0; }
+
