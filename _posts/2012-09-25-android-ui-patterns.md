@@ -69,7 +69,7 @@ Bringing Holo Theme from Android 4.0 to 1.6 and above.
 * Google Plus
 * Gmail 
 * Google IO (open source)
-* 
+
 
 ## Analytics App Collection
 * [Google Analytics (by GOOGLE)](https://play.google.com/store/apps/details?id=com.google.android.apps.giant&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5nb29nbGUuYW5kcm9pZC5hcHBzLmdpYW50Il0.)
@@ -88,16 +88,7 @@ Bringing Holo Theme from Android 4.0 to 1.6 and above.
 * [Piwik](https://play.google.com/store/apps/details?id=org.piwik.mobile&feature=search_result#?t=W251bGwsMSwyLDEsIm9yZy5waXdpay5tb2JpbGUiXQ..)
 * [TeleTRADE Analytics](https://play.google.com/store/apps/details?id=ru.teletrade.android.app&feature=search_result#?t=W251bGwsMSwyLDEsInJ1LnRlbGV0cmFkZS5hbmRyb2lkLmFwcCJd)
 * [Battlefield 3 Analytics](https://play.google.com/store/apps/details?id=com.stub.android.battlefieldanalytics&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5zdHViLmFuZHJvaWQuYmF0dGxlZmllbGRhbmFseXRpY3MiXQ..)
-* 
-* 
-* Google Play
-* Google Plus
-* Gmail 
-* Google IO (open source)
-* 
-
-
-
+ 
 
 
 
