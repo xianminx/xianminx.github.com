@@ -17,6 +17,17 @@ tags: [android]
 
 
 
+# References
+1. [Android boot process](http://bootloader.wikidot.com/linux:boot:android)
+2. General Android boot process
+    * http://www.androidenea.com/2009/06/android-boot-process-from-power-on.html
+    * http://bloggervarun.wordpress.com/2010/01/25/embedded-linux-boot-process/
+3. Boot of Linux on Embedded Devices
+    * Linux U-boot: http://www.denx.de/wiki/view/DULG/UBoot
+    * OMAP bring-up: http://elinux.org/Android_on_OMAP
+    * eLinux boot time: http://elinux.org/Boot_Time#Measuring_Boot-up_Time
+4. The Android boot image: boot.img
+    * Unpack, re-pack boot image: http://android-dls.com/wiki/index.php?title=HOWTO:_Unpack%2C_Edit%2C_and_Re-Pack_Boot_Images#Background
 
 
 
