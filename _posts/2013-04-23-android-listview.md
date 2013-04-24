@@ -15,6 +15,7 @@ Android [ApiDemos](http://developer.android.com/tools/samples/index.html) Sample
 The following is a simple example. 
 
 **/Users/lucas/dev/eclipse-juno-workspace/AdvancedListView/src/com/example/android/apis/view/advancedlistview/SimpleListViewActivity.java **
+
 ```java
 package com.example.android.apis.view.advancedlistview;
 
@@ -43,6 +44,7 @@ public class SimpleListViewActivity extends Activity {
 ```
 
 **/Users/lucas/dev/eclipse-juno-workspace/AdvancedListView/res/layout/activity_simple_listview.xml  ** 
+
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
