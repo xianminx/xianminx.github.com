@@ -5,3 +5,5 @@ tags: [android]
 ---
 
 http://developer.android.com/guide/topics/ui/themes.html#PlatformStyles
+
+http://developer.android.com/design/index.html
