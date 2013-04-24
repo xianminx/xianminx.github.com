@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android Fragment"
+title: "Android Theme and Style"
 tags: [android]
 ---
 
