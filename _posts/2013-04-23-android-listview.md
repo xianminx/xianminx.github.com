@@ -75,14 +75,30 @@ This is a very simple example of ListView.
  
 
 ## Adapter Architecture
+From the above simple example, we find 3 components for the ListView: the standard MVC pattern. Model, View, and Controller. 
+
+
 ### View
+ListView is embeded in Activity in layout XML. 
+
 ### Data
+To provide data for each item in the ListView, we need a Adapter. Here we use ListAdapter, constructed from a static `String` array.
+
+
 ### Controller
+If you want users to interact with your app, you can add `Listeners` for user actions, for example, click event, touch event. 
+This can be done by setting `setOnItemClickListener`.
 
 
 ## Framework API
+
 ### Official Tutorials
+* Official introductory tutorial can be found at this [link](http://developer.android.com/guide/topics/ui/layout/listview.html). 
+*  [Building Layouts with an Adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews)
+
 ### Non-Official Tutorials
+
+
 ### API Explored
 
 
