@@ -53,6 +53,15 @@ Utilities that help in the design and development of Android application user in
     2. Android Design Preview
     3. Pencil Stencils
 
+#### Books
+* [Android Design Patterns: Interaction Design Solutions for Developers](http://www.amazon.com/Android-Design-Patterns-Interaction-Developers/dp/1118394151)
+* [Mobile Design Pattern Gallery](http://www.amazon.com/Mobile-Design-Pattern-Gallery-Edition/dp/1449336442/ref=pd_sim_b_4)
+* [Android User Interface Design: Turning Ideas and Sketches into Beautifully Designed Apps](http://www.amazon.com/Android-User-Interface-Design-Beautifully/dp/0321886739/ref=pd_sim_b_3)
+* [Smashing Android UI (Smashing Magazine Book Series)](http://www.amazon.com/Smashing-Android-Magazine-Book-Series/dp/1118387287/ref=pd_sim_b_2)
+* [Designing Mobile Interfaces](http://www.amazon.com/Designing-Mobile-Interfaces-Steven-Hoober/dp/1449394639/ref=pd_sim_b_1)
+* [Lean UX: Applying Lean Principles to Improve User Experience](http://www.amazon.com/Lean-UX-Applying-Principles-Experience/dp/1449311652/ref=pd_sim_b_7)
+
+
 
 ### Open source project to facilitate Android design and development
 * [Android Bootstrap](http://www.androidbootstrap.com/)
