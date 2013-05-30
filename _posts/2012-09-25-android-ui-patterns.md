@@ -52,9 +52,10 @@ Utilities that help in the design and development of Android application user in
     1. Android Asset Studio
     2. Android Design Preview
     3. Pencil Stencils
+* [Design Caffeine](http://www.designcaffeine.com/), with Agile Mobile Design Webinar Video
 
 #### Books
-* [Android Design Patterns: Interaction Design Solutions for Developers](http://www.amazon.com/Android-Design-Patterns-Interaction-Developers/dp/1118394151)
+* [Android Design Patterns: Interaction Design Solutions for Developers](http://www.amazon.com/Android-Design-Patterns-Interaction-Developers/dp/1118394151). Accompany website: http://www.androiddesignbook.com/ & http://www.designcaffeine.com/
 * [Mobile Design Pattern Gallery](http://www.amazon.com/Mobile-Design-Pattern-Gallery-Edition/dp/1449336442/ref=pd_sim_b_4)
 * [Android User Interface Design: Turning Ideas and Sketches into Beautifully Designed Apps](http://www.amazon.com/Android-User-Interface-Design-Beautifully/dp/0321886739/ref=pd_sim_b_3)
 * [Smashing Android UI (Smashing Magazine Book Series)](http://www.amazon.com/Smashing-Android-Magazine-Book-Series/dp/1118387287/ref=pd_sim_b_2)
