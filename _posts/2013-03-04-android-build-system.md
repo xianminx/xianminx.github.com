@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android Build System"
-tags: [andYroid]
+tags: [android]
 ---
 
 Android build system is *make* based. 
