@@ -54,6 +54,12 @@ Utilities that help in the design and development of Android application user in
     3. Pencil Stencils
 * [Design Caffeine](http://www.designcaffeine.com/), with Agile Mobile Design Webinar Video
 * [Quora: What is the best site(s) for info Android UX and design patterns?](http://www.quora.com/Android-OS/What-is-the-best-site-s-for-info-Android-UX-and-design-patterns)
+* [pttrns](http://pttrns.com/)
+* [Zhihu Design collections](http://www.zhihu.com/question/19804692)
+* [Quora: What are the best open source libraries available for Android?]()http://www.quora.com/Android-Development/What-are-the-best-open-source-libraries-available-for-Android
+* [openintent's open source libraries collection](http://www.openintents.org/en/libraries)
+* [Wikipedia: List of free and open-source Android applications](http://en.wikipedia.org/wiki/List_of_open_source_Android_applications)
+
 
 #### Books
 * [Android Design Patterns: Interaction Design Solutions for Developers](http://www.amazon.com/Android-Design-Patterns-Interaction-Developers/dp/1118394151). Accompany website: http://www.androiddesignbook.com/ & http://www.designcaffeine.com/
