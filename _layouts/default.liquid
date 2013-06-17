@@ -153,7 +153,7 @@ jQuery(document).ready(function() {
         {% if forloop.last == false %} | {% endif %}
         </li>
         {% endfor %}
-        <li> | <a href="feed.xml"><img src="http://www.bookinglive.com/assets/Uploads/Icons/RSS-Feed-2.png" width="20" height="20" align="top"> RSS </a></li>
+        <li> | <a href="/feed.xml"><img src="http://www.bookinglive.com/assets/Uploads/Icons/RSS-Feed-2.png" width="20" height="20" align="top"> RSS </a></li>
         <li>&ndash; updated {{ site.time | date:"%Y-%m-%d" }}</li>
       </ul>
     </div>
