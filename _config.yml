@@ -6,6 +6,10 @@ author :
   github : xianminx
   twitter : xianminx
 
+
+site:
+  url: http://xianminx.github.io/
+
 safe: true
 lsi: false
 source:      .
