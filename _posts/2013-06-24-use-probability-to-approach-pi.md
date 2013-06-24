@@ -6,7 +6,7 @@ tags: [interview]
 ---
 
 Once I found this interview question: calculate Pi. 
-Where, all we have learned to calculate Pi in our primary math class by using regular polygon to approach a circle. 
+Where, all of us have learned calculating Pi in our primary math class by using regular polygon to approach a circle. 
 
 Today I am gonna show you a probability way. 
 
@@ -66,5 +66,5 @@ after 100000000 iterations, pi is 3.141486
 lucas@lucas-ubuntu:~/dev/workspace/pi$ 
 ```
 ## Conclusion 
-When iteration is set to 100,000,000, it takes about half a minute on my i7 Core Mac Pro with precision only to 3 digits. This algorithm is unacceptable. 
+When iteration is set to 100,000,000, it takes about half a minute on my i7 Core Mac Pro with precision only to 3 digits. This algorithm is **unacceptable**. 
 
