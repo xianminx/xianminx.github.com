@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Use Probability to approach Pi"
+title: "Use probability to approach Pi"
 published: true
-tags: []
+tags: [interview]
 ---
 
 Once I found this interview question: calculate Pi. 
@@ -11,11 +11,11 @@ Where, all we have learned to calculate Pi in our primary math class by using re
 Today I am gonna show you a probability way. 
 
 ## Method
-check the following graph for explanation. It is self-explainatory. 
+Check the following graph. I hope it is self-explainatory. 
 
 
 
-<img src="https://docs.google.com/drawings/d/1m0kMxt0QRv5hsOLwGUqvUM0TbllT6sZcIfPpFEQpsso/pub?w=960&amp;h=720">
+<img src="https://docs.google.com/drawings/d/1m0kMxt0QRv5hsOLwGUqvUM0TbllT6sZcIfPpFEQpsso/pub?w=480&amp;h=360">
 
 ## Code
 https://gist.github.com/xianminx/b59eef29b8137827f1f0#file-pi-java
@@ -50,7 +50,7 @@ class Pi{
 ```
 
 ## Experiment
-```log
+```
 lucas@lucas-ubuntu:~/dev/workspace/pi$ java Pi 1000
 after 1000 iterations, pi is 3.032000
 lucas@lucas-ubuntu:~/dev/workspace/pi$ java Pi 10000
@@ -65,4 +65,6 @@ lucas@lucas-ubuntu:~/dev/workspace/pi$ java Pi 100000000
 after 100000000 iterations, pi is 3.141486
 lucas@lucas-ubuntu:~/dev/workspace/pi$ 
 ```
+## Conclusion 
+When iteration is set to 100,000,000, it takes about half a minute on my i7 Core Mac Pro with precision only to 3 digits. This algorithm is unacceptable. 
 

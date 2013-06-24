@@ -40,7 +40,7 @@ Running JNI app on Intel Emulator.
 # 
 ```
 
-```log
+```
 
 
 I/ActivityManager( 1013): START {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.example.hellojni/.HelloJni u=0} from pid 1151
