@@ -66,5 +66,8 @@ after 100000000 iterations, pi is 3.141486
 lucas@lucas-ubuntu:~/dev/workspace/pi$ 
 ```
 ## Conclusion 
-When iteration is set to 100,000,000, it takes about half a minute on my i7 Core Mac Pro with precision only to 3 digits. This algorithm is **unacceptable**. 
+When iteration is set to 100,000,000, it takes about half a minute on my i7 Core Mac Pro with precision only to 3 digits. 
+
+* This algorithm is **unacceptable**. 
+* The precision cannot be guranteed as it is using a probabilistic way. 
 
