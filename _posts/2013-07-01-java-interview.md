@@ -72,5 +72,17 @@ public class Workout {
 # Discussion
 
 # TODOS
+1. @知乎 如何面试android 工程师？ 从哪些方面考察？
+    * 面试题库
+    * 技术
+    *    重构， 
+    *    算法
+    *    数据结构
+    *    操作系统
+    * 能力
+    * 开放式思维
+    * 知乎: [如何面试 Android 工程师？](http://www.zhihu.com/question/19733999)
+
+2. 面试官如何写面试反馈？
 1. 整理一个PPT 出来， 分topic 出面试题， 做分享
 1. 整理知乎上的相关java / android 面试题
