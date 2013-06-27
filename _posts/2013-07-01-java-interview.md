@@ -7,7 +7,7 @@ tags: [android, java, interview]
 
 # Interview Questions Collection
 1. [careercup](http://www.careercup.com/),There is an accompany book: Cracking the Coding Interview: 150 Programming Questions and Solutions
-
+1. Quora:[Java Interview Questions](http://www.quora.com/Java-Interview-Questions). A collection of java interview questions on quora. 
 # Java Resources
 1. Qura: [What questions are Java Software Engineers seeing the most of on technical interviews?](http://www.quora.com/What-questions-are-Java-Software-Engineers-seeing-the-most-of-on-technical-interviews)
 1. Qura: [What are good interview questions to ask JAVA developers?] (http://www.quora.com/Java-programming-language/What-are-good-interview-questions-to-ask-JAVA-developers)
@@ -17,6 +17,29 @@ tags: [android, java, interview]
 1. [Inside the Java Virtual Machine](http://www.artima.com/insidejvm/ed2/index.html) by Bill Venners. Online book available. 
 1. [Books Related to the JVM](http://www.artima.com/jvm/booklist.html), a list of jvm books. 
 1. [Thinking in Java](http://books.google.com.hk/books/about/Thinking_In_Java.html?id=j_O5QgAACAAJ) by Bruce Eckel. JAVA 101
+1. The Java Job Interview Companion
+1. Cracking the Coding Interview by Gayle Laakmann McDowell
+
+1. Quora: [What are good books to test one's programming skills?](http://www.quora.com/Computer-Science/What-are-good-books-to-test-ones-programming-skills)
+
+1. Programming Interviews Exposed: Secrets to Landing Your Next Job
+1. Coding Interviews By Harre He . A Press
+1. Cracking the coding interview by Gayle as mentioned in other posts
+1. Algorithms For Interviews (9781453792995): Adnan Aziz, Amit Prakash: Books
+1. Programming Challenges by Steven Skiena
+1. Elements of Programming Interviews.
+1. Cracking the Coding Interview: 150 Programming Questions and Solutions
+
+1. Cracking The IT Interview 2nd  Edition -
+1. Data Structures and Algorithms Made Easy 2nd Edition - I strongly recommend this book 
+1. Cracking the C, C++ and Java Interview 1st Edition -
+1. Test your C Skills - Yashwant Kanetkar
+1. Test your C ++ Skills - Yashwant Kanetkar
+1. Exploring C - Yashwant Kanetkar
+1. Test Your Unix skills - Yashwant Kanetkar
+
+
+I mostly agree with John Kurlak's answer. Personally I feel Cracking the Coding Interview: 150 Programming Questions and Solutions is a good choice if you only know Java. Programming Interviews Exposed is a little elementary and the materials actually need to be updated. Elements of Programming Interviews: 300 Questions and Solutions seems for people who actually want to pass all interviews including the hardest one after concluding all reviews on Amazon, and it is mainly written in C++ which makes this as a great choice for people who can understand on C++.
 
 
 # Sample Questions
@@ -67,6 +90,15 @@ public class Workout {
 }
 ```
 
+1. 
+> Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+
+
+
+# Online Tests
+1. [Test For Geeks](http://tests4geeks.com/test/java), including java and android tests. Extremely challenging. 
+1. [Fizz Buzz Test](http://c2.com/cgi/wiki?FizzBuzzTest)
+1. 
 
 
 # Discussion
