@@ -110,7 +110,8 @@ Bringing Holo Theme from Android 4.0 to 1.6 and above.
 * [Battlefield 3 Analytics](https://play.google.com/store/apps/details?id=com.stub.android.battlefieldanalytics&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5zdHViLmFuZHJvaWQuYmF0dGxlZmllbGRhbmFseXRpY3MiXQ..)
  
 
-
+[Libraries for developers](https://play.google.com/store/apps/details?id=com.desarrollodroide.repos) by Desarrollo Droide
+<img src="https://lh5.ggpht.com/NCK1E-h9b20F0330WCoGJ2cSX7oBR_bZZi8gm2flRmcXNanQ2JZdwDPfex2i3ybXsno_=w705" height="300px">
 
 
 <iframe src="http://www.slideshare.net/RachitShukla3/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
