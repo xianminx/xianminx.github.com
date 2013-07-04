@@ -19,9 +19,9 @@ tags: [android, java, interview]
 1. [Thinking in Java](http://books.google.com.hk/books/about/Thinking_In_Java.html?id=j_O5QgAACAAJ) by Bruce Eckel. JAVA 101
 1. The Java Job Interview Companion
 1. Cracking the Coding Interview by Gayle Laakmann McDowell
-
 1. Quora: [What are good books to test one's programming skills?](http://www.quora.com/Computer-Science/What-are-good-books-to-test-ones-programming-skills)
-
+1. Wiki:[List of data structures](http://en.wikipedia.org/wiki/List_of_data_structures)
+1. Wiki:[List of algorithms](http://en.wikipedia.org/wiki/List_of_algorithms)
 1. Programming Interviews Exposed: Secrets to Landing Your Next Job
 1. Coding Interviews By Harre He . A Press
 1. Cracking the coding interview by Gayle as mentioned in other posts
