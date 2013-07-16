@@ -25,11 +25,11 @@ tags: [android, java, interview]
 1. Programming Interviews Exposed: Secrets to Landing Your Next Job
 1. Coding Interviews By Harre He . A Press
 1. Cracking the coding interview by Gayle as mentioned in other posts
+1. [Cracking the coding interview--问题与解答](http://hawstein.com/posts/ctci-solutions-contents.html)
 1. Algorithms For Interviews (9781453792995): Adnan Aziz, Amit Prakash: Books
 1. Programming Challenges by Steven Skiena
 1. Elements of Programming Interviews.
 1. Cracking the Coding Interview: 150 Programming Questions and Solutions
-
 1. Cracking The IT Interview 2nd  Edition -
 1. Data Structures and Algorithms Made Easy 2nd Edition - I strongly recommend this book 
 1. Cracking the C, C++ and Java Interview 1st Edition -
@@ -37,6 +37,7 @@ tags: [android, java, interview]
 1. Test your C ++ Skills - Yashwant Kanetkar
 1. Exploring C - Yashwant Kanetkar
 1. Test Your Unix skills - Yashwant Kanetkar
+1. [Top 15 Java threading interview questions asked in Investment banks](http://javarevisited.blogspot.in/2011/07/java-multi-threading-interview.html)
 
 
 I mostly agree with John Kurlak's answer. Personally I feel Cracking the Coding Interview: 150 Programming Questions and Solutions is a good choice if you only know Java. Programming Interviews Exposed is a little elementary and the materials actually need to be updated. Elements of Programming Interviews: 300 Questions and Solutions seems for people who actually want to pass all interviews including the hardest one after concluding all reviews on Amazon, and it is mainly written in C++ which makes this as a great choice for people who can understand on C++.
@@ -93,12 +94,25 @@ public class Workout {
 1. 
 > Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
 
+1. 
+> Clock puzzles - find the angle between hr,min,sec handles, etc
+
 
 
 # Online Tests
 1. [Test For Geeks](http://tests4geeks.com/test/java), including java and android tests. Extremely challenging. 
 1. [Fizz Buzz Test](http://c2.com/cgi/wiki?FizzBuzzTest)
-1. 
+1. [Brainbench test](http://www.brainbench.com/xml/bb/common/testcenter/taketest.xml?testId=115) 
+
+
+# Fields
+1. Java Collection
+1. Multi Threading
+1. GC
+1. Design Patterns
+1. Algorithms
+1. Data Structure
+1.   
 
 
 # Discussion
