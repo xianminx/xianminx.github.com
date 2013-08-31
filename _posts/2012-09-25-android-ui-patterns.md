@@ -74,13 +74,17 @@ Utilities that help in the design and development of Android application user in
 
 
 
-### Open source project to facilitate Android design and development
+### Open source projects to facilitate Android design and development
 * [Android Bootstrap](http://www.androidbootstrap.com/)
 Bootstrap your next Android Application
 Android Bootstrap includes a full working implementation of Fragments, Fragment Pager, Account Manager, android-maven-plugin, RoboGuice 2, ActionBarSherlock 4, ViewPagerIndicator, http-request, GSON, Robotium for integration testing, API Consumption with an API on Parse.com and much more.
 
 * [HoloEverywhere](https://github.com/ChristopheVersieux/HoloEverywhere)
 Bringing Holo Theme from Android 4.0 to 1.6 and above.
+
+* [Android projects on Github](https://plus.google.com/u/0/communities/100609058582053363304) is a community on Google+, which provides collections of nice Android open source projects. 
+* [gabrielemariotti/changeloglib](https://github.com/gabrielemariotti/changeloglib) Android Library to display your changelog
+
 
 
 ## Nice App Collection
