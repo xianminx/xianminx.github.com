@@ -4,7 +4,10 @@ title: "Android ADB"
 tags: [android]
 ---
 
-Official document is at [adb](http://developer.android.com/tools/help/adb.html)
+* Official document is at [adb](http://developer.android.com/tools/help/adb.html)
+
+* [ADB (Android Debug Bridge):How it works?](https://events.linuxfoundation.org/images/stories/pdf/lf_abs12_kobayashi.pdf) by Tetsuyuki Kobayashi
+
 
 # Components
 
@@ -30,6 +33,7 @@ emulator-5554  device
 emulator-5556  device
 emulator-5558  device
 ```
+
 
 
 
