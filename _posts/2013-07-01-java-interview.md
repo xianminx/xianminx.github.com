@@ -132,3 +132,11 @@ public class Workout {
 2. 面试官如何写面试反馈？
 1. 整理一个PPT 出来， 分topic 出面试题， 做分享
 1. 整理知乎上的相关java / android 面试题
+
+
+
+## Android 面试题
+1. Android 中线程与线程，进程与进程之间如何通信?
+1. activity，intent 和 service 是什么关系？
+1. handler 机制的原理是什么？
+1. 横竖屏切换时候 activity 的生命周期？
