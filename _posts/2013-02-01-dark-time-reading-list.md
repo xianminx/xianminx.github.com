@@ -37,7 +37,7 @@ tags: [reading, thinking, writing]
 关于脑科学的书， 看到曾今的笔记里还有两本，一并列在这里:
 
 1. [HIERARCHICAL TEMPORAL MEMORY including HTM Cortical Learning Algorithms](http://www.numenta.com/htm-overview/education/HTM_CorticalLearningAlgorithms.pdf)
-1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by Jeff Hawkins. 
+1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins). 
 
  
 
@@ -89,7 +89,7 @@ tags: [reading, thinking, writing]
 
 学习的过程就是我们先去记忆一些知识， 在运用过程中加入自己的思考。《暗时间》提到学习的几个方面，包括：专注，效率，阅读，写作，知识结构等。 
 
-作者提到知识结构一词， 我非常认同。自认为从初中到高中数学非常容易，根本原因在于对于整体的数学知识结构把握的好。 这得益于初中遇到一个非常好的数学老师。 在他去启蒙下， 已经知道分析和综合方法是解决问题的两大基本方法。 数学中的基本知识点多多少少都忘的差不多了。就这最根本的方法没有忘记。 我估计这辈子也不会忘记了。 我敢说， 对于高中数学， 告诉我一个基本定量， 我能够把整个学科都建立起来，完全不需要记住这个定理，那个定理。 
+作者提到知识结构一词， 我非常认同。自认为从初中到高中数学非常容易，根本原因在于对于整体的数学知识结构把握的好。 这得益于初中遇到一个非常好的数学老师。 在他去启蒙下， 已经知道分析和综合方法是解决问题的两大基本方法。 数学中的基本知识点多多少少都忘的差不多了。就这最根本的方法没有忘记。 我估计这辈子也不会忘记了。 我敢说， 对于高中数学， 告诉我一个基本定理， 我能够把整个学科都建立起来，完全不需要记住这个定理，那个定理。 
 
 后来学习计算机科学就没有这种感觉， 太零散，学的是知识， 不是技能。从而走了很多弯路。 谴责一下坑人的大学教育。 读研的时候Nicolas 还是教了一些根本性的东西，那是非常好的。 
 
