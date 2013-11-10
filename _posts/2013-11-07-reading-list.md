@@ -60,5 +60,6 @@ tags: [reading]
 1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins). 
 1. [你就是极客!软件开发人员生存指南]
 1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特 
+1. [New][Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
 
 
