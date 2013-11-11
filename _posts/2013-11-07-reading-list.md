@@ -10,7 +10,7 @@ tags: [reading]
 ### 更新日志
 
 * 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。 
-
+* 2013/11/11 早， 新增 程序员必读书目, 添加 [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
 
 ## 已读
 
@@ -37,13 +37,11 @@ tags: [reading]
 
 ## Waiting List
 
-1. Android 内核剖析 by 
-1. 编程珠玑
+1. [Android 内核剖析](http://book.douban.com/subject/6811238/) by 柯元旦 
 1. 你就是极客
 1. 走出思维的误区
 1. 认知盈余
 1. 游戏改变世界
-1. [经典原版书库：深入理解计算机系统（英文版·第2版）]
 1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Lea 
 1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
 1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
@@ -60,6 +58,14 @@ tags: [reading]
 1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins). 
 1. [你就是极客!软件开发人员生存指南]
 1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特 
+1. [编程珠玑](http://book.douban.com/subject/3227098/) by Jon Bentley 
+
+### Programmer's must read
+1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民 
+1. [Computer Systems:A Programmer's Perspective](http://book.douban.com/subject/1229948/) by Randal E. Bryant / David R. O'Hallaron 
 1. [New][Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
+
+
+
 
 
