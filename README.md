@@ -47,3 +47,17 @@ highlight code. You can simply use the fenced code blocks like on github:
 
 See [here](https://github.com/nono/Jekyll-plugins) for Jekyll Redcarpt2 plugin.  
 
+
+## Bootstrap support
+
+Add bootstrap support by adding 
+```xml
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+```
+to _layouts/default.liquid. 
+
+
+Check commit #cea137a0fa8c104a05c20765220ca0cae32a7d24 for more detail.
+
