@@ -67,5 +67,11 @@ tags: [reading]
 
 
 
+### Deep Dive to Android Internals (resources)
+1. [XDA Developers' Android Hacker's Toolkit: The Complete Guide to Rooting, ROMs and Theming](http://www.amazon.com/dp/1119951380/?tag=stackoverfl08-20) by Jason Tyler (Author), Will Verduzco
+1. [NewCirle](https://thenewcircle.com/s/tags/android)'s Android Training
+1. [Android Architecture](http://elinux.org/Android_Architecture)
+1. [Deep Dive into Android IPC/Binder Framework](http://www.youtube.com/watch?v=Jgampt1DOak)
+
 
 
