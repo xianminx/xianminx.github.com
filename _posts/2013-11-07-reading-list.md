@@ -11,6 +11,9 @@ tags: [reading]
 
 * 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。 
 * 2013/11/11 早， 新增 程序员必读书目, 添加 [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
+* 2013/11/26 15:00, 新增  程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.  [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html）by AOSA. 
+
+
 
 ## 已读
 
@@ -64,6 +67,12 @@ tags: [reading]
 1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民 
 1. [Computer Systems:A Programmer's Perspective](http://book.douban.com/subject/1229948/) by Randal E. Bryant / David R. O'Hallaron 
 1. [New][Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
+1. [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond. 
+1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I
+1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part II
+1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA. 
+
+
 
 
 
