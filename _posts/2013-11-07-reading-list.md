@@ -33,10 +33,16 @@ tags: [reading]
 
 ## 11月在读
 
-1. [美妙的新世界](http://book.douban.com/subject/4872919/) by 阿道斯·伦纳德·赫胥黎  
+1. ~~[美妙的新世界](http://book.douban.com/subject/4872919/) by 阿道斯·伦纳德·赫胥黎~~
 1. [Predictably Irrational, The Hidden Forces That Shape Our Decisions , Revised and Expanded Edition](http://book.douban.com/subject/3692095/) by Dan Ariely 
 1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆 
 1. [Design Patterns: Elements of Reusable Object-Oriented Software](http://book.douban.com/subject/1052241/) by Erich Gamma / Richard Helm / Ralph Johnson / John Vlissides 
+
+## 2014年1月在读
+1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔 
+1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
+1. [第七天](http://book.douban.com/subject/24540864/) by 余华
+1. [可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow 
 
 ## Waiting List
 
@@ -48,8 +54,6 @@ tags: [reading]
 1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Lea 
 1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
 1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
-1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
-1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔 
 1. [走出思维的误区:批判性思维指南(修订第9版)]
 1. [本能:为什么我们管不住自己?]
 1. [对"伪心理学"说不(第8版)]
