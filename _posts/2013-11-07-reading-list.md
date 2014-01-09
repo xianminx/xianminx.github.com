@@ -5,7 +5,7 @@ published: true
 tags: [reading]
 ---
 
-<img src="http://www.ahsh.gov.cn/data/upfile/1/picture/1207/12071617343144.jpg" align="center" />
+<img src="/graphics/12071617343144.jpg" align="center" width="100%"/>
 
 > 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。 
 
@@ -37,35 +37,39 @@ tags: [reading]
 
 1. ~~[美妙的新世界](http://book.douban.com/subject/4872919/) by 阿道斯·伦纳德·赫胥黎~~
 1. [Predictably Irrational, The Hidden Forces That Shape Our Decisions , Revised and Expanded Edition](http://book.douban.com/subject/3692095/) by Dan Ariely 
-1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆 
 1. [Design Patterns: Elements of Reusable Object-Oriented Software](http://book.douban.com/subject/1052241/) by Erich Gamma / Richard Helm / Ralph Johnson / John Vlissides 
 
 ## 2014年1月在读
+<img src="/graphics/IMG_20140110_004325.jpg" align="center" width="100%"/>
+
 1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔 
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
 1. [第七天](http://book.douban.com/subject/24540864/) by 余华
 1. [可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow 
+1. [人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查 
+1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆 
+1. [数学与猜想(第1卷)](http://book.douban.com/subject/1134230/) by G. 波利亚 
+1. [数学与猜想(第2卷)](http://book.douban.com/subject/1134231/) by G. 波利亚
+1. [怎样解题:数学思维的新方法](http://book.douban.com/subject/2124114/) by G. 波利亚
+1. [你就是极客! - 软件开发人员生存指南](http://book.douban.com/subject/7055331/) by Michael Lopp 
+1. [快速阅读](http://book.douban.com/subject/3916049/) by Tony Buzan
+
 
 ## Waiting List
 
+1. [自控力](http://book.douban.com/subject/10786473/) by 凯利·麦格尼格尔 
+1. [怪诞心理学2](http://book.douban.com/subject/6712304/) by 理查德·怀斯曼 
 1. [Android 内核剖析](http://book.douban.com/subject/6811238/) by 柯元旦 
-1. 你就是极客
 1. 走出思维的误区
 1. 认知盈余
 1. 游戏改变世界
-1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Lea 
-1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
+1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Le1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
 1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
 1. [走出思维的误区:批判性思维指南(修订第9版)]
-1. [本能:为什么我们管不住自己?]
 1. [对"伪心理学"说不(第8版)]
 1. [找寻逝去的自我:大脑、心灵和往事的记忆]
-1. [数学与猜想(第1卷)]
-1. [数学与猜想(第2卷)] 
-1. [怎样解题:数学思维的新方法]
 1. [HIERARCHICAL TEMPORAL MEMORY including HTM Cortical Learning Algorithms](http://www.numenta.com/htm-overview/education/HTM_CorticalLearningAlgorithms.pdf)
 1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins). 
-1. [你就是极客!软件开发人员生存指南]
 1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特 
 1. [编程珠玑](http://book.douban.com/subject/3227098/) by Jon Bentley 
 
