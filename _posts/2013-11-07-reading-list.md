@@ -5,7 +5,7 @@ published: true
 tags: [reading]
 ---
 
-<img src="http://www.ahsh.gov.cn/data/upfile/1/picture/1207/12071617343144.jpg" align="middle" />
+<img src="http://www.ahsh.gov.cn/data/upfile/1/picture/1207/12071617343144.jpg" align="center" />
 
 > 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。 
 
