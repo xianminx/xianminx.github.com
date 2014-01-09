@@ -5,14 +5,16 @@ published: true
 tags: [reading]
 ---
 
+<img src="http://www.ahsh.gov.cn/data/upfile/1/picture/1207/12071617343144.jpg" align="middle" />
+
 > 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。 
 
 ### 更新日志
 
 * 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。 
 * 2013/11/11 早， 新增 程序员必读书目, 添加 [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
-* 2013/11/26 15:00, 新增  程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.  [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html）by AOSA. 
-
+* 2013/11/26 15:00, 新增  程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.  [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA. 
+* 2014/01/08 添加2014年1月阅读计划列表。
 
 
 ## 已读
