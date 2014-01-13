@@ -14,7 +14,10 @@ tags: [reading]
 * 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。 
 * 2013/11/11 早， 新增 程序员必读书目, 添加 [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
 * 2013/11/26 15:00, 新增  程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.  [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA. 
+* 2014/01/08 读完[美妙的新世界](http://book.douban.com/subject/4872919/)。
 * 2014/01/08 添加2014年1月阅读计划列表。
+* 2014/01/11 读完[第七天](http://book.douban.com/subject/24540864/)
+
 
 
 ## 已读
@@ -44,7 +47,7 @@ tags: [reading]
 
 1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔 
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
-~~1. [第七天](http://book.douban.com/subject/24540864/) by 余华~~
+1. ~~[第七天](http://book.douban.com/subject/24540864/) by 余华~~
 1. [可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow 
 1. [人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查 
 1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆 
