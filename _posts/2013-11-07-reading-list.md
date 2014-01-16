@@ -70,7 +70,7 @@ tags: [reading]
 1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
 1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
 1. [走出思维的误区:批判性思维指南(修订第9版)]
-1. [对"伪心理学"说不(第8版)]
+1. [对"伪心理学"说不(第8版)(How to think straight about psychology)](http://book.douban.com/subject/6952036/) by Keith E. Stanovich 
 1. [找寻逝去的自我:大脑、心灵和往事的记忆]
 1. [HIERARCHICAL TEMPORAL MEMORY including HTM Cortical Learning Algorithms](http://www.numenta.com/htm-overview/education/HTM_CorticalLearningAlgorithms.pdf)
 1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins). 
