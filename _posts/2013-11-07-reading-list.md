@@ -48,7 +48,7 @@ tags: [reading]
 1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔 
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
 1. ~~[第七天](http://book.douban.com/subject/24540864/) by 余华~~
-1. [可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow 
+1. ~~[可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow~~ 
 1. [人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查 
 1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆 
 1. [数学与猜想(第1卷)](http://book.douban.com/subject/1134230/) by G. 波利亚 
