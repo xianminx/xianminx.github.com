@@ -97,6 +97,15 @@ public class Workout {
 1. 
 > Clock puzzles - find the angle between hr,min,sec handles, etc
 
+1. From Twitter http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/
+>
+<p>"Consider the following picture:"</p>
+<p><img src="http://qandwhat.apps.runkite.com/content/images/2013/Oct/twitter.jpg" alt="alt text" /></p>
+<p>"In this picture we have walls of different heights. This picture is represented by an array of integers, where the value at each index is the height of the wall. The picture above is represented with an array as [2,5,1,2,3,4,7,7,6]."</p>
+<p>"Now imagine it rains. How much water is going to be accumulated in puddles between walls?" </p>
+<p><img src="http://qandwhat.apps.runkite.com/content/images/2013/Oct/twitter_water.jpg" alt="alt text" /></p>
+<p>"We count volume in square blocks of 1X1. So in the picture above, everything to the left of index 1 spills out. Water to the right of index 7 also spills out. We are left with a puddle between 1 and 6 and the volume is 10." </p>
+
 
 
 # Online Tests
