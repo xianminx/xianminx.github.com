@@ -38,7 +38,7 @@ tags: [android, java, interview]
 1. Exploring C - Yashwant Kanetkar
 1. Test Your Unix skills - Yashwant Kanetkar
 1. [Top 15 Java threading interview questions asked in Investment banks](http://javarevisited.blogspot.in/2011/07/java-multi-threading-interview.html)
-
+1. [有道难题](http://blog.csdn.net/goooxu)
 
 I mostly agree with John Kurlak's answer. Personally I feel Cracking the Coding Interview: 150 Programming Questions and Solutions is a good choice if you only know Java. Programming Interviews Exposed is a little elementary and the materials actually need to be updated. Elements of Programming Interviews: 300 Questions and Solutions seems for people who actually want to pass all interviews including the hardest one after concluding all reviews on Amazon, and it is mainly written in C++ which makes this as a great choice for people who can understand on C++.
 
