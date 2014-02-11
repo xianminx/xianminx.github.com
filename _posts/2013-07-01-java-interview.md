@@ -6,7 +6,8 @@ tags: [android, java, interview]
 ---
 
 # Interview Questions Collection
-1. [careercup](http://www.careercup.com/),There is an accompany book: Cracking the Coding Interview: 150 Programming Questions and Solutions
+1. [careercup](http://www.careercup.com/),There is an accompany book: "Cracking the Coding Interview: 150 Programming Questions and Solutions" by Gayle Laakmann McDowell
+1. [Cracking the coding interview--问题与解答](http://hawstein.com/posts/ctci-solutions-contents.html)
 1. Quora:[Java Interview Questions](http://www.quora.com/Java-Interview-Questions). A collection of java interview questions on quora. 
 # Java Resources
 1. Qura: [What questions are Java Software Engineers seeing the most of on technical interviews?](http://www.quora.com/What-questions-are-Java-Software-Engineers-seeing-the-most-of-on-technical-interviews)
@@ -18,14 +19,12 @@ tags: [android, java, interview]
 1. [Books Related to the JVM](http://www.artima.com/jvm/booklist.html), a list of jvm books. 
 1. [Thinking in Java](http://books.google.com.hk/books/about/Thinking_In_Java.html?id=j_O5QgAACAAJ) by Bruce Eckel. JAVA 101
 1. The Java Job Interview Companion
-1. Cracking the Coding Interview by Gayle Laakmann McDowell
 1. Quora: [What are good books to test one's programming skills?](http://www.quora.com/Computer-Science/What-are-good-books-to-test-ones-programming-skills)
 1. Wiki:[List of data structures](http://en.wikipedia.org/wiki/List_of_data_structures)
 1. Wiki:[List of algorithms](http://en.wikipedia.org/wiki/List_of_algorithms)
 1. Programming Interviews Exposed: Secrets to Landing Your Next Job
 1. Coding Interviews By Harre He . A Press
 1. Cracking the coding interview by Gayle as mentioned in other posts
-1. [Cracking the coding interview--问题与解答](http://hawstein.com/posts/ctci-solutions-contents.html)
 1. Algorithms For Interviews (9781453792995): Adnan Aziz, Amit Prakash: Books
 1. Programming Challenges by Steven Skiena
 1. Elements of Programming Interviews.
