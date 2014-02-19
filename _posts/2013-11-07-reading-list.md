@@ -58,6 +58,11 @@ tags: [reading]
 1. [快速阅读](http://book.douban.com/subject/3916049/) by Tony Buzan
 
 
+## 2014年2月在读
+1. [看见](http://book.douban.com/subject/20427187/) by 柴静
+2. [猫力乱步](http://book.douban.com/subject/24883513/) by 猫力
+3. [你一定爱读的极简欧洲史](http://book.douban.com/subject/5366248/) by John Hirst
+
 ## Waiting List
 
 1. [自控力](http://book.douban.com/subject/10786473/) by 凯利·麦格尼格尔 
