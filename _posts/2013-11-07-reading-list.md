@@ -73,6 +73,7 @@ tags: [reading]
 1. [咖啡大全](http://book.douban.com/subject/1344584/) by 田口護
 1. [蒋公的面子](http://book.douban.com/subject/25713688/) by  温方伊
 1. [中午吃什麼? 一個經濟學家的無星級開胃指南](http://book.douban.com/subject/24845960/) by Tyler Cowen 
+1. [长尾理论2.0](http://book.douban.com/subject/3685204/) by 安德森 
 
 
 ## Waiting List
