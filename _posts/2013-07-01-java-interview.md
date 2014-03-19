@@ -145,6 +145,10 @@ public class Workout {
 
 ## Android 面试题
 1. Android 中线程与线程，进程与进程之间如何通信?
+1. 解释 Binder 原理， 进程间通信
 1. activity，intent 和 service 是什么关系？
 1. handler 机制的原理是什么？
 1. 横竖屏切换时候 activity 的生命周期？
+1. 解释View 绘制过程
+1. 瀑布流如何回收资源
+2. 常用的Android 开源库有哪些， 如何选择？挑一个谈谈优缺点，如何改进？
