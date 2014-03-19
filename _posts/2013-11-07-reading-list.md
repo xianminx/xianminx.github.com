@@ -59,9 +59,21 @@ tags: [reading]
 
 
 ## 2014年2月在读
-1. [看见](http://book.douban.com/subject/20427187/) by 柴静
+1. ~~[看见](http://book.douban.com/subject/20427187/) by 柴静~~
 2. [猫力乱步](http://book.douban.com/subject/24883513/) by 猫力
+读完部分
 3. [你一定爱读的极简欧洲史](http://book.douban.com/subject/5366248/) by John Hirst
+
+
+## 2014年3月在读
+1. [猫力乱步](http://book.douban.com/subject/24883513/) by 猫力
+1. ~~[The Performance of Open Source Applications](http://aosabook.org/en/index.html) II [Secrets of Mobile Network Performance](http://aosabook.org/en/posa/secrets-of-mobile-network-performance.html)~~
+1. [你一定爱读的极简欧洲史](http://book.douban.com/subject/5366248/) by John Hirst
+1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
+1. [咖啡大全](http://book.douban.com/subject/1344584/) by 田口護
+1. [蒋公的面子](http://book.douban.com/subject/25713688/) by  温方伊
+1. [中午吃什麼? 一個經濟學家的無星級開胃指南](http://book.douban.com/subject/24845960/) by Tyler Cowen 
+
 
 ## Waiting List
 
@@ -73,7 +85,6 @@ tags: [reading]
 1. 游戏改变世界
 1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Le1. 
 1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
-1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
 1. [走出思维的误区:批判性思维指南(修订第9版)]
 1. [对"伪心理学"说不(第8版)(How to think straight about psychology)](http://book.douban.com/subject/6952036/) by Keith E. Stanovich 
 1. [找寻逝去的自我:大脑、心灵和往事的记忆]
