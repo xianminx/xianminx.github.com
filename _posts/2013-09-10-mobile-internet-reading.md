@@ -6,6 +6,28 @@ tags: [reading]
 ---
 
 这里列出一些移动互联网从业者应该关注的站点， 大部分为新闻和评论站点。 
+
+
+<div id="container" class="js-masonry"
+  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+	<div class="item"> 
+	  	<a href="http://www.36kr.com/">
+	  		<img src="http://a.36krcnd.com/photo/6fbcd8eda0c0d0ce194b208005376e92.png" />
+	  	</a>
+	</div>
+  </div>
+
+  <div id="container" class="js-masonry"
+  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+	<div class="item"> 
+	  	<a href="http://www.36kr.com/">
+	  		<img src="http://www.huxiu.com/static/img/top_logo.png" />
+	  	</a>
+	</div>
+  </div>
+
+
+
 * [36Kr](http://www.36kr.com/)
 
  <a href="http://www.36kr.com/"><img src="http://a.36krcnd.com/photo/6fbcd8eda0c0d0ce194b208005376e92.png"></a>
@@ -44,5 +66,6 @@ tags: [reading]
  
  
 * [kickstarter](http://www.kickstarter.com/) Kickstarter is the world's largest funding platform for creative projects.
+
 
 
