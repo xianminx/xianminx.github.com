@@ -7,13 +7,13 @@ tags: [reading]
 
 <img src="/graphics/12071617343144.jpg" align="center" width="100%"/>
 
-> 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。 
+> 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。
 
 ### 更新日志
 
-* 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。 
+* 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。
 * 2013/11/11 早， 新增 程序员必读书目, 添加 [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
-* 2013/11/26 15:00, 新增  程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.  [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA. 
+* 2013/11/26 15:00, 新增  程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.  [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA.
 * 2014/01/08 读完[美妙的新世界](http://book.douban.com/subject/4872919/)。
 * 2014/01/08 添加2014年1月阅读计划列表。
 * 2014/01/11 读完[第七天](http://book.douban.com/subject/24540864/)
@@ -34,27 +34,27 @@ tags: [reading]
 1. ~~[Java解惑:Traps, Pitfalls, and Corner Cases](http://book.douban.com/subject/5362860/) by (美)布洛克//加夫特~~
 1. ~~[编写高质量代码:改善Java程序的151个建议](http://book.douban.com/subject/7059903/)  by 秦小波~~
 1. ~~[乌合之众:大众心理学研究](http://book.douban.com/subject/1012611/) by (法)古斯塔夫.勒庞~~
-1. ~~[演讲之禅：一位技术演讲家的自白](http://book.douban.com/subject/4760725/) by Scott Berkun~~ 
+1. ~~[演讲之禅：一位技术演讲家的自白](http://book.douban.com/subject/4760725/) by Scott Berkun~~
 
 ## 11月在读
 
 1. ~~[美妙的新世界](http://book.douban.com/subject/4872919/) by 阿道斯·伦纳德·赫胥黎~~
-1. [Predictably Irrational, The Hidden Forces That Shape Our Decisions , Revised and Expanded Edition](http://book.douban.com/subject/3692095/) by Dan Ariely 
-1. [Design Patterns: Elements of Reusable Object-Oriented Software](http://book.douban.com/subject/1052241/) by Erich Gamma / Richard Helm / Ralph Johnson / John Vlissides 
+1. [Predictably Irrational, The Hidden Forces That Shape Our Decisions , Revised and Expanded Edition](http://book.douban.com/subject/3692095/) by Dan Ariely
+1. [Design Patterns: Elements of Reusable Object-Oriented Software](http://book.douban.com/subject/1052241/) by Erich Gamma / Richard Helm / Ralph Johnson / John Vlissides
 
 ## 2014年1月在读
 <img src="/graphics/IMG_20140110_004325.jpg" align="center" width="100%"/>
 
-1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔 
+1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
 1. ~~[第七天](http://book.douban.com/subject/24540864/) by 余华~~
-1. ~~[可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow~~ 
-1. [人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查 
-1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆 
-1. [数学与猜想(第1卷)](http://book.douban.com/subject/1134230/) by G. 波利亚 
+1. ~~[可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow~~
+1. [人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查
+1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆
+1. [数学与猜想(第1卷)](http://book.douban.com/subject/1134230/) by G. 波利亚
 1. [数学与猜想(第2卷)](http://book.douban.com/subject/1134231/) by G. 波利亚
 1. [怎样解题:数学思维的新方法](http://book.douban.com/subject/2124114/) by G. 波利亚
-1. ~~[你就是极客! - 软件开发人员生存指南](http://book.douban.com/subject/7055331/) by Michael Lopp~~ 
+1. ~~[你就是极客! - 软件开发人员生存指南](http://book.douban.com/subject/7055331/) by Michael Lopp~~
 1. [快速阅读](http://book.douban.com/subject/3916049/) by Tony Buzan
 
 
@@ -72,36 +72,45 @@ tags: [reading]
 1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
 1. [咖啡大全](http://book.douban.com/subject/1344584/) by 田口護
 1. [蒋公的面子](http://book.douban.com/subject/25713688/) by  温方伊
-1. [中午吃什麼? 一個經濟學家的無星級開胃指南](http://book.douban.com/subject/24845960/) by Tyler Cowen 
-1. [长尾理论2.0](http://book.douban.com/subject/3685204/) by 安德森 
+1. [中午吃什麼? 一個經濟學家的無星級開胃指南](http://book.douban.com/subject/24845960/) by Tyler Cowen
+1. [长尾理论2.0](http://book.douban.com/subject/3685204/) by 安德森
 1. ~~[快速阅读](http://book.douban.com/subject/3916049/) by Tony Buzan~~
+
+
+## 2014年4月在读
+1. ~~[大数据变革: 让客户数据驱动利润奔跑](http://book.douban.com/subject/25779414/) by 比约•布劳卿 / 拉斯•拉克 / 托马斯•拉姆什~~
+   > 一本大烂书，完全没有任何引起我兴趣的见解，连新知识点都没有。 建议一小时内看完， 看不完也不要看了。
+
+
+
+
 
 ## Waiting List
 
-1. [自控力](http://book.douban.com/subject/10786473/) by 凯利·麦格尼格尔 
-1. [怪诞心理学2](http://book.douban.com/subject/6712304/) by 理查德·怀斯曼 
-1. [Android 内核剖析](http://book.douban.com/subject/6811238/) by 柯元旦 
+1. [自控力](http://book.douban.com/subject/10786473/) by 凯利·麦格尼格尔
+1. [怪诞心理学2](http://book.douban.com/subject/6712304/) by 理查德·怀斯曼
+1. [Android 内核剖析](http://book.douban.com/subject/6811238/) by 柯元旦
 1. 走出思维的误区
 1. 认知盈余
 1. 游戏改变世界
-1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Le1. 
-1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等] 
+1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Le1.
+1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等]
 1. [走出思维的误区:批判性思维指南(修订第9版)]
-1. [对"伪心理学"说不(第8版)(How to think straight about psychology)](http://book.douban.com/subject/6952036/) by Keith E. Stanovich 
+1. [对"伪心理学"说不(第8版)(How to think straight about psychology)](http://book.douban.com/subject/6952036/) by Keith E. Stanovich
 1. [找寻逝去的自我:大脑、心灵和往事的记忆]
 1. [HIERARCHICAL TEMPORAL MEMORY including HTM Cortical Learning Algorithms](http://www.numenta.com/htm-overview/education/HTM_CorticalLearningAlgorithms.pdf)
-1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins). 
-1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特 
-1. [编程珠玑](http://book.douban.com/subject/3227098/) by Jon Bentley 
+1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins).
+1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特
+1. [编程珠玑](http://book.douban.com/subject/3227098/) by Jon Bentley
 
 ### Programmer's must read
-1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民 
-1. [Computer Systems:A Programmer's Perspective](http://book.douban.com/subject/1229948/) by Randal E. Bryant / David R. O'Hallaron 
+1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民
+1. [Computer Systems:A Programmer's Perspective](http://book.douban.com/subject/1229948/) by Randal E. Bryant / David R. O'Hallaron
 1. [New][Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
-1. [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond. 
+1. [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.
 1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I
 1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part II
-1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA. 
+1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA.
 
 
 
@@ -112,6 +121,3 @@ tags: [reading]
 1. [NewCirle](https://thenewcircle.com/s/tags/android)'s Android Training
 1. [Android Architecture](http://elinux.org/Android_Architecture)
 1. [Deep Dive into Android IPC/Binder Framework](http://www.youtube.com/watch?v=Jgampt1DOak)
-
-
-
