@@ -55,7 +55,7 @@ tags: [reading]
 1. [数学与猜想(第2卷)](http://book.douban.com/subject/1134231/) by G. 波利亚
 1. [怎样解题:数学思维的新方法](http://book.douban.com/subject/2124114/) by G. 波利亚
 1. ~~[你就是极客! - 软件开发人员生存指南](http://book.douban.com/subject/7055331/) by Michael Lopp~~
-1. [快速阅读](http://book.douban.com/subject/3916049/) by Tony Buzan
+1. ~~[快速阅读](http://book.douban.com/subject/3916049/) by Tony Buzan~~
 
 
 ## 2014年2月在读
