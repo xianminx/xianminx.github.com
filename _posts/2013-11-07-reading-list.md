@@ -80,7 +80,8 @@ tags: [reading]
 ## 2014年4月在读
 1. ~~[大数据变革: 让客户数据驱动利润奔跑](http://book.douban.com/subject/25779414/) by 比约•布劳卿 / 拉斯•拉克 / 托马斯•拉姆什~~
    > 一本大烂书，完全没有任何引起我兴趣的见解，连新知识点都没有。 建议一小时内看完， 看不完也不要看了。
-
+1. ~~[至关重要的关系(THE START-UP OF YOU)](http://book.douban.com/subject/24530336/) by Reid Hoffman / Ben Casnocha~~
+   > 又是一本大烂书，适合在机场等飞机半小时看完的那种。 还不如心灵鸡汤类的成功学， 至少会有一些鸡血故事刺激一下。 自从学了["快速阅读"](http://book.douban.com/subject/3916049/) 的方法后， 看这种书真是可以一目十行。这本书是个奇葩， 看完目录，基本就相当于看完了， 剩下的内容， 找些段子，故事，填充下逻辑就好了。 不知道为什么这本书在豆瓣上评分8.3那么高。 这种商人写书， 真是渣渣。 
 
 
 
@@ -106,7 +107,7 @@ tags: [reading]
 ### Programmer's must read
 1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民
 1. [Computer Systems:A Programmer's Perspective](http://book.douban.com/subject/1229948/) by Randal E. Bryant / David R. O'Hallaron
-1. [New][Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
+1. <img src="http://download.easyicon.net/png/548440/48/" />[Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
 1. [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.
 1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I
 1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part II
