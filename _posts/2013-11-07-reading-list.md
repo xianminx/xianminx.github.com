@@ -91,8 +91,11 @@ tags: [reading]
    > 小资情调， 认真生活。 文字读起来很舒适。 4星
 1. [失控](http://book.douban.com/subject/5375620/) by 凯文·凯利
 1. [冰与火之歌（卷一）](http://book.douban.com/subject/1336330/) by [美] 乔治·R. R. 马丁
-1. 
 
+
+## 2014年6月在读
+1. ~~[车库咖啡](http://book.douban.com/subject/25776420/) by 苏菂（口述） / 王海珍（撰稿）~~
+1. ~~[互联网思维独孤九剑](http://book.douban.com/subject/25843241/) by 赵大伟~~
 
 
 ## Waiting List
