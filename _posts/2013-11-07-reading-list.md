@@ -96,7 +96,18 @@ tags: [reading]
 ## 2014年6月在读
 1. ~~[车库咖啡](http://book.douban.com/subject/25776420/) by 苏菂（口述） / 王海珍（撰稿）~~
 1. ~~[互联网思维独孤九剑](http://book.douban.com/subject/25843241/) by 赵大伟~~
+1. [三体](http://book.douban.com/subject/2567698/) by 刘慈欣
+1. ~~罗辑思维 (Youku 视频节目)~~
+1. [信息简史](http://book.douban.com/subject/25752043/) by 詹姆斯·格雷克
+1. [The Singularity Is Near](http://book.douban.com/subject/2872645/) by Ray Kurzweil
+1. ~~[互联网思维独孤九剑](http://book.douban.com/subject/25843241/) by 赵大伟 ~~
+1. ~~[互联网新思维：未来十年的企业变形计](http://book.douban.com/subject/25882306/) by David Kerpen ~~
 
+## 2014年7月在读
+1. [信息简史](http://book.douban.com/subject/25752043/) by 詹姆斯·格雷克
+1. [数据之巅:大数据革命,历史、现实与未来](http://book.douban.com/subject/25871778/) by 涂子沛
+1. [大数据 : 正在到来的数据革命，以及它如何改变政府、商业与我们的生活](http://book.douban.com/subject/10799984/) by 涂子沛
+1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
 
 ## Waiting List
 
