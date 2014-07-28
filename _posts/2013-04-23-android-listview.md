@@ -5,16 +5,16 @@ tags: [android]
 ---
 
 # Introduction
-ListView is one of the most fundamental and important Android UI components. Due to the long rectangle shape of mobile device, ListView is widely used as the first level navigation to the more detailed content. Popular using scenarios include, but not limited to, news reader, reading list, e-commere product list, things to do list, ranking list, etc. If your applicaiton intends to providing updatable contents to users, you cannot avoid using this super powerful widgets. 
+ListView is one of the most fundamental and important Android UI components. Due to the long rectangle shape of mobile device, ListView is widely used as the first level navigation to the more detailed content. Popular using scenarios include, but not limited to, news reader, reading list, e-commere product list, things to do list, ranking list, etc. If your applicaiton intends to providing updatable contents to users, you cannot avoid using this super powerful widgets.
 
-ListView can be very simple and also extremely complex. There are many traps and tricks for novice developers. In this article, the author will summerize some typical traps developers may occur during their use of ListView and try to provide solutions or suggestions. In more general, the author will summerize typical advanced usages of ListView, such as pull to refresh ListView, HTTP cache, data binding, loader, etc. 
-   
+ListView can be very simple and also extremely complex. There are many traps and tricks for novice developers. In this article, the author will summerize some typical traps developers may occur during their use of ListView and try to provide solutions or suggestions. In more general, the author will summerize typical advanced usages of ListView, such as pull to refresh ListView, HTTP cache, data binding, loader, etc.
+
 ## Simple Example
 Android [ApiDemos](http://developer.android.com/tools/samples/index.html) Sample provide a bundle of examples for using ListView (under android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/view).
 
-The following is a simple example. 
+The following is a simple example.
 
-* /Users/lucas/dev/eclipse-juno-workspace/AdvancedListView/src/com/example/android/apis/view/advancedlistview/SimpleListViewActivity.java 
+* /Users/lucas/dev/eclipse-juno-workspace/AdvancedListView/src/com/example/android/apis/view/advancedlistview/SimpleListViewActivity.java
 
 ```java
 package com.example.android.apis.view.advancedlistview;
@@ -65,35 +65,35 @@ public class SimpleListViewActivity extends Activity {
 ```
 
 
-This is a very simple example of ListView. 
+This is a very simple example of ListView.
 
 <img src="/graphics/device-2013-04-24-184626.png" width="300">
 
 
 
 
- 
+
 
 ## Adapter Architecture
-From the above simple example, we find 3 components for the ListView: the standard MVC pattern. Model, View, and Controller. 
+From the above simple example, we find 3 components for the ListView: the standard MVC pattern. Model, View, and Controller.
 
 
 ### View
-ListView is embeded in Activity in layout XML. 
+ListView is embeded in Activity in layout XML.
 
 ### Data
 To provide data for each item in the ListView, we need a Adapter. Here we use ListAdapter, constructed from a static `String` array.
 
 
 ### Controller
-If you want users to interact with your app, you can add `Listeners` for user actions, for example, click event, touch event. 
+If you want users to interact with your app, you can add `Listeners` for user actions, for example, click event, touch event.
 This can be done by setting `setOnItemClickListener`.
 
 
 ## Framework API
 
 ### Official Tutorials
-* Official introductory tutorial can be found at this [link](http://developer.android.com/guide/topics/ui/layout/listview.html). 
+* Official introductory tutorial can be found at this [link](http://developer.android.com/guide/topics/ui/layout/listview.html).
 *  [Building Layouts with an Adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews)
 
 ### Non-Official Tutorials
@@ -165,6 +165,9 @@ ConvertView
 
 
 
+1. [Performance Tips for Android’s ListView](http://lucasr.org/2012/04/05/performance-tips-for-androids-listview/)
+1. [Google I/O 2010 - The world of ListView]<iframe width="560" height="315" src="//www.youtube.com/embed/wDBM6wVEO70" frameborder="0" allowfullscreen></iframe>
+
 
 
 
@@ -173,6 +176,3 @@ ConvertView
 
 <iframe style="width:700px;height:800px;border: 1px
 solid black" src="http://app.wisemapping.com/c/maps/116744/embed?zoom=1"> </iframe>
-
-
-

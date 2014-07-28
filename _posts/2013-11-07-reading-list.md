@@ -108,6 +108,8 @@ tags: [reading]
 1. [数据之巅:大数据革命,历史、现实与未来](http://book.douban.com/subject/25871778/) by 涂子沛
 1. [大数据 : 正在到来的数据革命，以及它如何改变政府、商业与我们的生活](http://book.douban.com/subject/10799984/) by 涂子沛
 1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
+1. ~~[短暂飞行](http://book.douban.com/subject/25900807/) by 张向东 ~~
+
 
 ## Waiting List
 
@@ -145,3 +147,37 @@ tags: [reading]
 1. [NewCirle](https://thenewcircle.com/s/tags/android)'s Android Training
 1. [Android Architecture](http://elinux.org/Android_Architecture)
 1. [Deep Dive into Android IPC/Binder Framework](http://www.youtube.com/watch?v=Jgampt1DOak)
+
+
+### 散文
+1. 丰子恺
+1. 木心 《圆光》
+1. 弘一法师 (李叔同)
+1. 汪增祺
+1. 陈之藩《剑河倒影》
+1. 简媜，杨绛，汪曾祺，张炜，北岛，野夫，张晓风，周作人，史铁生，朱自清
+1. 陈丹青的《荒废集》《退步集》
+1. 胡兰成的《今生今世》
+1. 章诒和的《伶人往事》
+1. 林清玄《心的菩提》
+1. 迟子建散文
+1. 梁遇春《春醪集》
+1. 木心先生《哥伦比亚的倒影》
+1. 龙应台《目送》刘瑜《送你一颗子弹》
+1. 陈丹青《多余的素材》
+1. 野夫的《乡关何处》
+1. 阿城--汪曾祺--沈从文--周作人--张岱
+1. 周作人的散文合集，《时光阡陌，你一直未曾走远》
+1. 郁达夫《故都的秋》
+1. 沈从文的《湘行散记》
+1. 林清玄《煮雪》
+
+
+#### 英文散文
+1. 陆谷孙《20篇：英美现当代散文》
+1. 《The Art of Travel》
+1. 《Beg, Borrow, Steal——A Writer’s Life》
+1. 黄源深编：《英语散文选读》，上海外语教育出版社，2007.
+1. 南建翀编：《经典英语美文》，世界图书出版社，2008.
+1. 杨自伍编：《英国散文名篇欣赏》，上海外语教育出版社，2010.
+1. 推荐看一下网易公开课上苏州大学王腊宝教授的公开课视频：“[英语经典美文：从培根到伍尔芙](http://v.163.com/special/cuvocw/yingyujingdianmeiwen.html)”
