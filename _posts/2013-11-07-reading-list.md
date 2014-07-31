@@ -108,7 +108,7 @@ tags: [reading]
 1. ~~[数据之巅:大数据革命,历史、现实与未来](http://book.douban.com/subject/25871778/) by 涂子沛~~
 1. [大数据 : 正在到来的数据革命，以及它如何改变政府、商业与我们的生活](http://book.douban.com/subject/10799984/) by 涂子沛
 1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
-1. ~~[短暂飞行](http://book.douban.com/subject/25900807/) by 张向东 ~~
+1. ~~[短暂飞行](http://book.douban.com/subject/25900807/) by 张向东~~
 
 
 ## Waiting List
