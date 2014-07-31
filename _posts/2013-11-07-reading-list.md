@@ -89,6 +89,7 @@ tags: [reading]
 1. ~~[十六周的人生蜕变: 找到意想不到的自己](https://read.douban.com/ebook/1726300/) by 胡蓉蓉 Vvivi Hu~~
 
    > 小资情调， 认真生活。 文字读起来很舒适。 4星
+
 1. [失控](http://book.douban.com/subject/5375620/) by 凯文·凯利
 1. [冰与火之歌（卷一）](http://book.douban.com/subject/1336330/) by [美] 乔治·R. R. 马丁
 
