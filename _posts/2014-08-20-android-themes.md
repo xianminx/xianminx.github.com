@@ -6,9 +6,13 @@ tags: [Android, theme, style, support-v4, actionbar]
 ---
 
 
-## support-v4 增加一些工具类， 可以使用Fragment, NotificationCompat, ViewPager等。 作为一个jar包提供， 更多是一个工具类， 通过jar包方式提供高版本系统的一些API。
+## support-v4 
 
-## support-v7 分三个组成部分:
+增加一些工具类， 可以使用Fragment, NotificationCompat, ViewPager等。 作为一个jar包提供， 更多是一个工具类， 通过jar包方式提供高版本系统的一些API。
+
+## support-v7 
+
+分三个组成部分:
 
 * appcompat library 
 * gridlayout library
