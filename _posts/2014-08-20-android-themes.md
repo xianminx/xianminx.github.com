@@ -6,6 +6,21 @@ tags: [Android, theme, style, support-v4, actionbar]
 ---
 
 
+## support-v4 增加一些工具类， 可以使用Fragment, NotificationCompat, ViewPager等。 作为一个jar包提供， 更多是一个工具类， 通过jar包方式提供高版本系统的一些API。
+
+## support-v7 分三个组成部分:
+
+* appcompat library 
+* gridlayout library
+* mediarouter library
+
+ 
+其中最重要的就是appcompat, 为API 7-10 系统提供在11上新加的ActionBar的设计模式。 所以如果你的应用只支持API 11+， 就可以不需要这个library。 
+
+appcompat 的核心支持是ActionBar。所以如果你决定你的应用要对API 7-10 支持ActionBar, 需要将Activity 继承 support/v7/app/ActionBarActivity， 并且将activity 的theme 设为Theme.AppCompat。 
+
+<iframe src="https://docs.google.com/file/d/0B0Ljn_Q37N4bY25HcU1rNklUR3M/preview" width="640" height="480"></iframe>
+
 
 
 	这些theme都定义在appcompat-v7包中	
