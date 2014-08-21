@@ -19,18 +19,18 @@ tags: [Android, theme, style, support-v4, actionbar]
 
 appcompat 的核心支持是ActionBar。所以如果你决定你的应用要对API 7-10 支持ActionBar, 需要将Activity 继承 support/v7/app/ActionBarActivity， 并且将activity 的theme 设为Theme.AppCompat。 
 
-<iframe src="https://docs.google.com/file/d/0B0Ljn_Q37N4bY25HcU1rNklUR3M/preview" width="640" height="480"></iframe>
+<iframe src="https://docs.google.com/file/d/0B0Ljn_Q37N4bY25HcU1rNklUR3M/embed" width="640" height="480"  frameborder="0"></iframe>
 
 
 
-	这些theme都定义在appcompat-v7包中	
-		
-		
-	v0 表示定义在values/values.xml 中	
-	v11 表示定义在values-11/values.xml 中	
-	v14 表示定义在values-14/values.xml 中	
-	app 表示应用定义的style	
-		
-	在v11 之后默认holo 风格	
-		
-	还有对应的Light 风格， 在每个Theme 的后面加上.Light	
+这些theme都定义在appcompat-v7包中	
+	
+	
+v0 表示定义在values/values.xml 中	
+v11 表示定义在values-11/values.xml 中	
+v14 表示定义在values-14/values.xml 中	
+app 表示应用定义的style	
+	
+在v11 之后默认holo 风格	
+	
+还有对应的Light 风格， 在每个Theme 的后面加上.Light	
