@@ -19,8 +19,7 @@ tags: [Android, theme, style, support-v4, actionbar]
 
 appcompat 的核心支持是ActionBar。所以如果你决定你的应用要对API 7-10 支持ActionBar, 需要将Activity 继承 support/v7/app/ActionBarActivity， 并且将activity 的theme 设为Theme.AppCompat。 
 
-<iframe src="https://docs.google.com/file/d/0B0Ljn_Q37N4bY25HcU1rNklUR3M/&embedded=true" width="640" height="480"  frameborder="0"></iframe>
-
+<iframe src="https://docs.google.com/viewer?srcid=0B0Ljn_Q37N4bY25HcU1rNklUR3M&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="640" height="480" frameborder="0"></iframe>
 
 这些theme都定义在appcompat-v7包中	
 	
