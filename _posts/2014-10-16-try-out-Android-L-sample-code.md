@@ -7,8 +7,9 @@ tags: [android]
 
 ### 1. 导入
 
-![image1](/graphics/cfb60561b8713704834aa59fc854921c.jpeg)
-![image2](/graphics/e86e59b11c4a955c363252918d9eda24.jpeg)
+![image1](/graphics/e86e59b11c4a955c363252918d9eda24.jpeg)
+
+![image2](/graphics/cfb60561b8713704834aa59fc854921c.jpeg)
 
 
 
@@ -19,7 +20,7 @@ tags: [android]
 
 此文件为空， 添加内容
 
-```gradle
+```groovy
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
@@ -49,7 +50,7 @@ samples/android-L/ui/views/FloatingActionButton/FloatingActionButtonBasic/Floati
 
 原始内容
 
-```gradle
+```groovy
 
 
 buildscript {
@@ -103,7 +104,7 @@ android {
 
 更新为:
 
-```gradle
+```groovy
 apply plugin: 'com.android.application'
 
 
@@ -134,11 +135,11 @@ android {
 https://code.google.com/p/android/issues/detail?id=60913
 
 解决方案： 手动杀掉gradle daemon 进程
+
 ```sh
 ➜  ClippingBasic  ps aux|grep gradle
 lucas           14659   0.0  0.0  2432784    612 s006  S+    4:13PM   0:00.00 grep gradle
 lucas           14529   0.0  4.3  3966132 359556   ??  S     4:07PM   0:22.98 /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/bin/java -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dfile.encoding=UTF-8 -cp /Users/lucas/.gradle/wrapper/dists/gradle-1.12-bin/64p5p2nte80b6rt6bb068pabi6/gradle-1.12/lib/gradle-launcher-1.12.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 1.12 /Users/lucas/.gradle/daemon 10800000 04d22f9b-874b-469b-8011-f7f2819ec409 -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dfile.encoding=UTF-8
 ➜  ClippingBasic  kill 14529
 ➜  ClippingBasic  
-
 ```
