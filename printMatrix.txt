@@ -1,0 +1,53 @@
+
+    private static void printMatrix(int n) {
+        int[][] matrix = computeMatrix(n);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                sb.append(String.format("%2d ", matrix[i][j]));
+            }
+            sb.append("\n");
+        }
+
+        Log.d("printMatrix", sb.toString());
+
+    }
+
+    private static int[][] computeMatrix(int n) {
+        int[][] matrix = new int[n][n];
+        int row = 0, column = 0;
+        final int RIGHT = 1;
+        final int DOWN = 2;
+        final int LEFT = 3;
+        final int UP = 4;
+        int direction = RIGHT;
+        for (int i = 0; i < n * n; i++) {
+            // turn at the point on the diagonal line.
+            if (row == column + 1 && row * 2 < n) {
+                direction = RIGHT;
+            } else if (row == column && row * 2 >= n) {
+                direction = LEFT;
+            } else if ((row + column == n - 1) && row * 2 < n) {
+                direction = DOWN;
+            } else if ((row + column == n - 1) && row * 2 >= n) {
+                direction = UP;
+            }
+            matrix[row][column] = i + 1;
+            switch (direction) {
+                case RIGHT:
+                    column++;
+                    break;
+                case LEFT:
+                    column--;
+                    break;
+                case UP:
+                    row--;
+                    break;
+                case DOWN:
+                    row++;
+                    break;
+            }
+
+        }
+        return matrix;
+    }

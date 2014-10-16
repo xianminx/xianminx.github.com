@@ -151,8 +151,43 @@ ConvertView
 
 
 
+# 问题
+1. Occasionally, you get the `IllegalStateException` error, stating
+> "The content of the adapter has changed but "
+				+ "ListView did not receive a notification. Make sure the content of "
+				+ "your adapter is not modified from a background thread, but only from "
+				+ "the UI thread. Make sure your adapter calls notifyDataSetChanged() "
+				+ "when its content changes. "
 
 
+By checking the source code, we find that when the ListView's 'mItemCount' is different from the bound adapter's count, framework will throw the exception.
+
+Here 'mItemCount' is written when the adapter is first time set or when 'onMeasure' is called (refresh).
+
+
+
+<img src="graphics/listview_itemcount_write.png".
+
+
+```java
+
+            // Handle the empty set by removing all views that are visible
+            // and calling it a day
+            if (mItemCount == 0) {
+                resetList();
+                invokeOnItemScrollListener();
+                return;
+            } else if (mItemCount != mAdapter.getCount()) {
+                throw new IllegalStateException("The content of the adapter has changed but "
+                        + "ListView did not receive a notification. Make sure the content of "
+                        + "your adapter is not modified from a background thread, but only from "
+                        + "the UI thread. Make sure your adapter calls notifyDataSetChanged() "
+                        + "when its content changes. [in ListView(" + getId() + ", " + getClass()
+                        + ") with Adapter(" + mAdapter.getClass() + ")]");
+            }
+
+
+```
 
 
 
