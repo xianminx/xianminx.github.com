@@ -130,7 +130,7 @@ android {
 
 ### 错误
 
-如果出现错误”Unable to locate a Java Runtime to invoke.”
+#### 错误`Unable to locate a Java Runtime to invoke.`
 可能是gradlew daemon 进程死掉了。
 https://code.google.com/p/android/issues/detail?id=60913
 
@@ -143,3 +143,27 @@ lucas           14529   0.0  4.3  3966132 359556   ??  S     4:07PM   0:22.98 /L
 ➜  ClippingBasic  kill 14529
 ➜  ClippingBasic  
 ```
+
+#### `Could not create plugin of type 'AppPlugin'.`
+Gradle 版本和gradle android plugin 版本不对
+修改gradle 版本
+
+```sh
+./gradlew --version
+
+ vim ./gradle/wrapper/gradle-wrapper.properties
+```
+
+```sh
+#Wed Apr 10 15:27:10 PDT 2013
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=http\://services.gradle.org/distributions/gradle-1.12-all.zip
+```
+修改 `distributionUrl` 的值 `gradle-1.*-all.zip`.
+
+关于Gradle 版本和gradle android plugin 版本的对应关系，见 gradle plugin version compatibility 页面映射表:
+http://tools.android.com/tech-docs/new-build-system/version-compatibility
+<img src="http://i.stack.imgur.com/PnMzD.jpg">
