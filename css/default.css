@@ -128,7 +128,7 @@ img {
     width: 25%;
 }
 
-#header ul {
+/*#header ul {
     margin-top: 0px;
     padding: 5px 0px 5px 0px;
     border-top: 2px solid #ddd;
@@ -160,7 +160,7 @@ img {
     color: #000;
     text-decoration: none;
 }
-
+*/
 /* col1: main column */
 #col1 {
     float: left;
@@ -318,4 +318,3 @@ h6.vlist {
     color: #000;
     text-decoration: none;
 }
-

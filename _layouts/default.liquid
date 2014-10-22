@@ -7,8 +7,6 @@ topnav:
     href: /
   - text: Archives
     href: /archives/
-  - text: Tags
-    href: /tags/
   - text: Other
     href: /other/
 ---
@@ -29,6 +27,9 @@ topnav:
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="//masonry.desandro.com/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+<link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/material-wfont.min.css" rel="stylesheet">
+<link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
 
 
 <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
@@ -83,20 +84,33 @@ jQuery(document).ready(function() {
 <body>
 <div class="page_margins">
   <div id="header">
-    <h2><a href="http://xianminx.github.com">lucas</a></h2>
+    <!-- <h2><a href="http://xianminx.github.com">lucas</a></h2> -->
     <div class="clear"></div>
 
     <!-- begin: main navigation #nav -->
-    <div id="nav">
-      <div class="hlist">
-        <ul>
-          {% for t in page.topnav %}
-          <li{% if t.text == navTitle %} class="active"{% endif %}>
-          <a href="{{ t.href }}"{% if t.title %} title="{{ t.title }}"{% endif %}>{{ t.text }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+    <!-- <div id="nav"> -->
+      <div class="bs-component">
+        <div class="navbar navbar-default">
+           <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://xianminx.github.com">Lucas</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                  {% for t in page.topnav %}
+                  <li{% if t.text == navTitle %} class="active"{% endif %}>
+                  <a href="{{ t.href }}"{% if t.title %} title="{{ t.title }}"{% endif %}>{{ t.text }}
+                    <div class="ripple-wrapper"></div>
+                  </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- end: main navigation -->
   </div>
@@ -147,7 +161,7 @@ jQuery(document).ready(function() {
   <!-- end: #main -->
 
   <!-- begin: #footer -->
-  <div id="footer">
+  <!-- <div id="footer">
     <div class="hlist">
       <ul>
         {% for t in page.topnav %}
@@ -162,10 +176,31 @@ jQuery(document).ready(function() {
         <li>&ndash; updated {{ site.time | date:"%Y-%m-%d" }}</li>
       </ul>
     </div>
-  </div>
+  </div> -->
   <!-- end: #footer -->
 
 </div>
 
+
+     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js"></script>
+        <script src="//fezvrasta.github.io/bootstrap-material-design/dist/js/material.min.js"></script>
+        <script src="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+        <script>
+            $(function() {
+                $(".slider").noUiSlider({
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+            });
+        </script>
 </body>
 </html>
