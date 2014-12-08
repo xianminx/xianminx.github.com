@@ -111,7 +111,8 @@ tags: [reading]
 1. ~~[短暂飞行](http://book.douban.com/subject/25900807/) by 张向东~~
 
 ## 2014年8月在读
-没有读书
+1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等]
+
 ## 2014年9月在读
 没有读书
 ## 2014年10月在读
@@ -140,7 +141,6 @@ tags: [reading]
 1. 认知盈余
 1. 游戏改变世界
 1. [Java并发编程实战](http://book.douban.com/subject/10484692/) by  Brian Goetz / Tim Peierls / Joshua Bloch / Joseph Bowbeer / David Holmes / Doug Le1.
-1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等]
 1. [走出思维的误区:批判性思维指南(修订第9版)]
 1. [对"伪心理学"说不(第8版)(How to think straight about psychology)](http://book.douban.com/subject/6952036/) by Keith E. Stanovich
 1. [找寻逝去的自我:大脑、心灵和往事的记忆]
