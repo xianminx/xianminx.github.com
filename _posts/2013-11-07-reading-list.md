@@ -49,8 +49,8 @@ tags: [reading]
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
 1. ~~[第七天](http://book.douban.com/subject/24540864/) by 余华~~
 1. ~~[可能与不可能的边界](http://book.douban.com/subject/25779326/) by Lance Fortnow~~
-1. [人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查
-1. [本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆
+1. ~~[人生中最美妙的事都是免费的](http://book.douban.com/subject/10563327/) by 尼尔•帕斯理查~~
+1. ~~[本能: 为什么我们管不住自己? Mean Genes](http://book.douban.com/subject/4010184/) by 特里·伯纳姆~~
 1. [数学与猜想(第1卷)](http://book.douban.com/subject/1134230/) by G. 波利亚
 1. [数学与猜想(第2卷)](http://book.douban.com/subject/1134231/) by G. 波利亚
 1. [怎样解题:数学思维的新方法](http://book.douban.com/subject/2124114/) by G. 波利亚
@@ -60,13 +60,13 @@ tags: [reading]
 
 ## 2014年2月在读
 1. ~~[看见](http://book.douban.com/subject/20427187/) by 柴静~~
-2. [猫力乱步](http://book.douban.com/subject/24883513/) by 猫力
+2. ~~[猫力乱步](http://book.douban.com/subject/24883513/) by 猫力~~
 读完部分
 3. [你一定爱读的极简欧洲史](http://book.douban.com/subject/5366248/) by John Hirst
 
 
 ## 2014年3月在读
-1. [猫力乱步](http://book.douban.com/subject/24883513/) by 猫力
+1. ~~[猫力乱步](http://book.douban.com/subject/24883513/) by 猫力~~
 1. ~~[The Performance of Open Source Applications](http://aosabook.org/en/index.html) II [Secrets of Mobile Network Performance](http://aosabook.org/en/posa/secrets-of-mobile-network-performance.html)~~
 1. [你一定爱读的极简欧洲史](http://book.douban.com/subject/5366248/) by John Hirst
 1. [Android软件安全与逆向分析](http://book.douban.com/subject/20556210/) by 丰生强
@@ -92,7 +92,6 @@ tags: [reading]
 
 1. [失控](http://book.douban.com/subject/5375620/) by 凯文·凯利
 1. [冰与火之歌（卷一）](http://book.douban.com/subject/1336330/) by [美] 乔治·R. R. 马丁
-
 
 ## 2014年6月在读
 1. ~~[车库咖啡](http://book.douban.com/subject/25776420/) by 苏菂（口述） / 王海珍（撰稿）~~
@@ -121,14 +120,16 @@ tags: [reading]
 没有读书
 
 ## 2014年12月在读
-1. [失控]
-1. 奇点
-2. 中国历史
+1. [失控](http://book.douban.com/subject/5375620/) by 凯文·凯利
 1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
 1. [西藏生死书](http://book.douban.com/subject/5990251/) by 索甲仁波切
 1. [讲谈社•中国的历史(套装共10册)](http://book.douban.com/subject/25844017/) by (日) 宫本一夫 等
 1. [每天懂一点色彩心理学•实用篇(附色彩杂学练习册)](http://book.douban.com/subject/24371378/) by (日) 原田玲仁
-1. 配色设计原理（http://book.douban.com/subject/4165856/) by 奥博斯科编辑部
+1. [配色设计原理](http://book.douban.com/subject/4165856/) by 奥博斯科编辑部
+1. [宝瓶同谋:大数据时代的思想聚变](http://book.douban.com/subject/25848220/) by [美] 玛丽琳. 弗格森
+1. [定价未来:撼动华尔街的量化金融史](http://book.douban.com/subject/25934012/)[美]乔治G.斯皮罗（George G. Szpiro）
+1. [僧侣与哲学家](http://book.douban.com/subject/25978763/) by 珍·法蘭可斯雷蒙 / 馬錫·理察
+
 
 ## Waiting List
 
@@ -147,8 +148,8 @@ tags: [reading]
 1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins).
 1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特
 1. [编程珠玑](http://book.douban.com/subject/3227098/) by Jon Bentley
-2. [文明之光](http://book.douban.com/subject/25902942/) （一、二）by 吴军
-1. 
+1. [文明之光](http://book.douban.com/subject/25902942/) （一、二）by 吴军
+
 
 ### Programmer's must read
 1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民
