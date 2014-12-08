@@ -100,8 +100,8 @@ tags: [reading]
 1. ~~罗辑思维 (Youku 视频节目)~~
 1. [信息简史](http://book.douban.com/subject/25752043/) by 詹姆斯·格雷克
 1. [The Singularity Is Near](http://book.douban.com/subject/2872645/) by Ray Kurzweil
-1. ~~[互联网思维独孤九剑](http://book.douban.com/subject/25843241/) by 赵大伟 ~~
-1. ~~[互联网新思维：未来十年的企业变形计](http://book.douban.com/subject/25882306/) by David Kerpen ~~
+1. ~~[互联网思维独孤九剑](http://book.douban.com/subject/25843241/) by 赵大伟~~
+1. ~~[互联网新思维：未来十年的企业变形计](http://book.douban.com/subject/25882306/) by David Kerpen~~
 
 ## 2014年7月在读
 1. [信息简史](http://book.douban.com/subject/25752043/) by 詹姆斯·格雷克
@@ -111,7 +111,7 @@ tags: [reading]
 1. ~~[短暂飞行](http://book.douban.com/subject/25900807/) by 张向东~~
 
 ## 2014年8月在读
-1. [国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等]
+1. ~~[国际平面设计基础教程](http://book.douban.com/subject/1917477/) by 加文·安布罗斯 [等]~~
 
 ## 2014年9月在读
 没有读书
