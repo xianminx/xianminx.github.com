@@ -111,6 +111,24 @@ tags: [reading]
 1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
 1. ~~[短暂飞行](http://book.douban.com/subject/25900807/) by 张向东~~
 
+## 2014年8月在读
+没有读书
+## 2014年9月在读
+没有读书
+## 2014年10月在读
+没有读书
+## 2014年11月在读
+没有读书
+
+## 2014年12月在读
+1. [失控]
+1. 奇点
+2. 中国历史
+1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
+1. [西藏生死书](http://book.douban.com/subject/5990251/) by 索甲仁波切
+1. [讲谈社•中国的历史(套装共10册)](http://book.douban.com/subject/25844017/) by (日) 宫本一夫 等
+1. [每天懂一点色彩心理学•实用篇(附色彩杂学练习册)](http://book.douban.com/subject/24371378/) by (日) 原田玲仁
+1. 配色设计原理（http://book.douban.com/subject/4165856/) by 奥博斯科编辑部
 
 ## Waiting List
 
@@ -129,6 +147,8 @@ tags: [reading]
 1. [On Intelligence](http://www.amazon.com/On-Intelligence-Jeff-Hawkins/dp/B000GQLCVE) by [Jeff Hawkins](http://en.wikipedia.org/wiki/Jeff_Hawkins).
 1. [竞争战略](http://book.douban.com/subject/1435909/) by 迈克尔·波特
 1. [编程珠玑](http://book.douban.com/subject/3227098/) by Jon Bentley
+2. [文明之光](http://book.douban.com/subject/25902942/) （一、二）by 吴军
+1. 
 
 ### Programmer's must read
 1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民
