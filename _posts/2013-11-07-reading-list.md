@@ -125,8 +125,8 @@ tags: [reading]
 1. [奇点临近](http://book.douban.com/subject/6855803/) by Ray Kurzweil
 1. [西藏生死书](http://book.douban.com/subject/5990251/) by 索甲仁波切
 1. [讲谈社•中国的历史(套装共10册)](http://book.douban.com/subject/25844017/) by (日) 宫本一夫 等
-1. [每天懂一点色彩心理学•实用篇(附色彩杂学练习册)](http://book.douban.com/subject/24371378/) by (日) 原田玲仁
-1. [配色设计原理](http://book.douban.com/subject/4165856/) by 奥博斯科编辑部
+1. ~~[每天懂一点色彩心理学•实用篇(附色彩杂学练习册)](http://book.douban.com/subject/24371378/) by (日) 原田玲仁~~
+1. ~~[配色设计原理](http://book.douban.com/subject/4165856/) by 奥博斯科编辑部~~
 1. [宝瓶同谋:大数据时代的思想聚变](http://book.douban.com/subject/25848220/) by [美] 玛丽琳. 弗格森
 1. [定价未来:撼动华尔街的量化金融史](http://book.douban.com/subject/25934012/)[美]乔治G.斯皮罗（George G. Szpiro）
 1. [僧侣与哲学家](http://book.douban.com/subject/25978763/) by 珍·法蘭可斯雷蒙 / 馬錫·理察
