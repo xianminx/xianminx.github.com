@@ -10,7 +10,7 @@ Previous reading for Year 2013 & 2014: http://xianminx.github.io/2013/11/07/read
 ## 2015年1月在读
 1. [讲谈社•中国的历史(套装共10册)](http://book.douban.com/subject/25844017/) by (日) 宫本一夫 等
 1. [Resource Revolution: How to Capture the Biggest Business Opportunity in a Century](http://book.douban.com/subject/25867809/)  by Stefan Heck / Matt Rogers
-~~1. [算法帝国](http://book.douban.com/subject/25854872/) by 克里斯托弗•斯坦纳~~
+1. ~~[算法帝国](http://book.douban.com/subject/25854872/) by 克里斯托弗•斯坦纳~~
 
 ## 2014 Leftover
 
