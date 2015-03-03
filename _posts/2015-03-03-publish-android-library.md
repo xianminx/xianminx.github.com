@@ -19,6 +19,8 @@ Familiarize yourself  with Gradle and Android Studio.
 Choose a license for your project. If you do not know how to, check this page:
 http://choosealicense.com/
 
+Apache License 2.0 is common to Android open source libraries on Github.
+
 ### Add a readme
 Add "readme.md" file to tell people what the project is about and how to use it.
 
@@ -61,4 +63,4 @@ Github provides "[Github Pages](https://help.github.com/categories/github-pages-
 Then follow the instructions to create a webpage for your project.
 
 ### Share it on Twitter, G+, Facebook, etc
-Finally, after all these done, share it to all social platforms to let people find it. 
+Finally, after all these done, share it to all social platforms to let people find it.
