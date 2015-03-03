@@ -13,15 +13,19 @@ git 用户经常混淆用户和ssh key 等概念。git码农们经常泡在githu
 * 对于公司项目， 可以使用 git config user.email xiaoming@corp.com
 
 但是如果每一个项目都这样配置， 又太麻烦了。 如果公司项目比较多， 可以将xiaoming@corp.com 加到git global 配置中
+
 ```
 git config —global user.email xiaoming@corp.com
 ```
+
 相反， 如果个人项目比较多， 可以
 
 ```
 git config —global user.email gitfan@gmail.com
 ```
+
 使用git log 可以看到使用哪个账户commit的：
+
 ```
 commit 977277ecc9ebccb2ddb93b99e69d71efbce9e7e3
 Author: lucas <xuxianming@umeng.com>
@@ -40,6 +44,7 @@ Date:   Fri Feb 27 13:37:57 2015 +0800
 同样，email前面的名字也同理可以配置。
 对于—global的配置， git 存储在~/.git/config 当中
 对于项目的配置， git 存储在 ./.git/config 项目multi下
+
 ```
 ➜  SwipeBack git:(master) less .git/config
 
@@ -61,12 +66,13 @@ Date:   Fri Feb 27 13:37:57 2015 +0800
 .git/config (END)
 
 ```
+
 这样配置项目使用的user.email和user.name 就能为公司项目和个人项目区分开用户账户了。
 
 
 ## 关于git 和 ssh key
 ssh key 和git 本地使用没有关系。 如果需要同服务器同步代码， 才会用到。 git通信协议底层使用ssh， 故需要ssh key。
-公司用的ssh key 多是用公司邮箱生成的， 如xiaoming@corp.com， 同公司代码库通信或者登陆公司服务器，都使用此key。
+公司用的ssh key 多是用公司邮箱生成的， 如xiaoming@corp.com , 同公司代码库通信或者登陆公司服务器，都使用此key。
 ssh key 默认存储在~/.ssh/目录下，如果将公司和个人区分开来呢？
 
 简单回答是不需要， 只用将pub key 加到github 上就可以了， 这个pub key 是可以公开的， 故将公司用的ssh key pubkey 放到github.com 也无妨。
@@ -79,6 +85,7 @@ SSH key 和git 用户是两个独立的概念， 不应该混淆在一起
 >
 Step 2: ssh config
 Set up multiple ssh profiles by creating/modifying ~/.ssh/config. Note the slightly differing 'Host' values:
+
 
 ```
 # Default GitHub
