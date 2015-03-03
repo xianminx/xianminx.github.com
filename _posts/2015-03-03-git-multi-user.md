@@ -2,11 +2,11 @@
 layout: post
 title: "Git 多账号"
 published: true
-tags: []
+tags: [git]
 ---
 
-git 用户经常混淆用户和ssh key 等概念。
-git码农们经常泡在github，bitbucket 等网站，一方面需要给公司写代码，另外一方面不干寂寞的写开源代码，需要两个Email账户。一个是个人的(personal use)，用户在github等网站使用， 比如gitfan@gmail.com, 另一个是工作用，使用公司邮箱， 比如叫xiaoming@corp.com。
+### git 账号
+git 用户经常混淆用户和ssh key 等概念。git码农们经常泡在github，bitbucket 等网站，一方面需要给公司写代码，另外一方面不干寂寞的写开源代码，需要两个Email账户。一个是个人的(personal use)，用户在github等网站使用， 比如 gitfan@gmail.com, 另一个是工作用公司邮箱， 比如叫 xiaoming@corp.com
 在commit 时候如何区分开来呢？
 
 * 对于个人项目， 可以在项目下，使用 git config user.email gitfan@gmail.com 添加email
@@ -76,7 +76,7 @@ SSH key 和git 用户是两个独立的概念， 不应该混淆在一起
 
 在~/.ssh/config 中为每一个ssh server 使用IdentityFile 参数配置好private key.
 
-> 
+>
 Step 2: ssh config
 Set up multiple ssh profiles by creating/modifying ~/.ssh/config. Note the slightly differing 'Host' values:
 
