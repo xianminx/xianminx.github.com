@@ -19,7 +19,7 @@ Familiarize yourself  with Gradle and Android Studio.
 Choose a license for your project. If you do not know how to, check this page:
 http://choosealicense.com/
 
-Apache License 2.0 is common to Android open source libraries on Github.
+"Apache License 2.0" is common to Android open source libraries on Github.
 
 ### Add a readme
 Add "readme.md" file to tell people what the project is about and how to use it.
@@ -50,7 +50,7 @@ https://gist.github.com/d860969fdda132b6d892.git
 
 Then publish with command:
 
-```cmd
+```
 ./gradew bintrayUpload
 ```
 
