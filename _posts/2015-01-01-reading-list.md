@@ -12,6 +12,16 @@ Previous reading for Year 2013 & 2014: http://xianminx.github.io/2013/11/07/read
 1. [Resource Revolution: How to Capture the Biggest Business Opportunity in a Century](http://book.douban.com/subject/25867809/)  by Stefan Heck / Matt Rogers
 1. ~~[算法帝国](http://book.douban.com/subject/25854872/) by 克里斯托弗•斯坦纳~~
 
+## 2015年3月在读
+1. ~~[论人类不平等的起源](http://book.douban.com/subject/4115323/) by 卢梭~~
+1. ~~[人类群星闪耀时](http://read.douban.com/ebook/3880720/?dct=Web&type=paid&dcc=3880720&dcm=douban&dcs=updates) by 〔奥〕茨威格~~
+1. [The Glory and the Dream: A Narrative History of America, 1932-1972 (Goodreads)](http://en.wikipedia.org/wiki/The_Glory_and_the_Dream) by William Manchester 
+1. ~~[Design Patterns - Elements of Reusable Object-Oriented Software](http://book.douban.com/subject/1436745/) by Erich Gamma / Richard Helm / Ralph Johnson / John Vlissides~~
+1. [Notes on the Synthesis of Form](http://book.douban.com/subject/1742456/) by Christopher Alexander
+1. [Refactoring -  Improving the Design of Existing Code](http://book.douban.com/subject/1419359/) by Martin Fowler / Kent Beck / John Brant / William Opdyke / Don Roberts
+
+
+
 ## 2014 Leftover
 
 1. [Predictably Irrational, The Hidden Forces That Shape Our Decisions , Revised and Expanded Edition](http://book.douban.com/subject/3692095/) by Dan Ariely
