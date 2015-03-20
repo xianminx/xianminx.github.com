@@ -21,6 +21,10 @@ Previous reading for Year 2013 & 2014: http://xianminx.github.io/2013/11/07/read
 1. [Refactoring -  Improving the Design of Existing Code](http://book.douban.com/subject/1419359/) by Martin Fowler / Kent Beck / John Brant / William Opdyke / Don Roberts
 
 
+## 2015年4月在读
+1. [僧侣与哲学家](http://book.douban.com/subject/25978763/) by 珍·法蘭可斯雷蒙 / 馬錫·理察
+1. [宝瓶同谋:大数据时代的思想聚变](http://book.douban.com/subject/25848220/) by [美] 玛丽琳. 弗格森
+
 
 ## 2014 Leftover
 
