@@ -131,6 +131,9 @@ tags: [reading]
 1. [定价未来:撼动华尔街的量化金融史](http://book.douban.com/subject/25934012/)[美]乔治G.斯皮罗（George G. Szpiro）
 1. [僧侣与哲学家](http://book.douban.com/subject/25978763/) by 珍·法蘭可斯雷蒙 / 馬錫·理察
 
+## 2015年08月在读
+1. [光荣与梦想](http://read.douban.com/ebook/9100874/?icn=profile-guess) by 威廉·曼彻斯特
+2. [从0到1](http://read.douban.com/ebook/8937101/?dct=Web&type=paid&dcc=8937101&dcm=douban&dcs=updates) by 〔美〕蒂尔〔美〕马斯特斯
 
 ## Waiting List
 
