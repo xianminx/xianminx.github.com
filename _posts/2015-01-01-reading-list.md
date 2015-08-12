@@ -26,6 +26,11 @@ Previous reading for Year 2013 & 2014: http://xianminx.github.io/2013/11/07/read
 1. [宝瓶同谋:大数据时代的思想聚变](http://book.douban.com/subject/25848220/) by [美] 玛丽琳. 弗格森
 
 
+## 2015年08月在读
+1. [光荣与梦想](http://read.douban.com/ebook/9100874/?icn=profile-guess) by 威廉·曼彻斯特
+2. [从0到1](http://read.douban.com/ebook/8937101/?dct=Web&type=paid&dcc=8937101&dcm=douban&dcs=updates) by 〔美〕蒂尔〔美〕马斯特斯
+
+
 ## 2014 Leftover
 
 1. [Predictably Irrational, The Hidden Forces That Shape Our Decisions , Revised and Expanded Edition](http://book.douban.com/subject/3692095/) by Dan Ariely
