@@ -188,7 +188,40 @@ def f(n, acc) ={
 
 
 ### 尾递归和函数式编程
+上面的尾递归函数其实是一个闭包, 满足闭包的条件. 闭包是函数式编程的核心概念. 
+所以学会尾递归对于学会函数式编程至关重要. 
+
 #### 闭包
 尾递归
+
+## Iteratee
+Iteratee 如同Unix 的管道概念, 对数据流做变换. 
+
+其有三个状态: Cont, Done, Error
+
+比Unix 的管道概念要轻, 不涉及进程后者现场. 
+
+Enumerator 是数据流的生产者, 相当于从console 或者文件读输入
+Iteratee 本身不对资源做任何管理, 生产者将数据推给Iteratee, 生产者本身负责资源管理
+Iteratee 是异步,非阻塞的
+
+
+
+异步和非阻塞IO 是两个概念, 但是基本上一一块儿出现的. 
+* 异步
+* 非阻塞IO
+* 
+
+Scala 中的共轭概念: 
+Future - Promise 
+
+
+step is a tail-recursive function (doesn’t unfold the full call stack at the end of recursion and returns immediately) preventing from stack overflow and behaving almost like the previous code with Iterator
+
+
+what is scalaz
+Enumeratee
+Enumerator
+
 
 
