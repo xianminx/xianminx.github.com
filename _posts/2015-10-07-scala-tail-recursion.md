@@ -141,6 +141,51 @@ val k = f(100)
 
 
 ## 尾递归(tail-recursion)
+上面的递归可以总结为: 
+
+* 初始条件: `f(0)`
+* 递归公式: `f(n+1) = g(f(n))`, 可能是多阶, 即: `f(n+1) = g(f(n), f(n-1), f(n-2),...)`
+* 终止条件 n 
+
+当 计算`f(n+1) = g(f(n))` 时, 会调用函数栈. 当n很大时,栈很快溢出. 
+
+这个时候需要
+
+``` 
+def f(n) ={
+   // compute tmp = f(n-1)
+   // operate on temp, and we get 
+   val ret = g(tmp)
+   ret
+}
+```
+这里, 会产生递归调用, 并压栈. 但是有一类特殊的递归, 是不需要压栈的, 这就是尾递归. 所谓尾递归, 就是调用的递归函数是计算的最后一步, 即上面形式中的g 不存在, 
+``` 
+def f(n) ={
+   // operate on temp, and we get 
+   computer something
+   f(n-1)
+}
+```
+
+这个时候, 就不需要压栈, 从而也就不会产生stackoverflow 了. 
+但是怎样转化呢, 起算, 将中间的计算结果传递过去,就好了. 
+``` 
+def f(n, acc) ={
+   // operate on temp, and we get 
+   computer something
+   val acc2 = compute(n-1, acc)
+   f(n-1, acc2)
+}
+```
+这样,就省去了压栈的过程, 中间结果通过函数参数在递归中间传递. 
+
+关键因素是：设计递归函数时, 讲递归函数的调用作为计算的最后一步. 
+
+
+
+
+
 
 ### 尾递归和函数式编程
 #### 闭包
