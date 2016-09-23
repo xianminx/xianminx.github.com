@@ -21,6 +21,7 @@ _site/
 _cache/
 blog/_site/
 blog/_cache/
+.sass-cache
+.jekyll-metadata
 
 ./blog/_site/
-

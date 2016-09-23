@@ -5,6 +5,8 @@ author :
   email : xianminx  gmail com
   github : xianminx
   twitter : xianminx
+twitter_username: jekyllrb
+github_username:  jekyll
 
 url: http://xianminx.github.io/
 
@@ -12,17 +14,40 @@ safe: true
 lsi: false
 source:      .
 destination: ./_site
-plugins:     ./_plugins
+plugins_dir:     ./_plugins
 
 
-auto:        false
-server_port: 4000
-pygments:    true
-markdown: redcarpet
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+
+google_analytics: UA-32905076-1
+JEKYLL_ENV: production
+
+
+markdown: kramdown
+theme: minima
+topnav:
+  - text: About
+    href: /about/
+  - text: Blog
+    href: /
+  - text: Archives
+    href: /archives/
+  - text: Other
+    href: /other/
+    
+#auto:        false
+port: 4000
+highlighter:    pygments
+
+#markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
 permalink:   pretty
-paginate:    5
+paginate:    10
 maruku:
   use_tex:   false
   use_divs:  false

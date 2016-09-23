@@ -1,5 +1,31 @@
 xianminx
 ========
+
+To preview locally
+
+```bash
+jekyll
+```
+
+## Enviroment Setup
+
+```bash
+# install ruby
+brew install ruby
+# install bundle
+gem install bundler
+# install dependencies
+bundle install
+# running
+bundle exec jekyll serve
+```
+
+### update 2016-09-23
+Github updated its jekyll engine. See [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) for detailed setup instructions.
+
+
+
+
 > Update: Github site now supports REDCARPET2. See https://help.github.com/articles/using-jekyll-with-pages
 
 ## Prerequesites:
