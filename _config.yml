@@ -28,7 +28,7 @@ JEKYLL_ENV: production
 
 
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-cayman
 topnav:
   - text: About
     href: /about/
