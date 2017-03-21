@@ -24,5 +24,6 @@ blog/_cache/
 .sass-cache
 .jekyll-metadata
 .Gemfile.lock
+Gemfile.lock
 
 ./blog/_site/
