@@ -1,114 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-us">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:wb="http://open.weibo.com/wb" lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html %}
 
+  <body>
 
-{% include head.html %}
-{% assign navTitle = 'Blog' %}
-{% for t in site.topnav %}
-{% if t.text == page.title %}{% assign navTitle = page.title %}{% endif %}
-{% endfor %}
+    {% include sidebar.html %}
 
-<body>
-<div class="page_margins">
-  <div id="header">
-    <!-- <h2><a href="http://xianminx.github.com">lucas</a></h2> -->
-    <div class="clear"></div>
-
-    <!-- begin: main navigation #nav -->
-    <!-- <div id="nav"> -->
-      <div class="bs-component">
-        <div class="navbar navbar-default">
-           <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://xianminx.github.com">Lucas</a>
-            </div>
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav">
-                  {% for t in site.topnav %}
-                  <li{% if t.text == navTitle %} class="active"{% endif %}>
-                  <a href="{{ t.href }}"{% if t.title %} title="{{ t.title }}"{% endif %}>{{ t.text }}
-                    <div class="ripple-wrapper"></div>
-                  </a>
-                  </li>
-                  {% endfor %}
-                </ul>
-            </div>
-        </div>
+    <div class="content container">
+      {{ content }}
     </div>
-    <!-- end: main navigation -->
-  </div>
 
-  <!-- begin: main content area #main -->
-  <div id="main">
-    <div id="col1">
-      <div id="col1_content">
-        {{ content }}
-      </div>
-    </div>
-    <div id="col3">
-      <div id="col3_content">
-
-
-
-
-<!-- AddThis Follow BEGIN -->
-<h6 class="vlist">Follow Me</h6>
-<br/>
-<div class="addthis_toolbox addthis_32x32_style addthis_default_style">
-<a class="addthis_button_google_follow" addthis:userid="101226668323584222394"></a>
-<a class="addthis_button_facebook_follow" addthis:userid="xianminx"></a>
-<a class="addthis_button_linkedin_follow" addthis:userid="xianminx"></a>
-<a class="addthis_button_twitter_follow" addthis:userid="xianminx"></a>
-</div>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fdf49b46dac2571"></script>
-<!-- AddThis Follow END -->
-
-<br/>
-
-
- <a href="http://stackoverflow.com/users/1381034/lucas">
-<img src="http://stackoverflow.com/users/flair/1381034.png" width="208" height="58" alt="profile for lucas at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for lucas at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
-</a>
-
-<br />
-<br/>
-
-
-<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=300&skin=1&isTitle=1&noborder=0&isWeibo=1&isFans=1&uid=2063991842&verifier=e0e8dc08&dpc=1"></iframe>
-
-
-</div>
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-
-
-     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="//fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js"></script>
-        <script src="//fezvrasta.github.io/bootstrap-material-design/dist/js/material.min.js"></script>
-        <script src="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
-
-
-        <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
-        <script>
-            $(function() {
-                $(".slider").noUiSlider({
-                    start: 40,
-                    connect: "lower",
-                    range: {
-                        min: 0,
-                        max: 100
-                    }
-                });
-            });
-        </script>
-</body>
+  </body>
 </html>

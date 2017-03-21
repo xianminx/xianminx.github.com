@@ -1,14 +1,24 @@
-title : Lucas Xu
+# Dependencies
+markdown:         kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Asylum
+tagline:          'lonely'
+description:      'A lonely talk to myself. <br/><a href="https://twitter.com/xianminx" target="_blank">@xianminx</a>.'
+url:              https://xianminx.github.io
+baseurl:          /
 
 author :
-  name : Lucas Xu
+  name : Asylum
+  url:   https://twitter.com/xianminx
   email : xianminx  gmail com
   github : xianminx
   twitter : xianminx
-twitter_username: jekyllrb
-github_username:  jekyll
-
-url: http://xianminx.github.io/
 
 safe: true
 lsi: false
@@ -16,38 +26,9 @@ source:      .
 destination: ./_site
 plugins_dir:     ./_plugins
 
-
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-
-
 google_analytics: UA-32905076-1
 JEKYLL_ENV: production
 
-
-markdown: kramdown
-theme: minima
-topnav:
-  - text: About
-    href: /about/
-  - text: Blog
-    href: /
-  - text: Archives
-    href: /archives/
-  - text: Other
-    href: /other/
-    
-#auto:        false
-port: 4000
-highlighter:    pygments
-
-#markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
-permalink:   pretty
-paginate:    10
 maruku:
   use_tex:   false
   use_divs:  false
@@ -56,3 +37,14 @@ maruku:
 exclude:
   - README.txt
   - Rakefile
+
+
+paginate:         10
+
+# Custom vars
+version:          2.0
+
+github:
+  repo:           https://github.com/xianminx/xianminx.github.com
+
+gems: [jekyll-paginate]
