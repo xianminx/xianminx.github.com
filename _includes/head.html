@@ -1,56 +1,29 @@
 <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  {% assign custom_url = site.url | append: site.baseurl %}
-  {% assign full_base_url = custom_url | default: site.github.url %}
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: full_base_url }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: full_base_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | prepend: full_base_url }}">
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }} &middot; {{ site.tagline }}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
 
-</head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
-<head>
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="{{ site.baseurl }}public/favicon.ico">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="wumiiVerification" content="488b82f0-c491-4adc-9a6c-511af901c26e" />
-
-<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="language" content="en" />
-<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-
-<link rel="stylesheet" type="text/css" href="/css/default.css" />
-
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="//masonry.desandro.com/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
-<link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
-<link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/material-wfont.min.css" rel="stylesheet">
-<link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
-
-
-<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
-<link rel="stylesheet" type="text/css" href="/css/mindmap.css" />
-<meta property="wb:webmaster" content="85ada6b02f0f02d5" />
-
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4064321344" type="text/javascript" charset="utf-8"></script>
-
-
-  {% if jekyll.environment == 'production' and site.google_analytics %}
-  {% include google-analytics.html %}
-  {% endif %}
-  
-
-<style>
-.item { width: 25%; }
-.item.w2 { width: 50%; }
-</style>
-
-
-
-
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 </head>
