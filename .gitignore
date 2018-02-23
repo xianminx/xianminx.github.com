@@ -25,5 +25,5 @@ blog/_cache/
 .jekyll-metadata
 .Gemfile.lock
 Gemfile.lock
-
+.vscode/
 ./blog/_site/
