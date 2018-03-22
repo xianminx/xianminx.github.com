@@ -8,12 +8,14 @@ tags: [python]
 
 ## Module
 
-* A module is a file containing Python definitions and statements. The file name is the module name with the suffix ‘.py’ appended. Within a module, the module's name (as a string) is available as the value of the global variable __name__. 
+* A module is a file containing Python definitions and statements. The file name is the module name with the suffix ‘.py’ appended. Within a module, the module's name (as a string) is available as the value of the global variable `__name__`. 
 
-* `__name__`
-* `import fibo`
-* `from fibo import fib, fib2`
-* `from fibo import *`
+```python
+__name__
+import fibo
+from fibo import fib, fib2
+from fibo import *
+```
 * symbol table
 
 * A module can contain executable statements as well as function definitions. These statements are intended to initialize the module. They are executed only the first time the module is imported somewhere.
@@ -22,7 +24,36 @@ tags: [python]
 * `sys.path` = the directory containing the input script (or the current directory), +  ‘PYTHONPATH’ +  the installation-dependent default.
 
 * `dir()` find out which names a module defines.
-* tandard module `__builtin__`
+* standard module `__builtins__`
+
+```python
+# -*- coding: utf8 -*-
+import os, sys
+
+# demo module usage
+
+def f():
+    print "function f in module 'module.py'"
+print "__name__ = ", __name__
+print "os.environ['PYTHONPATH'] = ", os.environ.get("PYTHONPATH", '')
+print "sys.path = ", sys.path
+print "dir() = ", dir()
+print "__builtins__ = ", __builtins__
+print "dir(__builtins__) = ", dir(__builtins__)
+```
+
+outputs： 
+
+
+```sh
+➜  python101 python /Users/lucas/dev/workspace/python/python101/module.py
+__name__ =  __main__
+os.environ['PYTHONPATH'] =
+sys.path =  ['/Users/lucas/dev/workspace/python/python101', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python27.zip', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old', '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/site-packages', '/usr/local/Cellar/protobuf/2.6.1/libexec/lib/python2.7/site-packages']
+dir() =  ['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'f', 'os', 'sys']
+__builtins__ =  <module '__builtin__' (built-in)>
+dir(__builtins__) =  ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BufferError', 'BytesWarning', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'NameError', 'None', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'ReferenceError', 'RuntimeError', 'RuntimeWarning', 'StandardError', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '__debug__', '__doc__', '__import__', '__name__', '__package__', 'abs', 'all', 'any', 'apply', 'basestring', 'bin', 'bool', 'buffer', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'cmp', 'coerce', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'execfile', 'exit', 'file', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'intern', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'long', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'raw_input', 'reduce', 'reload', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'unichr', 'unicode', 'vars', 'xrange', 'zip']
+```
 
 ## package
 
@@ -34,7 +65,22 @@ tags: [python]
 
 ## Class
 
-<img src="http://pythoncentral.io/wp-content/uploads/2012/08/1.png" width='400px'>
+```python
+# -*- coding: utf8 -*-
+
+class Foo:
+    val=0
+    def __init__(self, val):
+        self.val = val
+        pass
+    
+    def printVal(self):
+        print(self.val)
+
+
+foo = Foo(5)
+foo.printVal()
+```
 
 * `__init__` 
 ```python
@@ -156,3 +202,38 @@ Class methods and variable names that start with two underscores are considered 
        def __del__(self):
     ```
 
+
+
+## import 
+how to import module in parent directory?
+
+check [How does python find packages?](https://leemendelowitz.github.io/blog/how-does-python-find-packages.html)
+
+Python imports work by searching the directories listed in sys.path.
+
+```python
+> import sys
+> print '\n'.join(sys.path)
+
+/usr/lib/python2.7
+/usr/lib/python2.7/plat-x86_64-linux-gnu
+/usr/lib/python2.7/lib-tk
+/usr/lib/python2.7/lib-old
+/usr/lib/python2.7/lib-dynload
+/usr/local/lib/python2.7/dist-packages
+/usr/lib/python2.7/dist-packages
+```
+
+sys.path is populated using the current working directory, followed by directories listed in your PYTHONPATH environment variable, followed by installation-dependent default paths, which are controlled by the site module.
+
+The site module is automatically imported when you start Python, you can read more about how it manipulates your sys.path in the Python docs.
+
+
+Find module
+```python
+> import imp
+> imp.find_module('numpy')
+(None, '/usr/local/lib/python2.7/dist-packages/numpy', ('', '', 5))
+```
+
+### site-python
