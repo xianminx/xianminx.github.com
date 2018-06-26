@@ -32,7 +32,7 @@ tsc --help
 ## Project management
 
 ### structure
-See []()
+See [typescript101](https://github.com/xianminx/typescript101)
 ```sh
 ➜  typescript101 git:(master) ✗ tree
 .
@@ -48,8 +48,15 @@ See []()
 
 ```
 
-### with Visual Studio Code
-[Editing TypeScript in VSCode](https://code.visualstudio.com/docs/languages/typescript)
+### With Visual Studio Code
+
+> Warning: Visual Studio for Mac Community Edition does not support TypeScript natively. 
+> So if on Mac, use Visual Studio Code instead. 
+> or Use Visual Studio on Windows for better IDE support.
+
+References: 
+1. [Editing TypeScript in VSCode](https://code.visualstudio.com/docs/languages/typescript)
+2. [Simplest TypeScript project using Visual Studio Code](https://medium.com/@equisept/simplest-typescript-with-visual-studio-code-e42843fe437)
 * File Scope
 * Explicit Project
 
