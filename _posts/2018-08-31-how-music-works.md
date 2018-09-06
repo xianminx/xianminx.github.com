@@ -40,3 +40,4 @@ https://ianring.com/musictheory/scales/#citation2
 https://www.ams.jhu.edu/dan-mathofmusic/
 https://news.ycombinator.com/item?id=12792063
 https://quariety.com/2018/04/28/a-laymans-intro-to-western-classical-music/
+https://www.soundslice.com/scores/auld-lang-syne/
