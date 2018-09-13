@@ -3,6 +3,7 @@ layout: post
 title: "Deep Learning"
 published: true
 tags: [es6]
+mathjax: true
 ---
 
 
