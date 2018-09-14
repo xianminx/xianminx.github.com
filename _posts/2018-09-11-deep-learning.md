@@ -62,6 +62,7 @@ define:
 $$
 \delta^l_j \equiv \frac {\partial C} {\partial z_j^l} \\
 $$
+
 $$
 z_j^{l+1} = \sum_{k=1} (w_{jk}^l\sigma(z_k^l) + b_j^{l+1}  \\
 \frac {\partial z_j^{l+1}} {\partial z_k^{l}} = w_{jk} \cdot \sigma^{\prime} =  w_{jk}^{l+1} \cdot \sigma(z_k^{l})(1-\sigma(z_k^{l}))

@@ -58,3 +58,20 @@ https://www.soundslice.com/scores/auld-lang-syne/
     * [Lilypond](http://lilypond.org/)
 
 
+## Music Theory
+[Piano key frequencies](https://en.wikipedia.org/wiki/Piano_key_frequencies)
+* scientific notation
+    ```
+    Eb4, C#,,, C4, d#'', Ab2
+    ```
+* Helmholtz 
+## libraries
+### [tone.js](https://tonejs.github.io/) music synthesis,
+### [Teoria.js](https://www.cheatography.com/tasjaevan/cheat-sheets/redis/) for theory
+* Note
+* Chord
+* Scale
+* Interval
+
+### [Web Audio API ](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
+* 
