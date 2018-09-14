@@ -69,10 +69,9 @@ z_j^{l+1} = \sum_{k=1} (w_{jk}^l\sigma(z_k^l) + b_j^{l+1}  \\
 $$
 to z
 $$
-\frac {\partial C_x} {\partial z_k^l} = \sum_j  {\frac {\partial C_x} {\partial z_j^{l+1} } \frac{{\partial z_j^{l+1} } }{{\partial z_k^{l} } }
-}\\
+\frac {\partial C_x} {\partial z_k^l} = \sum_j { \frac {\partial C_x} {\partial z_j^{l+1} } \cdot \frac {\partial z_j^{l+1}} {\partial z_k^{l}} }\\
 
-\delta^l_k = \sum_j  \delta^{l+1}_j \frac{{\partial z_j^{l+1} } }{{\partial z_k^{l} } }
+\delta^l_k = \sum_j  \delta^{l+1}_j \cdot {\frac {\partial z_j^{l+1}}  {\partial z_k^{l} }}
 
 $$
 Output layer: 
