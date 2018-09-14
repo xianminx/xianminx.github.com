@@ -11,7 +11,7 @@ title:            Asylum
 tagline:          'lonely'
 description:      'A lonely talk to myself. <br/><a href="https://twitter.com/xianminx" target="_blank">@xianminx</a>.'
 url:              https://xianminx.github.io
-baseurl:          /
+baseurl:          ''
 
 author :
   name : Asylum
