@@ -4,10 +4,6 @@ title: "Deep Learning"
 published: true
 tags: [es6]
 mathjax: true
-jsarr: 
-- MathJax.js
-- mathjax_conf.js
-
 ---
 
 
