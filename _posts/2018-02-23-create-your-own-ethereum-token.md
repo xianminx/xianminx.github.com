@@ -105,11 +105,11 @@ geth    19806 lucas   88u  IPv4 0x9295f20a183d681      0t0  TCP 192.168.1.116:64
 
 ## Ethereum Network Visualization
 http://ethviewer.live/
-![ethviewer.live](img/ethviewer.live.jpg)
+![ethviewer.live](graphics/ethviewer.live.jpg)
 
 https://ethstats.net/
 
-![ethstats.net](img/ethstats.net.jpg)
+![ethstats.net](graphics/ethstats.net.jpg)
 
 
 

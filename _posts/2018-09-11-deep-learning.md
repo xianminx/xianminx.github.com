@@ -5,8 +5,8 @@ published: true
 tags: [es6]
 mathjax: true
 jsarr: 
-- https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-- _includes/mathjax_conf.js
+- MathJax.js
+- mathjax_conf.js
 
 ---
 
