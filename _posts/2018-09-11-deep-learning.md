@@ -4,21 +4,12 @@ title: "Deep Learning"
 published: true
 tags: [es6]
 mathjax: true
+jsarr: 
+- https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+- _includes/mathjax_conf.js
+
 ---
 
-
-- [ECMAScript 6 Primer](#ecmascript-6-primer)
-    - [第1章 ECMAScript 6 简介](#%E7%AC%AC1%E7%AB%A0-ecmascript-6-%E7%AE%80%E4%BB%8B)
-    - [第2章 `let` 和 `const` 命令](#%E7%AC%AC2%E7%AB%A0-let-%08%E5%92%8C-const-%E5%91%BD%E4%BB%A4)
-        - [2.1 `let`](#21-let)
-        - [2.2 `const`](#22-const)
-        - [顶层对象](#%E9%A1%B6%E5%B1%82%E5%AF%B9%E8%B1%A1)
-    - [第 3 章 变量的解构赋值 Destructuring assignment](#%E7%AC%AC-3-%E7%AB%A0-%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC-destructuring-assignment)
-        - [3.1 数组的 Destructuring assignment](#31-%E6%95%B0%E7%BB%84%E7%9A%84-destructuring-assignment)
-        - [3.2 对象的解构赋值](#32-%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC)
-        - [Map](#map)
-    - [TODO:](#todo)
-    - [Q & A](#q--a)
 
 # Deep Learning
 

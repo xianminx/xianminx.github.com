@@ -23,6 +23,6 @@ A Soul Talker/
 
 <div class="site-footer">
   <small class="meta final">
-  The tool to build the site is credited to [hyde](https://github.com/hyde/hyde) and theme credited to [poole/hyde](https://github.com/poole/hyde).
+  The tool to build the site is credited to <a src="https://github.com/hyde/hyde">hyde</a> and theme credited to <a src="https://github.com/poole/hyde">poole/hyde</a>.
   </small>
 </div>

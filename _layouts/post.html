@@ -2,6 +2,7 @@
 layout: default
 ---
 
+
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
@@ -23,3 +24,12 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+
+<!-- Stuff for jsarr tag  -->
+
+{% for js in page.jsarr %}
+  <script type="text/javascript">
+    {% include {{ js }} %}
+  </script>
+{% endfor %}
+<!-- End Stuff for jsarr tag  -->
