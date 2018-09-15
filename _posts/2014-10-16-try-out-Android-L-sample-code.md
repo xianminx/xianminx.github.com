@@ -7,9 +7,9 @@ tags: [android]
 
 ### 1. 导入
 
-![image1](/graphics/e86e59b11c4a955c363252918d9eda24.jpeg)
+![image1](/imgs/e86e59b11c4a955c363252918d9eda24.jpeg)
 
-![image2](/graphics/cfb60561b8713704834aa59fc854921c.jpeg)
+![image2](/imgs/cfb60561b8713704834aa59fc854921c.jpeg)
 
 
 

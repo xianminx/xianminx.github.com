@@ -5,7 +5,7 @@ published: true
 tags: [reading]
 ---
 
-<img src="/graphics/12071617343144.jpg" align="center" width="100%"/>
+<img src="/imgs/12071617343144.jpg" align="center" width="100%"/>
 
 > 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。
 
@@ -43,7 +43,7 @@ tags: [reading]
 1. [Design Patterns: Elements of Reusable Object-Oriented Software](http://book.douban.com/subject/1052241/) by Erich Gamma / Richard Helm / Ralph Johnson / John Vlissides
 
 ## 2014年1月在读
-<img src="/graphics/IMG_20140110_004325.jpg" align="center" width="100%"/>
+<img src="/imgs/IMG_20140110_004325.jpg" align="center" width="100%"/>
 
 1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell

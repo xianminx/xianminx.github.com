@@ -67,7 +67,7 @@ public class SimpleListViewActivity extends Activity {
 
 This is a very simple example of ListView.
 
-<img src="/graphics/device-2013-04-24-184626.png" width="300">
+<img src="/imgs/device-2013-04-24-184626.png" width="300">
 
 
 
@@ -166,7 +166,7 @@ Here 'mItemCount' is written when the adapter is first time set or when 'onMeasu
 
 
 
-<img src="graphics/listview_itemcount_write.png".
+<img src="imgs/listview_itemcount_write.png".
 
 
 ```java

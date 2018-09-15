@@ -47,4 +47,4 @@ version:          2.0
 github:
   repo:           https://github.com/xianminx/xianminx.github.com
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
