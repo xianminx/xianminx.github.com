@@ -1,3 +1,7 @@
+---
+title: "Algorithm Review"
+---
+
 # Algorithm Review
 
 ## Stack

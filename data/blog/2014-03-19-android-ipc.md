@@ -1,14 +1,15 @@
 ---
-layout: post
+layout: "post"
 title: 'Android IPC'
-published: false
+published: "false"
 tags: [android]
+date: "2014-03-19"
 ---
 
 Inter-process communication of Android
 
-read Tetsuyuku Koboyashi 's slides on Android topics. Very good material.
+read Tetsuyuku Koboyashi's slides on Android topics. Very good material.
 
-http://www.slideshare.net/tetsu.koba?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview
+[Slideshare](http://www.slideshare.net/tetsu.koba?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview)
 
-blog site: http://kobablog.wordpress.com/2011/06/04/inter-process-communication-of-android/
+blog site: [Koba Blog](http://kobablog.wordpress.com/2011/06/04/inter-process-communication-of-android/)

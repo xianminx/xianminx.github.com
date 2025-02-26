@@ -1,16 +1,15 @@
 ---
-layout: post
+layout: "post"
 title: "The Mobile Web Developer's Tool Belt"
 tags: [web, mobile]
+date: "2012-11-10"
 ---
 
-The Mobile Web
-Developer's Tool Belt
+The Mobile Web Developer's Tool Belt
 
-http://petelepage.com/presentations/2012/qcon/#2
-'
+[http://petelepage.com/presentations/2012/qcon/#2](http://petelepage.com/presentations/2012/qcon/#2)
 
-## Development Enviroment
+## Development Environment
 
 1. Sublime Text
 2. Codekit
@@ -22,7 +21,7 @@ http://petelepage.com/presentations/2012/qcon/#2
 - www.mobile-patterns.com
 - pttrns.com
 
-### Human Interface Guidelines\*
+### Human Interface Guidelines*
 
 - Android's Human Interface Guidelines
 - iOS Human Interface Guidelines
@@ -38,4 +37,4 @@ http://petelepage.com/presentations/2012/qcon/#2
 
 ## Open Device Lab
 
-http://klick-ass.com/awesomeness/avoid-the-tamagotchis-a-list-of-open-device-labs/
+[http://klick-ass.com/awesomeness/avoid-the-tamagotchis-a-list-of-open-device-labs/](http://klick-ass.com/awesomeness/avoid-the-tamagotchis-a-list-of-open-device-labs/)

@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Interlude'
-published: true
+published: "true"
 tags: [music]
+date: "2017-11-14"
 ---
 
 # 余华 『间奏』
@@ -25,10 +26,15 @@ tags: [music]
 ## 章节
 
 - 叙述: 勃拉姆斯
+
 - 高潮: 肖斯塔科维奇和霍桑
+
 - 灵感: 莫扎特
+
 - 否定: 柏辽兹
+
 - 色彩: 拉赫玛尼诺夫， 绘画
+
 - 字与音: 门德尔松
 
 ## 文字

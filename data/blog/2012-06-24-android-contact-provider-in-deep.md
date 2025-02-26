@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Android Contacts Provider In Deep'
 tags: [android]
+date: "2012-06-24"
 ---
 
 Android contact API uses Content Provider to provide data for application. The service is provided by `com.android.providers.contacts`. All the contact data are stored in SQLite database. You can find all the data under `/data/data/com.android.providers.contacts/databases`, as following:
@@ -16,7 +17,7 @@ profile.db
 profile.db-journal
 ```
 
-The most important and the central database here is `contacts2.db`. To view what's in this database, you can utilize the tool called `sqlite3` provided by Google. This is the [link](http://developer.android.com/tools/help/sqlite3.html) to the official description of the tool. This tool is under /system/bin/ by default in Android. But in case you cannot find it on you device, you can use Eclipse SQLite Plugin to visualize the table structure and data. See this article [Browse an Android Emulator SQLite Database in Eclipse](http://www.tylerfrankenstein.com/browse-android-emulator-sqlite-database-eclipse)for help.
+The most important and the central database here is `contacts2.db`. To view what's in this database, you can utilize the tool called `sqlite3` provided by Google. This is the [link](http://developer.android.com/tools/help/sqlite3.html) to the official description of the tool. This tool is under /system/bin/ by default in Android. But in case you cannot find it on your device, you can use Eclipse SQLite Plugin to visualize the table structure and data. See this article [Browse an Android Emulator SQLite Database in Eclipse](http://www.tylerfrankenstein.com/browse-android-emulator-sqlite-database-eclipse) for help.
 
 To view the db under command line, execute:
 
@@ -45,7 +46,7 @@ packages                  view_contacts             voicemail_status
 
 3 most important tables are `contacts`, `raw_contacts` and `data`.
 
-For a explaination of these 3 tables, see [Contact Provider](http://developer.android.com/guide/topics/providers/contacts-provider.html)
+For an explanation of these 3 tables, see [Contact Provider](http://developer.android.com/guide/topics/providers/contacts-provider.html).
 
 Let's take a look at the schema of the tables:
 
@@ -76,10 +77,9 @@ CREATE INDEX data_mimetype_data1_index ON data (mimetype_id,data1);
 CREATE INDEX data_raw_contact_id ON data (raw_contact_id);
 CREATE TRIGGER data_deleted BEFORE DELETE ON data BEGIN    UPDATE raw_contacts     SET version=version+1      WHERE _id=OLD.raw_contact_id;   DELETE FROM phone_lookup     WHERE data_id=OLD._id;   DELETE FROM status_updates     WHERE status_update_data_id=OLD._id;   DELETE FROM name_lookup     WHERE data_id=OLD._id; END;
 CREATE TRIGGER data_updated AFTER UPDATE ON data BEGIN    UPDATE data     SET data_version=OLD.data_version+1      WHERE _id=OLD._id;   UPDATE raw_contacts     SET version=version+1      WHERE _id=OLD.raw_contact_id; END;
-
 ```
 
-To visiualize the table, here is the screen short from Eclipse SQlite Plugin:
+To visualize the table, here is the screenshot from Eclipse SQLite Plugin:
 
 ![contacts table](/imgs/8c440d12df2a8bb8a7b680760caa1fc5.jpeg 'contacts table')
 

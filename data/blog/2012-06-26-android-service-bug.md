@@ -1,13 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: 'Android Account Manager'
 tags: [android]
+date: "2012-06-26"
 ---
 
-Android系统本身提供了多用户账户的支持。 这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户， 如Google账户， Facebook账户， Twitter账户等。
+Android系统本身提供了多用户账户的支持。这里的多用户账户不是指操作系统中的用户，而是不同网络服务的账户，如Google账户，Facebook账户，Twitter账户等。
 
-对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。 每一个应用对应于一个process，运行时会有一个独立的UID， 也就对应于Linux中的用户。 开发者可以在adb下使用 `ps` 命令来查看。
-如下，左边第一列就是运行对应应用的用户名. 可以看到， 对于安装的应用而言，每个应用都有自己独立的UID， 如`com.baidu.input`的UID为`app_67`
+对于android操作系统来讲，本身就是Linux系统，是一个支持多用户的系统。每一个应用对应于一个process，运行时会有一个独立的UID，也就对应于Linux中的用户。开发者可以在adb下使用 `ps` 命令来查看。如下，左边第一列就是运行对应应用的用户名。可以看到，对于安装的应用而言，每个应用都有自己独立的UID，如 `com.baidu.input` 的UID为 `app_67`。
 
 ```java
 root      117   2     0      0     c01839a4 00000000 S ext4-dio-unwrit
@@ -92,9 +92,9 @@ root      29439 166   804    432   c01090a8 400d6f94 S /system/bin/sh
 root      29444 29439 980    364   00000000 400ed578 R ps
 ```
 
-由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。 Android的解决方案是提供[AccountManager](http://developer.android.com/reference/android/accounts/AccountManager.html)来管理不同服务的账户。 [AccountManager](http://developer.android.com/reference/android/accounts/AccountManager.html)是由系统提供的服务([AccountManagerService])， 从而很好的在系统层面解决不同应用共享服务账户的问题。
+由于Android系统是为互联网而设计的，自然需要对各种网络服务有很好的支持。Android的解决方案是提供[AccountManager](http://developer.android.com/reference/android/accounts/AccountManager.html)来管理不同服务的账户。[AccountManager](http://developer.android.com/reference/android/accounts/AccountManager.html)是由系统提供的服务([AccountManagerService])，从而很好的在系统层面解决不同应用共享服务账户的问题。
 
-比如， 用户注册了Google账户，使用这个账户可以登陆Google+,Google Play, Gmail, 也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。 由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。 甚至处理不好， 会带来很大的安全隐患。 现在好了，Android在系统级别提供了账户管理功能， 用户只要去账户管理中心登陆账户， 不同应用就可以想账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。
+比如，用户注册了Google账户，使用这个账户可以登陆Google+、Google Play、Gmail，也可以同步联系人甚至手机上的其他设置如WI-FI密码和浏览器书签到Google的服务器上。由于这些服务是由不同的应用提供的，如果账户由每个应用自己单独处理，将是一件很繁琐的事情。甚至处理不好，会带来很大的安全隐患。现在好了，Android在系统级别提供了账户管理功能，用户只要去账户管理中心登陆账户，不同应用就可以向账户管理中心请求账户访问权限，而不需要应用本身去维护和管理这些账户，对应用开发来说既简单又安全了。
 
 ## Android Account 管理类库介绍
 
@@ -104,41 +104,47 @@ Android中和账户相关的API都在[android.accounts](http://developer.android
 
 ### Interfaces
 
-- `AccountManagerCallback<V>` 包含回调函数。 类似于我们经常写的Listener
-- `AccountManagerFuture<V>` 异步调用`AccountManager`的结果。
+- `AccountManagerCallback<V>` 包含回调函数。类似于我们经常写的Listener
+
+- `AccountManagerFuture<V>` 异步调用 `AccountManager` 的结果。
+
 - `OnAccountsUpdateListener` AccountMonitor用到的回调接口。
 
 ### Classes
 
-- AbstractAccountAuthenticator 如果开发者需要实现自己的认证方式， 可以通过继承这个类来实现
+- AbstractAccountAuthenticator 如果开发者需要实现自己的认证方式，可以通过继承这个类来实现
+
 - Account 表示我们的账户
+
 - AccountAuthenticatorActivity Base class for implementing an Activity that is used to help implement an AbstractAccountAuthenticator.
+
 - AccountAuthenticatorResponse Object used to communicate responses back to the AccountManager
-- AccountManager 账户管理的核心类,是访问账户的入口。
+
+- AccountManager 账户管理的核心类，是访问账户的入口。
+
 - AuthenticatorDescription A Parcelable value type that contains information about an account authenticator.
 
 ## 使用[AccountManager]访问已经支持的账户
 
-Android 系统默认支持Google账户， Microsoft Exchange账户，和普通邮件账户。
+Android系统默认支持Google账户、Microsoft Exchange账户和普通邮件账户。
 
-现在，假如你开发了一个应用,会使用到用户的Google账户， 比如， 类似于[SMS Backup](https://play.google.com/store/apps/details?id=com.zegoggles.smssync&hl=en)这种应用， 可以把手机端的短信同步到GMail邮箱当中。 当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利， 如同下图所示：
-，用户也很害怕把密码告诉你。这种情况下， 你可以请求用户授予你访问他的账户的权利， 如同下图所示：
+现在，假如你开发了一个应用，会使用到用户的Google账户，比如，类似于[SMS Backup](https://play.google.com/store/apps/details?id=com.zegoggles.smssync&hl=en)这种应用，可以把手机端的短信同步到GMail邮箱当中。当然你不希望已经在自己手机上登陆过Gmail账户的用户再次在你的应用中输入用户名和密码，用户也很害怕把密码告诉你。这种情况下，你可以请求用户授予你访问他的账户的权利，如同下图所示：
+用户也很害怕把密码告诉你。这种情况下，你可以请求用户授予你访问他的账户的权利，如同下图所示：
 ![Request Account Access from SMS Backup](/imgs/ae6d0505e0138e239f8e7715fddf57ac.png 'Reqeust Account Access Permission')
 
 将如何实现呢？
 
-Google 提供了一个很好的例子， 在Google Task API 下。 [](link)
-简单的使用如下：
+Google提供了一个很好的例子，在Google Task API下。简单的使用如下：
 
 ```java
-	mAccountManager = AccountManager.get(this);
+mAccountManager = AccountManager.get(this);
 
-    	Account[] accounts = mAccountManager.getAccounts();
-    	for(Account account : accounts){
-    		Log.i(TAG, String.format("account.name={0}, type={1}, content={2}",account.name, account.type, account.describeContents()));
-    	}
+Account[] accounts = mAccountManager.getAccounts();
+for(Account account : accounts){
+    Log.i(TAG, String.format("account.name={0}, type={1}, content={2}", account.name, account.type, account.describeContents()));
+}
 ```
 
 ## 扩展[AccountManager]支持自定义的账户
 
-既然系统的AccountManager提供了这么多的便利， 你开始考虑把自己的在线服务加到Android系统中去了， 比如你有类似人人或者新浪微博， 想要把账户管理加到系统中去， 该怎么做呢？
+既然系统的AccountManager提供了这么多的便利，你开始考虑把自己的在线服务加到Android系统中去了，比如你有类似人人或者新浪微博，想要把账户管理加到系统中去，该怎么做呢？

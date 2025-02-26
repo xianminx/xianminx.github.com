@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Try out Android-L Samples with Android studio'
 tags: [android]
+date: "2014-10-16"
 ---
 
 ### 1. 导入
@@ -12,12 +13,11 @@ tags: [android]
 
 ### 2. 更新文件
 
-samples/android-L/ui/views/FloatingActionButton/FloatingActionButtonBasic/build.gradle
+`samples/android-L/ui/views/FloatingActionButton/FloatingActionButtonBasic/build.gradle`
 
 此文件为空， 添加内容
 
 ```groovy
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
@@ -41,13 +41,11 @@ allprojects {
 
 ### 3. 更新文件内容
 
-samples/android-L/ui/views/FloatingActionButton/FloatingActionButtonBasic/FloatingActionButtonBasicSample/build.gradle
+`samples/android-L/ui/views/FloatingActionButton/FloatingActionButtonBasic/FloatingActionButtonBasicSample/build.gradle`
 
 原始内容
 
 ```groovy
-
-
 buildscript {
     repositories {
         mavenCentral()
@@ -60,12 +58,9 @@ buildscript {
 
 apply plugin: 'android'
 
-
 dependencies {
-
     compile "com.android.support:support-v4:20.+"
     compile "com.android.support:support-v13:20.+"
-
 }
 
 // The sample build uses multiple directories to
@@ -90,11 +85,8 @@ android {
         }
         androidTest.setRoot('tests')
         androidTest.java.srcDirs = ['tests/src']
-
     }
-
 }
-
 ```
 
 更新为:
@@ -102,13 +94,9 @@ android {
 ```groovy
 apply plugin: 'com.android.application'
 
-
-
 dependencies {
-
     compile "com.android.support:support-v4:20.+"
     compile "com.android.support:support-v13:20.+"
-
 }
 
 android {
@@ -124,9 +112,9 @@ android {
 
 ### 错误
 
-#### 错误`Unable to locate a Java Runtime to invoke.`
+#### 错误 ` Unable to locate a Java Runtime to invoke. `
 
-可能是gradlew daemon 进程死掉了。
+可能是gradlew daemon 进程死掉了。  
 https://code.google.com/p/android/issues/detail?id=60913
 
 解决方案： 手动杀掉gradle daemon 进程
@@ -139,15 +127,15 @@ lucas           14529   0.0  4.3  3966132 359556   ??  S     4:07PM   0:22.98 /L
 ➜  ClippingBasic
 ```
 
-#### `Could not create plugin of type 'AppPlugin'.`
+#### ` Could not create plugin of type 'AppPlugin'. `
 
-Gradle 版本和gradle android plugin 版本不对
+Gradle 版本和gradle android plugin 版本不对  
 修改gradle 版本
 
 ```sh
 ./gradlew --version
 
- vim ./gradle/wrapper/gradle-wrapper.properties
+vim ./gradle/wrapper/gradle-wrapper.properties
 ```
 
 ```sh
@@ -159,8 +147,8 @@ zipStorePath=wrapper/dists
 distributionUrl=http\://services.gradle.org/distributions/gradle-1.12-all.zip
 ```
 
-修改 `distributionUrl` 的值 `gradle-1.*-all.zip`.
+修改 ` distributionUrl ` 的值 ` gradle-1.*-all.zip ` .
 
-关于Gradle 版本和gradle android plugin 版本的对应关系，见 gradle plugin version compatibility 页面映射表:
-http://tools.android.com/tech-docs/new-build-system/version-compatibility
-<img src="http://i.stack.imgur.com/PnMzD.jpg">
+关于Gradle 版本和gradle android plugin 版本的对应关系，见 gradle plugin version compatibility 页面映射表:  
+http://tools.android.com/tech-docs/new-build-system/version-compatibility  
+<img src="http://i.stack.imgur.com/PnMzD.jpg" />

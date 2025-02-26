@@ -1,21 +1,27 @@
 ---
-layout: post
+layout: "post"
 title: 'Readings for Year 2013'
-published: true
+published: "true"
 tags: [reading]
+date: "2013-11-07"
 ---
 
-<img src="/imgs/12071617343144.jpg" align="center" width="100%"/>
+<img src="/imgs/12071617343144.jpg" align="center" width="100%" />
 
 > 说明: 此前由读[《暗时间》](http://xianminx.github.io/2013/02/01/dark-time-reading-list/) 催生了读书的计划。 这篇博客用来记录2013 年看过的和想看但没看完或者还没开始看的书。 由于记不太清楚， 个别书可能是2012 年或者更早读过。
 
 ### 更新日志
 
 - 2013/11/7 晚， 第一次总结， 发现今年不知不觉中也看了十多本书了。 努力一下， 争取20本。
+
 - 2013/11/11 早， 新增 程序员必读书目, 添加 [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
+
 - 2013/11/26 15:00, 新增 程序员必读书目, 添加 [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I,II. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) by AOSA.
+
 - 2014/01/08 读完[美妙的新世界](http://book.douban.com/subject/4872919/)。
+
 - 2014/01/08 添加2014年1月阅读计划列表。
+
 - 2014/01/11 读完[第七天](http://book.douban.com/subject/24540864/)
 
 ## 已读
@@ -42,7 +48,7 @@ tags: [reading]
 
 ## 2014年1月在读
 
-<img src="/imgs/IMG_20140110_004325.jpg" align="center" width="100%"/>
+<img src="/imgs/IMG_20140110_004325.jpg" align="center" width="100%" />
 
 1. [动物庄园](http://book.douban.com/subject/3808982/) by 乔治·奥威尔
 1. [1984](http://book.douban.com/subject/4820710/) by George Orwell
@@ -137,7 +143,7 @@ tags: [reading]
 1. ~~[每天懂一点色彩心理学•实用篇(附色彩杂学练习册)](http://book.douban.com/subject/24371378/) by (日) 原田玲仁~~
 1. ~~[配色设计原理](http://book.douban.com/subject/4165856/) by 奥博斯科编辑部~~
 1. [宝瓶同谋:大数据时代的思想聚变](http://book.douban.com/subject/25848220/) by [美] 玛丽琳. 弗格森
-1. [定价未来:撼动华尔街的量化金融史](http://book.douban.com/subject/25934012/)[美]乔治G.斯皮罗（George G. Szpiro）
+1. [定价未来:撼动华尔街的量化金融史](http://book.douban.com/subject/25934012/) by [美]乔治G.斯皮罗（George G. Szpiro）
 1. [僧侣与哲学家](http://book.douban.com/subject/25978763/) by 珍·法蘭可斯雷蒙 / 馬錫·理察
 
 ## Waiting List
@@ -162,7 +168,7 @@ tags: [reading]
 
 1. [程序员的自我修养](http://book.douban.com/subject/3652388/) by 俞甲子 / 石凡 / 潘爱民
 1. [Computer Systems:A Programmer's Perspective](http://book.douban.com/subject/1229948/) by Randal E. Bryant / David R. O'Hallaron
-1. <img src="http://www.coachingcommons.org/images/New.jpg" width=30px/>[Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
+1. <img src="http://www.coachingcommons.org/images/New.jpg" width="30" />[Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) by Harold Abelson and Gerald Jay Sussman
 1. [The Art of Unix Programming](http://books.google.com.hk/books/about/The_Art_of_Unix_Programming.html?id=giJxmAEACAAJ) by Eric S. Raymond.
 1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part I
 1. [The Performance of Open Source Applications](http://aosabook.org/en/index.html) part II

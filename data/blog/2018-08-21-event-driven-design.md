@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Event Driven Design'
-published: true
+published: "true"
 tags: [architecture]
+date: "2018-08-21"
 ---
 
 ## Introduction
@@ -15,7 +16,7 @@ Observer Pattern
 
 ## Implementation
 
-Queue
+Queue  
 Single Thread, queue, watch
 
 Operating System, Kernel mode, user mode
@@ -40,8 +41,8 @@ AsyncTask
 
 - `vm.$emit`
 - `vm.$on`
-- `vm.$once( event, callback )`
-- `vm.$off( [event, callback] )`
+- `vm.$once(event, callback)`
+- `vm.$off([event, callback])`
 
 ```js
 // node_modules/vue/src/core/instance/events.js
@@ -67,12 +68,12 @@ export function eventsMixin (Vue: Class<Component>) {
 
 ## Javascript Event
 
-https://developer.mozilla.org/en-US/docs/Web/API/Event
+[MDN Web Docs - Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
 
 ## Java Event
 
-In Java, we implement event using interface,
-See https://docs.oracle.com/javase/tutorial/uiswing/events/intro.html
+In Java, we implement event using interface,  
+See [Java Swing Events](https://docs.oracle.com/javase/tutorial/uiswing/events/intro.html)
 
 # Event Hierarchy
 
@@ -86,14 +87,14 @@ register
 
 ## pub/sub
 
-# Programming Models and Phylosophy
+# Programming Models and Philosophy
 
-A Core Pattern for Events
-Adila A. Krisnadhi1;2 and Pascal Hitzler1
-1 Wright State University, OH, USA
+A Core Pattern for Events  
+Adila A. Krisnadhi1;2 and Pascal Hitzler1  
+1 Wright State University, OH, USA  
 2 Universitas Indonesia, Depok, Indonesia
 
-## Refernces:
+## References:
 
-- https://github.com/mspnp/architecture-center/blob/master/docs/patterns/event-sourcing.md
+- [Event Sourcing Pattern](https://github.com/mspnp/architecture-center/blob/master/docs/patterns/event-sourcing.md)
 -

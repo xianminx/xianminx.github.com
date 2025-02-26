@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Spring Security'
-published: true
+published: "true"
 tags: [spring, java]
+date: "2018-05-05"
 ---
 
 Servelet Interceptor
@@ -31,5 +32,5 @@ Spring Security中进行身份验证的是AuthenticationManager接口，Provider
 
 UsernamePasswordAuthenticationToken
 
-<img src="http://up.2cto.com/kf/201103/20110314161540976.png" vertical-align="middle">
-http://up.2cto.com/kf/201103/20110314161540730.png
+<img src="http://up.2cto.com/kf/201103/20110314161540976.png" style={{ verticalAlign: "middle" }} />
+<img src="http://up.2cto.com/kf/201103/20110314161540730.png" />

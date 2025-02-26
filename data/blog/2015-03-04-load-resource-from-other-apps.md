@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Loading resources from other Android applications.'
-published: true
+published: "true"
 tags: [android, classloader]
+date: "2015-03-04"
 ---
 
 This post tells you how to "steal" data and code from other Android applications at Runtime.
@@ -47,9 +48,7 @@ private void testCreatePackageContext() {
     } catch (Exception e) {
         e.printStackTrace();
     }
-
 }
-
 ```
 
 ## ClassLoader

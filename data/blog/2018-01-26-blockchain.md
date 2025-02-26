@@ -1,17 +1,19 @@
 ---
-layout: post
+layout: "post"
 title: 'BlockChain'
-published: true
+published: "true"
 tags: [bitcoin]
+date: "2018-01-26"
 ---
 
 # Bitcoin
 
-# Lightening Network
+## Lightening Network
 
-    ## BlockStream
-    c-lightening
-    ## Lightening Labs
+### BlockStream
+c-lightening
+
+### Lightening Labs
 
 # Ethereum
 

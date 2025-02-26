@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Spring boot'
-published: true
+published: "true"
 tags: [cloud]
+date: "2018-03-15"
 ---
 
 Sping Boot
@@ -12,7 +13,6 @@ Sping Boot
 The curated list contains all the spring modules that you can use with Spring Boot as well as a refined list of third party libraries. The list is available as a standard Bills of Materials (spring-boot-dependencies) that can be used with both Maven and Gradle.
 
 ```sh
-
 BUILD FAILED in 4s
 ➜  NutNetwork git:(master) ✗ ./gradlew dependencies
 /Users/lucas/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.15/1483490805e8f86c21240958629905e733d079eb/log4j-1.2.15.pom:

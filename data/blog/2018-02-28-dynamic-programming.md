@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Dynamic programming'
-published: true
+published: "true"
 tags: [programming]
+date: "2018-02-28"
 ---
 
 # Model Definition
@@ -10,10 +11,13 @@ tags: [programming]
 ## components
 
 - 界定问题
+
 - 子问题
+
 - 递推公式
+
 - 边界条件
--
+
 - 复杂度
 
 ## 示例问题分析
@@ -25,8 +29,8 @@ tags: [programming]
 迭代公式: f(n) = f(n-1) + f(n-2)
 
 边界条件:
-f(0) = 1
-f(1) =1
+f(0) = 1  
+f(1) = 1
 
 ### 字符串相似度(编辑距离)
 

@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'SIP System Integration Protection'
-published: true
+published: "true"
 tags: [string, trie, pattern matching]
+date: "2016-09-21"
 ---
 
 ```bash
@@ -13,7 +14,7 @@ ERROR:  While executing gem ... (Errno::EPERM)
    Operation not permitted - /usr/bin/bundle
 ```
 
-Google it find https://github.com/bundler/bundler/issues/4065
+Google it find [https://github.com/bundler/bundler/issues/4065](https://github.com/bundler/bundler/issues/4065)
 
 After adding option `-n /usr/local/bin`, it works.
 
@@ -25,7 +26,7 @@ Installing ri documentation for bundler-1.13.1
 1 gem installed
 ```
 
-http://apple.stackexchange.com/questions/193368/what-is-the-rootless-feature-in-el-capitan-really
+[http://apple.stackexchange.com/questions/193368/what-is-the-rootless-feature-in-el-capitan-really](http://apple.stackexchange.com/questions/193368/what-is-the-rootless-feature-in-el-capitan-really)
 
 - You can't modify anything in /System, /bin, /sbin, or /usr (except /usr/local); or any of the built-in apps and utilities. Only Installer and software update can modify these areas, and even they only do it when installing Apple-signed packages. But since normal OS X-style customizations go in /Library (or ~/Library, or /Applications), and unix-style customizations (e.g. Homebrew) go in /usr/local (or sometimes /etc or /opt), this shouldn't be a big deal. It also prevents block-level writes to the startup disk, so you can't bypass it that way.
 

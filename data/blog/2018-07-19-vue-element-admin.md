@@ -1,15 +1,21 @@
 ---
-layout: post
+layout: "post"
 title: 'vue-element-admin'
-published: true
+published: "true"
 tags: [css, web]
+date: "2018-07-19"
 ---
 
 - [axios](#axios)
+
 - [mock.js](#mockjs)
+
   - [random](#random)
+
 - [ES2015+](#es2015)
+
 - [vuex](#vuex)
+
 - [vue-router](#vue-router)
 
 ## [axios](https://github.com/axios/axios)
@@ -31,7 +37,7 @@ npm run serve
 ```
 
 - 数据模板定义规范 DTD
-  `'name|rule': value`
+  ` 'name|rule': value `
 
 ### random
 
@@ -122,15 +128,19 @@ npm install random -g
 每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器，它包含着你的应用中大部分的状态 (state)。
 
 - reactive in store state vars.
+
 - commit mutation
 
 ## vue-router
 
 # Questions
 
-- `import request from '@/utils/request'` what is @?
+- ` import request from '@/utils/request' ` what is @?
+
 - requests interceptor 中 set login token
+
 - response interceptor 中验证 response 错误
+
 - [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
   ```js
@@ -140,6 +150,7 @@ npm install random -g
 - store
 
   - getters
+
   - [store modules](https://vuex.vuejs.org/guide/modules.html)
 
     ```js
@@ -155,6 +166,7 @@ npm install random -g
     ```
 
 - export function
+
 - router
   ```js
   {
@@ -169,7 +181,11 @@ npm install random -g
     }]
   },
   ```
+
 - vuex
+
   - getters
+
   - mapGetters
+
   - mutations

@@ -1,19 +1,24 @@
 ---
-layout: post
+layout: "post"
 title: 'Python logging'
-published: true
+published: "true"
 tags: [python, logging]
+date: "2017-10-10"
 ---
 
-# Pythong logging module
+# Python logging module
 
 ![img](https://docs.python.org/2/_images/logging_flow.png)
 
 - Loggers expose the interface that application code directly uses.
+
 - Handlers send the log records (created by loggers) to the appropriate destination.
+
 - Filters provide a finer grained facility for determining which log records to output.
+
 - Formatters specify the layout of log records in the final output.
-- ` LogRecord`
+
+- `LogRecord`
 
 ## syslog
 
@@ -46,7 +51,9 @@ logger.info('Hello baby')
 logger names track the package/module hierarchy, and it’s intuitively obvious where events are logged just from the logger name.
 
 - `Logger.setLevel()` specifies the lowest-severity log message a logger will handle, where debug is the lowest built-in severity level and critical is the highest built-in severity. For example, if the severity level is INFO, the logger will handle only INFO, WARNING, ERROR, and CRITICAL messages and will ignore DEBUG messages.
+
 - `Logger.addHandler()` and `Logger.removeHandler()` add and remove handler objects from the logger object. Handlers are covered in more detail in Handlers.
+
 - `Logger.addFilter()` and `Logger.removeFilter()` add and remove filter objects from the logger object. Filters are covered in more detail in Filter Objects.
 
 ### Config
@@ -61,6 +68,7 @@ three ways:
   ```python
   logging.config.fileConfig('logging.conf')
   ```
+
 - Creating a dictionary of configuration information and passing it to the dictConfig() function.
 
 Use rotating file handler
@@ -72,20 +80,35 @@ debug(), info(), warning(), error() and critical().
 ## Handler
 
 - `class Handler()`
+
 - `class logging.StreamHandler(stream=None)`
+
 - `class logging.NullHandler`
+
 - `class logging.FileHandler(filename, mode='a', encoding=None, delay=False)`
+
 - `class logging.handlers.WatchedFileHandler(filename[, mode[, encoding[, delay]]])`
+
 - `class logging.handlers.RotatingFileHandler(filename, mode='a', maxBytes=0, backupCount=0, encoding=None, delay=0)`
+
   - `doRollover()`
+
 - `class logging.handlers.TimedRotatingFileHandler(filename, when='h', interval=1, backupCount=0, encoding=None, delay=False, utc=False)`
+
 - `class logging.handlers.SocketHandler(host, port)`
+
 - `class logging.handlers.DatagramHandler(host, port)`
+
 - `class logging.handlers.SysLogHandler(address=('localhost', SYSLOG_UDP_PORT), facility=LOG_USER, socktype=socket.SOCK_DGRAM)`
+
 - `class logging.handlers.NTEventLogHandler(appname, dllname=None, logtype='Application')`
+
 - `class logging.handlers.SMTPHandler(mailhost, fromaddr, toaddrs, subject, credentials=None, secure=None)`
+
 - `class logging.handlers.BufferingHandler(capacity)`
+
 - `class logging.handlers.MemoryHandler(capacity, flushLevel=ERROR, target=None)`
+
 - `class logging.handlers.HTTPHandler(host, url, method='GET')`
 
 ## misc

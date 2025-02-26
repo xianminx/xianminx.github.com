@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Maven with Eclipse'
 tags: [android]
+date: "2013-03-19"
 ---
 
 #
@@ -10,8 +11,10 @@ tags: [android]
 2. 安装Eclipse
 3. 安装m2e
 
-- [Install Instruction](http://www.eclipse.org/m2e/download/).
+- [Install Instruction](http://www.eclipse.org/m2e/download/)
+
 - [M2E DOC](http://wiki.eclipse.org/Maven_Integration)
+
 - [How To Create A Web Application Project With Maven](http://www.mkyong.com/maven/how-to-create-a-web-application-project-with-maven/)
 
 ```bash
@@ -24,11 +27,9 @@ To convert a maven project to a eclipse project
 mvn eclipse:eclipse -Dwtpversion=2.0
 ```
 
-<div class="mindmap">
-  <p class="heading">
-    <a href="http://app.wisemapping.com/c/maps/108563/public">Mind Map</a>
-  </p>
-  <div class="content">
-    <iframe style="width:700px;height:400px;border: 1px solid black" src="http://app.wisemapping.com/c/maps/108563/embed?zoom=1"> </iframe>
-  </div>
+<p className="heading">
+  <a href="http://app.wisemapping.com/c/maps/108563/public">Mind Map</a>
+</p>
+<div className="content">
+  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="http://app.wisemapping.com/c/maps/108563/embed?zoom=1"></iframe>
 </div>

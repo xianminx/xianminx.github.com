@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Python VIRTUAL ENV'
-published: true
+published: "true"
 tags: [python]
+date: "2017-11-27"
 ---
 
 Python virtual enviroment 提供一个独立的 python 运行环境， 用来解决类似 Windows 上的 DLL HELL 问题。
@@ -26,7 +27,7 @@ drwxr-xr-x   9 lucas  admin   288B Nov  3 23:25 backports.functools_lru_cache-1.
 $ [sudo] pip install virtualenv
 ```
 
-也可以安装源代码到本地，这样不需要 sudo 权限
+也可以安装源代码到本地，这样不需要 sudo 权限
 
 ```sh
 $ python virtualenv.py myVE
@@ -53,8 +54,8 @@ drwxr-xr-x  2 lucas lucas 4.0K 2016-11-16 11:39 virtualenv_embedded
 drwxr-xr-x  2 lucas lucas 4.0K 2016-11-16 11:39 virtualenv_support
 ```
 
-核心文件是`virtualenv.py`
-当然要求 相关的类库存在。
+核心文件是 `virtualenv.py`
+当然要求 相关的类库存在。
 
 ## 使用
 
@@ -67,32 +68,33 @@ Installing setuptools, pip, wheel...done.
 ➜  /tmp tree -L 2 ENV
 ENV
 ├── bin
-│   ├── activate
-│   ├── activate.csh
-│   ├── activate.fish
-│   ├── activate_this.py
-│   ├── easy_install
-│   ├── easy_install-2.7
-│   ├── pip
-│   ├── pip2
-│   ├── pip2.7
-│   ├── python -> python2.7
-│   ├── python-config
-│   ├── python2 -> python2.7
-│   ├── python2.7
-│   └── wheel
+│   ├── activate
+│   ├── activate.csh
+│   ├── activate.fish
+│   ├── activate_this.py
+│   ├── easy_install
+│   ├── easy_install-2.7
+│   ├── pip
+│   ├── pip2
+│   ├── pip2.7
+│   ├── python -> python2.7
+│   ├── python-config
+│   ├── python2 -> python2.7
+│   ├── python2.7
+│   └── wheel
 ├── include
-│   └── python2.7 -> /usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/include/python2.7
+│   └── python2.7 -> /usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/include/python2.7
 ├── lib
-│   └── python2.7
+│   └── python2.7
 └── pip-selfcheck.json
 
 5 directories, 15 files
-
 ```
 
 - ENV/lib/ and ENV/include/ are created, containing supporting library files for a new virtualenv python. Packages installed in this environment will live under ENV/lib/pythonX.X/site-packages/.
+
 - ENV/bin is created, where executables live - noticeably a new python. Thus running a script with #! /path/to/ENV/bin/python would run that script under this virtualenv’s python.
+
 - The crucial packages pip and setuptools are installed, which allow other packages to be easily installed to the environment. This associated pip can be run from ENV/bin/pip.
 
 ### 激活
@@ -101,7 +103,7 @@ ENV
 $ source bin/activate
 ```
 
-```
+```sh
 $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 

@@ -1,32 +1,55 @@
 ---
-layout: post
+layout: "post"
 title: 'Algorithm'
-published: true
+published: "true"
 tags: [cloud]
+date: "2018-03-12"
 ---
 
 - [Divide and Conqure](#divide-and-conqure)
+
   - [Steps](#steps)
+
     - [Examples](#examples)
+
   - [求解法](#%E6%B1%82%E8%A7%A3%E6%B3%95)
+
     - [递归](#%E9%80%92%E5%BD%92)
+
     - [迭代](#%E8%BF%AD%E4%BB%A3)
+
   - [子问题类型](#%E5%AD%90%E9%97%AE%E9%A2%98%E7%B1%BB%E5%9E%8B)
+
     - [f(n) = f(n-1) , f(n-2)](#fn-fn-1-fn-2)
+
       - [e.g. Fibonacci 数列问题](#eg-fibonacci-%E6%95%B0%E5%88%97%E9%97%AE%E9%A2%98)
+
     - [f(n) = f(n/2) or more generally f(n/k)](#fn-fn2-or-more-generally-fnk)
+
       - [Binary Search 的三个模板:](#binary-search-%E7%9A%84%E4%B8%89%E4%B8%AA%E6%A8%A1%E6%9D%BF)
+
 - [Dynamic Programming](#dynamic-programming)
+
   - [Steps](#steps)
+
 - [Two Pointers](#two-pointers)
+
 - [Recursion](#recursion)
+
   - [Recursively-defined functions](#recursively-defined-functions)
+
   - [tail recursion](#%08tail-recursion)
+
 - [DFS](#dfs)
+
 - [圆形问题 round / circle/ rotation](#%E5%9C%86%E5%BD%A2%E9%97%AE%E9%A2%98-round-circle-rotation)
+
   - [Tail Recursion](#tail-recursion)
+
     - [Tail Recursion vs. Non-Tail Recursion](#tail-recursion-vs-non-tail-recursion)
+
 - [References:](#references)
+
   - [Divide and Conquer Strategy for Problem Solving - Recursive Functions ](#divide-and-conquer-strategy-for-problem-solving---recursive-functions)
 
 # Divide and Conqure
@@ -118,12 +141,12 @@ public double pow(x, n){
 }
 ```
 
-将上面的 乘法 \* 换成矩阵乘法就可以求解 f(n) 了。
-复杂度降为 `O(logn)`.
+将上面的 乘法 * 换成矩阵乘法就可以求解 f(n) 了。
+复杂度降为 ` O(logn) ` .
 
 ### f(n) = f(n/2) or more generally f(n/k)
 
-此类问题经常对应搜索空间减半，从而实现 `O(logn)` 的时间复杂度。
+此类问题经常对应搜索空间减半，从而实现 ` O(logn) ` 的时间复杂度。
 binary search 是典型此类问题。
 
 **二分查找的形式: **
@@ -147,9 +170,13 @@ while(l < r){
 3 Templates for Binary Search
 
 1. Template #1 is used to search for an element or condition which can be determined by accessing a single index in the array.
+
    - Search Condition can be determined without comparing to the element's neighbors (or use specific elements around it)
+
    - No post-processing required because at each step, you are checking to see if the element has been found. If you reach the end, then you know the element is not found
+
    - Initial Condition: left = 0, right = length-1
+
    - Termination: left > right
 
 ```java
@@ -172,12 +199,19 @@ int binarySearch(int[] nums, int target){
 ```
 
 2.  It is used to search for an element or condition which requires accessing the current index and its immediate right neighbor's index in the array.
+
     - An advanced way to implement Binary Search.
+
     - Search Condition needs to access element's immediate right neighbor
+
     - Use element's right neighbor to determine if condition is met and decide whether to go left or right
+
     - Gurantees Search Space is at least 2 in size at each step
+
     - Post-processing required. Loop/Recursion ends when you have 1 element left. Need to assess if the remaining element meets the condition.
+
     - Initial Condition: left = 0, right = length
+
     - Termination: left == right
 
 ```java
@@ -202,12 +236,19 @@ int binarySearch(int[] nums, int target){
 ```
 
 3. Template #3 is another unique form of Binary Search. It is used to search for an element or condition which requires accessing the current index and its immediate left and right neighbor's index in the array.
+
    - An alternative way to implement Binary Search
+
    - Search Condition needs to access element's immediate left and right neighbors
+
    - Use element's neighbors to determine if condition is met and decide whether to go left or right
+
    - Gurantees Search Space is at least 3 in size at each step
+
    - Post-processing required. Loop/Recursion ends when you have 2 elements left. Need to assess if the remaining elements meet the condition.
+
    - Initial Condition: left = 0, right = length-1
+
    - Termination: left + 1 == right
 
 ```java
@@ -323,10 +364,15 @@ end
 ## Recursively-defined functions
 
 - Factorial: n!
+
 - Fibonacci numbers
+
 - Ackermann Function
+
 - Tower of Hanoi
+
 - Fractals
+
 - Tree and data searches
 
 ## tail recursion
@@ -353,8 +399,11 @@ private void print(Node node, String ident){
 # 圆形问题 round / circle/ rotation
 
 - Distributed Hashing Table
+
 - 数组循环
+
 - 队列 实现
+
 - Link list
 
 ## Tail Recursion
@@ -412,12 +461,19 @@ The consequence of this is that once you are ready to perform your next recursiv
 ### Tail Recursion vs. Non-Tail Recursion
 
 - In general, (non-tail) recursive function calls put parameters on the stack
+
   - Every call grows the stack
+
   - On return, the parameters are needed to compute the result (together with the partial result returned)
+
 - In tail recursive functions, the parameters from the call before are not needed anymore
+
   - Instead, the result is directly handed to the parent
+
   - Hence, no parameters need to be put on the stack
+
 - Languages that use tail recursion optimization realize this and don’t grow the stack
+
 - The languages we cover next are optimized in this way So they are much more efficient when using recursion
 
 # References:

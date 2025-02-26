@@ -1,18 +1,19 @@
 ---
-layout: post
+layout: "post"
 title: 'Python Packaging'
-published: true
+published: "true"
 tags: [python]
+date: "2017-11-20"
 ---
 
 # Python Process
 
 ## Current Architecture
 
-Disutils
-Setuptools
-Distribute
-Pip
+Disutils  
+Setuptools  
+Distribute  
+Pip  
 
 ## Miscs
 

@@ -1,23 +1,24 @@
 ---
-layout: post
+layout: "post"
 title: 'Python Pandas'
-published: true
+published: "true"
 tags: [python]
+date: "2017-11-28"
 ---
 
 # model
 
 ## DataFrame
 
-index
-Series
+index  
+Series  
 
-Join
+Join  
 
-Extract
-Transform
-Load
-pc4t
+Extract  
+Transform  
+Load  
+pc4t  
 
-Tabular data
+Tabular data  
 Time series data

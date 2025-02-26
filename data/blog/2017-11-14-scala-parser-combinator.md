@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Parser combinator'
-published: true
+published: "true"
 tags: [scala]
+date: "2017-11-14"
 ---
 
 # Parser
@@ -16,12 +17,17 @@ tags: [scala]
 algebra =
 
 - a collection of functions
+
 - data types
+
 - a set of laws over functions
 
 ## miscs
 
 - YACC
+
 - ANTLR
+
 - algebraic design
+
 - how is regular expression implemented in various languages?

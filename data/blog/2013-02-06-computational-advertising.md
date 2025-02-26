@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Computational Advertising'
 tags: [ads]
+date: "2013-02-06"
 ---
 
 Resources:

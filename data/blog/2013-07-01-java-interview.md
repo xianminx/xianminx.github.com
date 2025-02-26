@@ -1,20 +1,21 @@
 ---
-layout: post
+layout: "post"
 title: 'Android Interview'
-published: true
+published: "true"
 tags: [android, java, interview]
+date: "2013-07-01"
 ---
 
 # Interview Questions Collection
 
-1. [careercup](http://www.careercup.com/),There is an accompany book: "Cracking the Coding Interview: 150 Programming Questions and Solutions" by Gayle Laakmann McDowell
+1. [careercup](http://www.careercup.com/)，There is an accompany book: "Cracking the Coding Interview: 150 Programming Questions and Solutions" by Gayle Laakmann McDowell
 1. [Cracking the coding interview--问题与解答](http://hawstein.com/posts/ctci-solutions-contents.html)
-1. Quora:[Java Interview Questions](http://www.quora.com/Java-Interview-Questions). A collection of java interview questions on quora.
+1. Quora: [Java Interview Questions](http://www.quora.com/Java-Interview-Questions). A collection of java interview questions on quora.
 
 # Java Resources
 
-1. Qura: [What questions are Java Software Engineers seeing the most of on technical interviews?](http://www.quora.com/What-questions-are-Java-Software-Engineers-seeing-the-most-of-on-technical-interviews)
-1. Qura: [What are good interview questions to ask JAVA developers?] (http://www.quora.com/Java-programming-language/What-are-good-interview-questions-to-ask-JAVA-developers)
+1. Quora: [What questions are Java Software Engineers seeing the most of on technical interviews?](http://www.quora.com/What-questions-are-Java-Software-Engineers-seeing-the-most-of-on-technical-interviews)
+1. Quora: [What are good interview questions to ask JAVA developers?](http://www.quora.com/Java-programming-language/What-are-good-interview-questions-to-ask-JAVA-developers)
 1. [Java puzzlers](http://www.javapuzzlers.com/) by Joshua Bloch. **RECOMMENDED** FOR SENIOR JAVA DEVELOPERS.
 1. [Effective Java](http://books.google.com.hk/books/about/Effective_Java.html?id=ka2VUBqHiWkC) by Joshua Bloch. **RECOMMENDED** FOR ADVANCED JUNIOR JAVA DEVELOPERS.
 1. [Java Concurrency in Practice](http://books.google.com.hk/books?id=EK43StEVfJIC&hl=zh-CN&source=gbs_similarbooks) by Tim Peierls, Brian Goetz, Joshua Bloch, Joseph Bowbeer, Doug Lea, David Holmes. **RECOMMENDED** FOR SERVER DEVELOPERS.
@@ -23,10 +24,10 @@ tags: [android, java, interview]
 1. [Thinking in Java](http://books.google.com.hk/books/about/Thinking_In_Java.html?id=j_O5QgAACAAJ) by Bruce Eckel. JAVA 101
 1. The Java Job Interview Companion
 1. Quora: [What are good books to test one's programming skills?](http://www.quora.com/Computer-Science/What-are-good-books-to-test-ones-programming-skills)
-1. Wiki:[List of data structures](http://en.wikipedia.org/wiki/List_of_data_structures)
-1. Wiki:[List of algorithms](http://en.wikipedia.org/wiki/List_of_algorithms)
+1. Wiki: [List of data structures](http://en.wikipedia.org/wiki/List_of_data_structures)
+1. Wiki: [List of algorithms](http://en.wikipedia.org/wiki/List_of_algorithms)
 1. Programming Interviews Exposed: Secrets to Landing Your Next Job
-1. Coding Interviews By Harre He . A Press
+1. Coding Interviews By Harre He. A Press
 1. Cracking the coding interview by Gayle as mentioned in other posts
 1. Algorithms For Interviews (9781453792995): Adnan Aziz, Amit Prakash: Books
 1. Programming Challenges by Steven Skiena
@@ -36,7 +37,7 @@ tags: [android, java, interview]
 1. Data Structures and Algorithms Made Easy 2nd Edition - I strongly recommend this book
 1. Cracking the C, C++ and Java Interview 1st Edition -
 1. Test your C Skills - Yashwant Kanetkar
-1. Test your C ++ Skills - Yashwant Kanetkar
+1. Test your C++ Skills - Yashwant Kanetkar
 1. Exploring C - Yashwant Kanetkar
 1. Test Your Unix skills - Yashwant Kanetkar
 1. [Top 15 Java threading interview questions asked in Investment banks](http://javarevisited.blogspot.in/2011/07/java-multi-threading-interview.html)
@@ -47,8 +48,11 @@ I mostly agree with John Kurlak's answer. Personally I feel Cracking the Coding 
 # Sample Questions
 
 1. Card Shuffle
+
    - http://www.cs.swarthmore.edu/~newhall/cs21/s05/Homework/hw07.html
+
    - [The Danger of Naïveté](http://www.codinghorror.com/blog/2007/12/the-danger-of-naivete.html)
+
    - [Java™ Puzzlers: Traps, Pitfalls, and Corner Cases](http://my.safaribooksonline.com/book/programming/java/032133678x/advanced-puzzlers/ch10lev1sec9) Puzzle 94: Lost in the Shuffle
 
 The following shuffle method purports to shuffle its input array fairly. In other words, it purports to generate all permutations with equal likelihood, assuming that the underlying pseudorandom number generator is fair. Does it make good on its promise? If not, how do you fix it?
@@ -97,7 +101,7 @@ public class Workout {
 
 1.  > Clock puzzles - find the angle between hr,min,sec handles, etc
 
-1.  From Twitter http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/
+1.  From Twitter [http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/](http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/)
     >
     <p>"Consider the following picture:"</p>
     <p><img src="http://qandwhat.apps.runkite.com/content/images/2013/Oct/twitter.jpg" alt="alt text" /></p>
@@ -120,7 +124,6 @@ public class Workout {
 1. Design Patterns
 1. Algorithms
 1. Data Structure
-1.
 
 # Discussion
 
@@ -129,13 +132,21 @@ public class Workout {
 1. @知乎 如何面试android 工程师？ 从哪些方面考察？
 
    - 面试题库
+
    - 技术
+
    - 重构，
+
    - 算法
+
    - 数据结构
+
    - 操作系统
+
    - 能力
+
    - 开放式思维
+
    - 知乎: [如何面试 Android 工程师？](http://www.zhihu.com/question/19733999)
 
 2. 面试官如何写面试反馈？

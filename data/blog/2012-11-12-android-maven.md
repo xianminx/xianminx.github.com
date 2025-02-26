@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Build android applications using maven'
 tags: [android, maven]
+date: "2012-11-12"
 ---
 
 构建android项目的3种方式：

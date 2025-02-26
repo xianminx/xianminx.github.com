@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 title: 'Android NDK'
 tags: [android]
 ---
@@ -8,7 +8,7 @@ tags: [android]
 
 NDK is short for Native Development Kit. It does not benefit for all tasks. Typical good candidates for the NDK are self-contained, CPU-intensive operations that don't allocate much memory, such as signal processing, physics simulation, and so on.
 
-Add /Users/lucas/dev/android/android-ndk-r8d to ~/.bash_profile
+Add `/Users/lucas/dev/android/android-ndk-r8d` to `~/.bash_profile`
 
 ```bash
 export PATH=${PATH}:/Users/lucas/dev/android/android-ndk-r8d/
@@ -16,16 +16,17 @@ export PATH=${PATH}:/Users/lucas/dev/android/android-ndk-r8d/
 
 Here's the general outline of how you work with the NDK tools:
 
-1. Place your native sources under <project>/jni/...
-2. Create <project>/jni/Android.mk to describe your native sources to the NDK build system
-3. Optional: Create <project>/jni/Application.mk.
-4. Build your native code by running the 'ndk-build' script from your project's directory. It is located in the top-level NDK directory:
+1. Place your native sources under `<project>/jni/...`
+2. Create `<project>/jni/Android.mk` to describe your native sources to the NDK build system
+3. Optional: Create `<project>/jni/Application.mk`.
+4. Build your native code by running the `ndk-build` script from your project's directory. It is located in the top-level NDK directory:
+   ```bash
    cd <project>
    <ndk>/ndk-build
-5. The build tools copy the stripped, shared libraries needed by your application to the proper location in the application's project directory.
-   Finally, compile your application using the SDK tools in the usual way. The SDK build tools will package the shared libraries in the application's deployable .apk file.
+   ```
+5. The build tools copy the stripped, shared libraries needed by your application to the proper location in the application's project directory. Finally, compile your application using the SDK tools in the usual way. The SDK build tools will package the shared libraries in the application's deployable `.apk` file.
 
-### On ARM emualtor
+### On ARM emulator
 
 ```bash
 root@android:/data/data/com.example.hellojni/lib # ls
@@ -44,8 +45,6 @@ Running JNI app on Intel Emulator.
 ```
 
 ```
-
-
 I/ActivityManager( 1013): START {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.example.hellojni/.HelloJni u=0} from pid 1151
 D/dalvikvm( 1013): GC_FOR_ALLOC freed 376K, 9% free 12167K/13255K, paused 6ms, total 8ms
 D/dalvikvm( 1800): Not late-enabling CheckJNI (already on)
@@ -107,8 +106,7 @@ E/AndroidRuntime(  956):  at java.lang.reflect.Method.invokeNative(Native Method
 E/AndroidRuntime(  956):  at java.lang.reflect.Method.invoke(Method.java:511)
 E/AndroidRuntime(  956):  at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:793)
 E/AndroidRuntime(  956):  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:560)
-E/AndroidRuntime(  956):  at dalvik.system.NativeStart.main(Native Method)
-E/AndroidRuntime(  956): Caused by: java.lang.IllegalArgumentException: Unable to find native library: native-activity
+E/AndroidRuntime(  956):  Caused by: java.lang.IllegalArgumentException: Unable to find native library: native-activity
 E/AndroidRuntime(  956):  at android.app.NativeActivity.onCreate(NativeActivity.java:181)
 E/AndroidRuntime(  956):  at android.app.Activity.performCreate(Activity.java:5104)
 E/AndroidRuntime(  956):  at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1080)
@@ -119,11 +117,9 @@ W/Trace   (  402): Unexpected value from nativeGetEnabledTags: 0
 D/dalvikvm(  285): GC_FOR_ALLOC freed 467K, 21% free 11175K/14060K, paused 89ms, total 90ms
 ```
 
-<div class="mindmap">
-  <p class="heading">
-    <a href="http://app.wisemapping.com/c/maps/103695/public">Mind Map</a>
-  </p>
-  <div class="content">
-    <iframe style="width:700px;height:400px;border: 1px solid black" src="http://app.wisemapping.com/c/maps/103695/embed?zoom=1"> </iframe>
-  </div>
+<p class="heading">
+  <a href="http://app.wisemapping.com/c/maps/103695/public">Mind Map</a>
+</p>
+<div class="content">
+  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="http://app.wisemapping.com/c/maps/103695/embed?zoom=1"></iframe>
 </div>

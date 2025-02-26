@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Android ListView Advanced'
 tags: [android]
+date: "2013-04-23"
 ---
 
 # Introduction
@@ -56,7 +57,7 @@ public class SimpleListViewActivity extends Activity {
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <ListView
         android:id="@+id/list"
@@ -68,7 +69,7 @@ public class SimpleListViewActivity extends Activity {
 
 This is a very simple example of ListView.
 
-<img src="/imgs/device-2013-04-24-184626.png" width="300">
+<img src="/imgs/device-2013-04-24-184626.png" width="300" />
 
 ## Adapter Architecture
 
@@ -80,18 +81,18 @@ ListView is embeded in Activity in layout XML.
 
 ### Data
 
-To provide data for each item in the ListView, we need a Adapter. Here we use ListAdapter, constructed from a static `String` array.
+To provide data for each item in the ListView, we need a Adapter. Here we use ListAdapter, constructed from a static ` String ` array.
 
 ### Controller
 
-If you want users to interact with your app, you can add `Listeners` for user actions, for example, click event, touch event.
-This can be done by setting `setOnItemClickListener`.
+If you want users to interact with your app, you can add ` Listeners ` for user actions, for example, click event, touch event. This can be done by setting ` setOnItemClickListener `.
 
 ## Framework API
 
 ### Official Tutorials
 
 - Official introductory tutorial can be found at this [link](http://developer.android.com/guide/topics/ui/layout/listview.html).
+
 - [Building Layouts with an Adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews)
 
 ### Non-Official Tutorials
@@ -122,43 +123,40 @@ ConvertView
 
 # 问题
 
-1.  Occasionally, you get the `IllegalStateException` error, stating
+1.  Occasionally, you get the ` IllegalStateException ` error, stating
     > "The content of the adapter has changed but "
-        			+ "ListView did not receive a notification. Make sure the content of "
-        			+ "your adapter is not modified from a background thread, but only from "
-        			+ "the UI thread. Make sure your adapter calls notifyDataSetChanged() "
-        			+ "when its content changes. "
+    > "ListView did not receive a notification. Make sure the content of "
+    > "your adapter is not modified from a background thread, but only from "
+    > "the UI thread. Make sure your adapter calls notifyDataSetChanged() "
+    > "when its content changes."
 
 By checking the source code, we find that when the ListView's 'mItemCount' is different from the bound adapter's count, framework will throw the exception.
 
 Here 'mItemCount' is written when the adapter is first time set or when 'onMeasure' is called (refresh).
 
-<img src="imgs/listview_itemcount_write.png".
+<img src="imgs/listview_itemcount_write.png" />
 
 ```java
-
-            // Handle the empty set by removing all views that are visible
-            // and calling it a day
-            if (mItemCount == 0) {
-                resetList();
-                invokeOnItemScrollListener();
-                return;
-            } else if (mItemCount != mAdapter.getCount()) {
-                throw new IllegalStateException("The content of the adapter has changed but "
-                        + "ListView did not receive a notification. Make sure the content of "
-                        + "your adapter is not modified from a background thread, but only from "
-                        + "the UI thread. Make sure your adapter calls notifyDataSetChanged() "
-                        + "when its content changes. [in ListView(" + getId() + ", " + getClass()
-                        + ") with Adapter(" + mAdapter.getClass() + ")]");
-            }
-
-
+// Handle the empty set by removing all views that are visible
+// and calling it a day
+if (mItemCount == 0) {
+    resetList();
+    invokeOnItemScrollListener();
+    return;
+} else if (mItemCount != mAdapter.getCount()) {
+    throw new IllegalStateException("The content of the adapter has changed but "
+            + "ListView did not receive a notification. Make sure the content of "
+            + "your adapter is not modified from a background thread, but only from "
+            + "the UI thread. Make sure your adapter calls notifyDataSetChanged() "
+            + "when its content changes. [in ListView(" + getId() + ", " + getClass()
+            + ") with Adapter(" + mAdapter.getClass() + ")]");
+}
 ```
 
 1. [Performance Tips for Android’s ListView](http://lucasr.org/2012/04/05/performance-tips-for-androids-listview/)
-1. [Google I/O 2010 - The world of ListView]<iframe width="560" height="315" src="//www.youtube.com/embed/wDBM6wVEO70" frameborder="0" allowfullscreen></iframe>
+2. [Google I/O 2010 - The world of ListView]
+    <iframe width="560" height="315" src="//www.youtube.com/embed/wDBM6wVEO70" frameborder="0" allowfullscreen></iframe>
 
 [MIND MAP](http://app.wisemapping.com/c/maps/116744/public)
 
-<iframe style="width:700px;height:800px;border: 1px
-solid black" src="http://app.wisemapping.com/c/maps/116744/embed?zoom=1"> </iframe>
+<iframe style="width:700px;height:800px;border: 1px solid black" src="http://app.wisemapping.com/c/maps/116744/embed?zoom=1"></iframe>

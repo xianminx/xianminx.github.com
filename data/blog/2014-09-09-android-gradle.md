@@ -1,25 +1,26 @@
 ---
-layout: post
+layout: "post"
 title: 'Gradle'
-published: true
+published: "true"
 tags: [Android, gradle]
+date: "2014-09-09"
 ---
 
 目标:
 
 1. 初步了解gradle的DSL 语言，能够看懂， 并简单改写。
-1. 了解Android Gradle build 系统
-1. 为Feedback Android SDK 书写gradle 打包系统，发布。
-1. 生成Eclipse 导入环境。 使得在Eclipse 中可用。
+2. 了解Android Gradle build 系统
+3. 为Feedback Android SDK 书写gradle 打包系统，发布。
+4. 生成Eclipse 导入环境。 使得在Eclipse 中可用。
 
-<img src="https://0d9321c1-a-db1c6dfe-s-sites.googlegroups.com/a/android.com/tools/tech-docs/new-build-system/build-workflow/Android%20Build%20Process.png?attachauth=ANoY7cquRb3ywfVMD_ZPVzHioLUTJ8QhE5Yt0EhvVtaVEMZjiVUIlmml33h1XxnnNzUGTcOifXobzgMU5tIZBKsXnGBu6ZnkScrZxjOPSVXRB_8mHzW83p0PRvBjK7YsBpxEfBOut8XGwZQi8JTZI_bnrvYMcs4PP1ri20plPjb3HP1lXC_qbrk8oHiIslKzx59EWnJ7CwWgePa4geJASujZCJ3VYXq9qIcZKY9WAONbzUqG2SsUEzfuTP_VorTQRYmt4DYgrXFDc-z1c3mWcbxKVaR_vANxmw%3D%3D&attredirects=0">
+<img src="https://0d9321c1-a-db1c6dfe-s-sites.googlegroups.com/a/android.com/tools/tech-docs/new-build-system/build-workflow/Android%20Build%20Process.png?attachauth=ANoY7cquRb3ywfVMD_ZPVzHioLUTJ8QhE5Yt0EhvVtaVEMZjiVUIlmml33h1XxnnNzUGTcOifXobzgMU5tIZBKsXnGBu6ZnkScrZxjOPSVXRB_8mHzW83p0PRvBjK7YsBpxEfBOut8XGwZQi8JTZI_bnrvYMcs4PP1ri20plPjb3HP1lXC_qbrk8oHiIslKzx59EWnJ7CwWgePa4geJASujZCJ3VYXq9qIcZKY9WAONbzUqG2SsUEzfuTP_VorTQRYmt4DYgrXFDc-z1c3mWcbxKVaR_vANxmw%3D%3D&attredirects=0" />
 
 <img src="http://www.gradle.org/docs/current/userguide/img/javaPluginTasks.png" />
 
 # 导读
 
 Gradle 是一个通用的编译构建工具。 Gradle 编译脚本使用Groovy的DSL 语言编写。
-其强调`配置` 而不是`编程`。
+其强调 `配置` 而不是 `编程` 。
 
 新的Android 工程使用Gradle 来编译， Android 团队提供了一个官方的Gradle plugin 插件来支持Android 工程使用Gradle 来编译。
 
@@ -41,17 +42,17 @@ Gradle 特征：
 
 # 基础
 
-一个Gradle 项目使用根目录下的`build.gradle` 来描述其构建配置。
+一个Gradle 项目使用根目录下的 `build.gradle` 来描述其构建配置。
 
 - java-only
 
-  ```
+  ```groovy
   apply plugin: 'java'
   ```
 
 - Android
 
-  ```
+  ```groovy
   buildscript {
       repositories {
           mavenCentral()
@@ -70,7 +71,7 @@ Gradle 特征：
   }
   ```
 
-  - buildscript { ... } 配置了构建过程需要的代码。 需要注意的是此中的`dependencies` 只是指定了构建过程需要的依赖， 而不是项目的依赖。
+  - buildscript { ... } 配置了构建过程需要的代码。 需要注意的是此中的 `dependencies` 只是指定了构建过程需要的依赖， 而不是项目的依赖。
   - `android` 表明使用android 插件来构建此项目。
   - android{ ... } 配置了Android 构建的所有参数。 是Android DSL 的入口。
 
@@ -80,7 +81,7 @@ Gradle 利用了习惯而不是配置的原则，尽可能的提供一些合理�
 
 可以使用"sourceSets" 来配置或者改变默认值
 
-```
+```groovy
 sourceSets {
     main {
         java {
@@ -95,7 +96,7 @@ sourceSets {
 
 Android：
 
-```
+```groovy
 android {
     sourceSets {
         main {
@@ -138,7 +139,7 @@ android {
 
 - Manifest 参数
 
-  ```
+  ```groovy
   android {
       compileSdkVersion 19
       buildToolsVersion "19.0.0"
@@ -156,7 +157,7 @@ android {
 
 `debug`, `release` instances of `BuildType`.
 
-```
+```groovy
 android {
     buildTypes {
         debug {
@@ -170,7 +171,6 @@ android {
         }
     }
 }
-
 ```
 
 ### ProGuard
@@ -181,10 +181,11 @@ android {
 
   - local
     - compile files('libs/foo.jar')
+
   - remote
     - compile 'com.google.guava:guava:11.0.2'
-  - multi-project
 
+  - multi-project
     - compile project(':libraries:lib1')
 
     ```
@@ -198,9 +199,9 @@ android {
 - java lib project and android lib project
 
   - apply plugin: 'android-library'
-  - generate a `.aar` Android archive output
+  - generate a ` .aar ` Android archive output
 
-- Build flaors and types
+- Build flavors and types
 
 # Library publication
 
@@ -245,7 +246,7 @@ The R.txt file is the output of aapt with --output-text-symbols.
 
 # Java Plugin
 
-```
+```groovy
 apply plugin: 'java'
 ```
 
@@ -258,7 +259,7 @@ apply plugin: 'java'
 
 ## Project layout
 
-```
+```groovy
 sourceSets {
   main {
       java {
@@ -271,7 +272,7 @@ sourceSets {
 }
 ```
 
-  <img src="http://www.gradle.org/docs/current/userguide/img/javaPluginTasks.png" />
+<img src="http://www.gradle.org/docs/current/userguide/img/javaPluginTasks.png" />
 
 ## Dependency management
 
@@ -289,5 +290,5 @@ sourceSets {
 # References
 
 1. [Gradle Java Plugin](http://www.gradle.org/docs/current/userguide/java_plugin.html)
-1. [Gradle Plugin User Guide](http://tools.android.com/tech-docs/new-build-system/user-guide)
-1. [Gradle Build Language Reference](http://www.gradle.org/docs/current/dsl/)
+2. [Gradle Plugin User Guide](http://tools.android.com/tech-docs/new-build-system/user-guide)
+3. [Gradle Build Language Reference](http://www.gradle.org/docs/current/dsl/)

@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'LetsEncrypt'
-published: true
+published: "true"
 tags: [ssl]
+date: "2018-06-06"
 ---
 
 https://certbot.eff.org/lets-encrypt/ubuntutrusty-nginx
@@ -65,5 +66,4 @@ IMPORTANT NOTES:
 
    Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
-
 ```

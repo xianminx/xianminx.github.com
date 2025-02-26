@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'TypeScript'
-published: true
+published: "true"
 tags: [typescript]
+date: "2018-03-22"
 ---
 
 # TypeScript
@@ -26,7 +27,6 @@ tsc --version
 Version 2.7.2
 
 tsc --help
-
 ```
 
 ## Project management
@@ -47,14 +47,13 @@ See [typescript101](https://github.com/xianminx/typescript101)
 ├── greeter.js.map
 ├── greeter.ts
 └── tsconfig.json
-
 ```
 
 ### With Visual Studio Code
 
-> Warning: Visual Studio for Mac Community Edition does not support TypeScript natively.
-> So if on Mac, use Visual Studio Code instead.
-> or Use Visual Studio on Windows for better IDE support.
+> Warning: Visual Studio for Mac Community Edition does not support TypeScript natively.  
+> So if on Mac, use Visual Studio Code instead.  
+> or Use Visual Studio on Windows for better IDE support.
 
 References:
 
@@ -62,6 +61,7 @@ References:
 2. [Simplest TypeScript project using Visual Studio Code](https://medium.com/@equisept/simplest-typescript-with-visual-studio-code-e42843fe437)
 
 - File Scope
+
 - Explicit Project
 
 ### tsconfig.json

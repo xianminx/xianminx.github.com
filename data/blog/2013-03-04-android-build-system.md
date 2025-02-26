@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: "post"
 title: 'Android Build System'
 tags: [android]
+date: "2013-03-04"
 ---
 
 Android build system is _make_ based.
@@ -19,12 +20,12 @@ Understanding the makefile
 
 A makefile defines how to build a particular application. Makefiles typically include all of the following elements:
 
-1. Name: Give your build a name (LOCAL_MODULE := <build_name>).
-1. Local Variables: Clear local variables with CLEAR_VARS (include $(CLEAR_VARS)).
-1. Files: Determine which files your application depends upon (LOCAL_SRC_FILES := main.c).
-1. Tags: Define tags, as necessary (LOCAL_MODULE_TAGS := eng development).
-1. Libraries: Define whether your application links with other libraries (LOCAL_SHARED_LIBRARIES := cutils).
-1. Template file: Include a template file to define underlining make tools for a particular target (include $(BUILD_EXECUTABLE)).
+1. Name: Give your build a name (LOCAL_MODULE := `<build_name>`).
+2. Local Variables: Clear local variables with CLEAR_VARS (include $(CLEAR_VARS)).
+3. Files: Determine which files your application depends upon (LOCAL_SRC_FILES := main.c).
+4. Tags: Define tags, as necessary (LOCAL_MODULE_TAGS := eng development).
+5. Libraries: Define whether your application links with other libraries (LOCAL_SHARED_LIBRARIES := cutils).
+6. Template file: Include a template file to define underlining make tools for a particular target (include $(BUILD_EXECUTABLE)).
 
 《Android 内核剖析》 第18章 Android 编译系统
 
@@ -32,7 +33,7 @@ A makefile defines how to build a particular application. Makefiles typically in
    目标：条件
    .PHONY 声明目标
 
-1. Android 源码文件结构
+2. Android 源码文件结构
 
 ```bash
 drwxr-xr-x    6 lucas  staff   306 Mar  4 12:37 .repo
@@ -73,10 +74,9 @@ drwxr-xr-x    3 lucas  staff   102 Mar  4 12:00 tools
 ```bash
 source ./build/envsetup.sh
 make PRODUCT-ful-crespo-eng
-
 ```
 
-1. 编译子工程
+2. 编译子工程
 
 ```bash
 make libbz

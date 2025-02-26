@@ -1,12 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: 'Jetty Configuration'
 tags: [java, jetty]
+date: "2012-08-02"
 ---
 
 ## Jetty Configuration Files
 
-There are a number of locations to configure settings for Jetty and web applciations running on it.
+There are a number of locations to configure settings for Jetty and web applications running on it.
 
 A number of configuration files can be found at ${jetty.home}/start.ini.
 
@@ -50,7 +51,7 @@ Defaults:
   which are used if no command line arguments are provided and override
   the defaults in the start.config file. If the directory jetty.home/start.d
   exists, then multiple *.ini files will be read from that directory in
-  alphabetical order. If --ini options are provided on  the command line,
+  alphabetical order. If --ini options are provided on the command line,
   then start.ini and start.d will NOT be read.
 
   The current start.ini arguments are:
@@ -67,13 +68,13 @@ Defaults:
 
 ### Contexts
 
-An important concept in Jetty is _Context_. A web application is a context. Thus each xml file configured under ./contexts directorty represents a web application.
+An important concept in Jetty is _Context_. A web application is a context. Thus each xml file configured under ./contexts directory represents a web application.
 
-- ./contexts/test.xml
-  The applicaiton configure file, using format of jetty. Jetty uses its own IOC mechanism to read and inject components to the server. The root element of the file is _Server_, representing a server.
+- ./contexts/test.xml  
+  The application configure file, using format of jetty. Jetty uses its own IOC mechanism to read and inject components to the server. The root element of the file is _Server_, representing a server.
 
 - web.xml  
-   `[webapp_name]/WEB-INF/web.xml`. This file is located under a web app WEB-INF directory. The directory name `WEB-INF` and file name `web.xml` is regulated by Serverlet web app standards.
+   `[webapp_name]/WEB-INF/web.xml`. This file is located under a web app WEB-INF directory. The directory name `WEB-INF` and file name `web.xml` is regulated by Servlet web app standards.
 
 - jetty.xml
 
@@ -91,9 +92,9 @@ lucas-mac:jetty-distribution-8.1.5.v20120716 lucas$ cat start.ini
 
 
 #===========================================================
-# If the arguements in this file include JVM arguments
+# If the arguments in this file include JVM arguments
 # (eg -Xmx512m) or JVM System properties (eg com.sun.???),
-# then these will not take affect unless the --exec
+# then these will not take effect unless the --exec
 # parameter is included or if the output from --dry-run
 # is executed like:
 #   eval $(java -jar start.jar --dry-run)

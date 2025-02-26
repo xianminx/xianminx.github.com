@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: "post"
 title: 'Python Modules, Classes, Packages'
-published: true
+published: "true"
 tags: [python]
+date: "2017-10-26"
 ---
 
 # Python Modules, Classes, Packages
@@ -23,9 +24,11 @@ from fibo import *
 - A module can contain executable statements as well as function definitions. These statements are intended to initialize the module. They are executed only the first time the module is imported somewhere.
 
 - When a module named ‘spam’ is imported, the interpreter searches for a file named ‘spam.py’ in the current directory, and then in the list of directories specified by the environment variable ‘PYTHONPATH’. This has the same syntax as the shell variable ‘PATH’, that is, a list of directory names. When ‘PYTHONPATH’ is not set, or when the file is not found there, the search continues in an installation-dependent default path; on UNIX, this is usually ‘.:/usr/local/lib/python’.
+
 - `sys.path` = the directory containing the input script (or the current directory), + ‘PYTHONPATH’ + the installation-dependent default.
 
 - `dir()` find out which names a module defines.
+
 - standard module `__builtins__`
 
 ```python
@@ -59,9 +62,13 @@ dir(__builtins__) =  ['ArithmeticError', 'AssertionError', 'AttributeError', 'Ba
 ## package
 
 - Packages are a way of structuring Python's module namespace by using "dotted module names".
+
 - The `__init__.py` files are required to make Python treat the directories as containing packages;
-- `    __all__ = ["echo", "surround", "reverse"]`
+
+- `__all__ = ["echo", "surround", "reverse"]`
+
 - Intra-package References
+
 - `__path__`. This is initialized to be a list containing the name of the directory holding the package's `__init__.py` before the code in that file is executed.
 
 ## Class
@@ -91,11 +98,14 @@ foo.printVal()
 ```
 
 - `self` `this` `me`, etc.
+
 - methods
+
 - variables: Python creates variables on the fly, when they are first assigned, and class member variables are no different.
   ```python
       self.val = val
   ```
+
 - instance
   we can change the definition of a class on the fly, or even create a completely new class at run-time!
 
@@ -110,19 +120,31 @@ foo.printVal()
 - standard methods:
 
   - `__del__`: Called when an instance is about to be destroyed, which lets you do any clean-up e.g. closing file handles or database connections
+
   - `__repr__` and `__str__`: Both return a string representation of the object, but `__repr__` should return a Python expression that can be used to re-create the object. The more commonly used one is `__str__`, which can return anything.
+
   - `__cmp__`: Called to compare the object with another object. Note that this is only used with Python 2.x. In Python 3.x, only rich comparison methods are used. Such as `__lt__`.
+
   - `__lt__`, `__le__`, `__eq__`, `__ne__`, `__gt__` and `__ge__`: Called to compare the object with another object. These will be called if defined, otherwise Python will fall-back to using `__cmp__`.
+
   - `__hash__`: Called to calculate a hash for the object, which is used for placing objects in data structures such as sets and dictionaries.
+
   - `__call__`: Lets an object be "called" e.g. so that you can write things like this: obj(arg1,arg2,...).
-  - Python also lets you define methods that let an object act like an array (so you can write things like this: `obj[2] = "foo"`), or like a numeric type (so you write things like this: `print(obj1 + 3*obj2)`.
+
+  - Python also lets you define methods that let an object act like an array (so you can write things like this: `obj[2] = "foo"`), or like a numeric type (so you write things like this: `print(obj1 + 3*obj2`).
+
   - `__dict__` − Dictionary containing the class's namespace.
+
   - `__doc__` − Class documentation string or none, if undefined.
+
   - `__name__` − Class name.
-  - `__module__` − Module name in which the class is defined. This attribute is "`__main__`" in interactive mode.
+
+  - `__module__` − Module name in which the class is defined. This attribute is `"__main__"` in interactive mode.
+
   - `__bases__` − A possibly empty tuple containing the base classes, in the order of their occurrence in the base class list.
 
 - In Python, methods and member variables are always public i.e. anyone can access them.
+
 - private methods and variables:
   Class methods and variable names that start with two underscores are considered to be private to that class, However, this is only a convention
 
@@ -141,11 +163,12 @@ foo.printVal()
   ```
 
 - `isinstance`
+
 - `issubclass`
+
 - Class Iterators and Generators
 
   ```python
-
   class Backwards:
       def __init__(self, val):
           self.val = val
@@ -170,11 +193,15 @@ foo.printVal()
   `yield`
 
 - class variable
+
 - instance variable
+
 - function overloading
+
 - inheritance
 
-- data memebers
+- data members
+
 - documentation
 
   ```python
@@ -244,3 +271,4 @@ Find module
 ```
 
 ### site-python
+```mdx
