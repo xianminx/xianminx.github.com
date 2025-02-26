@@ -1,8 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android Advanced'
 tags: [android]
-date: "2013-02-22"
+date: '2013-02-22'
 ---
 
 After more than 1 year experience on Android application development, it is time to dig deeper into more advanced topics.
@@ -20,8 +20,8 @@ Here I list some topics:
 9. Scala on Android.
 
 <p className="heading">
-  <a href="http://app.wisemapping.com/c/maps/102534/public">Mind Map</a>
+  <a href="https://app.wisemapping.com/c/maps/102534/public">Mind Map</a>
 </p>
 <div className="content">
-  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="http://app.wisemapping.com/c/maps/102534/embed?zoom=1"></iframe>
+  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="https://app.wisemapping.com/c/maps/102534/embed?zoom=1"></iframe>
 </div>

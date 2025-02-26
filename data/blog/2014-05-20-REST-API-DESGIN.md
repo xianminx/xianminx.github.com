@@ -97,7 +97,7 @@ performance, scalability, simplicity, modifiability, visibility, portability and
 
   - https://wiki.jenkins-ci.org/display/JENKINS/Remote+access+API
 
-  - http://www.slideshare.net/nicolaiarocci/developing-restful-web-apis-with-python-flask-and-mongodb
+  - https://www.slideshare.net/nicolaiarocci/developing-restful-web-apis-with-python-flask-and-mongodb
 
   - http://docs.python-requests.org/en/latest/community/out-there/#articles-talks
 

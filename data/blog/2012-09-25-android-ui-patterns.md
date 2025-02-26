@@ -1,8 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android UI Design'
 tags: [android, design]
-date: "2012-09-25"
+date: '2012-09-25'
 ---
 
 ## Google Official Design Guideline
@@ -16,7 +16,7 @@ date: "2012-09-25"
   _ Style
   _ Patterns
   _ Building Blocks
-  _ Downloads * Videos Courses
+  _ Downloads \* Videos Courses
 
 - [Best Practices for User Experience & UI](http://developer.android.com/training/best-ux.html)
 
@@ -28,7 +28,7 @@ date: "2012-09-25"
 
   - Implementing Adaptive UI Flows
 
-- [Android Design on Slideshare](http://www.slideshare.net/search/slideshow?searchfrom=header&q=android+design)
+- [Android Design on Slideshare](https://www.slideshare.net/search/slideshow?searchfrom=header&q=android+design)
 
 pre-Honeycomb and post-Honeycomb comparison
 
@@ -36,7 +36,7 @@ pre-Honeycomb and post-Honeycomb comparison
 
 - [Android niceties](http://androidniceties.tumblr.com/)
 
-- [The Best Android Apps 2012: A Designers Collection](http://www.slideshare.net/theresaneil/best-android-app-designs)
+- [The Best Android Apps 2012: A Designers Collection](https://www.slideshare.net/theresaneil/best-android-app-designs)
 
 - [150 Best Android Apps Of Year 2011 [Editor's Pick]](http://www.addictivetips.com/mobile/150-best-android-apps-of-year-2011-editors-pick/)
 
@@ -158,4 +158,4 @@ pre-Honeycomb and post-Honeycomb comparison
 [Libraries for developers](https://play.google.com/store/apps/details?id=com.desarrollodroide.repos) by Desarrollo Droide
 <img src="https://lh5.ggpht.com/NCK1E-h9b20F0330WCoGJ2cSX7oBR_bZZi8gm2flRmcXNanQ2JZdwDPfex2i3ybXsno_=w705" height="300px" alt="Libraries for developers" />
 
-<iframe src="http://www.slideshare.net/RachitShukla3/slideshelf" width="615px" height="470px" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" style={{ border: 'none' }} allowFullScreen webkitAllowFullScreen mozAllowFullScreen></iframe>
+<iframe src="https://www.slideshare.net/RachitShukla3/slideshelf" width="615px" height="470px" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no" style={{ border: 'none' }} allowFullScreen webkitAllowFullScreen mozAllowFullScreen></iframe>

@@ -1,8 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: "[READING]Computer Systems: A Programmer's Perspective"
 tags: [CSAPP]
-date: "2013-02-28"
+date: '2013-02-28'
 ---
 
 > Why Computer Science is so hard to learn?
@@ -99,8 +99,8 @@ A series of blogs for reading notes.
 ## What does the book teach?
 
 <p class="heading">
-  <a href="http://app.wisemapping.com/c/maps/103695/public">Mind Map</a>
+  <a href="https://app.wisemapping.com/c/maps/103695/public">Mind Map</a>
 </p>
 <div class="content">
-  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="http://app.wisemapping.com/c/maps/103695/embed?zoom=1"></iframe>
+  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="https://app.wisemapping.com/c/maps/103695/embed?zoom=1"></iframe>
 </div>

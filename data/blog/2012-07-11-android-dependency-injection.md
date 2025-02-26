@@ -1,8 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android Dependency Injection'
 tags: [android]
-date: "2012-07-11"
+date: '2012-07-11'
 ---
 
 ## Andoid ioc [https://github.com/socialize/android-ioc/](https://github.com/socialize/android-ioc/)
@@ -15,7 +15,7 @@ date: "2012-07-11"
 
 - dagger
 
-[http://www.slideshare.net/InfoQ/dagger-a-fast-dependency-injector-for-android-and-java](http://www.slideshare.net/InfoQ/dagger-a-fast-dependency-injector-for-android-and-java)
+[https://www.slideshare.net/InfoQ/dagger-a-fast-dependency-injector-for-android-and-java](https://www.slideshare.net/InfoQ/dagger-a-fast-dependency-injector-for-android-and-java)
 
 Android dependency injection
 

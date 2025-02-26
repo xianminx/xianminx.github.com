@@ -1,8 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Maven with Eclipse'
 tags: [android]
-date: "2013-03-19"
+date: '2013-03-19'
 ---
 
 #
@@ -28,8 +28,8 @@ mvn eclipse:eclipse -Dwtpversion=2.0
 ```
 
 <p className="heading">
-  <a href="http://app.wisemapping.com/c/maps/108563/public">Mind Map</a>
+  <a href="https://app.wisemapping.com/c/maps/108563/public">Mind Map</a>
 </p>
 <div className="content">
-  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="http://app.wisemapping.com/c/maps/108563/embed?zoom=1"></iframe>
+  <iframe style={{ width: '700px', height: '400px', border: '1px solid black' }} src="https://app.wisemapping.com/c/maps/108563/embed?zoom=1"></iframe>
 </div>

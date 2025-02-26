@@ -1,8 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: '由《暗时间》所引起的读书计划'
 tags: [reading, thinking, writing]
-date: "2013-02-01"
+date: '2013-02-01'
 ---
 
 > 读 刘未鹏的 《暗时间》所感
@@ -101,6 +101,6 @@ date: "2013-02-01"
 
 列了这么多书在这里，压力很大啊。争取半年看完。
 
-[MIND MAP](http://app.wisemapping.com/c/maps/97768/public)
+[MIND MAP](https://app.wisemapping.com/c/maps/97768/public)
 
-<iframe style={{ width: "700px", height: "800px", border: "1px solid black" }} src="http://app.wisemapping.com/c/maps/97768/embed?zoom=1"></iframe>
+<iframe style={{ width: "700px", height: "800px", border: "1px solid black" }} src="https://app.wisemapping.com/c/maps/97768/embed?zoom=1"></iframe>

@@ -156,4 +156,4 @@ if (mItemCount == 0) {
 1. [Performance Tips for Android's ListView](http://lucasr.org/2012/04/05/performance-tips-for-androids-listview/)
 2. [Google I/O 2010 - The world of ListView](https://www.youtube.com/embed/wDBM6wVEO70)
 
-[View the full mind map](http://app.wisemapping.com/c/maps/116744/public)
+[View the full mind map](https://app.wisemapping.com/c/maps/116744/public)
