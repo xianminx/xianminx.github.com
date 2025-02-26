@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Use probability to approach Pi'
-published: "true"
 tags: [interview]
-date: "2013-06-24"
+date: '2013-06-24'
 ---
 
 Once I found this interview question: calculate Pi. Where, all of us have learned calculating Pi in our primary math class by using regular polygon to approach a circle.

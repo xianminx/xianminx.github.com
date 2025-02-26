@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Spring boot'
-published: "true"
 tags: [cloud]
-date: "2018-03-15"
+date: '2018-03-15'
 ---
 
 Sping Boot

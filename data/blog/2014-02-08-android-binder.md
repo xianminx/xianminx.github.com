@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android Binder'
-published: "false"
 tags: [android]
-date: "2014-02-08"
+date: '2014-02-08'
 ---
 
 Binder is the core concept in Android operating system, and is the main difference from Linux.

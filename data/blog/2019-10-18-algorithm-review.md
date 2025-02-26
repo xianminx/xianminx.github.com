@@ -1,8 +1,7 @@
 ---
-title: "Algorithm Review"
+title: 'Algorithm Review'
+date: 2019-10-18
 ---
-
-# Algorithm Review
 
 ## Stack
 

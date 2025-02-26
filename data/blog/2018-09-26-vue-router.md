@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'vue-router'
-published: "true"
 tags: [vue, router]
-date: "2018-09-26"
+date: '2018-09-26'
 ---
 
 - History
@@ -28,7 +27,7 @@ Vue.util.defineReactive(
 
   - location
 
-    - ancestorOrigins: DOMStringList {length: 0}
+    - `ancestorOrigins: DOMStringList {length: 0}`
 
     - assign: ƒ ()
 

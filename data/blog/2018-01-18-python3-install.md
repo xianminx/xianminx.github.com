@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python3 install'
-published: "true"
 tags: [python]
-date: "2018-01-18"
+date: '2018-01-18'
 ---
 
 https://passingcuriosity.com/2015/installing-python-from-source/

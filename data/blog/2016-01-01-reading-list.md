@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Readings for Year 2016'
-published: "true"
 tags: [reading]
-date: "2016-01-01"
+date: '2016-01-01'
 ---
 
 Previous reading for Year 2013 & 2014: [http://xianminx.github.io/2015/01/01/reading-list/](http://xianminx.github.io/2015/01/01/reading-list/)

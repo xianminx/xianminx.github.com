@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Git 多账号'
-published: "true"
 tags: [git]
-date: "2015-03-03"
+date: '2015-03-03'
 ---
 
 ### git 账号

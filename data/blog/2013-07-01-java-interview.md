@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android Interview'
-published: "true"
 tags: [android, java, interview]
-date: "2013-07-01"
+date: '2013-07-01'
 ---
 
 # Interview Questions Collection

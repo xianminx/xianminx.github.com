@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Jupyter'
-published: "true"
 tags: [python]
-date: "2017-11-24"
+date: '2017-11-24'
 ---
 
 Jupyter Notebook， 一款基于 Ipython Kernel 的 web 版 python 运行工具。 方便写 python 相关的报告。

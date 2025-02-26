@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Dynamic programming'
-published: "true"
 tags: [programming]
-date: "2018-02-28"
+date: '2018-02-28'
 ---
 
 # Model Definition

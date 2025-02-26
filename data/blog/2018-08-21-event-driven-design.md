@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Event Driven Design'
-published: "true"
 tags: [architecture]
-date: "2018-08-21"
+date: '2018-08-21'
 ---
 
 ## Introduction

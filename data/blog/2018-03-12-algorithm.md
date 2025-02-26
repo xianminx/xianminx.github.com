@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Algorithm'
-published: "true"
 tags: [cloud]
-date: "2018-03-12"
+date: '2018-03-12'
 ---
 
 - [Divide and Conqure](#divide-and-conqure)
@@ -141,12 +140,12 @@ public double pow(x, n){
 }
 ```
 
-将上面的 乘法 * 换成矩阵乘法就可以求解 f(n) 了。
-复杂度降为 ` O(logn) ` .
+将上面的 乘法 \* 换成矩阵乘法就可以求解 f(n) 了。
+复杂度降为 `O(logn)` .
 
 ### f(n) = f(n/2) or more generally f(n/k)
 
-此类问题经常对应搜索空间减半，从而实现 ` O(logn) ` 的时间复杂度。
+此类问题经常对应搜索空间减半，从而实现 `O(logn)` 的时间复杂度。
 binary search 是典型此类问题。
 
 **二分查找的形式: **
@@ -340,7 +339,7 @@ You have two identical eggs and you are given access to a 100 story building. Yo
 
 To iterate is human, to recurse divine (Anonymous)
 
-```
+```c
 solve( problem p )
     if ( p is simple )
         Solve the problem p directly
@@ -359,7 +358,7 @@ end
 
 初始状态 -> 按某种规则转移，有些状态属于终止状态，然后状态的某个变量就是所求
 
-当前状态下，各个变量间互动，迁移，达到另一个状态，状态机的一般形式是 while (true) { //转移规则}， for (int i = 0; i < n; ++i ) {}这种是说，i这个状态分量每一轮的转移是固定的（++i），并且i == n 是触发状态机stop的方式之一。 状态机停止的一般形式是在转移的规则里的break或者 return
+当前状态下，各个变量间互动，迁移， 达到另一个状态，状态机的一般形式是` while (true) { //转移规则}， for (int i = 0; i < n; ++i ) {}`这种是说，i这个状态分量每一轮的转移是固定的（++i），并且i == n 是触发状态机stop的方式之一。 状态机停止的一般形式是在转移的规则里的break或者 return
 
 ## Recursively-defined functions
 

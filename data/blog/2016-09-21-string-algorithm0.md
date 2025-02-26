@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'SIP System Integration Protection'
-published: "true"
 tags: [string, trie, pattern matching]
-date: "2016-09-21"
+date: '2016-09-21'
 ---
 
 ```bash

@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'appcompat-v7 Theme demystified'
-published: "true"
 tags: [Android, theme, style, support-v4, actionbar]
-date: "2014-08-20"
+date: '2014-08-20'
 ---
 
 ## support-v4

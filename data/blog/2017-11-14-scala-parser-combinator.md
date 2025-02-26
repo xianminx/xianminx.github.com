@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Parser combinator'
-published: "true"
 tags: [scala]
-date: "2017-11-14"
+date: '2017-11-14'
 ---
 
 # Parser

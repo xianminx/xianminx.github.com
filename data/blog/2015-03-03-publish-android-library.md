@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Publish Android Library'
-published: "true"
 tags: [android, open source, git, github]
-date: "2015-03-03"
+date: '2015-03-03'
 ---
 
 Like you, as an Android developer that has benefitted from Github open source libraries a lot for long time, I start thinking how to repay this community. The best way, of course, is to share my contribution by publishing android library code. This post tells what to follow when you want to publish your Android library project on Github.

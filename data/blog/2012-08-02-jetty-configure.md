@@ -1,15 +1,15 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Jetty Configuration'
 tags: [java, jetty]
-date: "2012-08-02"
+date: '2012-08-02'
 ---
 
 ## Jetty Configuration Files
 
 There are a number of locations to configure settings for Jetty and web applications running on it.
 
-A number of configuration files can be found at ${jetty.home}/start.ini.
+A number of configuration files can be found at `${jetty.home}/start.ini`.
 
 ```
 $java -jar start.jar --help

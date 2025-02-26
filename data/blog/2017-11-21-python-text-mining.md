@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python Text Mining'
-published: "true"
 tags: [python]
-date: "2017-11-21"
+date: '2017-11-21'
 ---
 
 Coursera Course: [Applied Data Science with Python Specialization](https://www.coursera.org/specializations/data-science-python).  

@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Ethereum and Solidity'
-published: "true"
 tags: [spring, java]
-date: "2018-05-07"
+date: '2018-05-07'
 ---
 
 ## Tooling
@@ -96,7 +95,7 @@ Solidity 是 Ethereum 上智能合约实现的主要语言之一。
 
 ## Frequently Asked Questions
 
-## 
+##
 
 ## Global variable
 

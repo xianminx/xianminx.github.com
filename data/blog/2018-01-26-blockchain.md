@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'BlockChain'
-published: "true"
 tags: [bitcoin]
-date: "2018-01-26"
+date: '2018-01-26'
 ---
 
 # Bitcoin
@@ -11,6 +10,7 @@ date: "2018-01-26"
 ## Lightening Network
 
 ### BlockStream
+
 c-lightening
 
 ### Lightening Labs

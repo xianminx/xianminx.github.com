@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android TV'
-published: "false"
 tags: [android]
-date: "2014-02-08"
+date: '2014-02-08'
 ---
 
 # Android TV

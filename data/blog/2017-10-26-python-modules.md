@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python Modules, Classes, Packages'
-published: "true"
 tags: [python]
-date: "2017-10-26"
+date: '2017-10-26'
 ---
 
 # Python Modules, Classes, Packages
@@ -102,6 +101,7 @@ foo.printVal()
 - methods
 
 - variables: Python creates variables on the fly, when they are first assigned, and class member variables are no different.
+
   ```python
       self.val = val
   ```
@@ -271,4 +271,7 @@ Find module
 ```
 
 ### site-python
+
 ```mdx
+
+```

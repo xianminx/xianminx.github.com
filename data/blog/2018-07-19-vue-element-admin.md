@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'vue-element-admin'
-published: "true"
 tags: [css, web]
-date: "2018-07-19"
+date: '2018-07-19'
 ---
 
 - [axios](#axios)
@@ -37,7 +36,7 @@ npm run serve
 ```
 
 - 数据模板定义规范 DTD
-  ` 'name|rule': value `
+  `'name|rule': value`
 
 ### random
 
@@ -135,7 +134,7 @@ npm install random -g
 
 # Questions
 
-- ` import request from '@/utils/request' ` what is @?
+- `import request from '@/utils/request'` what is @?
 
 - requests interceptor 中 set login token
 
@@ -168,6 +167,7 @@ npm install random -g
 - export function
 
 - router
+
   ```js
   {
     path: '/',

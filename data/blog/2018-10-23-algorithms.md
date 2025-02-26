@@ -1,10 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Math for algorithms'
-published: "true"
 tags: [algorithm]
-mathjax: "true"
-date: "2018-10-23"
+date: '2018-10-23'
 ---
 
 # Math basics for algorithm

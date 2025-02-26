@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android IPC'
-published: "false"
 tags: [android]
-date: "2014-03-19"
+date: '2014-03-19'
 ---
 
 Inter-process communication of Android

@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python Thread'
-published: "true"
 tags: [python]
-date: "2017-10-26"
+date: '2017-10-26'
 ---
 
 # Python Thread

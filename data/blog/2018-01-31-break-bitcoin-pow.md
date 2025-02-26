@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Break Bitcoin Pow'
-published: "true"
 tags: [bitcoin]
-date: "2018-01-31"
+date: '2018-01-31'
 ---
 
 Miners are required to do a Proof of Work (PoW) computation to find a `x` such that  

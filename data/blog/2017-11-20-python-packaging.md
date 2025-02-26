@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python Packaging'
-published: "true"
 tags: [python]
-date: "2017-11-20"
+date: '2017-11-20'
 ---
 
 # Python Process
@@ -13,7 +12,7 @@ date: "2017-11-20"
 Disutils  
 Setuptools  
 Distribute  
-Pip  
+Pip
 
 ## Miscs
 

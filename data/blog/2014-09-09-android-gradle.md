@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Gradle'
-published: "true"
 tags: [Android, gradle]
-date: "2014-09-09"
+date: '2014-09-09'
 ---
 
 目标:
@@ -71,9 +70,9 @@ Gradle 特征：
   }
   ```
 
-  - buildscript { ... } 配置了构建过程需要的代码。 需要注意的是此中的 `dependencies` 只是指定了构建过程需要的依赖， 而不是项目的依赖。
+  - `buildscript { ... }` 配置了构建过程需要的代码。 需要注意的是此中的 `dependencies` 只是指定了构建过程需要的依赖， 而不是项目的依赖。
   - `android` 表明使用android 插件来构建此项目。
-  - android{ ... } 配置了Android 构建的所有参数。 是Android DSL 的入口。
+  - `android { ... }` 配置了Android 构建的所有参数。 是Android DSL 的入口。
 
 # 项目结构
 
@@ -180,12 +179,15 @@ android {
 - `dependencies`
 
   - local
+
     - compile files('libs/foo.jar')
 
   - remote
+
     - compile 'com.google.guava:guava:11.0.2'
 
   - multi-project
+
     - compile project(':libraries:lib1')
 
     ```
@@ -199,7 +201,7 @@ android {
 - java lib project and android lib project
 
   - apply plugin: 'android-library'
-  - generate a ` .aar ` Android archive output
+  - generate a `.aar` Android archive output
 
 - Build flavors and types
 
@@ -231,6 +233,8 @@ Build Type + Product Flavor = Build Variant
 The 'aar' bundle is the binary distribution of an Android Library Project.
 
 The file extension is .aar, and the maven artifact type should be aar as well, but the file itself a simple zip file with the following entries:
+
+```sh
 /AndroidManifest.xml (mandatory)
 /classes.jar (mandatory)
 /res/ (mandatory)
@@ -240,6 +244,8 @@ The file extension is .aar, and the maven artifact type should be aar as well, b
 /jni/<abi>/_.so (optional)
 /proguard.txt (optional)
 /lint.jar (optional)
+```
+
 These entries are directly at the root of the zip file.
 
 The R.txt file is the output of aapt with --output-text-symbols.

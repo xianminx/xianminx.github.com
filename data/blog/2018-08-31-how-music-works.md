@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'How Music Works'
-published: "true"
 tags: [music]
-date: "2018-08-31"
+date: '2018-08-31'
 ---
 
 [How Music Works](http://www.howmusicworks.org/)
@@ -45,6 +44,7 @@ https://www.soundslice.com/scores/auld-lang-syne/
 - [Installation](http://web.mit.edu/music21/doc/installing/installAdditional.html):
 
   - libs
+
     ```sh
     brew install portaudio
     pip3 install matplotlib numpy scipy pyaudio pygame pillow
@@ -61,6 +61,7 @@ https://www.soundslice.com/scores/auld-lang-syne/
 [Piano key frequencies](https://en.wikipedia.org/wiki/Piano_key_frequencies)
 
 - scientific notation
+
   ```
   Eb4, C#,,, C4, d#'', Ab2
   ```

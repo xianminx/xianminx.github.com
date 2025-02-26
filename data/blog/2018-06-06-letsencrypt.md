@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'LetsEncrypt'
-published: "true"
 tags: [ssl]
-date: "2018-06-06"
+date: '2018-06-06'
 ---
 
 https://certbot.eff.org/lets-encrypt/ubuntutrusty-nginx

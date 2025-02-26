@@ -1,7 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android NDK'
 tags: [android]
+date: 2013-02-19
 ---
 
 # Android NDK Development

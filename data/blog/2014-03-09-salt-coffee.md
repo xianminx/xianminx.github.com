@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: '盐咖啡'
-published: "true"
 tags: [life]
-date: "2014-03-09"
+date: '2014-03-09'
 ---
 
 <br />

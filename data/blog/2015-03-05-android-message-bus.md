@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android Message Bus'
-published: "false"
 tags: [android, message bus]
-date: "2015-03-05"
+date: '2015-03-05'
 ---
 
 http://stackoverflow.com/questions/3987391/why-people-use-message-event-buses-in-their-code  

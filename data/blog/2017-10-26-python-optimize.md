@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python Optimize'
-published: "true"
 tags: [python]
-date: "2017-10-26"
+date: '2017-10-26'
 ---
 
 ## 项目优化
@@ -172,7 +171,7 @@ Python 的 multi-thread 虽然将运行线程化了，但是只是在单核上�
 
 ## msic
 
-- ` **kwargs `
+- `**kwargs`
 
 - How does OS pip work?
 

@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Create your own Ethereum token'
-published: "true"
 tags: [ethereum]
-date: "2018-02-23"
+date: '2018-02-23'
 ---
 
 ## web3j.io

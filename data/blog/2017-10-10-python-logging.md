@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python logging'
-published: "true"
 tags: [python, logging]
-date: "2017-10-10"
+date: '2017-10-10'
 ---
 
 # Python logging module
@@ -65,6 +64,7 @@ three ways:
 - Creating loggers, handlers, and formatters explicitly using Python code that calls the configuration methods listed above.
 
 - Creating a logging config file and reading it using the fileConfig() function.
+
   ```python
   logging.config.fileConfig('logging.conf')
   ```

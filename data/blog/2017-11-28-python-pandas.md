@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python Pandas'
-published: "true"
 tags: [python]
-date: "2017-11-28"
+date: '2017-11-28'
 ---
 
 # model
@@ -11,14 +10,14 @@ date: "2017-11-28"
 ## DataFrame
 
 index  
-Series  
+Series
 
-Join  
+Join
 
 Extract  
 Transform  
 Load  
-pc4t  
+pc4t
 
 Tabular data  
 Time series data

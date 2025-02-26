@@ -1,9 +1,9 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'github视通的jekyll真的很不给力'
 tags: [github]
-draft: "true"
-date: "2012-06-24"
+draft: true
+date: '2012-06-24'
 ---
 
 一直以来想找一个简单的可以写技术博客的站点，要求很简单，不需要什么酷的界面，也不需要什么炫的皮肤，只需要能够不错的展示代码和图片就可以了。

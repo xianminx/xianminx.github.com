@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python VIRTUAL ENV'
-published: "true"
 tags: [python]
-date: "2017-11-27"
+date: '2017-11-27'
 ---
 
 Python virtual enviroment 提供一个独立的 python 运行环境， 用来解决类似 Windows 上的 DLL HELL 问题。

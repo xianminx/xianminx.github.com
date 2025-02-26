@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'TypeScript'
-published: "true"
 tags: [typescript]
-date: "2018-03-22"
+date: '2018-03-22'
 ---
 
 # TypeScript

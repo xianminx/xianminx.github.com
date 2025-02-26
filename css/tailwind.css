@@ -58,3 +58,13 @@ input:-webkit-autofill:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* Iframe container styles */
+.iframe-container {
+  @apply relative my-8 w-full overflow-hidden;
+}
+
+.iframe-container iframe {
+  @apply max-w-full rounded border border-gray-200 dark:border-gray-700;
+  aspect-ratio: 16 / 9;
+}

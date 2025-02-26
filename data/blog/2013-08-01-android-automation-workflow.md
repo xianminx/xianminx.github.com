@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android 自动化'
-published: "true"
 tags: [android, maven, automation, test]
-date: "2013-08-01"
+date: '2013-08-01'
 ---
 
 Android 自动化开发流程  

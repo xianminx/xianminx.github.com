@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Upgrade to Android Studio 3.0'
-published: "true"
 tags: [android]
-date: "2018-02-23"
+date: '2018-02-23'
 ---
 
 After upgrading to Android Studio 3.0, many configs changed.  

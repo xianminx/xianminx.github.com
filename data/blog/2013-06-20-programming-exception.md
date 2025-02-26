@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Exception'
-published: "false"
 tags: [java, programming]
-date: "2013-06-20"
+date: '2013-06-20'
 ---
 
 读书: Java Puzzlers, chapter exception  
@@ -12,8 +11,8 @@ Computer systems, a programmer's perspective.
 1. 编程语言中的异常处理框架是如何设计的？  
    对于不同语言有何区别， 为什么需要异常处理？
 
-2. 编程语言中的异常和系统中断有关系吗？  
-3. functional programming, "Programming Language, principles and paradigms" chap14, 了解PF 的基本原则和Java C 等区别  
+2. 编程语言中的异常和系统中断有关系吗？
+3. functional programming, "Programming Language, principles and paradigms" chap14, 了解PF 的基本原则和Java C 等区别
 4. java Runtime 是干嘛用的？
 
 ：
@@ -22,24 +21,24 @@ Computer systems, a programmer's perspective.
 
 2. [10 Java Exception and Error Interview Questions Answers](http://javarevisited.blogspot.com/2013/06/10-java-exception-and-error-interview-questions-answers-programming.html)
 
-1. What are some basic principles behind exception handling framework for a programming language (java)? Compare the exception handling framework for different languages.  
-2. Why does a language need exception handling?  
-3. How does compiler do exception check? How does runtime do exception check?  
-4. What is Java Runtime? @Quora, StackOverflow, zhihu  
-5. Exception Check mechanism in java?  
-6. Java try-catch-finally and return  
-7. Java Exception v.s. Error v.s. Throwable?  
-8. What is Exception Table in java byte code?  
-9. Runtime exception v.s. compile time exception  
-10. Checked exception v.s. unchecked exception  
-11. Check out java serialization framework  
-12. [ ]Read Function programming. "Programming Languages: Principles and Paradigms" Chap14. Understand the principles of functional programming and difference from OOP, Java, C.  
-13. Check Scala and Clojure, Haskell  
-14. What is JIT, Just in Time?  
-15. what is closures in Scala?  
-16. what is java Immutable data structure?  
-17. Check Scala (Script) for Android.  
-18.
+3. What are some basic principles behind exception handling framework for a programming language (java)? Compare the exception handling framework for different languages.
+4. Why does a language need exception handling?
+5. How does compiler do exception check? How does runtime do exception check?
+6. What is Java Runtime? @Quora, StackOverflow, zhihu
+7. Exception Check mechanism in java?
+8. Java try-catch-finally and return
+9. Java Exception v.s. Error v.s. Throwable?
+10. What is Exception Table in java byte code?
+11. Runtime exception v.s. compile time exception
+12. Checked exception v.s. unchecked exception
+13. Check out java serialization framework
+14. [ ]Read Function programming. "Programming Languages: Principles and Paradigms" Chap14. Understand the principles of functional programming and difference from OOP, Java, C.
+15. Check Scala and Clojure, Haskell
+16. What is JIT, Just in Time?
+17. what is closures in Scala?
+18. what is java Immutable data structure?
+19. Check Scala (Script) for Android.
+20.
 
 Oracle Java Tutorial: Lesson: Exceptions  
 http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
@@ -48,9 +47,9 @@ Definition: An exception is an event, which occurs during the execution of a pro
 
 3 types of Exceptions:
 
-1. checked exception  
-2. error  
-3. RuntimeException  
+1. checked exception
+2. error
+3. RuntimeException
 
 Thinking in Java  
 Chap10 通过异常处理错误  

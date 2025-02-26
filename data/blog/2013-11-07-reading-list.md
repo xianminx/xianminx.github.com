@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Readings for Year 2013'
-published: "true"
 tags: [reading]
-date: "2013-11-07"
+date: '2013-11-07'
 ---
 
 <img src="/imgs/12071617343144.jpg" align="center" width="100%" />

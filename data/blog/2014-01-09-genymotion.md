@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Genymotion'
-published: "true"
 tags: [android]
-date: "2014-01-09"
+date: '2014-01-09'
 ---
 
 Genymotion is based on VirtualBox, most issues come from VirtualBox. If you cannot start a Genymotion emulator, try reinstalling VirtualBox, or repairing VirtualBox.

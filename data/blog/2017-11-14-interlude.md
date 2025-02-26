@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Interlude'
-published: "true"
 tags: [music]
-date: "2017-11-14"
+date: '2017-11-14'
 ---
 
 # 余华 『间奏』

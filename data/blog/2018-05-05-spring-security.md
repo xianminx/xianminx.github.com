@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Spring Security'
-published: "true"
 tags: [spring, java]
-date: "2018-05-05"
+date: '2018-05-05'
 ---
 
 Servelet Interceptor

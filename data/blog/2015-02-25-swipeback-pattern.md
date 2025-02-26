@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Android SwipeBack pattern'
-published: "true"
 tags: [android]
-date: "2015-02-25"
+date: '2015-02-25'
 ---
 
 ### Intro

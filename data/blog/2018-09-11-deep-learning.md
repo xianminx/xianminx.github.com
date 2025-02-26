@@ -1,10 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Deep Learning'
-published: "true"
 tags: [es6]
-mathjax: "true"
-date: "2018-09-11"
+date: '2018-09-11'
 ---
 
 # Deep Learning

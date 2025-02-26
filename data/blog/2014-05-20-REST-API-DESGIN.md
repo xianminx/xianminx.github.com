@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'REST API DESIGN'
-published: "true"
 tags: [REST, API, design]
-date: "2014-05-20"
+date: '2014-05-20'
 ---
 
 REST 缩写: **RE**presentation **S**tate **T**ransfer  
@@ -68,7 +67,7 @@ performance, scalability, simplicity, modifiability, visibility, portability and
 
 - 避免使用集合词
 
-- URL 使用小写，使用 '_' 或者 '-' 来分割单词
+- URL 使用小写，使用 '\_' 或者 '-' 来分割单词
 
 - 尽量保持URL 短小
 

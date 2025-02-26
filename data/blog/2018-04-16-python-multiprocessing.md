@@ -1,9 +1,8 @@
 ---
-layout: "post"
+layout: 'post'
 title: 'Python multitasking'
-published: "true"
 tags: [python]
-date: "2018-04-16"
+date: '2018-04-16'
 ---
 
 - [threading](#threading)
