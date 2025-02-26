@@ -1,0 +1,82 @@
+---
+title: 'Blog Migration'
+date: '2025-02-26'
+summary: 'Transitioning from a Jekyll-based GitHub Pages blog to a Next.js and Tailwind CSS setup, incorporating MDX for enhanced interactivity.'
+draft: false
+tags: ['blog', 'migration']
+author: 'Lukas'
+---
+
+For years, I've maintained my blog using GitHub Pages with Jekyll. The system worked well - write in Markdown, let GitHub handle the rendering, and voilà! But recently, I caught the itch to modernize my setup with Next.js and Tailwind CSS.
+
+The turning point came when I discovered MDX - Markdown's powerful cousin that lets you embed React components directly in content. As someone who occasionally writes about interactive AI projects like my [Chinese Chess Game](https://ai-chinese-chess.vercel.app/), this opened exciting possibilities. Imagine explaining machine learning concepts with live demos, or illustrating game theory with interactive diagrams!
+
+My initial excitement met reality when I tried extracting the documentation system from my chess project. Building a full blog engine requires:
+
+- Post management with pagination/archives
+- Category/tag systems
+- Comment integration
+- SEO optimization
+- RSS feeds
+- Dark/light mode toggles
+- ...and countless other features
+
+That's when I found the [Tailwind Next.js Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) - a template offering 90% of what I needed out of the box. After considering alternatives like [alexcarpenter's MDX theme](https://github.com/alexcarpenter/nextjs-mdx-blog-theme), this became my foundation.
+
+## The Migration Marathon
+
+1. **Branching Out**  
+   Created a new `mdx` branch and dedicated `/blog` directory
+
+2. **Template Setup**
+
+   ```bash
+   npx degit 'timlrx/tailwind-nextjs-starter-blog'
+   ```
+
+3. **Content Migration**  
+   Moved 160+ posts from `__posts` to `data/blog`, only to discover:
+
+   - Legacy HTML/CSS in old Markdown files
+   - Inconsistent frontmatter formats
+   - Broken image references
+
+4. **AI-Assisted Cleanup**  
+   Built a Python script that:
+   - Used OpenAI API to modernize legacy syntax
+   - Standardized frontmatter fields
+   - Handled 80% of conversions automatically  
+     _(Available at `scripts/migration/convert_to_mdx.py`)_
+
+The remaining 20% required manual fixes - a perfect opportunity to reacquaint myself with old content while testing the new system's limits.
+
+## Lessons Learned
+
+1. **Starter Templates Are Lifesavers**  
+   The template's built-in features saved weeks of development time
+
+2. **AI Co-Pilots Shine**  
+   ChatGPT helped troubleshoot MDX edge cases I'd never encountered
+
+3. **Content Debt is Real**  
+   Migrating 10-year-old posts revealed outdated practices and broken links
+
+4. **Progressive Enhancement Wins**  
+   Prioritized core content migration before adding new features
+
+## What's Next?
+
+While the new system already supports:  
+✅ Dark/light mode  
+✅ Improved SEO  
+✅ Responsive layouts  
+✅ Social sharing
+
+I'm eyeing future upgrades:
+
+- Interactive code playgrounds
+- Article version history
+- Enhanced analytics
+- Newsletter integration
+
+This migration taught me that even established systems need occasional renovation. The process felt like moving houses - stressful in the moment, but ultimately rewarding when you settle into a better-organized space with room to grow.
