@@ -23,6 +23,7 @@ const siteMetadata = {
   medium: 'https://medium.com',
   bluesky: 'https://bsky.app/',
   locale: 'en-US',
+  postsPerPage: 20,
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
   analytics: {
