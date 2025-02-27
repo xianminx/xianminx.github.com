@@ -3,7 +3,7 @@ import { allBlogs } from 'contentlayer/generated'
 import { genPageMetadata } from 'app/seo'
 import ListLayout from '@/layouts/ListLayoutWithTags'
 
-const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 20
 
 export const metadata = genPageMetadata({ title: 'Blog' })
 
