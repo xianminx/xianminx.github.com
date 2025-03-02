@@ -6,7 +6,6 @@ import Image from './Image'
 import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 import HelloMDX from './hello-mdx'
-// import { Slider, Calendar } from "@heroui/react";
 
 export const components: MDXComponents = {
   Image,
@@ -14,6 +13,6 @@ export const components: MDXComponents = {
   a: CustomLink,
   pre: Pre,
   table: TableWrapper,
-  BlogNewsletterForm,  
+  BlogNewsletterForm,
   HelloMDX,
 }
