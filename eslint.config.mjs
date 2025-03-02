@@ -12,7 +12,7 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
 
-const config = [
+export default [
   {
     ignores: [],
   },
@@ -68,5 +68,3 @@ const config = [
     },
   },
 ]
-
-export default config
