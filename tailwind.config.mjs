@@ -3,13 +3,13 @@ import { fontFamily } from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
-import {heroui} from "@heroui/theme";
+// import {heroui} from "@heroui/theme";
 
 /** @type {import("tailwindcss/types").Config } */
 const config = {
   content: [
     './node_modules/pliny/**/*.js',
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
+    // "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,tsx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -80,7 +80,7 @@ const config = {
     },
   },
   plugins: [
-    heroui(),
+    // heroui(),
     forms,
     typography,
     ({ addBase, theme }) => {

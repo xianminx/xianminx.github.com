@@ -1,0 +1,72 @@
+---
+title: Use MDX
+date: 2025-01-23
+summary: Use MDX in Next.js
+authors: [Lucas]
+tags: [markdown, github, gfm, mdx]
+
+---
+
+## 1. 安装依赖
+
+```bash
+pnpm add @next/mdx
+```
+
+
+## 2. 配置 next.config.ts
+
+```ts
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
+
+export default withMDX(nextConfig);
+```
+
+
+## 3. 创建 mdx-components.tsx
+
+```tsx
+import type { MDXComponents } from 'mdx/types'
+ 
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    ...components,
+  }
+}
+```
+
+## 4. 创建 mdx 文件
+
+```mdx
+# Hello World
+
+This is a test.
+```
+
+## 5. 创建 mdx 文件 with MDXComponents
+
+在 mdx 文件中使用 MDXComponents 
+* 创建 React 组件
+```tsx
+// hello-mdx.tsx
+export default function HelloMDX() {
+  return (...);
+}
+```
+
+* 在 mdx 文件中使用
+```mdx
+### Demo show HelloMDX
+
+<HelloMDX />
+```
+
+### Demo show HelloMDX
+
+<HelloMDX />
+
+    
+### mdx 配置
+`mdx-components.tsx` 文件中定义的映射， 是在静态和动态编译时用到，如果使用 `MDXRemote` 组件， 则不生效了。 

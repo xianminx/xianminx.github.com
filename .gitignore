@@ -64,3 +64,6 @@ Gemfile.lock
 node_modules
 # Contentlayer
 .contentlayer
+
+# React Component Preview
+previewConfig.json
