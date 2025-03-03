@@ -4,7 +4,6 @@ date: 2025-01-23
 summary: Use MDX in Next.js
 authors: [Lucas]
 tags: [markdown, github, gfm, mdx]
-
 ---
 
 ## 1. 安装依赖
@@ -13,23 +12,21 @@ tags: [markdown, github, gfm, mdx]
 pnpm add @next/mdx
 ```
 
-
 ## 2. 配置 next.config.ts
 
 ```ts
 const withMDX = createMDX({
   extension: /\.mdx?$/,
-});
+})
 
-export default withMDX(nextConfig);
+export default withMDX(nextConfig)
 ```
-
 
 ## 3. 创建 mdx-components.tsx
 
 ```tsx
 import type { MDXComponents } from 'mdx/types'
- 
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
@@ -47,8 +44,10 @@ This is a test.
 
 ## 5. 创建 mdx 文件 with MDXComponents
 
-在 mdx 文件中使用 MDXComponents 
-* 创建 React 组件
+在 mdx 文件中使用 MDXComponents
+
+- 创建 React 组件
+
 ```tsx
 // hello-mdx.tsx
 export default function HelloMDX() {
@@ -56,7 +55,8 @@ export default function HelloMDX() {
 }
 ```
 
-* 在 mdx 文件中使用
+- 在 mdx 文件中使用
+
 ```mdx
 ### Demo show HelloMDX
 
@@ -67,6 +67,21 @@ export default function HelloMDX() {
 
 <HelloMDX />
 
-    
 ### mdx 配置
-`mdx-components.tsx` 文件中定义的映射， 是在静态和动态编译时用到，如果使用 `MDXRemote` 组件， 则不生效了。 
+
+`mdx-components.tsx` 文件中定义的映射， 是在静态和动态编译时用到，如果使用 `MDXRemote` 组件， 则不生效了。
+
+### mermaid
+
+Github supports mermaid code block as
+
+````markdown
+\```mermaid
+````
+
+But mermaid in mdx needs playwright to build, which internally depends on chromium and can be a heavey dependency, so currently contentlayer has no good solution to support mermaid in mdx.
+
+See
+
+- [mdx-mermaid](https://sjwall.github.io/mdx-mermaid/docs/intro/), which relies on puppeteer to render mermaid to svg.
+- [mermaid.js](https://mermaid.js.org/intro/getting-started.html)

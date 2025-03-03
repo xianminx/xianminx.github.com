@@ -1,20 +1,18 @@
 ---
-title: "How ContentLayer Works"
+title: 'How ContentLayer Works'
 date: 2025-02-28
-summary: "ContentLayer is a static site generator that uses MDX and React components to build websites."
+summary: 'ContentLayer is a static site generator that uses MDX and React components to build websites.'
 authors: [Lucas]
 tags: [contentlayer, mdx, react, static-site-generator]
 ---
 
 ## What is ContentLayer?
 
-The workflow 
-
+The workflow
 
 1. mdx transforms to json
 2. json converts to react components
 3. react components render to html
-
 
 Next.js uses webpack to compile and bundle the project.
 ContentLayer, as a plugin, is used by next.js to process the mdx files and generate the json files. This is configured in `next.config.js`:
@@ -38,10 +36,10 @@ The `withContentlayer` function is a plugin that processes the mdx files and gen
 
 Then ContentLayer as plugin, use contentlayer sdk to scan and find all md(x) files in the project, then transform them to json files.
 the json files has frontmatter and body, frontmatter is the metadata of the md(x) file, body is the content of the md(x) file.
-the body has `raw` and `code` 
-the raw field is the raw text of the content of mdx file. and the code the transformed react of the mdx file, make it possible to render the mdx file as react component. so you can embed custom react compoentn inside mdx file. 
+the body has `raw` and `code`
+the raw field is the raw text of the content of mdx file. and the code the transformed react of the mdx file, make it possible to render the mdx file as react component. so you can embed custom react compoentn inside mdx file.
 
-Sample json file: 
+Sample json file:
 
 ```json
 {
@@ -71,11 +69,10 @@ Sample json file:
   }
 ```
 
-You can customize how contentlayer transform the mdx file to json file by using `contentlayer.config.js` file. 
-The core function to transform the mdx file to json file is `makeSource` function. 
+You can customize how contentlayer transform the mdx file to json file by using `contentlayer.config.js` file.
+The core function to transform the mdx file to json file is `makeSource` function.
 
 ```javascript
-
 export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog, Authors],
@@ -114,29 +111,25 @@ export default makeSource({
     createSearchIndex(allBlogs)
   },
 })
-
 ```
 
 When ContentLayer sdk transform the mdx file to json file, it will use the remark and rehype plugins to process the mdx file.
 
-
-
-
-Then in `/app/blog/[...slug]/page.tsx` file, the json file is imported and used to render the content. 
+Then in `/app/blog/[...slug]/page.tsx` file, the json file is imported and used to render the content.
 
 ```javascript
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+<MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
 ```
 
-`MDXLayoutRenderer` is a util component from `pliny` lib that render the generated code as react component. 
+`MDXLayoutRenderer` is a util component from `pliny` lib that render the generated code as react component.
 
-* `code` is the transformed react component of the mdx file.
-* `components` is the custom components that can be used in the mdx file.
-* `toc` is the table of content of the mdx file.
+- `code` is the transformed react component of the mdx file.
+- `components` is the custom components that can be used in the mdx file.
+- `toc` is the table of content of the mdx file.
 
-So if the mdx uses custom components, the `components` prop should be passed to the `MDXLayoutRenderer` component. 
+So if the mdx uses custom components, the `components` prop should be passed to the `MDXLayoutRenderer` component.
 
-Register custom components in `/components/MDXComponents.tsx` file. 
+Register custom components in `/components/MDXComponents.tsx` file.
 
 ```javascript
 import { HelloMDX } from './HelloMDX'
@@ -147,11 +140,6 @@ export const components: MDXComponents = {
 }
 ```
 
-
-
-
-
-
 Contentlayer is a content processing SDK that transforms your MDX files into type-safe JSON data, enabling seamless integration into your application. This transformation allows you to import MDX content as structured data, with the `body.code` field containing the React component representation of the MDX content.
 
 **Input:**
@@ -160,8 +148,8 @@ The input to Contentlayer is your MDX files, which may include frontmatter and c
 
 ```mdx
 ---
-title: "Sample Post"
-date: "2025-02-27"
+title: 'Sample Post'
+date: '2025-02-27'
 ---
 
 # Hello, World!
@@ -192,7 +180,6 @@ Contentlayer processes these MDX files and outputs JSON objects with the followi
 }
 ```
 
-
 In this output:
 
 - `title` and `date` are extracted from the frontmatter.
@@ -214,7 +201,7 @@ However, you can achieve similar functionality by setting up a custom script tha
 
    ```typescript
    // contentlayer.config.ts
-   import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+   import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
    const Post = defineDocumentType(() => ({
      name: 'Post',
@@ -227,12 +214,12 @@ However, you can achieve similar functionality by setting up a custom script tha
      computedFields: {
        url: { type: 'string', resolve: (doc) => `/posts/${doc._raw.flattenedPath}` },
      },
-   }));
+   }))
 
    export default makeSource({
      contentDirPath: 'content',
      documentTypes: [Post],
-   });
+   })
    ```
 
 2. **Create a Custom Script:**
@@ -241,26 +228,26 @@ However, you can achieve similar functionality by setting up a custom script tha
 
    ```javascript
    // processMdx.js
-   const { makeSource } = require('contentlayer/source-files');
-   const fs = require('fs');
-   const path = require('path');
+   const { makeSource } = require('contentlayer/source-files')
+   const fs = require('fs')
+   const path = require('path')
 
    // Initialize Contentlayer source
    const source = makeSource({
      contentDirPath: 'content',
      documentTypes: [], // Specify your document types here
-   });
+   })
 
    // Process a single MDX file
    const processMdxFile = async (filePath) => {
-     const fileContent = fs.readFileSync(filePath, 'utf-8');
-     const processedContent = await source.process(fileContent);
-     console.log(processedContent);
-   };
+     const fileContent = fs.readFileSync(filePath, 'utf-8')
+     const processedContent = await source.process(fileContent)
+     console.log(processedContent)
+   }
 
    // Specify the path to your MDX file
-   const mdxFilePath = path.resolve(__dirname, 'content/path/to/your/file.mdx');
-   processMdxFile(mdxFilePath);
+   const mdxFilePath = path.resolve(__dirname, 'content/path/to/your/file.mdx')
+   processMdxFile(mdxFilePath)
    ```
 
 3. **Run the Script:**
@@ -271,11 +258,10 @@ However, you can achieve similar functionality by setting up a custom script tha
    node processMdx.js
    ```
 
-
 This script reads the specified MDX file, processes it using Contentlayer, and outputs the processed content. You can modify the script to handle the output as needed, such as saving it to a JSON file or logging it to the console.
 
 **Note:**
 
 While this approach allows you to process individual MDX files, it's not the primary use case for Contentlayer. Contentlayer is designed to process all specified content files during the build process, integrating them into your application seamlessly.
 
-For more detailed information on processing MDX files with Contentlayer, refer to the official documentation. citeturn0search1 
+For more detailed information on processing MDX files with Contentlayer, refer to the official documentation. citeturn0search1
