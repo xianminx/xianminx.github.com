@@ -25,6 +25,7 @@ import rehypePresetMinify from 'rehype-preset-minify'
 import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import prettier from 'prettier'
+// import rehypeMermaid from 'rehype-mermaid'
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
@@ -177,6 +178,7 @@ export default makeSource({
       [rehypeCitation, { path: path.join(root, 'data') }],
       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
       rehypePresetMinify,
+      // rehypeMermaid,
     ],
   },
   onSuccess: async (importData) => {
