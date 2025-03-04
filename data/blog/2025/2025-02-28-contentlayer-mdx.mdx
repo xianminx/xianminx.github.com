@@ -265,3 +265,121 @@ This script reads the specified MDX file, processes it using Contentlayer, and o
 While this approach allows you to process individual MDX files, it's not the primary use case for Contentlayer. Contentlayer is designed to process all specified content files during the build process, integrating them into your application seamlessly.
 
 For more detailed information on processing MDX files with Contentlayer, refer to the official documentation. citeturn0search1
+
+ContentLayer2 transform mdx files at compile time, use
+
+1. Builds a AST on the mdx file.
+2. Use the AST to generate a JSON file.
+3. Use components defined in `MDXComponents.tsx` file to transform custom markdown element to react component.
+   For example, contentlayer2 use pliny to render code block to `pre` tag, and map it to `Pre` React component, so it renders in a more elegant and can copy and past code block.
+   The source file from pliny to render `pre` is at
+   https://github.com/timlrx/pliny/blob/main/packages/pliny/src/ui/Pre.tsx .
+   The react componnet just add a wrapper `div` out of `pre` tag, and add a button to copy code when mouse hover the code block.
+
+```tsx
+import { useState, useRef, ReactNode } from 'react'
+
+const Pre = ({ children }: { children: ReactNode }) => {
+  const textInput = useRef(null)
+  const [hovered, setHovered] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  const onEnter = () => {
+    setHovered(true)
+  }
+  const onExit = () => {
+    setHovered(false)
+    setCopied(false)
+  }
+  const onCopy = () => {
+    setCopied(true)
+    navigator.clipboard.writeText(textInput.current.textContent)
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  }
+
+  return (
+    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative">
+      {hovered && (
+        <button
+          aria-label="Copy code"
+          className={`absolute right-2 top-2 h-8 w-8 rounded border-2 bg-gray-700 p-1 dark:bg-gray-800 ${
+            copied
+              ? 'border-green-400 focus:border-green-400 focus:outline-none'
+              : 'border-gray-300'
+          }`}
+          onClick={onCopy}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+            className={copied ? 'text-green-400' : 'text-gray-300'}
+          >
+            {copied ? (
+              <>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                />
+              </>
+            ) : (
+              <>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </>
+            )}
+          </svg>
+        </button>
+      )}
+
+      <pre>{children}</pre>
+    </div>
+  )
+}
+
+export default Pre
+```
+
+The code block itself is still rendered by highlight js.
+
+3. Use the JSON file to generate a component.
+
+those custom components then are used by `MDXLayoutRenderer` in `/app/blog/[...slug]/page.tsx` as
+
+```tsx
+<MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+```
+
+The transformation process happens in several steps:
+MDX Parsing: Your MDX content is first parsed into an Abstract Syntax Tree (AST)
+Remark Plugins: The AST goes through remark plugins:
+remarkGfm - Adds GitHub Flavored Markdown support
+remarkCodeTitles - Handles code block titles
+And others for math, frontmatter, etc.
+Rehype Plugins: Then it goes through rehype plugins that transform the AST to HTML/JSX:
+rehypePrismPlus - This is the key plugin that's transforming your code blocks into syntax-highlighted JSX elements
+Other plugins for headings, math, minification, etc.
+Final Compilation: The processed content is compiled into the React components you're seeing in the output, where each part of the code block is wrapped in spans with appropriate classes for syntax highlighting.
+Let's modify the configuration to better handle Mermaid blocks. We'll update both the ContentLayer config and the MDX components:
+
+Ah, let me explain the relationship between code and pre components in MDX/Markdown processing:
+In Markdown/MDX, when you write a code block like this:
+`
+It gets transformed into HTML/JSX structure like this:
+
+>
+
+In your MDX setup:
+
+- The pre component handles the outer wrapper (`<pre>`) tag
+- The code component handles the inner content (`<code>`) tag
+- Both are registered in your MDXComponents for custom handling

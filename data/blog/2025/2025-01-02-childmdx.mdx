@@ -7,12 +7,9 @@ draft: true
 tags: [markdown, github, gfm, mdx]
 ---
 
-{/_
-import {
-default as ChildMDX,
-frontmatter as childFrontmatter,
-} from "./child.mdx";
-_/}
+```tsx
+import { default as ChildMDX, frontmatter as childFrontmatter } from './child.mdx'
+```
 
 ## MDX Using file based routing
 
@@ -28,7 +25,6 @@ Just like you would do in a normal React component.
 
 ```tsx
 import HelloMDX from './hello-mdx'
-
 ;<HelloMDX />
 ```
 

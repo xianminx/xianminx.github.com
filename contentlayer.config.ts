@@ -25,7 +25,6 @@ import rehypePresetMinify from 'rehype-preset-minify'
 import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import prettier from 'prettier'
-// import rehypeMermaid from 'rehype-mermaid'
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
@@ -176,9 +175,16 @@ export default makeSource({
       rehypeKatex,
       rehypeKatexNoTranslate,
       [rehypeCitation, { path: path.join(root, 'data') }],
-      [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
+      [
+        rehypePrismPlus,
+        {
+          defaultLanguage: 'js',
+          ignoreMissing: true,
+          // Don't transform mermaid code blocks
+          // ignore: ['mermaid'],
+        },
+      ],
       rehypePresetMinify,
-      // rehypeMermaid,
     ],
   },
   onSuccess: async (importData) => {
