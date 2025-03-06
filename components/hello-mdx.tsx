@@ -2,8 +2,6 @@
 
 // import { Slider } from "@heroui/react";
 import { useState } from 'react'
-import Slider from 'rc-slider'
-import 'rc-slider/assets/index.css'
 
 export default function HelloMDX() {
   const [opacity, setOpacity] = useState(0)
@@ -22,13 +20,15 @@ export default function HelloMDX() {
           This is a card component rendered from MDX with interactive components.
         </p>
         <div className="mt-6">
-          <Slider
-            step={0.01}
-            max={1}
-            min={0}
-            defaultValue={0}
-            className="max-w-md"
-            onChange={(value) => setOpacity(Array.isArray(value) ? value[0] : value)}
+          <input
+            id="opacity-range"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={opacity}
+            className="max-w-auto h-2"
+            onChange={(event) => setOpacity(Number(event.target.value))}
           />
         </div>
       </div>

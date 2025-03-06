@@ -32,7 +32,6 @@
     "next-themes": "^0.3.0",
     "pliny": "^0.4.1",
     "prism-react-renderer": "^2.4.1",
-    "rc-slider": "^11.1.8",
     "react": "^19",
     "react-code-block": "^1.1.3",
     "react-dom": "^19",
