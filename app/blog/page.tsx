@@ -1,29 +1,22 @@
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
-import { allBlogs } from 'contentlayer/generated'
+import { getPaginatedPosts } from './page-utils'
 import { genPageMetadata } from 'app/seo'
 import ListLayout from '@/layouts/ListLayoutWithTags'
 
-import siteMetadata from '@/data/siteMetadata'
-
-const postsPerPage = siteMetadata.postsPerPage || 20
-
 export const metadata = genPageMetadata({ title: 'Blog' })
 
-export default async function BlogPage(props: { searchParams: Promise<{ page: string }> }) {
-  const posts = allCoreContent(sortPosts(allBlogs))
-  const pageNumber = 1
-  const totalPages = Math.ceil(posts.length / postsPerPage)
-  const initialDisplayPosts = posts.slice(0, postsPerPage * pageNumber)
-  const pagination = {
-    currentPage: pageNumber,
-    totalPages: totalPages,
+export default async function BlogPage() {
+  const pageData = getPaginatedPosts(1, false)
+
+  // This should never happen for page 1, but included for consistency
+  if (!pageData) {
+    return null
   }
 
   return (
     <ListLayout
-      posts={posts}
-      initialDisplayPosts={initialDisplayPosts}
-      pagination={pagination}
+      posts={pageData.posts}
+      initialDisplayPosts={pageData.initialDisplayPosts}
+      pagination={pageData.pagination}
       title="All Posts"
     />
   )
