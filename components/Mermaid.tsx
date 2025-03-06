@@ -10,12 +10,28 @@ const initializeMermaid = () => {
   if (!mermaidInitialized) {
     mermaid.initialize({
       startOnLoad: true,
-      theme: 'default',
-      securityLevel: 'loose',
+      theme: 'base',
       logLevel: 'error',
+      securityLevel: 'loose',
       suppressErrorRendering: true,
-      fontFamily:
-        'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif',
+      flowchart: {
+        curve: 'basis',
+        padding: 20,
+        nodeSpacing: 50,
+        rankSpacing: 50,
+        htmlLabels: true,
+        defaultRenderer: 'dagre-wrapper',
+      },
+      themeVariables: {
+        fontFamily:
+          'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif',
+        primaryColor: '#6366f1',
+        primaryTextColor: '#ffffff',
+        primaryBorderColor: '#4f46e5',
+        lineColor: '#6366f1',
+        secondaryColor: '#f1f5f9',
+        tertiaryColor: '#e2e8f0',
+      },
     })
     mermaidInitialized = true
   }

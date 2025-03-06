@@ -180,6 +180,7 @@ export default makeSource({
         {
           defaultLanguage: 'js',
           ignoreMissing: true,
+          showLineNumbers: true,
           // Don't transform mermaid code blocks
           // ignore: ['mermaid'],
         },

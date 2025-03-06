@@ -1,0 +1,185 @@
+---
+title: MD Code Block
+date: 2025-03-05
+authors: [Lucas]
+summary: A demo to show using MDX code block.
+draft: true
+tags: [markdown, github, gfm, mdx]
+---
+
+<TOCInline toc={props.toc} toHeading={2} exclude="Introduction" />
+
+## Simple code block in markdown
+
+Markdown provides a straightforward way to include code blocks using triple backticks (```). Here's a basic example:
+
+````
+```js
+const a = 1
+```
+````
+
+When processed, this markdown syntax is transformed into HTML with the following structure:
+
+```html:transformed.html showLineNumbers=1 {1,3-4}
+<pre>
+    <code class="language-js">
+    const a = 1
+    </code>
+</pre>
+```
+
+To enhance code presentation with syntax highlighting, several popular libraries are available:
+
+- [Prism](https://prismjs.com/) - Lightweight, extensible syntax highlighting
+- [Shiki](https://shiki.style/) - TextMate grammar-based highlighter
+- [highlight.js](https://highlightjs.org/) - Versatile syntax highlighting
+
+These libraries can operate in both browser and Node.js environments. Their primary function is to:
+
+1. Locate `<code>` elements in the HTML
+2. Identify the programming language from the element's class
+3. Transform the code content into HTML with semantic token classes
+4. Enable visual styling through CSS
+
+For example, the simple code block above gets transformed into a rich HTML structure with token-specific classes:
+
+```html
+<pre>
+  <code class="code-highlight language-html">
+    <span class="code-line">
+      <span class="token tag">
+        <span class="token tag">
+          <span class="token punctuation">&lt;</span>pre
+        </span>
+        <span class="token punctuation">&gt;</span>
+      </span>
+    </span>
+    <span class="code-line">
+      <span class="token tag">
+        <span class="token tag">
+          <span class="token punctuation">&lt;</span>code
+        </span>
+        <span class="token attr-name">class</span>
+        <span class="token attr-value">
+          <span class="token punctuation attr-equals">=</span>
+          <span class="token punctuation">"</span>language-js<span class="token punctuation">"</span>
+        </span>
+        <span class="token punctuation">&gt;</span>
+      </span>
+    </span>
+    <span class="code-line"> const a = 1</span>
+    <span class="code-line">
+      <span class="token tag">
+        <span class="token tag">
+          <span class="token punctuation">&lt;/</span>code
+        </span>
+        <span class="token punctuation">&gt;</span>
+      </span>
+    </span>
+    <span class="code-line">
+      <span class="token tag">
+        <span class="token tag">
+          <span class="token punctuation">&lt;/</span>pre
+        </span>
+        <span class="token punctuation">&gt;</span>
+      </span>
+    </span>
+  </code>
+</pre>
+```
+
+You can also use the libraries' APIs to transform the given `<code>` string into an HTML string either during the bundling (compile-time) process or manually at runtime.
+
+These highlighting libraries offer flexibility in implementation:
+
+- Runtime transformation in the browser
+- Build-time processing during bundling
+- Manual transformation through their APIs
+
+The choice between these approaches depends on your specific requirements for performance, build complexity, and dynamic content needs.
+
+## rehype plugin: `rehype-prism-plus`
+
+The current blog template, [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog), uses [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus/tree/main/src) to transform code blocks with line numbers and word highlighting during the build process. You can customize the title and enable line numbers as needed.
+
+````
+```html:transformed.html showLineNumbers
+<pre>
+    <code class="language-js">
+    const a = 1
+    </code>
+</pre>
+```
+````
+
+This will show the result you see in [the first section](#simple-code-block-in-markdown)
+
+## Advanced usage
+
+### line numbers and line highlight
+
+````
+```html:transformed.html showLineNumbers=1 {1,3-4}
+````
+
+- code title: `html:transformed.html`
+- show line numbers: `showLineNumbers=1`
+- highlight lines: `{1,3-4}`
+- word highlighting not supported by `rehype-prism-plus`
+
+### Copy and paste
+
+[tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) use customized component `[pliny/Pre](https://github.com/pliny/pliny/blob/main/src/components/Pre.tsx)` to provide copy and paste feature. You may build your own react component.
+
+### Collapse code block
+
+The current blog builds a customized component [CollapsiblePre](https://github.com/xianminx/xianminx.github.com/blob/386dcffc6076fc6879546d49087e0bc8bf896f04/components/CollapsiblePre.tsx#L28) to provide collapse feature.
+
+## Other React code block renderers
+
+```
+------------------------
+pliny/Pre
+------------------------
+react-code-block
+------------------------
+prism-react-renderer
+------------------------
+prismjs
+------------------------
+```
+
+### prism-react-renderer
+
+[prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) encapsulates the core logic of Prism, and provides a React component for rendering code blocks with syntax highlighting.
+
+Basic usage:
+
+```jsx
+import { Highlight, themes } from 'prism-react-renderer'
+
+;<Highlight code={`const a = 1`} language="javascript" theme={themes.dracula}>
+  {({ className, style, tokens, getLineProps, getTokenProps }) => (
+    <pre className={className} style={style}>
+      {tokens.map((line, i) => (
+        <div {...getLineProps({ line, key: i })}>
+          {line.map((token, key) => (
+            <span {...getTokenProps({ token, key })} />
+          ))}
+        </div>
+      ))}
+    </pre>
+  )}
+</Highlight>
+```
+
+The `<Highlight>` component internally use prism to tokenize code, and then use react to render the code block.
+
+### react-code-block
+
+[react-code-block](https://react-code-block.netlify.app/) is built on top of `prism-react-render`, and provides features like: Line numbers, Line highlighting and Word highlighting.
+
+### With MDX in Next.js
+
+You can use `react-code-block` along with mdx, see [With MDX](https://react-code-block.netlify.app/usage/with-mdx)

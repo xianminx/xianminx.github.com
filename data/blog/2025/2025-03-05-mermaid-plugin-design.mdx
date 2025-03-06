@@ -1,0 +1,100 @@
+---
+title: Mermaid Plugin Design
+summary: A detailed look at the design and implementation of the Mermaid plugin.
+date: 2025-03-05
+---
+
+In the previous post [Mermaid MDX](/blog/2025/2025-03-04-mermaid-mdx), I added a `Mermaid` component to the MDX components and use it to render the mermaid diagrams..
+
+But it is more as ad-hoc, after I published the post, I was thinking about how to make it more general and reusable.
+
+So I started to think about how to design a more general plugin for this.
+
+There are two ways to do this,
+
+- one is to use the `rehype` plugin to transform the mermaid code blocks to svg at compile time,
+- the other is to use the `Mermaid` component to render the mermaid diagrams at runtime.
+
+Better way to do may be when compiling the mdx file, if find the mermaid code blocks,
+add global script to the html head.
+
+```html
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
+  mermaid.initialize({ startOnLoad: true })
+</script>
+```
+
+ContentLayer -> mdx-bundler -> @mdx-js/esbuild -> @
+
+Libraries such as mermaid.js traditionally run inside browsers because they depend on browser-specific objects like `document` and `window`. However, their primary role is to perform data transformations rather than rendering final HTML output. This opens up the possibility of running them in environments like Node.js or edge runtimes by supplying mocked or virtual implementations of the required `document` and `window` APIs.
+
+The core difficulty is rendering process requires layout, which need to measure, and it needs a powerful layout system to calculate the size like fonts, and lightweight jsdom is not enough.
+See https://github.com/mermaid-js/mermaid/issues/559#issuecomment-372685431
+
+Yes, you can provide mock `document` and `window` APIs in a Node.js environment using libraries that simulate a browser-like environment. Here are some common solutions:
+
+### 1. **JSDOM (Recommended for Most Use Cases)**
+
+[JSDOM](https://github.com/jsdom/jsdom) is a popular library that emulates the DOM in Node.js. It provides `window` and `document` objects similar to those in a real browser.
+
+```javascript
+import { JSDOM } from 'jsdom'
+
+const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`)
+global.window = dom.window
+global.document = dom.window.document
+global.navigator = dom.window.navigator
+```
+
+This allows libraries like Mermaid.js to function as if they were in a browser.
+
+---
+
+### 2. **HappyDOM (Faster Alternative to JSDOM)**
+
+[HappyDOM](https://github.com/capricorn86/happy-dom) is another DOM simulation library optimized for speed.
+
+```javascript
+import { Window } from 'happy-dom'
+
+const window = new Window()
+global.window = window
+global.document = window.document
+global.navigator = window.navigator
+```
+
+HappyDOM is generally faster than JSDOM and may be more efficient for certain workloads.
+
+---
+
+### 3. **Puppeteer (Headless Browser)**
+
+If you need full browser rendering capabilities, you can use [Puppeteer](https://pptr.dev/), which runs a headless version of Chrome.
+
+```javascript
+import puppeteer from 'puppeteer'
+
+;(async () => {
+  const browser = await puppeteer.launch()
+  const page = await browser.newPage()
+
+  await page.evaluate(() => {
+    window.someCustomProperty = 'test' // Modify the window object
+  })
+
+  await browser.close()
+})()
+```
+
+While Puppeteer provides a real browser environment, it's heavier and slower compared to JSDOM or HappyDOM.
+
+---
+
+### Which One to Choose?
+
+- **Use JSDOM** if you need basic DOM emulation (good balance between compatibility and performance).
+- **Use HappyDOM** if performance is a priority and JSDOM is too slow.
+- **Use Puppeteer** if you require a full browser environment with real rendering.
+
+For running **Mermaid.js in Node.js**, JSDOM is usually sufficient since Mermaid mainly manipulates the DOM but doesn't require full browser rendering.

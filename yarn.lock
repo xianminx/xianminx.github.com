@@ -4084,7 +4084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prismjs@npm:^1.0.0":
+"@types/prismjs@npm:^1.0.0, @types/prismjs@npm:^1.26.0":
   version: 1.26.5
   resolution: "@types/prismjs@npm:1.26.5"
   checksum: d208b04ee9b6de6b2dc916439a81baa47e64ab3659a66d3d34bc3e42faccba9d4b26f590d76f97f7978d1dfaafa0861f81172b1e3c68696dd7a42d73aaaf5b7b
@@ -4716,8 +4716,10 @@ __metadata:
     postcss: 8.4.49
     prettier: ^3.0.0
     prettier-plugin-tailwindcss: ^0.5.11
+    prism-react-renderer: ^2.4.1
     rc-slider: ^11.1.8
     react: ^19
+    react-code-block: ^1.1.3
     react-dom: ^19
     reading-time: 1.5.0
     rehype-autolink-headings: ^7.1.0
@@ -10965,6 +10967,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prism-react-renderer@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "prism-react-renderer@npm:2.4.1"
+  dependencies:
+    "@types/prismjs": ^1.26.0
+    clsx: ^2.0.0
+  peerDependencies:
+    react: ">=16.0.0"
+  checksum: ddd5490a1335629addde9535db7872f0aee8dbce048818dd6e4c3972c779780af13d669c12d3f2fbb54c5b22d1578e50945099ef1a24dd445f33774e87d85e6e
+  languageName: node
+  linkType: hard
+
 "probe-image-size@npm:^7.2.3":
   version: 7.2.3
   resolution: "probe-image-size@npm:7.2.3"
@@ -11108,6 +11122,17 @@ __metadata:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
   checksum: 28d8597b54b6f713a2f0345569f37abe6e8ccf68d42190d9cc494c26790e474ad13eaa6948c6a1f410112392b082a51d4e6e3d9e3deb3132bfbf6dda267ce322
+  languageName: node
+  linkType: hard
+
+"react-code-block@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "react-code-block@npm:1.1.3"
+  peerDependencies:
+    prism-react-renderer: ^2
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  checksum: 1d541628040885a4508865e4e6284343313f20ad5cbe96c838a294e6e13a2d999067be8df07013a42f5701dae240c1d87673d0da2eaa267bec4ae142b27a2388
   languageName: node
   linkType: hard
 

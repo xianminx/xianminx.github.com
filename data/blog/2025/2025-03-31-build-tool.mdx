@@ -1,0 +1,70 @@
+---
+title: Build Tool
+date: 2025-03-31
+---
+
+## unifiedjs
+
+unifiedjs is a platform for building modular content pipelines.
+It provides a core interface for parsing, transforming, and serializing content.
+
+- unifiedjs
+  - ast: mdast, hast, xast etc.
+  - build tools: remark, rehype, remark-rehype, rehype-remark
+
+### AST
+
+text string is parsed into an abstract syntax tree (AST). So unstructured text is transformed into structured data and now logic code with rules can be applied to the text.
+
+Later on, we can code plugins to transform the AST into another AST, to yet another AST, and finally, to the target format.
+
+Since the AST is a tree structure, we can build a tree based library to transform the AST, and this is unist.
+The core action on tree is `visit`, which is a recursive function that traverses the tree and applies a function to each node.
+
+### remark
+
+remark is a markdown processor powered by plugins.
+
+### rehype
+
+rehype is a html processor powered by plugins.
+
+If you are interested in how markdown source text is transformed into a static html page, I highly recommend you to read this article https://unifiedjs.com/learn/guide/using-unified/.
+
+```mermaid
+flowchart TD
+    %% Styling
+    classDef layer fill:#f8fafc,stroke:#e2e8f0,stroke-width:2px
+    classDef primary fill:#6366f1,stroke:#4f46e5,color:#ffffff,stroke-width:2px
+
+    %% Layer 1: ContentLayer2
+    subgraph L1["Layer 1: ContentLayer2"]
+      CL2["ContentLayer2<br/>(UI & Data)"]
+    end
+
+    %% Layer 2: MDX Processing
+    subgraph L2["Layer 2: MDX"]
+      MDX["MDX Compiler<br/>& Parser"]
+    end
+
+    %% Layer 3: unified Engine
+    subgraph L3["Layer 3: unified"]
+      UNI["unified Engine"]
+      PLUG["Plugins<br/>(remark/rehype)"]
+    end
+
+    %% Layer 4: AST Specification
+    subgraph L4["Layer 4: AST Spec"]
+      AST["AST Specification<br/>(Syntax Tree)"]
+    end
+
+    %% Data flow between layers with styling
+    CL2 --> MDX
+    MDX --> UNI
+    UNI --> PLUG
+    PLUG --> AST
+
+    %% Apply styles
+    class L1,L2,L3,L4 layer
+    class CL2,MDX,UNI,PLUG,AST primary
+```
