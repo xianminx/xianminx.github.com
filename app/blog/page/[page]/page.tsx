@@ -4,8 +4,10 @@ import { getPaginatedPosts, generateStaticParams as getParams } from '../../page
 
 export { getParams as generateStaticParams }
 
-export default async function Page({ params }: { params: { page: string } }) {
-  const pageNumber = parseInt(params.page as string)
+export default async function Page({ params }: { params: Promise<{ page: string }> }) {
+  const { page } = await params
+
+  const pageNumber = parseInt(page)
 
   const pageData = getPaginatedPosts(pageNumber, false)
 
