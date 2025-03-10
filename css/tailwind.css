@@ -99,6 +99,12 @@
     }
     & :where(code):not(pre code) {
       color: var(--color-indigo-500);
+      &::before {
+        content: none;
+      }
+      &::after {
+        content: none;
+      }
     }
   }
 
