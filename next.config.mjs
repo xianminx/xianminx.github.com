@@ -14,7 +14,7 @@ const ContentSecurityPolicy = `
   media-src *.s3.amazonaws.com;
   connect-src *;
   font-src 'self' data:;
-  frame-src giscus.app youtube.com www.youtube.com *.wisemapping.com *.slideshare.net
+  frame-src giscus.app youtube.com www.youtube.com *.wisemapping.com *.slideshare.net open.spotify.com
 `
 
 const securityHeaders = [
