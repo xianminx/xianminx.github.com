@@ -1,0 +1,140 @@
+---
+title: 'Lecture Note 6:  Multimodal autonomous agents'
+date: '2023-03-11'
+authors: [Lucas]
+tags: [sp25, agents, ai]
+summary: 'Lecture note for Multimodal autonomous agents'
+draft: false
+---
+
+[CS294/194-280: Advanced Large Language Model Agents](https://llmagents-learning.org/sp25)
+
+Lecture Note 6 : `Multimodal autonomous agents`
+
+[Ruslan Salakhutdinov](https://www.cs.toronto.edu/~rsalakhu/)
+
+<TOCInline toc={props.toc} toHeading={3} />
+
+## Web Agents
+
+## WebArena
+
+[WebArena: A Realistic Web Environment for Building Autonomous Agents](https://webarena.dev/)
+
+## VisualWebArena
+
+[VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks](https://jykoh.com/vwa)
+
+$$ \epsilon = \langle S, A, O, T \rangle $$
+
+Observation:
+
+Action:
+
+Visual Language Models as Agents
+
+Accessiblity tree HTML representations: cluttered with unneccessary information, long and confusing contenxt.
+
+VLM + SoM: simplified representation with Set-of-Marks(SoM) prompting over interactable elements.
+
+Deterministic transition function:
+$$ \tau: S \times A \rightarrow S $$
+
+Baseline Agents
+
+![Baseline Agents](/imgs/blog/2025/sp25/baseline_agents.png)
+
+Web Agent Architecture:
+![Web Agent Architecture](/imgs/blog/2025/sp25/web_agent_arch.png)
+
+![Visual Web Agent Architecture](/imgs/blog/2025/sp25/visualwebarena.png)
+
+Planner:
+
+Common Failure Modes:
+Long horizon reasoning and planning
+
+- Models oscillate between two webpages, or get stuck in a loop.
+- Correctly performing tasks but undoing them.
+-
+
+- Failures visual
+
+What is missing ?
+
+We need to do a lot more to close the gaps:
+reasoing and planning
+
+Measuring Productive Tasks:
+
+## Tree Search for Language Model Agents
+
+[Tree Search for Language Model Agents](https://jykoh.com/search-agents)
+Jing Yu Koh Stephen McAleer Daniel Fried Ruslan Salakhutdinov
+
+Local decisions; global consequences.
+
+Search by repeated sampling
+MCTS
+
+Key idea: apply value function to guide search.
+
+Ablations:
+
+Web agent and AlphaGo Zero MCTS
+
+Limitations
+
+- search is slow
+- dealing with destructive actions
+
+Agents suffer from data problem
+
+## Towards Internet Scal Training for Agents (InSTA)
+
+Key Idea: use Llama to generate and verify synthetic agentic tasks
+
+The Data Pipeline:
+
+- Stage 1: Task Generation
+- Stage 2: Task Evaluation
+- Stage 3: Data Collection
+
+Plan Sequence learn
+
+- Planning module
+
+Common crawl PageRank
+
+Adversarial Attack on multi-modal agents
+
+## Questions
+
+- **What is SoM representation?**
+
+<img src="https://github.com/microsoft/SoM/raw/main/assets/som_logo.png" alt="Logo" width="40" height="40" align="left" style="max-width: 100%;">
+[Set-of-Mark Visual Prompting for GPT-4V](https://github.com/microsoft/SoM)
+
+The paper was published in 2023 by Microsoft.
+At the time, the strongest VLM was GPT-4V.
+The paper uses SAM employ off-the-shelf interactive segmentation models, such as SEEM/SAM, to partition an image into regions at different levels of granularity, and overlay these regions with a set of marks e.g., alphanumerics, masks, boxes. Using the marked image as input, GPT-4V can answer the questions that require visual grounding.
+
+The method works like adding Accessiblity tags to the image.  
+I think this SoM works well for VLM maybe because it was training with segmentation of images.
+
+I doubt there is no need to explicitly add SoM to the image for today's VLM.
+
+The work was pretty simple, but very useful.
+
+- **Why not use site map to assistant the navigation of the website?**
+
+- what is inference time for the agent?
+
+🔥 Turn entire websites into LLM-ready markdown or structured data. Scrape, crawl and extract with a single API.
+https://github.com/mendableai/firecrawl
+
+https://firecrawl.dev/
+
+[The Lessons of Developing Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2501.07301)
+
+[🤖🛜 Awesome AI Agent tools for the web](https://github.com/Agent-Tools/awesome-autonomous-web)

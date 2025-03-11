@@ -1,0 +1,133 @@
+---
+title: 'Manus Demistified'
+date: '2025-03-11'
+summary: 'A guide to the Manus Island detention center'
+authors: ['Lucas']
+tags: [manus, ai, sandbox]
+draft: true
+---
+
+Here is a reverse engineering of the manus project, prompts and tools.
+https://gist.github.com/jlia0/db0a9695b3ca7609c9b1a08dcbf872c9
+
+## Sandbox
+
+unfolded structure of the sandbox is as follows:
+
+```bash
+Ξ .manus/.sandbox-runtime → tree -L 2
+.
+├── Pipfile
+├── Pipfile.lock
+├── app
+│   ├── __init__.py
+│   ├── helpers
+│   ├── logger.py
+│   ├── models.py
+│   ├── router.py
+│   ├── server.py
+│   ├── terminal_socket_server.py
+│   ├── tools
+│   └── types
+├── app_data
+│   └── js       // for chrome extension scripts
+├── browser_use
+│   ├── __init__.py
+│   ├── agent
+│   ├── browser
+│   ├── controller
+│   ├── dom
+│   ├── logging_config.py
+│   ├── telemetry
+│   └── utils.py
+├── conftest.py
+├── data_api.py
+├── pyarmor_runtime_009055
+│   ├── __init__.py
+│   └── pyarmor_runtime.so
+└── start_server.py
+
+14 directories, 16 files
+
+
+tree .packages/ -L 2
+.packages/
+├── chrome-extensions
+│   ├── manus-helper
+│   ├── ublock-origin
+│   └── vida-helper
+└── scripts
+    ├── check-start-chrome.sh
+    ├── check-start-code-server.sh
+    └── start-chrome.sh
+
+
+tree deploy/ -L 2
+deploy/
+└── templates
+    ├── next
+    └── react
+```
+
+Most of the python files are obfuscated by pyarmor.
+
+```python filename=start_server.py
+# Pyarmor 9.1.0 (basic), 009055, Manus, 2025-03-07T15:51:50.544057
+from pyarmor_runtime_009055 import __pyarmor__
+__pyarmor__(__name__, __file__, b'PY009055\x00\x03\x0b\x00\xa7\r\r\n\x80\x00\x01....')
+```
+
+https://gist.github.com/jlia0/db0a9695b3ca7609c9b1a08dcbf872c9
+
+## Browser
+
+The sandbox use browser_use to control the browser, which in turn, use playwright to control the browser.
+
+## Security
+
+The sandbox security is the key factor in desining a LLM agent.
+Since LLM agent can execute code and run browsers for various task, it is import to make sure the generated code follows security rules.
+
+- the code execution enviroment should be kept safe, or it is easy to destroy and restore, one time( or session wide) The envrioemnt does nto share among different agent executions.
+
+- The sandbox does not make side effect to the external world. For example, it does not automatically write to external database, or API.
+  It keeps the internally set enviroment safe, keep it resistant to hack prompts to leak its envrioemnet variables like various API keys.
+
+For example, the sandbox has pre-configured api tokens to deliver execution results to the outside world. This may be a potential security risk, as the hacker may carefully craft a prompt to leak the api token.
+
+```python filename=data_api.py
+    def __init__(self):
+        """
+        Initialize the API client with the base host URL for the proxy service.
+        """
+        host = os.getenv('RUNTIME_API_HOST', 'https://api.manus.im')
+        self.host = f'{host}/apiproxy.v1.ApiProxyService/CallApi'
+        with Path().home().joinpath('.secrets/sandbox_api_token').open('r') as f:
+            self.token = f.read().strip()
+```
+
+## OpenManus
+
+https://github.com/mannaandpoem/OpenManus
+
+<Tweet id="1898994802194346408" />
+
+> [!NOTE]
+> Hi! I'm Peak from Manus AI. Actually, it's not that complicated - the sandbox is directly accessible to each user (see screenshot for method).
+>
+> Specifically:
+>
+> - Each session has its own sandbox, completely isolated from other sessions. Users can enter the sandbox directly through Manus's interface.
+> - The code in the sandbox is only used to receive commands from agents, so it's only lightly obfuscated.
+> - The tools design isn't a secret - Manus agent's action space design isn't significantly different from common academic approaches. And due to the RAG mechanism, the tools descriptions you get through jailbreaking will vary across different tasks.
+> - Multi-agent implementation is one of Manus's key features. When messaging with Manus, you only communicate with the executor agent, which itself doesn't know the details of knowledge, planner, or other agents. This really helps to control context length. And that's why prompts obtained through jailbreaking are mostly hallucinations.
+> - We did use
+>   @browser_use
+>   's open-source code. In fact, we use many different open-source technologies, which is why I specifically mentioned in the launch video that Manus wouldn't exist without the open-source community. We'll have a series of acknowledgments and collaborations coming up.
+> - There's no need to rush - our team has always had an open-source tradition, and I personally have been sharing my post-trained models on HuggingFace. We'll be open-sourcing quite a few good things in the near future.
+
+## OpenHands
+
+[Executable Code Actions Elicit Better LLM Agents](https://github.com/xingyaoww/code-act)
+
+Executable Code Actions Elicit Better LLM Agents

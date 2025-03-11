@@ -6,7 +6,7 @@ import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 import HelloMDX from './hello-mdx'
 import CodeBlockRenderer from './CodeBlockRenderer'
-
+import { Tweet } from 'react-tweet'
 export const components: MDXComponents = {
   Image,
   TOCInline,
@@ -15,4 +15,5 @@ export const components: MDXComponents = {
   table: TableWrapper,
   BlogNewsletterForm,
   HelloMDX,
+  Tweet,
 }

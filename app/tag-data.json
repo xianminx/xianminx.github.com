@@ -1,4 +1,7 @@
 {
+  "frontend": 1,
+  "tooling": 1,
+  "ecosystem": 1,
   "mdx": 8,
   "internal": 1,
   "build-tool": 1,
@@ -30,6 +33,9 @@
   "guide": 5,
   "feature": 2,
   "blog-template": 10,
+  "sp25": 1,
+  "agents": 1,
+  "ai": 1,
   "chatgpt": 1,
   "年终总结": 1,
   "multi-author": 1,
