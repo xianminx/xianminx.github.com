@@ -1,0 +1,440 @@
+[
+  {
+    "era": "Early Foundations (1940s-1950s)",
+    "events": [
+      {
+        "year": 1943,
+        "event": "McCulloch and Pitts publish 'A Logical Calculus of the Ideas Immanent in Nervous Activity', laying the groundwork for neural networks.",
+        "url": "https://en.wikipedia.org/wiki/McCulloch%E2%80%93Pitts_neuron"
+      },
+      {
+        "year": 1948,
+        "event": "Norbert Wiener publishes 'Cybernetics: Or Control and Communication in the Animal and the Machine', establishing key concepts in feedback systems and control theory.",
+        "url": "https://en.wikipedia.org/wiki/Cybernetics"
+      },
+      {
+        "year": 1950,
+        "event": "Alan Turing publishes 'Computing Machinery and Intelligence', introducing the Turing Test to evaluate machine intelligence.",
+        "url": "https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence"
+      },
+      {
+        "year": 1956,
+        "event": "The Dartmouth Conference marks the birth of AI as a field, where John McCarthy coins the term 'artificial intelligence'.",
+        "url": "https://en.wikipedia.org/wiki/Dartmouth_workshop"
+      },
+      {
+        "year": 1958,
+        "event": "Frank Rosenblatt introduces the perceptron, an early neural network model capable of learning.",
+        "url": "https://en.wikipedia.org/wiki/Perceptron"
+      }
+    ]
+  },
+  {
+    "era": "The Golden Age (1950s-1970s)",
+    "events": [
+      {
+        "year": 1956,
+        "event": "Allen Newell and Herbert A. Simon develop the Logic Theorist, the first AI program capable of proving mathematical theorems.",
+        "url": "https://en.wikipedia.org/wiki/Logic_Theorist"
+      },
+      {
+        "year": 1957,
+        "event": "Allen Newell, Herbert A. Simon, and J. C. Shaw develop the General Problem Solver (GPS), a program designed to mimic human problem-solving.",
+        "url": "https://en.wikipedia.org/wiki/General_Problem_Solver"
+      },
+      {
+        "year": 1958,
+        "event": "John McCarthy develops LISP, a programming language that becomes foundational in AI research.",
+        "url": "https://en.wikipedia.org/wiki/Lisp_(programming_language)"
+      },
+      {
+        "year": 1966,
+        "event": "Joseph Weizenbaum creates ELIZA, an early natural language processing program that simulates conversation.",
+        "url": "https://en.wikipedia.org/wiki/ELIZA"
+      },
+      {
+        "year": "1966-1972",
+        "event": "Shakey the Robot, developed at SRI International, becomes the first general-purpose mobile robot capable of reasoning about its actions.",
+        "url": "https://en.wikipedia.org/wiki/Shakey_the_Robot"
+      }
+    ]
+  },
+  {
+    "era": "The AI Winters (1970s-1980s)",
+    "events": [
+      {
+        "year": "1970s-1980s",
+        "event": "A decline in funding and interest in AI research, known as the 'AI winter', occurs due to unmet expectations.",
+        "url": ""
+      },
+      {
+        "year": "1970s-1990s",
+        "event": "Project Stargate, a U.S. government initiative exploring remote viewing for intelligence purposes, is conducted until its termination in 1995.",
+        "category": "Controversial Research",
+        "url": "https://en.wikipedia.org/wiki/Project_Stargate"
+      }
+    ]
+  },
+  {
+    "era": "The Resurgence (1980s-1990s)",
+    "events": [
+      {
+        "year": 1980,
+        "event": "Expert systems gain prominence as AI research revives, alongside renewed interest in neural networks.",
+        "url": "https://en.wikipedia.org/wiki/Expert_system"
+      },
+      {
+        "year": 1986,
+        "event": "Rumelhart, Hinton, and Williams popularize the backpropagation algorithm, revitalizing neural network research.",
+        "url": "https://en.wikipedia.org/wiki/Backpropagation"
+      },
+      {
+        "year": 1997,
+        "event": "IBM's Deep Blue defeats world chess champion Garry Kasparov in a historic match.",
+        "url": "https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)"
+      }
+    ]
+  },
+  {
+    "era": "Modern Era (2000s-2018)",
+    "events": [
+      {
+        "year": 2009,
+        "event": "The ImageNet dataset is released, providing a large-scale resource for advancing computer vision research.",
+        "url": "https://en.wikipedia.org/wiki/ImageNet"
+      },
+      {
+        "year": 2011,
+        "event": "IBM's Watson wins on Jeopardy!, showcasing advances in natural language processing and information retrieval.",
+        "url": "https://en.wikipedia.org/wiki/IBM_Watson"
+      },
+      {
+        "year": 2012,
+        "event": "AlexNet, a deep convolutional neural network, achieves a breakthrough in image recognition by winning the ImageNet competition.",
+        "url": "https://en.wikipedia.org/wiki/AlexNet"
+      },
+      {
+        "year": 2013,
+        "event": "Google introduces Word2Vec, a model that learns word embeddings, significantly advancing natural language processing.",
+        "url": "https://en.wikipedia.org/wiki/Word2vec"
+      },
+      {
+        "year": 2014,
+        "event": "Generative Adversarial Networks (GANs) are introduced, enabling AI to generate realistic data.",
+        "url": "https://en.wikipedia.org/wiki/Generative_adversarial_network"
+      },
+      {
+        "year": 2017,
+        "event": "The Transformer architecture, introduced in 'Attention Is All You Need', revolutionizes natural language processing.",
+        "url": "https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)"
+      },
+      {
+        "year": 2018,
+        "event": "BERT (Bidirectional Encoder Representations from Transformers) is introduced, setting new benchmarks in language understanding.",
+        "url": "https://en.wikipedia.org/wiki/BERT_(language_model)"
+      }
+    ]
+  },
+  {
+    "era": "Recent AI Revolution (2019-2025)",
+    "events": [
+      {
+        "year": 2019,
+        "month": "January",
+        "event": "OpenAI introduces GPT-2, a large language model capable of generating human-like text, though its full version is initially withheld due to misuse concerns.",
+        "category": "LLM",
+        "url": "https://openai.com/blog/better-language-models/"
+      },
+      {
+        "year": 2019,
+        "month": "May",
+        "event": "Google deploys a BERT-based search algorithm to improve natural language understanding in search results.",
+        "category": "Search",
+        "url": "https://blog.google/products/search/search-language-understanding-bert/"
+      },
+      {
+        "year": 2019,
+        "month": "June",
+        "event": "Facebook (Meta) releases PyTorch 1.1, reinforcing its position as a leading machine learning framework.",
+        "category": "Tools",
+        "url": "https://pytorch.org/blog/announcing-pytorch-1.1/"
+      },
+      {
+        "year": 2019,
+        "month": "October",
+        "event": "DeepMind's AlphaStar reaches Grandmaster level in StarCraft II, demonstrating advanced strategic reasoning.",
+        "category": "Reinforcement Learning",
+        "url": "https://deepmind.com/blog/article/alphastar-mastering-starcraft-ii"
+      },
+      {
+        "year": 2019,
+        "month": "December",
+        "event": "OpenAI transitions from a non-profit to a 'capped-profit' model to secure funding for future research.",
+        "category": "Business",
+        "url": "https://openai.com/blog/introducing-openai/"
+      },
+      {
+        "year": 2020,
+        "event": "OpenAI releases GPT-3, a language model with 175 billion parameters that sets new standards in natural language generation.",
+        "category": "LLM",
+        "url": "https://openai.com/blog/openai-api/"
+      },
+      {
+        "year": 2020,
+        "month": "January",
+        "event": "Google Health develops an AI system for breast cancer detection that outperforms human radiologists.",
+        "category": "Healthcare",
+        "url": "https://ai.google/healthcare/"
+      },
+      {
+        "year": 2020,
+        "month": "July",
+        "event": "DeepMind's AlphaFold demonstrates a breakthrough in protein folding prediction at CASP14, revolutionizing biological research.",
+        "category": "Science",
+        "url": "https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology"
+      },
+      {
+        "year": 2020,
+        "month": "September",
+        "event": "Microsoft exclusively licenses GPT-3 from OpenAI, integrating advanced language models into its products.",
+        "category": "Business",
+        "url": "https://news.microsoft.com/2020/09/01/microsoft-and-openai-partner-on-azure/"
+      },
+      {
+        "year": 2020,
+        "month": "December",
+        "event": "Timnit Gebru's departure from Google sparks widespread debate on ethics in AI research.",
+        "category": "Ethics",
+        "url": "https://en.wikipedia.org/wiki/Timnit_Gebru"
+      },
+      {
+        "year": 2021,
+        "event": "DeepMind releases the full AlphaFold Protein Structure Database, providing open access to predicted protein structures.",
+        "category": "Science",
+        "url": "https://deepmind.com/research/case-studies/alphafold"
+      },
+      {
+        "year": 2021,
+        "month": "January",
+        "event": "OpenAI introduces DALL·E, a model that generates images from text descriptions, marking a leap in multimodal AI.",
+        "category": "Generative AI",
+        "url": "https://openai.com/blog/dall-e/"
+      },
+      {
+        "year": 2021,
+        "month": "April",
+        "event": "Meta announces the PyTorch Foundation to accelerate AI research and community development.",
+        "category": "Tools",
+        "url": "https://ai.facebook.com/blog/introducing-pytorch-foundation/"
+      },
+      {
+        "year": 2021,
+        "month": "August",
+        "event": "GitHub Copilot is released in technical preview, offering AI-assisted code suggestions powered by OpenAI Codex.",
+        "category": "Tools",
+        "url": "https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/"
+      },
+      {
+        "year": 2021,
+        "month": "October",
+        "event": "Facebook rebrands as Meta, reflecting a strategic shift toward building the metaverse with integrated AI.",
+        "category": "Business",
+        "url": "https://about.fb.com/news/2021/10/facebook-company-is-now-meta/"
+      },
+      {
+        "year": 2021,
+        "month": "November",
+        "event": "DeepMind releases Gopher, a 280 billion parameter language model pushing the boundaries of natural language understanding.",
+        "category": "LLM",
+        "url": "https://deepmind.com/blog/article/introducing-gopher"
+      },
+      {
+        "year": 2022,
+        "event": "OpenAI releases ChatGPT, sparking widespread public interest in conversational AI.",
+        "category": "LLM",
+        "url": "https://openai.com/blog/chatgpt/"
+      },
+      {
+        "year": 2022,
+        "month": "January",
+        "event": "Google's LaMDA gains attention following claims of sentience, highlighting debates on AI consciousness.",
+        "category": "LLM",
+        "url": "https://blog.google/technology/ai/lamda/"
+      },
+      {
+        "year": 2022,
+        "month": "April",
+        "event": "OpenAI releases DALL·E 2, an enhanced image generation model building on its predecessor's capabilities.",
+        "category": "Generative AI",
+        "url": "https://openai.com/dall-e-2/"
+      },
+      {
+        "year": 2022,
+        "month": "July",
+        "event": "DeepMind introduces Chinchilla, demonstrating that smaller models trained on more data can outperform larger counterparts.",
+        "category": "LLM",
+        "url": "https://deepmind.com/blog/article/chinchilla"
+      },
+      {
+        "year": 2022,
+        "month": "August",
+        "event": "Stability AI releases Stable Diffusion as open-source software, democratizing image generation.",
+        "category": "Generative AI",
+        "url": "https://stability.ai/blog/stable-diffusion-public-release"
+      },
+      {
+        "year": 2022,
+        "month": "October",
+        "event": "Meta releases Make-A-Video, a model for text-to-video generation, expanding AI's creative capabilities.",
+        "category": "Generative AI",
+        "url": "https://ai.facebook.com/blog/make-a-video/"
+      },
+      {
+        "year": 2022,
+        "month": "December",
+        "event": "ChatGPT reaches one million users within five days of launch, highlighting the rapid adoption of conversational AI.",
+        "category": "Business",
+        "url": "https://openai.com/blog/chatgpt/"
+      },
+      {
+        "year": 2023,
+        "month": "January",
+        "event": "Microsoft announces a multi-billion dollar investment in OpenAI, bolstering the development of advanced AI models.",
+        "category": "Business",
+        "url": "https://blogs.microsoft.com/blog/2023/01/"
+      },
+      {
+        "year": 2023,
+        "month": "February",
+        "event": "Google launches Bard AI, a conversational service designed to rival ChatGPT.",
+        "category": "LLM",
+        "url": "https://blog.google/technology/ai/introducing-bard/"
+      },
+      {
+        "year": 2023,
+        "month": "March",
+        "event": "OpenAI releases GPT-4, showcasing significant improvements in reasoning and multimodal capabilities.",
+        "category": "LLM",
+        "url": "https://openai.com/gpt-4/"
+      },
+      {
+        "year": 2023,
+        "month": "March",
+        "event": "The Future of Life Institute publishes an open letter calling for a pause on training AI systems more powerful than GPT-4, sparking global debate on AI safety.",
+        "category": "Ethics",
+        "url": "https://futureoflife.org/open-letter/pause-giant-ai-trainings/"
+      },
+      {
+        "year": 2023,
+        "month": "February",
+        "event": "Meta releases LLaMA 1, its first set of foundation language models, marking a significant contribution to open research in AI.",
+        "category": "LLM",
+        "url": "https://ai.facebook.com/blog/large-language-model-llama/"
+      },
+      {
+        "year": 2023,
+        "month": "May",
+        "event": "Sam Altman testifies before the U.S. Congress on AI regulation, highlighting the need for balanced policy oversight.",
+        "category": "Ethics",
+        "url": "https://www.cnbc.com/2023/05/"
+      },
+      {
+        "year": 2023,
+        "month": "July",
+        "event": "Anthropic releases Claude 2, an advanced language model with improved reasoning and extended context capabilities.",
+        "category": "LLM",
+        "url": "https://www.anthropic.com/"
+      },
+      {
+        "year": 2023,
+        "month": "July",
+        "event": "Meta launches LLaMA 2 as an open-source follow-up to its earlier language models, further democratizing AI research.",
+        "category": "LLM",
+        "url": "https://ai.meta.com/llama/"
+      },
+      {
+        "year": 2023,
+        "month": "October",
+        "event": "OpenAI unveils GPT-4V, integrating vision capabilities into its flagship language model.",
+        "category": "MultiAI",
+        "url": "https://openai.com/gpt-4v/"
+      },
+      {
+        "year": 2023,
+        "month": "November",
+        "event": "Internal boardroom drama at OpenAI leads to the brief firing and subsequent rehiring of CEO Sam Altman.",
+        "category": "Business",
+        "url": "https://www.bloomberg.com/"
+      },
+      {
+        "year": 2023,
+        "month": "December",
+        "event": "Google announces Gemini, a new multimodal AI model designed to compete with GPT-4.",
+        "category": "MultiAI",
+        "url": "https://blog.google/technology/ai/introducing-gemini/"
+      },
+      {
+        "year": 2023,
+        "month": "December",
+        "event": "The European Union reaches a provisional agreement on the AI Act, the world's first comprehensive regulatory framework for AI.",
+        "category": "Ethics",
+        "url": "https://en.wikipedia.org/wiki/European_Union_AI_regulation"
+      },
+      {
+        "year": 2024,
+        "month": "January",
+        "event": "Anthropic releases Claude 3, claiming improvements in performance and reasoning over its predecessor.",
+        "category": "LLM",
+        "url": "https://www.anthropic.com/claude"
+      },
+      {
+        "year": 2024,
+        "month": "February",
+        "event": "OpenAI launches Sora, an advanced text-to-video model that pushes the boundaries of multimodal AI.",
+        "category": "Generative AI",
+        "url": "https://openai.com/"
+      },
+      {
+        "year": 2024,
+        "month": "March",
+        "event": "The EU Parliament formally approves the AI Act, establishing risk-based regulations for AI systems.",
+        "category": "Ethics",
+        "url": "https://en.wikipedia.org/wiki/European_Union_AI_regulation"
+      },
+      {
+        "year": 2024,
+        "month": "March",
+        "event": "OpenAI releases GPT-4o, a variant of GPT-4 with enhanced performance, voice capabilities, and vision features.",
+        "category": "MultiAI",
+        "url": "https://openai.com/"
+      },
+      {
+        "year": 2024,
+        "month": "April",
+        "event": "Meta launches LLaMA 3, continuing its commitment to open-source language model research.",
+        "category": "LLM",
+        "url": "https://ai.meta.com/llama/"
+      },
+      {
+        "year": 2024,
+        "month": "May",
+        "event": "Google releases Gemini 1.5 Pro, featuring a context window of 1 million tokens for advanced language modeling.",
+        "category": "LLM",
+        "url": "https://blog.google/technology/ai/"
+      },
+      {
+        "year": 2024,
+        "event": "The EU AI Act is fully approved, marking a milestone in comprehensive AI regulation.",
+        "category": "Ethics",
+        "url": "https://en.wikipedia.org/wiki/European_Union_AI_regulation"
+      },
+      {
+        "year": 2025,
+        "month": "March",
+        "event": "OpenAI releases GPT-5, demonstrating significant advancements in AI reasoning, creativity, and multimodal integration.",
+        "category": "LLM",
+        "url": "https://openai.com/gpt-5/"
+      }
+    ]
+  }
+]
