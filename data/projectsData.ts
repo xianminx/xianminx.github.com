@@ -24,6 +24,12 @@ const projectsData: Project[] = [
     imgSrc: '/static/images/hexapawn.png',
     href: 'https://ai-chinese-chess.vercel.app/games/hexapawn',
   },
+  {
+    title: 'AI History',
+    description: `Visualize the history of AI through a timeline.`,
+    imgSrc: '/static/images/aihistory.png',
+    href: '/projects/ai/history',
+  },
 ]
 
 export default projectsData
