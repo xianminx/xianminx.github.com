@@ -54,7 +54,7 @@ export default function AIHistory() {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-br from-purple-50 via-white to-pink-50 text-gray-900 dark:from-gray-900 dark:via-purple-950/20 dark:to-pink-950/20 dark:text-white">
+    <div className="relative min-h-screen w-full bg-gradient-to-br  text-gray-900  dark:text-white">
       {/* Background decoration */}
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,0,255,0.1),rgba(255,0,150,0.05))]"></div>
 
