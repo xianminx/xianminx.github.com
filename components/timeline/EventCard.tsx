@@ -3,21 +3,12 @@ import { TimelineEvent } from './TimelineView'
 
 interface EventCardProps {
   event: TimelineEvent
-  isRight: boolean
-  isRecent: boolean
   isSelected: boolean
   onClick: () => void
   categoryColor: string
 }
 
-const EventCard: React.FC<EventCardProps> = ({
-  event,
-  isRight,
-  isRecent,
-  isSelected,
-  onClick,
-  categoryColor,
-}) => {
+const EventCard: React.FC<EventCardProps> = ({ event, isSelected, onClick, categoryColor }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleClick = (e: React.MouseEvent) => {
@@ -36,10 +27,10 @@ const EventCard: React.FC<EventCardProps> = ({
   }
 
   return (
-    <div className="group relative flex items-start pl-6 sm:pl-8">
+    <div className="group relative flex items-start">
       {/* Timeline dot */}
       <div
-        className={`absolute -left-5 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-purple-500 bg-white transition-all duration-300 ${
+        className={`absolute left-2 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-purple-500 bg-white transition-all duration-300 md:left-4 ${
           isSelected
             ? 'scale-125 border-purple-600 bg-purple-50 dark:bg-purple-900/20'
             : 'group-hover:scale-110 group-hover:border-purple-600 group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20'
@@ -49,10 +40,10 @@ const EventCard: React.FC<EventCardProps> = ({
       {/* Card */}
       <div
         className={`
-          w-full cursor-pointer rounded-xl border border-gray-200
-          bg-gradient-to-br from-white to-purple-50/50 p-4 shadow-sm backdrop-blur-sm
-          transition-all duration-300 ease-out
-          hover:border-purple-200 hover:shadow-md hover:shadow-purple-500/10
+          mx-8 w-full cursor-pointer rounded-xl border border-gray-200 bg-gradient-to-br from-white
+          to-purple-50/50 p-4 shadow-sm backdrop-blur-sm transition-all duration-300
+          ease-out hover:border-purple-200 hover:shadow-md
+          hover:shadow-purple-500/10 md:mx-12
           dark:border-gray-800 dark:from-gray-900/80 dark:to-purple-900/20
           dark:hover:border-purple-900 dark:hover:shadow-purple-500/10
           ${
@@ -72,7 +63,7 @@ const EventCard: React.FC<EventCardProps> = ({
         <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
-              {isRecent && event.month ? `${event.month} ${event.year}` : event.year}
+              {event.month ? `${event.month} ${event.year}` : event.year}
             </span>
             {event.category && (
               <span

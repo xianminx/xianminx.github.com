@@ -24,10 +24,10 @@ const TimelineView: React.FC<TimelineViewProps> = ({ data }) => {
     <div className="relative py-12">
       <div className="relative mx-auto max-w-4xl px-4">
         {/* Timeline axis with gradient effect */}
-        <div className="absolute left-8 z-0 h-full w-1 bg-gradient-to-b from-purple-400 via-purple-500 to-pink-500 opacity-50"></div>
+        <div className="absolute left-6 z-0 h-full w-0.5 bg-gradient-to-b from-purple-400 via-purple-500 to-pink-500 opacity-50 md:left-8"></div>
 
         {/* Timeline content container */}
-        <div className="relative min-h-[60vh] space-y-16">
+        <div className="relative min-h-[60vh] space-y-8">
           {data.map((era, index) => (
             <Era key={era.era} era={era} isEven={false} />
           ))}

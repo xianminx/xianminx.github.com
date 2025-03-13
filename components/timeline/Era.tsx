@@ -54,14 +54,14 @@ const Era: React.FC<EraProps> = ({ era, isEven }) => {
   }
 
   return (
-    <div id={eraId} className="group/era mb-10 pl-6 transition-all duration-500 ease-out sm:pl-8">
+    <div id={eraId} className="group/era mb-10 transition-all duration-500 ease-out">
       {/* Era header */}
       <div
         className={`
           ${getEraColor()}
-          -ml-6 mb-6 transform cursor-pointer rounded-r-lg p-4 shadow-sm backdrop-blur-sm
+           mb-6 transform cursor-pointer rounded-r-lg p-4 shadow-sm backdrop-blur-sm
           transition-all duration-300 ease-out hover:scale-[1.01]
-          hover:shadow-md hover:shadow-blue-500/5 sm:-ml-8
+          hover:shadow-md hover:shadow-blue-500/5
           dark:shadow-blue-500/5
         `}
         onClick={() => setIsExpanded(!isExpanded)}
@@ -125,7 +125,6 @@ const Era: React.FC<EraProps> = ({ era, isEven }) => {
         `}
       >
         {era.events.map((event, index) => {
-          const isRecent = era.era === 'Recent AI Revolution (2019-2025)'
           const eventId = `event-${event.year}-${event.event.substring(0, 10).replace(/\s+/g, '-').toLowerCase()}`
           const isSelected = eventId === selectedEventId
 
@@ -136,8 +135,6 @@ const Era: React.FC<EraProps> = ({ era, isEven }) => {
             <EventCard
               key={`${event.year}-${index}`}
               event={event}
-              isRight={true}
-              isRecent={isRecent}
               isSelected={isSelected}
               onClick={() => handleEventClick(event)}
               categoryColor={categoryColor}
