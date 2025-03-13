@@ -54,15 +54,29 @@ export default function AIHistory() {
   }
 
   return (
-    <div className="w-full bg-transparent text-gray-900 dark:text-white">
+    <div className="relative min-h-screen w-full bg-gradient-to-br from-purple-50 via-white to-pink-50 text-gray-900 dark:from-gray-900 dark:via-purple-950/20 dark:to-pink-950/20 dark:text-white">
+      {/* Background decoration */}
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,0,255,0.1),rgba(255,0,150,0.05))]"></div>
+
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col">
-          {/* Header section */}
-          <header className="pb-6 pt-8">
-            <h1 className="text-center text-3xl font-bold">History of Artificial Intelligence</h1>
+          {/* Header section with enhanced styling */}
+          <header className="relative pb-12 pt-16">
+            <div className="text-center">
+              <h1 className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+                History of Artificial Intelligence
+              </h1>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+                Exploring the fascinating journey from early concepts to modern breakthroughs
+              </p>
+            </div>
+            {/* Decorative elements */}
+            <div className="absolute -top-4 left-1/2 h-40 w-40 -translate-x-1/2 bg-purple-500/10 blur-3xl"></div>
+            <div className="absolute -top-4 left-1/3 h-40 w-40 -translate-x-1/2 bg-pink-500/10 blur-3xl"></div>
           </header>
-          {/* Timeline view */}
-          <div className="pb-24">
+
+          {/* Timeline view with enhanced container */}
+          <div className="relative pb-24">
             <TimelineView data={data} />
           </div>
         </div>

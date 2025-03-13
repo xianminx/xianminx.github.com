@@ -57,8 +57,8 @@ const TimelineView: React.FC<TimelineViewProps> = ({ data }) => {
       </div>
 
       {/* Decorative elements */}
-      <div className="pointer-events-none absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-purple-50/50 via-purple-50/30 to-transparent dark:from-purple-950/30 dark:via-purple-950/20"></div>
-      <div className="pointer-events-none absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-pink-50/50 via-pink-50/30 to-transparent dark:from-pink-950/30 dark:via-pink-950/20"></div>
+      {/* <div className="pointer-events-none absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-purple-50/50 via-purple-50/30 to-transparent dark:from-purple-950/30 dark:via-purple-950/20"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-pink-50/50 via-pink-50/30 to-transparent dark:from-pink-950/30 dark:via-pink-950/20"></div> */}
     </div>
   )
 }
