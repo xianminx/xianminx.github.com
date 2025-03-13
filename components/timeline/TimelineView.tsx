@@ -22,7 +22,7 @@ interface TimelineViewProps {
 const TimelineView: React.FC<TimelineViewProps> = ({ data }) => {
   return (
     <div className="relative py-12">
-      <div className="relative mx-auto max-w-4xl px-4">
+      <div className="relative mx-auto my-4 max-w-4xl px-4">
         {/* Timeline axis with gradient effect */}
         <div className="absolute left-6 z-0 h-full w-0.5 bg-gradient-to-b from-purple-400 via-purple-500 to-pink-500 opacity-50 md:left-8"></div>
 
@@ -54,11 +54,11 @@ const TimelineView: React.FC<TimelineViewProps> = ({ data }) => {
             />
           </svg>
         </button>
-
-        {/* Decorative elements */}
-        <div className="pointer-events-none absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-white via-white/80 to-transparent dark:from-gray-900 dark:via-gray-900/80"></div>
-        <div className="pointer-events-none absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-white via-white/80 to-transparent dark:from-gray-900 dark:via-gray-900/80"></div>
       </div>
+
+      {/* Decorative elements */}
+      <div className="pointer-events-none absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-purple-50/50 via-purple-50/30 to-transparent dark:from-purple-950/30 dark:via-purple-950/20"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-pink-50/50 via-pink-50/30 to-transparent dark:from-pink-950/30 dark:via-pink-950/20"></div>
     </div>
   )
 }

@@ -120,9 +120,13 @@ const Era: React.FC<EraProps> = ({ era, isEven }) => {
       {/* Events container with animation */}
       <div
         className={`
-          transform-gpu space-y-6 transition-all duration-500 ease-out
-          ${isExpanded ? 'opacity-100' : 'h-0 overflow-hidden opacity-0'}
+          transform-gpu space-y-6
+          ${isExpanded ? '' : 'max-h-0'}
         `}
+        style={{
+          overflow: 'hidden',
+          transition: 'max-height 500ms ease-out',
+        }}
       >
         {era.events.map((event, index) => {
           const eventId = `event-${event.year}-${event.event.substring(0, 10).replace(/\s+/g, '-').toLowerCase()}`
