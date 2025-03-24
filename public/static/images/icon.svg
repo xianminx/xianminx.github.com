@@ -1,0 +1,78 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define a vivid radial gradient for the background -->
+  <defs>
+    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#grad)"/>
+  
+  <!-- Top Petal: Tech (Gear Icon) -->
+  <g transform="translate(100,60)">
+    <!-- Petal background for visual emphasis -->
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="#ffffff" opacity="0.2"/>
+    <!-- Gear icon: central circle with simplified teeth -->
+    <g fill="#ffffff">
+      <circle cx="0" cy="0" r="5"/>
+      <!-- Vertical teeth -->
+      <rect x="-2" y="-15" width="4" height="6"/>
+      <rect x="-2" y="9" width="4" height="6"/>
+      <!-- Horizontal teeth -->
+      <rect x="9" y="-2" width="6" height="4"/>
+      <rect x="-15" y="-2" width="6" height="4"/>
+      <!-- Diagonal teeth -->
+      <g transform="rotate(45)">
+        <rect x="-2" y="-15" width="4" height="6"/>
+      </g>
+      <g transform="rotate(-45)">
+        <rect x="-2" y="-15" width="4" height="6"/>
+      </g>
+      <g transform="rotate(135)">
+        <rect x="-2" y="-15" width="4" height="6"/>
+      </g>
+      <g transform="rotate(-135)">
+        <rect x="-2" y="-15" width="4" height="6"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Right Petal: Novel (Open Book Icon) -->
+  <g transform="translate(140,100)">
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="#ffffff" opacity="0.2"/>
+    <g fill="#ffffff">
+      <!-- Open book represented by two triangular pages -->
+      <path d="M -10 -10 L 0 0 L -10 10 Z"/>
+      <path d="M 10 -10 L 0 0 L 10 10 Z"/>
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#ffffff" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Bottom Petal: History (Column Icon) -->
+  <g transform="translate(100,140)">
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="#ffffff" opacity="0.2"/>
+    <g fill="#ffffff">
+      <!-- Column shaft -->
+      <rect x="-5" y="-10" width="10" height="15"/>
+      <!-- Simple triangular capital -->
+      <polygon points="-8,-10 8,-10 0,-18"/>
+    </g>
+  </g>
+  
+  <!-- Left Petal: Philosophy (Lightbulb Icon) -->
+  <g transform="translate(60,100)">
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="#ffffff" opacity="0.2"/>
+    <g fill="#ffffff">
+      <!-- Lightbulb: rounded bulb with base -->
+      <circle cx="0" cy="-5" r="7"/>
+      <rect x="-3" y="2" width="6" height="4"/>
+      <!-- A subtle filament detail -->
+      <line x1="0" y1="-12" x2="0" y2="-16" stroke="#ffffff" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Central Unifying Element -->
+  <circle cx="100" cy="100" r="12" fill="#ffffff"/>
+</svg>

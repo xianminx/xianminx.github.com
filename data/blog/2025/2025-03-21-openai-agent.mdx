@@ -1,0 +1,56 @@
+---
+title: 'OpenAI Agent'
+date: '2025-03-21'
+---
+
+OpenAI agent is developed from previous prototype [Swarm](https://github.com/openai/swarm).
+
+- Key concepts
+  OpenAI Agent framework is LLM centric, with memeory and tools.
+
+- **Agent**
+- **Handoffs**
+- **Guardrails**
+- **Tracing**
+
+- General Agent
+
+- Voice Agent
+
+- Comparison with other agent frameworks
+
+## SDK
+
+- Runner
+
+```python
+result = await Runner.run(agent, input)
+```
+
+- Agent
+
+```python
+agent = Agent.from_tools(tools)
+```
+
+### Internal workflow of Runner
+
+LLM centric approact,
+
+In the center of the agent, we have a loop.
+It runs the LLM, check the output:
+
+- Is it a stop signal? a final output (i.e. the agent produces something of type `agent.output_type`, the loop terminates.
+- Is it a tool call? call tools, and submit the tool call result to the LLM.
+- Is it a handoff? if yes, run agent b
+
+### Hooks
+
+## Telemetry
+
+- workflow
+- Tasks
+- agents
+- tools
+- guardrails
+- handoffs

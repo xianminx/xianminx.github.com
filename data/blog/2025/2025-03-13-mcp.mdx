@@ -1,0 +1,175 @@
+---
+title: 'Model Context Protocol (MCP)'
+date: '2025-03-13'
+summary: 'The Model Context Protocol (MCP) is a protocol for building and deploying AI agents that are able to understand and interact with the context in which they are operating.'
+tags: ['AI', 'mcp', 'agent']
+authors: ['Lucas']
+image: '/imgs/blog/2025/mcp.png'
+---
+
+- Resource
+- tools
+- Prompts: more like a tempalted string prompt, but leave it to the server to decide how to use it.
+
+why separate resource from tools?
+
+In general, resource and tools different like http verb semantics. Resource is more like a static content, while tool is more like a function call.
+
+These 3 components are common in a comman LLM applicaiton, and sicne when we develop LLM applicaitons, we spend most of the time tuning these components, it is important to have a standard way to specify them.
+
+so MCP abstract these components and provide a interface for developers to customize them.
+
+This is typical LLM centeric perspective, but it is not the only perspective.
+
+Background
+
+LLM can generate function call, but it is not enough.
+
+You as a developer, need to tell LLM the specification of the functions available. .
+
+Then you decide how to interpret the function call, and how to implement the function.
+
+So it is ad-hoc and not scalable.
+
+There is need to have a standard way to specify the function call and the function implementation.
+
+Here comes MCP.
+
+MCP is like USB for computer.
+
+Since for general agent, it is not possible to know the function call in advance.  
+We need a way for agent to discover the externl pools of tools.
+The agent can utilize a way to find if there are appropriate tools for the task.
+and then the agent knows hwo to call the tools by following a standard protocol.
+
+Knowing this, the agent will be able to use a lot of tools.
+
+## Introduction
+
+## Hello World
+
+## Specification
+
+Client
+Server
+
+service discovery
+
+service call
+
+Authentication
+
+### Prompts
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Server
+
+    Note over Client,Server: Discovery
+    Client->>Server: prompts/list
+    Server-->>Client: List of prompts
+
+    Note over Client,Server: Usage
+    Client->>Server: prompts/get
+    Server-->>Client: Prompt content
+
+    Note over Client,Server: Changes
+    opt listChanged
+        Server-->>Client: prompts/list_changed
+        Client->>Server: prompts/list
+        Server-->>Client: Updated prompts
+    end
+```
+
+- `prompts/list`
+- `prompts/get`
+- `prompts/list_changed`
+
+it seems `prompts/list_changed` is not as useful as the other two. Implementations of the protocol may do not know when to nofity the client.
+
+since the change can happen at any time, it is not possible to know when to notify the client.
+
+## Popular libraries
+
+- MCP client for browser use
+- MCP client for code sandbox
+- MCP client for mobile use
+- MCP client for server use
+- MCP client for Desktop use
+
+## MCP in the wild
+
+MCP for 3D Blender
+
+[🦉 OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-World Task Automation](https://github.com/camel-ai/owl)
+🦉 OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-World Task Automation
+
+MCP as a high level protocol, should not care about the underlying transport layer.
+From this perspective, the design of MCP is very cubersome.
+
+As a high level protocol, MCP should support streaming transport and bi-directional streaming. So there is no need to care about request/response or uni-directional notification.
+
+What is JSON-RPC? how it related to HTTP or TCP?
+
+https://glama.ai/chat
+
+MCP 貌似就是 tools 的一个包装， 所以 MCP 的价值是什么
+
+基本流程，
+
+1. 在 client 端配置好 MCP server 的地址（或者python/js 的脚步）
+2. client 调用 mcp listTools 获取对应 server 的工具列表
+3. client 在调用LLM 时， 将对应 tools 的描述作为 prompt 的一部分发送给 LLM
+4. LLM 在生成 response 时， 根据 response 的格式， 调用对应的工具
+5. client 检查 LLM 的 response， 完成tool call 的调用
+6. 将 tool call 的执行结果返回给 LLM
+7. LLM 根据 tool call 的执行结果， 生成最终的 response
+
+从这个流程来看， MCP 就是封装了了 list tools 的流程， 对于服务提供商来说， 实现 MCP 的一个 list tools 工具， 而具体的工具调用，可以基于 IPC 或者 HTTP Rest API 来实现。
+
+非说价值， 更多是使用方便， 因为这样很多聊天客户端就可以通过支持 MCP 来支持各种工具调用，而不用客户端开发者内置各种工具调用。
+
+当然，其实可以再加一个服务发现的接口， 就是客户端将需求发送给 MCP server， 然后 MCP server 返回合适的工具列表。（默认情况下， MCP server 会返回所有工具列表） 高级实现可以基于 LLM 来实现。
+
+TODO:
+
+- write a annotation style framework for MCP server in Typescript
+
+for example:
+This expose tools like Rest API route.
+
+```typescript
+@mcp.tool()
+@mcp.stdio
+@mcp.http
+export function myTool(input: string) {
+    return "Hello, world!";
+}
+```
+
+### Node module Resolution
+
+```mermaid
+graph TD
+    A[Module Specifier] --> B{Core Module?};
+    B -- Yes --> C[Load Core Module];
+    B -- No --> D{Relative Path?};
+    D -- Yes --> E[Resolve Relative Path];
+    D -- No --> F[Search node_modules];
+    E --> G{Directory?};
+    G -- Yes --> H[Check package.json "main"];
+    H --> I[Load Entry Point];
+    G -- No --> I[Load Entry Point];
+    E --> J[Append Extensions (.js, .json, .node)];
+    J --> I[Load Entry Point];
+    F --> K{Found in node_modules?};
+    K -- Yes --> L{package.json "exports" field?};
+    L -- Yes --> M[Resolve using exports field];
+    L-- No --> H;
+    M --> I[Load Entry Point];
+    K -- No --> N[Move to Parent node_modules];
+    N --> F;
+    I[Load Entry Point] --> O[Module Loaded];
+    C --> O[Module Loaded];
+```

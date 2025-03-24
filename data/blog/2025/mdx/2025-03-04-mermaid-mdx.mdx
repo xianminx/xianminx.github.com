@@ -7,6 +7,8 @@ summary: 'Guide on how to add Mermaid diagram support to a Next.js blog using MD
 authors: ['Lukas']
 ---
 
+<MdxSeriesNav currentPost={props.path} />
+
 <TOCInline toc={props.toc} toHeading={2} exclude="Introduction" />
 
 GitHub added support for Mermaid diagrams in markdown files, but this feature isn't natively available in MDX. When adding Mermaid diagram support to an MDX blog, there are two main approaches:

@@ -7,6 +7,8 @@ draft: true
 tags: [markdown, github, gfm, mdx]
 ---
 
+<MdxSeriesNav currentPost={props.path} />
+
 <TOCInline toc={props.toc} toHeading={2} exclude="Introduction" />
 
 ## Simple code block in markdown
@@ -158,7 +160,6 @@ Basic usage:
 
 ```jsx
 import { Highlight, themes } from 'prism-react-renderer'
-
 ;<Highlight code={`const a = 1`} language="javascript" theme={themes.dracula}>
   {({ className, style, tokens, getLineProps, getTokenProps }) => (
     <pre className={className} style={style}>

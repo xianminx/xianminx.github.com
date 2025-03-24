@@ -7,6 +7,10 @@ tags: ['mdx']
 draft: false
 ---
 
+This is just the beginning of our journey into the world of MDX. In the following posts, we'll explore:
+
+<MdxSeriesNav currentPost={props.path} />
+
 Imagine a world where writing for the web was as simple as writing a note to a friend. That's the promise that Markdown made to us, and it's a promise that changed how we think about content creation on the internet.
 
 Think of Markdown as a bridge between the human mind and the digital world. It's like having a conversation with your computer in a language that feels natural to us humans. When you write in Markdown, you're not wrestling with complex HTML tags or formatting commands – you're just writing, plain and simple.
@@ -89,20 +93,55 @@ Each plugin adds a new dimension to your documentation while maintaining Markdow
 
 The beauty of this whole system lies in its modularity. If you want to add a new feature to Markdown, you don't have to rewrite everything from scratch. You can simply create a plugin for Remark or Rehype that understands your new syntax and knows how to transform it into the desired output. It's like adding a new tool to your workshop – it enhances your capabilities without requiring you to rebuild the entire workshop.
 
-This is just the beginning of our journey into the world of MDX. In the following posts, we'll explore:
-
-- [GitHub Flavored Markdown Guide](/blog/2025/2024-01-01-gfm)
-- [Build a documentation site with Next.js and MDX](/blog/2025/2025-01-13-nextjs-mdx)
-- [ContentLayer](/blog/2025/2025-02-28-contentlayer-mdx)
-- [MDX Open Source](/blog/2025/DRAFT/2025-03-12-mdx-opensource)
-- [MDX Internal](/blog/2025/DRAFT/2025-03-12-mdx-internal)
-
 From its humble beginnings as a simple way to format text, Markdown has evolved into a powerful platform for creating and sharing information. It's a reminder that sometimes, the most impactful innovations are the ones that are easy to use, understand, and extend. And the story of Markdown and its extensions like MDX is still being written, with new possibilities emerging all the time.
 
-### Open Source Projects on MDX
+**How MDX Works Under the Hood**
+
+While standard Markdown transforms your text into HTML, MDX takes a different approach. Think of MDX as a bridge between Markdown and React - it transforms your content into JSX components that can be rendered in a React application.
+
+Here's what makes MDX special:
+
+1. It's actually an extension of JSX, not just Markdown
+2. It understands both Markdown syntax and JSX syntax
+3. It compiles your MDX files into React components
+
+The transformation process is fascinating:
+
+1. Your MDX file is first parsed into an Abstract Syntax Tree (AST)
+2. This AST is then transformed into a JSX component tree
+3. The resulting component can be imported and used in your React application
+
+For example, when you write MDX like this:
+
+For example, the following MDX text:
+
+```mdx
+export function Thing() {
+  return <>World</>
+}
+
+# Hello <Thing />
+```
+
+After processing, the MDX file will be transformed into a jsx component:
+
+```jsx
+/* @jsxRuntime automatic */
+/* @jsxImportSource react */
+
+export function Thing() {
+  return <>World</>
+}
+
+export default function MDXContent() {
+  return (
+    <h1>
+      Hello <Thing />
+    </h1>
+  )
+}
+```
+
+**Open Source Projects on MDX**
 
 [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
-
-[next-mdx-blog](https://github.com/hashicorp/next-mdx-blog)
-
-[next-mdx-blog-template](https://github.com/hashicorp/next-mdx-blog-template)

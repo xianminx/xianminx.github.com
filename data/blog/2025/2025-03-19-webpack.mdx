@@ -1,0 +1,45 @@
+---
+title: 'How does Next.js build system work?'
+date: '2025-03-19'
+---
+
+## Build system
+
+Profiling
+
+从 cpu profiling 的 flame graph 中，可以看到很多时间都是 idle 的
+
+webpack 是单线程的，所以需要使用 parallel-webpack 来并行处理
+
+webpack 本身是 javascript 开发的， 在 nodejs v8 中运行， 是单线程的， 而 Nodejs 的单线程， 本质上是使用 event loop， 通过 microsotask queue 配合 async 来实现高吞吐量，
+属于 I/O 密集型应用友好。
+编译任务在短时间内可能也有很多 IO 操作， 但算不上互联网应用那样的高 IO 密集型类型。
+编译任务的一大特点还是计算密集型， 所以需要有办法更高效地榨取 CPU。
+
+编译任务的一大特点是， 需要处理大量的文件， 然后解析字符串， 进行各种转换， 最后生成结果。
+
+这其中，很多是可以并行的， 比如解析字符串， 进行各种转换， 最后生成结果，中间也有很多微观任务是大量重复执行的，比如对同一个文件的多次解析， 这些都是可以缓存的。
+
+好的编译系统， 能够高效地利用缓存， 并行处理， 充分利用 CPU。
+
+一种改造方式， 可以大体上保持webpack 的源码， 但是将其 运行在 web worker 中，或者多个 node 实例中。
+
+## DAG
+
+## Webpack
+
+- transpiler / compiler
+
+- bundle
+
+- minify
+
+- tree shaking
+
+https://www.digitalocean.com/community/tutorials/how-to-use-multithreading-in-node-js#creating-a-cpu-bound-task-without-worker-threads
+
+As mentioned in the introduction, JavaScript is single-threaded and all the JavaScript code executes in a single thread. This includes your program source code and third-party libraries that you include in your program. When a program makes an I/O operation to read a file or a network request, this blocks the main thread.
+
+However, Node.js implements the libuv library, which provides four extra threads to a Node.js process. With these threads, the I/O operations are handled separately and when they are finished, the event loop adds the callback associated with the I/O task in a microtask queue. When the call stack in the main thread is clear, the callback is pushed on the call stack and then it executes. To make this clear, the callback associated with the given I/O task does not execute in parallel; however, the task itself of reading a file or a network request happens in parallel with the help of the threads. Once the I/O task finishes, the callback runs in the main thread.
+
+In addition to these four threads, the V8 engine, also provides two threads for handling things like automatic garbage collection. This brings the total number of threads in a process to seven: one main thread, four Node.js threads, and two V8 threads.

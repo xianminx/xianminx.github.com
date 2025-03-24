@@ -3,9 +3,11 @@ title: 'How ContentLayer Works'
 date: 2025-02-28
 summary: 'ContentLayer is a static site generator that uses MDX and React components to build websites.'
 authors: [Lucas]
-tags: [contentlayer, mdx, react, static-site-generator]
+tags: ['mdx']
 draft: false
 ---
+
+<MdxSeriesNav currentPost={props.path} />
 
 ## What is ContentLayer?
 
@@ -384,3 +386,84 @@ In your MDX setup:
 - The pre component handles the outer wrapper (`<pre>`) tag
 - The code component handles the inner content (`<code>`) tag
 - Both are registered in your MDXComponents for custom handling
+
+Have you ever wondered how a simple markdown file transforms into a beautiful webpage? It's like watching a caterpillar become a butterfly – a seemingly magical process that, when you look closer, reveals an elegant system of transformation. This is the story of unifiedjs, a platform that makes this metamorphosis possible.
+
+## The Power of Abstraction
+
+In the world of content creation, we often find ourselves dealing with raw text – unstructured, formless, and difficult to manipulate. It's like having a pile of building blocks without a blueprint. This is where unifiedjs steps in, offering us a way to transform this raw material into something structured and meaningful.
+
+The magic begins with something called an Abstract Syntax Tree, or AST for short. Think of it as a map that shows how different pieces of content relate to each other. Just as a city map helps us understand how streets connect and buildings are arranged, an AST helps us understand how words, paragraphs, and other elements connect to form our content.
+
+## The Tree of Knowledge
+
+The beauty of this approach lies in its simplicity. unifiedjs provides us with a core interface – a set of fundamental tools that let us parse, transform, and serialize content. It's like having a universal translator that can convert content between different formats while maintaining its meaning.
+
+At the heart of this system are two powerful tools: remark and rehype. Remark is our markdown processor, the one that takes our plain text and gives it structure. Rehype, on the other hand, is our HTML processor, the one that transforms this structured content into beautiful web pages.
+
+## The Art of Transformation
+
+What makes unifiedjs truly fascinating is its plugin-based architecture. Think of it as a modular workshop where each tool has a specific purpose. You can add or remove tools as needed, creating your own unique content processing pipeline. It's like having a Swiss Army knife where you can add new tools to handle different tasks.
+
+The process is elegant in its simplicity:
+
+1. Take raw content
+2. Transform it into a structured format (AST)
+3. Apply various transformations through plugins
+4. Convert it into the final desired format
+
+This approach is not just about processing content – it's about understanding it. By breaking down content into a structured format, we can apply logic and rules to transform it in ways that would be impossible with raw text.
+
+## The Journey of Content
+
+Let me show you how this works in practice. When you write a markdown file, it starts as simple text. unifiedjs takes this text and creates a map (AST) of how everything fits together. Then, through a series of transformations (using plugins), this map is gradually transformed into the final HTML that appears on your website.
+
+It's like watching a sculptor work with clay. First, they have a rough block of material (raw text). Then they create a basic structure (AST). Finally, they refine and shape it (transformations) until it becomes the finished piece (HTML).
+
+## The Power of Understanding
+
+What makes unifiedjs special isn't just its technical capabilities – it's the way it helps us understand and manipulate content. By providing a structured way to work with content, it opens up possibilities that would be difficult or impossible to achieve otherwise.
+
+If you're interested in diving deeper into how this transformation works, I highly recommend reading the unifiedjs guide. It's like having a backstage pass to watch the magic happen.
+
+```mermaid
+flowchart TD
+
+    subgraph L1["L1: ContentLayer"]
+      CL2["contentlayer sdk"]
+    end
+
+    subgraph L2["L2: MDX Bundler"]
+      MDX["mdx-bundler"]
+    end
+
+    subgraph L3["L3: unified.js"]
+      UNI["unified.js core"]
+      PLUG["Plugins<br/>(remark/rehype)"]
+    end
+
+    subgraph L4["L4: AST Spec"]
+      spec["unist"]
+      ast["mdast<br/>hast<br/>xast"]
+    end
+
+    %% Data flow between subgraphs - connecting boxes directly
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+
+    UNI --> PLUG
+
+    %% Apply styles
+    classDef layer fill:#f5f3ff,stroke:#c4b5fd,stroke-width:2px
+    classDef primary fill:#7c3aed,stroke:#6d28d9,color:#ffffff,stroke-width:2px
+    classDef accent fill:#f97316,stroke:#ea580c,color:#ffffff,stroke-width:2px
+    class L1,L2,L3,L4 layer
+
+    style CL2 fill:none,stroke:none,color:black
+    style MDX fill:none,stroke:none,color:black
+    style UNI fill:none,stroke:none,color:black
+    style AST fill:none,stroke:none,color:black
+    style PLUG fill:none,stroke:none,color:black
+
+```

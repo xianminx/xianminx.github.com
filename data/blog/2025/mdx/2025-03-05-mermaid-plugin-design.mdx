@@ -1,8 +1,11 @@
 ---
 title: Mermaid Plugin Design
 summary: A detailed look at the design and implementation of the Mermaid plugin.
+tags: [mermaid, plugin, mdx]
 date: 2025-03-05
 ---
+
+<MdxSeriesNav currentPost={props.path} />
 
 In the previous post [Mermaid MDX](/blog/2025/2025-03-04-mermaid-mdx), I added a `Mermaid` component to the MDX components and use it to render the mermaid diagrams..
 
@@ -74,7 +77,6 @@ If you need full browser rendering capabilities, you can use [Puppeteer](https:/
 
 ```javascript
 import puppeteer from 'puppeteer'
-
 ;(async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()

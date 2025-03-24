@@ -7,6 +7,7 @@ import TableWrapper from './TableWrapper'
 import HelloMDX from './hello-mdx'
 import CodeBlockRenderer from './CodeBlockRenderer'
 import { Tweet } from 'react-tweet'
+import { MdxSeriesNav } from './mdx/MdxSeriesNav'
 export const components: MDXComponents = {
   Image,
   TOCInline,
@@ -16,4 +17,5 @@ export const components: MDXComponents = {
   BlogNewsletterForm,
   HelloMDX,
   Tweet,
+  MdxSeriesNav,
 }
