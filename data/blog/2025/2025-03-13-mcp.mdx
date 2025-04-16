@@ -7,9 +7,16 @@ authors: ['Lucas']
 image: '/imgs/blog/2025/mcp.png'
 ---
 
-- Resource
-- tools
-- Prompts: more like a tempalted string prompt, but leave it to the server to decide how to use it.
+MCP 协议提供 stdio IPC 和 SSE 两种传输方式。
+
+核心提供两个 JSON rpc 函数:
+
+- listTools
+- callTool
+
+* Resource
+* tools
+* Prompts: more like a tempalted string prompt, but leave it to the server to decide how to use it.
 
 why separate resource from tools?
 
@@ -47,6 +54,9 @@ Knowing this, the agent will be able to use a lot of tools.
 ## Introduction
 
 ## Hello World
+
+This hello world project wraps Flomoapp API in a MCP server.
+See [mcp-server-flomo](https://github.com/camel-ai/mcp-hello-world) for more details.
 
 ## Specification
 
@@ -173,3 +183,69 @@ graph TD
     I[Load Entry Point] --> O[Module Loaded];
     C --> O[Module Loaded];
 ```
+
+### mcp-get
+
+What mcp-get does is quite simple.
+Whoever wants to publish a mcp-server tool to be used by Claude, can submit a PR to add the tool to the list.
+For example https://github.com/michaellatman/mcp-get/pull/101/files
+this PR adds a tool `mcp-server-flomo` to the package list.
+
+On every PR, the github action will automatically bump `mcp-get` to the next version, containing the updated [package list](https://github.com/michaellatman/mcp-get/tree/main/packages).
+
+Now, as long as the PR is merged, you can find the page at https://mcp-get.com/packages/mcp-server-flomo.
+In the same time, in the terminal, you can use `npx @michaellatman/mcp-get@latest install mcp-server-flomo` to install the tool for Claude Desktop.
+
+mcp-get is more a client side installation tool with limited registry management capabilities.
+
+### Smithery.ai
+
+Smithery.ai is a similar tool to mcp-get, but it can provide a cloud service to host simple mcp-server, acting like a proxy between the client and the tool provider.
+
+For example, I deploy the `mcp-server-flomo` on Smithery.ai, and then you can find it at https://smithery.ai/server/@xianminx/mcp-server-flomo.
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-flomo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@xianminx/mcp-server-flomo",
+        "--key",
+        "your-smithery-key-here"
+      ]
+    }
+  }
+}
+```
+
+This will use Smithery.ai to host the `mcp-server-flomo` and use it as a proxy server for the tool.
+
+### composio.dev
+
+https://mcp.composio.dev/
+
+### Cursor
+
+https://docs.cursor.com/context/model-context-protocol#model-context-protocol
+
+- stdio
+- sse
+- tools
+- resources (not supported yet)
+
+- Architecture
+
+- Configuration
+  can be specified in the `mcp.json` file, project root or user home directory.
+
+使用 stdio 时， 不能轻易使用 console.log 来输出信息， 因为 stdio 的输出会被截断。
+
+- Protocol
+  - connect
+  - notification
+  - setRequestHandler
+  - setNotificationHandler
