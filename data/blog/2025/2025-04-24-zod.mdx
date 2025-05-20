@@ -1,0 +1,116 @@
+---
+title: 'Zod'
+date: '2025-04-24'
+---
+
+## Zod: TypeScript-first schema declaration and validation library
+
+### schema declaration
+
+```ts
+const userSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  age: z.number().min(18),
+})
+```
+
+### schema validation
+
+```ts
+const user = userSchema.parse({
+  name: 'John Doe',
+  email: 'john.doe@example.com',
+  age: 25,
+})
+```
+
+safe parse
+
+```ts
+const user = userSchema.safeParse({
+  name: 'John Doe',
+  email: 'john.doe@example.com',
+  age: 25,
+})
+```
+
+If the schema is invalid, the `safeParse` method will return a `ZodError` object instead of throwing an error.
+
+### types
+
+- primitive
+  - string
+  - number
+  - boolean
+  - null
+  - undefined
+  - bigint
+  - symbol
+- object
+  - literal
+  - string
+  - number
+  - boolean
+  - null
+  - undefined
+
+```ts
+const sampleSchema = z.object({
+  // String type with min length validation
+  name: z.string().min(2),
+
+  // Number type with range validation
+  age: z.number().min(18).max(120),
+
+  // Boolean type
+  isActive: z.boolean(),
+
+  // Null type
+  emptyField: z.null(),
+
+  // Undefined type
+  optionalField: z.undefined(),
+
+  // BigInt type
+  largeNumber: z.bigint(),
+
+  // Symbol type
+  uniqueId: z.symbol(),
+
+  // Literal type
+  status: z.literal('active'),
+
+  // Object type
+  address: z.object({
+    street: z.string(),
+    city: z.string(),
+  }),
+
+  // Union type
+  contact: z.union([
+    z.string().email(),
+    z.string().regex(/^\+\d{1,3}-\d{3,14}$/), // Phone number
+  ]),
+})
+
+const sample = sampleSchema.parse({
+  name: 'John Doe',
+  age: 25,
+})
+```
+
+### Usage Scenarios
+
+- API validation
+- Form validation
+- Configuration validation
+- Data transformation
+-
+
+- JSON RPC
+- GraphQL
+- Database schemas
+- CLI arguments
+- Environment variables
+-

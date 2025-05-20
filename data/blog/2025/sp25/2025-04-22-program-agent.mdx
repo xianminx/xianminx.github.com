@@ -1,0 +1,41 @@
+---
+title: 'Abstraction and Discovery with Large Language Model Agents'
+summary: 'Abstraction and Discovery with Large Language Model Agents'
+date: 2025-04-22
+authors: [Lukas]
+---
+
+Abstraction and Discovery with Large Language Model Agents
+by Swarat Chaudhuri, Computer Science, The University of Texas at Austin
+
+- Mathematical Discovery
+  - AI for math: automate conjecturing and proof
+- Scientific Discovery
+  - AI for science: Automate hypothesis generation and experiment design
+
+```python
+from sympy import symbols, Eq, solve, simplify
+
+# Problem: Suppose that the sum of the squares of two complex numbers x and y is 7, and the sum of their cubes is 10. List all possible values for x+y, separated by commas.  
+
+def possible_values():
+    x, y = symbols('x y')
+    eq1 = Eq(x ** 2 + y ** 2, 7)
+    eq2 = Eq(x**3 + y**3, 10)
+    solutions = solve((eq1, eq2), (x, y))
+    return [simplify(sol[0] + sol[1]) for sol in solutions]
+
+print(possible_values())
+
+```
+
+Math / science problem as a search problem, search space is the space of all possible conjectures and experiments
+
+### Application in Formal Verification
+
+Example: Compiler Verification
+
+- [sympy](https://www.sympy.org/) SymPy is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS) while keeping the code as simple as possible in order to be comprehensible and easily extensible. SymPy is written entirely in Python.
+
+An In-Context Learning Agent for Formal
+Theorem-Proving

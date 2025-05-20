@@ -1,0 +1,295 @@
+---
+title: 'Full Text Search with PostgreSQL'
+summary: 'Learn how to use full text search with PostgreSQL to search for text in your database.'
+date: '2025-04-16'
+author: ['Lukas']
+tags: ['postgresql', 'gin', 'fts']
+draft: false
+---
+
+1. regular expression search
+2. reverted index: turn text into a inverted index and then compare the inverted index with the search query
+3. external search service like elasticsearch or algolia
+
+chinese support
+
+zhparser
+
+中文分词
+
+jieba (结巴中文分词) or SCWS (简易中文分词系统),
+
+[PostgreSQL 全文检索](https://wener.me/notes/db/relational/postgresql/fts) 总结得很好
+
+简单来说 ，使用 PostgreSQL 来做中文检索比较复杂， 但我们的实际需求可能也没有那么复杂， 根据具体需求， 我们可以使用不同的方案和配置来在一定程度上满足现实的需求。
+
+> - 简单场景 - 80%: like 或 fuzzystrmatch
+>   - 数据量少 - 业务数据 - 能够扫表
+>   - 数据经常变化
+> - 基础场景 - 15%: 内建 tssearch + 中文分词插件 - zhparser,pg_trgm
+>   - 数据量大 - 需要索引
+>   - 检索大量文本
+>   - 相关性排序
+>   - 中文分词操作起来有点麻烦，但定制性高
+> - 扩展场景 - 3%: 不考虑使用内建 FTS 使用 [pgroonga](https://wener.me/notes/db/relational/postgresql/pgroonga)
+>   - 需要支持补全和多种语言
+> - 搜索引擎场景 - 2%: Solr, Elasticsearch
+>   - 不要使用 PG - 将数据同步到专业的搜索引擎
+>   - 索引的内容不怎么变化
+>   - 专门做索引业务
+> - 扩展场景 - pgvector, postgresql ml
+>   - 向量化
+>   - Embedding
+>   - 理解自然语言
+> - 特殊场景
+>   - GEO - PostGIS
+>   - 寻路 - pgRouting
+
+Postgres with index capabilities from elasticsearch
+https://github.com/zombodb/zombodb
+https://github.com/paradedb/paradedb
+
+pg_dump -Fp --no-owner --no-privileges --no-comments postgresql://postgres.dodveyrkyjnrdrwvshge:wWVz1g9tgTJeyLoY@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres > books.sql
+
+psql -f books_dump.sql
+
+### pgroonga
+
+I was using PostgreSQL.app on macos, and PostgreSQL.app comes with a lot of extensions bundled, but not pgroonga.
+
+It is not trivial to install pgroonga on macos, so I decided to use supabase.
+
+1. Install pgroonga on macos
+   Check https://pgroonga.github.io/install/ for installation instructions for other platforms.
+   https://pgroonga.github.io/install/macos.html
+
+```bash
+brew install pgroonga
+```
+
+Supabase integrates pgroonga by default, so you don't need to install it manually. Just go to supabase dashboard and enable it.
+
+2. Create extension in your database
+
+```sql
+CREATE EXTENSION pgroonga;
+```
+
+Before you install pgroonga, you may see the error like this:
+
+```json
+{
+  "status": "error",
+  "error": {}
+}
+```
+
+After you install pgroonga, you can create a table with pgroonga index.
+
+3. Create a table with pgroonga index
+
+````sql
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+
+
+
+
+
+Solutions:
+
+- How to let LLM make query over db?
+- Similarity fuzzy search  + vector search + SQL query
+
+3 methods
+
+1. string  match  using  like
+2. tsvector  + gin index
+3. elastic  search
+
+比如一个 table  films
+
+```jsx
+  {
+    "id": 89,
+    "year": 2018,
+    "section": "黑铁时代（纪录）",
+    "title": "神姬",
+    "synopsis": "名仪是美甲美睫师，月娇是家庭主妇，因为人生的际遇，使她们成为神明的代言人，这条路没有男女的区别，只有着各自人生的课题与考验，花样年华的少女和寻找人生方向的妇女，面对着使命与现实的冲突，他们该如何寻求平衡？",
+    "directors": [
+      {
+        "bio": "台湾台北人，五专开始开始接触影视拍摄，专攻纪录片，目前就读国立台湾艺术大学应用媒体艺术研究所，从 事纪录片编导、摄影为主，拍摄过职棒、鲸豚救援、更生人、原住民、乩童、身障棒球等各议题纪录片。",
+        "name": "张弘榤"
+      }
+    ]
+  },
+````
+
+当用户 输入之后， 是如何知道该查询哪个字段呢？
+
+如果增加一个字段 `searchable_content` 拼装其他字段信息， 并做 embedding ， 对于搜索具体的人名或者导演名字， 效果并不是很好。
+
+需要综合使用 vector search 和 fuzzy search， 有时需要 sql query， 具体由 LLM 决定。
+
+- vector search
+- fuzzy search
+- sql query
+
+```jsx
+title: 神姬
+  year:2018
+  section:黑铁时代（纪录）
+  synopsis: 名仪是美甲美睫师，月娇是家庭主妇，因为人生的际遇，使她们成为神明的代言人，这条路没有男女的区别，只有着各自人生的课题与考验，花样年华的少女和寻找人生方向的妇女，面对着使命与现实的冲突，他们该如何寻求平衡？
+  directors: 张弘榤 台湾台北人，五专开始开始接触影视拍摄，专攻纪录片，目前就读国立台湾艺术大学应用媒体艺术研究所，从 事纪录片编导、摄影为主，拍摄过职棒、鲸豚救援、更生人、原住民、乩童、身障棒球等各议题纪录片。
+```
+
+```jsx
+;[
+  {
+    id: 89,
+    year: 2018,
+    section: '黑铁时代（纪录）',
+    title: '神姬',
+    synopsis:
+      '名仪是美甲美睫师，月娇是家庭主妇，因为人生的际遇，使她们成为神明的代言人，这条路没有男女的区别，只有着各自人生的课题与考验，花样年华的少女和寻找人生方向的妇女，面对着使命与现实的冲突，他们该如何寻求平衡？',
+    directors: [
+      {
+        bio: '台湾台北人，五专开始开始接触影视拍摄，专攻纪录片，目前就读国立台湾艺术大学应用媒体艺术研究所，从 事纪录片编导、摄影为主，拍摄过职棒、鲸豚救援、更生人、原住民、乩童、身障棒球等各议题纪录片。',
+        name: '张弘榤',
+      },
+    ],
+    comment: null,
+    created_at: '2025-04-12 11:31:57.929021+00',
+    updated_at: '2025-04-12 11:31:57.929021+00',
+    content_embedding: '[0.024211809,,-0.020431742]',
+    title_embedding: '[0.0131595397...]',
+    searchable_content:
+      'title: 神姬 \n  year:2018 \n  section:黑铁时代（纪录） \n  synopsis: 名仪是美甲美睫师，月娇是家庭主妇，因为人生的际遇，使她们成为神明的代言人，这条路没有男女的区别，只有着各自人生的课题与考验，花样年华的少女和寻找人生方向的妇女，面对着使命与现实的冲突，他们该如何寻求平衡？ \n  directors: 张弘榤 台湾台北人，五专开始开始接触影视拍摄，专攻纪录片，目前就读国立台湾艺术大学应用媒体艺术研究所，从 事纪录片编导、摄影为主，拍摄过职棒、鲸豚救援、更生人、原住民、乩童、身障棒球等各议题纪录片。',
+  },
+]
+```
+
+[pg](https://www.notion.so/pg-1d66b8812f6a81a0a0e0f9cec5b77de2?pvs=21)
+
+[database.build v2: Bring-your-own-LLM](https://www.notion.so/database-build-v2-Bring-your-own-LLM-1d66b8812f6a8118bf98e8b89b068a41?pvs=21)
+
+- How does `pg_trgm` trigram similarity match work?
+-
+
+https://wener.me/notes/db/relational/postgresql/fts
+
+```jsx
+SELECT to_tsvector('simple', content) FROM memos;
+```
+
+```jsx
+;[
+  {
+    to_tsvector:
+      "'a':3 'database':5 'is':2 'management':6 'postgresql':1 'relational':4 'system':7",
+  },
+  {
+    to_tsvector:
+      "'a':3 'all':11 'engine':8 'fast':4 'full':5 'groonga':1 'is':2 'languages':12 'search':7 'supports':10 'text':6 'that':9",
+  },
+  {
+    to_tsvector:
+      "'a':3 'as':9 'extension':5 'groonga':8 'index':10 'is':2 'pgroonga':1 'postgresql':4 'that':6 'uses':7",
+  },
+  {
+    to_tsvector: "'command':4 'groonga':3 'is':2 'there':1",
+  },
+]
+```
+
+```jsx
+select ts_stat('SELECT to_tsvector(''simple'', content) FROM memos');
+```
+
+**`(term, ndoc, nentry)`**: This is the format of the value within the `ts_stat` column.
+
+- **`term`**: This is the actual word (token) extracted from the `content` column after being processed by the `to_tsvector('simple', ...)` function. The `'simple'` configuration performs basic tokenization, typically lowercasing and removing punctuation.
+- **`ndoc`**: This indicates the **number of documents (rows in the `memos` table)** in which this term appears at least once.
+- **`nentry`**: This indicates the **total number of times** this term appears across all the documents in the `memos` table.
+
+```jsx
+;[
+  {
+    ts_stat: '(uses,1,1)',
+  },
+  {
+    ts_stat: '(there,1,1)',
+  },
+  {
+    ts_stat: '(that,2,2)',
+  },
+  {
+    ts_stat: '(text,1,1)',
+  },
+  {
+    ts_stat: '(system,1,1)',
+  },
+  {
+    ts_stat: '(supports,1,1)',
+  },
+  {
+    ts_stat: '(search,1,1)',
+  },
+  {
+    ts_stat: '(relational,1,1)',
+  },
+  {
+    ts_stat: '(postgresql,2,2)',
+  },
+  {
+    ts_stat: '(pgroonga,1,1)',
+  },
+  {
+    ts_stat: '(management,1,1)',
+  },
+  {
+    ts_stat: '(languages,1,1)',
+  },
+  {
+    ts_stat: '(is,4,4)',
+  },
+  {
+    ts_stat: '(index,1,1)',
+  },
+  {
+    ts_stat: '(groonga,3,3)',
+  },
+  {
+    ts_stat: '(full,1,1)',
+  },
+  {
+    ts_stat: '(fast,1,1)',
+  },
+  {
+    ts_stat: '(extension,1,1)',
+  },
+  {
+    ts_stat: '(engine,1,1)',
+  },
+  {
+    ts_stat: '(database,1,1)',
+  },
+  {
+    ts_stat: '(command,1,1)',
+  },
+  {
+    ts_stat: '(as,1,1)',
+  },
+  {
+    ts_stat: '(all,1,1)',
+  },
+  {
+    ts_stat: '(a,3,3)',
+  },
+]
+```
+
+[flexsearch](https://github.com/nextapps-de/flexsearch) is a javascript library for full text search supporting Nodejs and browsers.
+
+It is convenient to use for small scale document search, like a blog search.
