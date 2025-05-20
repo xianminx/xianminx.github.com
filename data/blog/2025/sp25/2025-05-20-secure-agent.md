@@ -28,7 +28,7 @@ draft: true
 - Interaction flows
 - Potential harm points
 
-![harms](./images/harms.png)
+![harms](/imgs/blog/2025/sp25/harms.png)
 
 ## 2. Security Framework
 
