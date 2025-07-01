@@ -8,14 +8,14 @@ const withBundleAnalyzer = bundleAnalyzer({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is;
-  style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is https://cdn.tailwindcss.com https://cdn.jsdelivr.net;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src * blob: data:;
   media-src *.s3.amazonaws.com  *.cloudfront.net ;
   connect-src *;
-  font-src 'self' data:;
+  font-src 'self' https://fonts.gstatic.com data:;
   frame-src giscus.app youtube.com www.youtube.com *.wisemapping.com *.slideshare.net open.spotify.com *.cloudfront.net *.amazonaws.com stackblitz.com
-`
+  `
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -96,6 +96,14 @@ const config = () => {
       })
 
       return config
+    },
+    async rewrites() {
+      return [
+        {
+          source: '/projects/mcp-report',
+          destination: '/mcp-report.html',
+        },
+      ]
     },
   })
 }

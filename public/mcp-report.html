@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Model Context Protocol: An Interactive Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Neutral Tech -->
+    <!-- Application Structure Plan: A single-page, scrolling application with a sticky top navigation bar. The structure is thematic rather than linear to improve usability. It begins with a high-level "What is MCP?" to orient the user, followed by a deeper "How It Works" section for technical details. The core is the "Ecosystem Explorer," an interactive dashboard with a chart and a filterable table, turning the report's static data into a dynamic tool. This is followed by "Strategic Landscape" for context and "Future & Security" for a concluding analysis. This structure allows users to either follow a narrative flow or jump directly to the section that interests them most, catering to both casual readers and technical experts. Gemini API features are added to the Ecosystem and Landscape sections to provide dynamic, on-demand analysis. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Top 50 Repositories data (Stars, Forks, etc.). Goal: Compare, Analyze. Viz: Interactive bar chart (Chart.js/Canvas) and a filterable/sortable HTML table. Interaction: Users can filter by technology/type, search by name, and sort by metrics. The chart dynamically updates based on the filtered data, providing immediate visual feedback. ✨ A "Summarize" button is added to each row, which calls the Gemini API to generate a detailed project summary.
+        - Report Info: Client-Host-Server Architecture. Goal: Organize, Explain. Viz: A structured diagram built with HTML divs and Tailwind CSS. Interaction: Hover effects on each component to reveal more information. Justification: A simple, non-SVG visual representation is clearer than text alone and avoids library dependencies.
+        - Report Info: MCP vs. LangChain. Goal: Compare, Clarify. Viz: Side-by-side content cards using HTML/Tailwind. Interaction: None, focus on clear textual comparison. Justification: A direct visual juxtaposition is the most effective way to explain the distinction between the two.
+        - ✨ A new "Strategic Insight Generator" module allows users to select two project categories and use the Gemini API to generate an analysis of their relationship, adding a dynamic strategic thinking tool.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .chart-container { position: relative; width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; height: 500px; max-height: 60vh; }
+        .nav-link.active { color: #3b82f6; border-bottom-color: #3b82f6; }
+        .nav-link { transition: all 0.2s ease-in-out; border-bottom: 2px solid transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        .table-auto th, .table-auto td { white-space: nowrap; }
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header id="header" class="bg-slate-50/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <h1 class="text-xl font-bold text-slate-900">MCP Interactive Report</h1>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#intro" class="nav-link text-slate-600 hover:text-blue-500 font-medium pb-1">Introduction</a>
+                    <a href="#architecture" class="nav-link text-slate-600 hover:text-blue-500 font-medium pb-1">Architecture</a>
+                    <a href="#ecosystem" class="nav-link text-slate-600 hover:text-blue-500 font-medium pb-1">Ecosystem</a>
+                    <a href="#landscape" class="nav-link text-slate-600 hover:text-blue-500 font-medium pb-1">Landscape</a>
+                    <a href="#future" class="nav-link text-slate-600 hover:text-blue-500 font-medium pb-1">Future</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <!-- Section: Introduction -->
+        <section id="intro" class="mb-16 scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">The Model Context Protocol</h2>
+                <p class="text-xl md:text-2xl text-blue-600 font-semibold">The "USB-C Port" for Artificial Intelligence</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6 text-lg text-slate-700">
+                <p class="text-center">This interactive report analyzes the **Model Context Protocol (MCP)**, an open standard designed to solve one of the biggest challenges in AI. This enhanced version now includes **✨ AI-powered features using the Gemini API** to provide dynamic summaries and strategic insights, allowing you to explore the ecosystem more deeply.</p>
+                <div class="grid md:grid-cols-2 gap-6 pt-4">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-xl mb-2 text-slate-900">The Core Problem: M x N Integrations</h3>
+                        <p>Before MCP, connecting *M* AI applications to *N* data sources required a tangled web of *M x N* custom integrations. This was slow, expensive, and unsustainable.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-xl mb-2 text-slate-900">The MCP Solution: M + N</h3>
+                        <p>MCP transforms the problem into a simple *M + N* model. Applications and tools build to one standard, enabling universal interoperability and a thriving, modular ecosystem.</p>
+                    </div>
+                </div>
+                 <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mt-6">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Unprecedented Industry Adoption</h3>
+                    <p>The protocol's strategic importance is highlighted by its rapid and widespread adoption. Within months of its November 2024 launch by Anthropic, it was embraced by major AI labs and tech giants.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Architecture -->
+        <section id="architecture" class="mb-16 scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">How It Works: A Look Under the Hood</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">MCP uses a clean and secure Client-Host-Server architecture, inspired by the Language Server Protocol (LSP), to decouple tools from AI applications.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                <h3 class="text-2xl font-bold text-center mb-8 text-slate-900">The Three Core Components</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center group">
+                        <div class="bg-slate-100 p-4 rounded-full mb-4 border-2 border-transparent group-hover:border-blue-500 transition-all">
+                            <span class="text-4xl">🏠</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900">MCP Host</h4>
+                        <p class="text-slate-600 mt-2">The user-facing application (e.g., an IDE, a chat client) that manages security, user consent, and orchestrates the AI's interaction with tools.</p>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="bg-slate-100 p-4 rounded-full mb-4 border-2 border-transparent group-hover:border-blue-500 transition-all">
+                            <span class="text-4xl">🔌</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900">MCP Client</h4>
+                        <p class="text-slate-600 mt-2">Protocol logic living inside the Host. It manages a stateful, isolated connection to a single MCP Server, routing messages back and forth.</p>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="bg-slate-100 p-4 rounded-full mb-4 border-2 border-transparent group-hover:border-blue-500 transition-all">
+                            <span class="text-4xl">🛠️</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-slate-900">MCP Server</h4>
+                        <p class="text-slate-600 mt-2">The lightweight program that exposes capabilities. It acts as a bridge to a data source or API, like a filesystem or a GitHub repository.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Ecosystem -->
+        <section id="ecosystem" class="mb-16 scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Ecosystem Explorer</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">The MCP ecosystem is young but growing explosively. Use the filters, sorting, and **✨ AI Summarizer** to explore the landscape of tools and integrations.</p>
+            </div>
+            
+            <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg border border-slate-200">
+                <div class="mb-6">
+                    <div class="chart-container">
+                        <canvas id="mcpStarsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="mb-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="md:col-span-1">
+                        <label for="search" class="block text-sm font-medium text-slate-700">Search by Name</label>
+                        <input type="text" id="search" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="e.g., python-sdk">
+                    </div>
+                     <div class="md:col-span-2">
+                         <label class="block text-sm font-medium text-slate-700">Filter by Category</label>
+                         <div id="filters" class="mt-1 flex flex-wrap gap-2">
+                            <button class="filter-btn active bg-blue-500 text-white px-3 py-1.5 text-sm font-medium rounded-full" data-filter="all">All</button>
+                            <button class="filter-btn bg-slate-200 text-slate-700 px-3 py-1.5 text-sm font-medium rounded-full" data-filter="sdk">SDKs</button>
+                            <button class="filter-btn bg-slate-200 text-slate-700 px-3 py-1.5 text-sm font-medium rounded-full" data-filter="devtool">Dev Tools</button>
+                            <button class="filter-btn bg-slate-200 text-slate-700 px-3 py-1.5 text-sm font-medium rounded-full" data-filter="rag">RAG & Data</button>
+                             <button class="filter-btn bg-slate-200 text-slate-700 px-3 py-1.5 text-sm font-medium rounded-full" data-filter="automation">Automation</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200 table-auto">
+                        <thead class="bg-slate-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider cursor-pointer" data-sort="rank">Rank</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider cursor-pointer" data-sort="name">Project Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Primary Use Case</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider cursor-pointer" data-sort="stars">Stars</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Summary</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mcp-table-body" class="bg-white divide-y divide-slate-200">
+                            <!-- JS will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Landscape -->
+        <section id="landscape" class="mb-16 scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">The Strategic Landscape</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">MCP doesn't exist in a vacuum. Use the **✨ AI Insight Generator** below to explore its relationship with other parts of the ecosystem.</p>
+            </div>
+
+            <div class="space-y-8">
+                 <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                    <h3 class="text-2xl font-bold text-center mb-2 text-slate-900">✨ AI-Powered Strategic Insight</h3>
+                    <p class="text-center text-slate-600 max-w-2xl mx-auto mb-6">Select two ecosystem categories to generate an AI analysis of their potential synergies, competitive dynamics, or collaborative opportunities.</p>
+                    <div class="max-w-xl mx-auto">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="category1" class="block text-sm font-medium text-slate-700">Category 1</label>
+                                <select id="category1" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    <option>SDKs</option>
+                                    <option>Dev Tools</option>
+                                    <option>RAG & Data</option>
+                                    <option>Automation</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="category2" class="block text-sm font-medium text-slate-700">Category 2</label>
+                                <select id="category2" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    <option>SDKs</option>
+                                    <option>Dev Tools</option>
+                                    <option selected>RAG & Data</option>
+                                    <option>Automation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="generate-insight-btn" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
+                            Generate Insight
+                        </button>
+                        <div id="insight-output" class="mt-6 bg-slate-50 p-6 rounded-lg border border-slate-200 min-h-[100px]">
+                           Select two categories and click generate.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-slate-900">Protocol vs. Framework</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="border-r-0 md:border-r md:pr-8 border-slate-200">
+                            <h4 class="text-xl font-semibold mb-2">Model Context Protocol (MCP)</h4>
+                            <p class="text-slate-600">MCP is a **Protocol**. It's the standardized 'socket on the wall.' Its job is to define *how* an AI application and a tool communicate, standardizing the connection itself.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">LangChain</h4>
+                            <p class="text-slate-600">LangChain is a **Framework**. It's the 'intelligent appliance' that plugs into the socket. Its job is to provide the logic for *deciding which tool to call*, *when to call it*, and how to chain actions together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Future -->
+        <section id="future" class="scroll-mt-24">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Future Trajectory & Core Challenges</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">The evidence suggests MCP is a foundational fixture, but its long-term success hinges on navigating key challenges.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Ecosystem Health: Excellent</h3>
+                    <p class="text-slate-600">With universal industry backing, comprehensive SDKs, and a vibrant open-source community, the ecosystem fundamentals are incredibly strong.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 ring-2 ring-amber-400">
+                    <h3 class="font-bold text-xl mb-2 text-amber-900">Security Model: Centralized Burden</h3>
+                    <p class="text-slate-600">The protocol places the entire burden of security and user consent on the **Host** application. This centralizes risk, making the security of popular hosts like VS Code paramount for the whole ecosystem.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Primary Challenge: User Experience</h3>
+                    <p class="text-slate-600">For mainstream adoption, the friction of installing and running tools must be eliminated. One-click installers and zero-setup remote servers are the path forward.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for AI Summary -->
+    <div id="summary-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-2xl p-6 transform scale-95">
+            <div class="flex justify-between items-center border-b pb-3 mb-4">
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900">AI-Powered Summary</h3>
+                <button id="close-modal-btn" class="text-slate-500 hover:text-slate-800">&times;</button>
+            </div>
+            <div id="modal-body" class="text-slate-700">
+                <!-- AI summary will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+const mcpData = [
+    { rank: 1, name: "modelcontextprotocol/servers", bio: "The official monorepo for reference and archived MCP server implementations from Anthropic.", useCase: "Foundational starting point for the ecosystem, providing high-quality, official examples for key integrations like Filesystem, Git, and Memory.", tech: "Python, TypeScript", stars: 56900, forks: 6600, lastCommit: "2025-06-28", category: "devtool" },
+    { rank: 2, name: "mindsdb/mindsdb", bio: "An AI query engine and MCP server for building AI over federated data sources.", useCase: "Positions itself as a universal data layer for AI, abstracting multiple backends into a single powerful MCP interface for complex RAG.", tech: "Python, SQL, MCP", stars: 32900, forks: 5400, lastCommit: "2025-07-01", category: "rag" },
+    { rank: 3, name: "assafelovic/gpt-researcher", bio: "An LLM-based autonomous agent that conducts deep local and web research and generates reports with citations.", useCase: "A popular autonomous agent that integrates MCP to use external tools for its research tasks, showcasing a key agentic use case.", tech: "Python, MCP", stars: 22100, forks: 2900, lastCommit: "2025-07-01", category: "automation" },
+    { rank: 4, name: "modelcontextprotocol/python-sdk", bio: "The official Python SDK for building MCP servers and clients.", useCase: "The primary tool for the largest community of AI/ML developers (Python users) to engage with the MCP ecosystem.", tech: "Python, JSON-RPC", stars: 15400, forks: 1900, lastCommit: "2025-06-30", category: "sdk" },
+    { rank: 5, name: "github/github-mcp-server", bio: "GitHub's official MCP server for interacting with the GitHub API.", useCase: "A critical, first-party tool that deeply integrates the most important platform for developers into the MCP ecosystem.", tech: "Go, MCP, GitHub API", stars: 14700, forks: 1200, lastCommit: "2025-06-28", category: "devtool" },
+    { rank: 6, name: "modelcontextprotocol/typescript-sdk", bio: "The official TypeScript SDK for Model Context Protocol servers and clients.", useCase: "The essential SDK for the vast JavaScript/TypeScript ecosystem, crucial for web-based and IDE-based MCP hosts and servers.", tech: "TypeScript, Node.js", stars: 8100, forks: 986, lastCommit: "2025-06-30", category: "sdk" },
+    { rank: 7, name: "modelcontextprotocol/inspector", bio: "A visual testing and debugging tool for MCP servers.", useCase: "An indispensable developer utility for building and troubleshooting MCP servers, accelerating the development cycle.", tech: "TypeScript, React", stars: 4500, forks: 586, lastCommit: "2025-06-30", category: "devtool" },
+    { rank: 8, name: "modelcontextprotocol/modelcontextprotocol", bio: "The official repository for the MCP specification and protocol schema.", useCase: "The canonical source of truth for the protocol itself, defining the rules for the entire ecosystem.", tech: "TypeScript, JSON Schema", stars: 4300, forks: 688, lastCommit: "2025-07-01", category: "sdk" },
+    { rank: 40, name: "microsoft/playwright-mcp", bio: "An MCP server for browser automation using Microsoft's Playwright.", useCase: "A powerful tool for web scraping, UI testing, and general browser automation, backed by a major industry player.", tech: "TypeScript, Playwright", stars: 19800, forks: 1800, lastCommit: "2025-07-01", category: "automation" },
+    { rank: 18, name: "qdrant/mcp-server-qdrant", bio: "Official Qdrant MCP server implementation for vector search.", useCase: "Provides a standardized RAG retrieval interface for one of the leading vector databases.", tech: "Python, FastMCP", stars: 735, forks: 100, lastCommit: "2025-06-27", category: "rag" },
+    { rank: 24, name: "chroma-core/chroma-mcp", bio: "An MCP server implementation for the Chroma vector database.", useCase: "Provides a standardized RAG retrieval interface for another leading vector database.", tech: "Python", stars: 209, forks: 39, lastCommit: "2025-06-19", category: "rag" },
+];
+
+
+    let currentSort = { column: 'rank', order: 'asc' };
+    let chartInstance = null;
+
+    const tableBody = document.getElementById('mcp-table-body');
+    const searchInput = document.getElementById('search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const headers = document.querySelectorAll('th[data-sort]');
+    
+    // Modal elements
+    const summaryModal = document.getElementById('summary-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    // Insight generator elements
+    const generateInsightBtn = document.getElementById('generate-insight-btn');
+    const insightOutput = document.getElementById('insight-output');
+    const category1Select = document.getElementById('category1');
+    const category2Select = document.getElementById('category2');
+
+    function showLoader(element) {
+        element.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+    }
+
+    async function callGeminiAPI(prompt) {
+        const apiKey = ""; 
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        
+        const payload = {
+            contents: [{
+                role: "user",
+                parts: [{ text: prompt }]
+            }]
+        };
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API call failed with status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            if (result.candidates && result.candidates.length > 0 &&
+                result.candidates[0].content && result.candidates[0].content.parts &&
+                result.candidates[0].content.parts.length > 0) {
+                return result.candidates[0].content.parts[0].text;
+            } else {
+                console.error("Unexpected API response structure:", result);
+                return "Could not retrieve a valid response from the AI. The response format was unexpected.";
+            }
+        } catch (error) {
+            console.error("Error calling Gemini API:", error);
+            return `An error occurred while contacting the AI model: ${error.message}. Please check the console for details.`;
+        }
+    }
+
+    function formatNumber(num) {
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'k';
+        }
+        return num;
+    }
+
+    function renderTable(data) {
+        tableBody.innerHTML = '';
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.className = 'hover:bg-slate-50';
+            row.innerHTML = `
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${item.rank}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-semibold">
+                    <a href="https://github.com/${item.name}" target="_blank" rel="noopener noreferrer" class="hover:underline">${item.name}</a>
+                </td>
+                <td class="px-6 py-4 text-sm text-slate-600 max-w-sm whitespace-normal">${item.useCase}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">${formatNumber(item.stars)}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <button class="summarize-btn bg-blue-100 text-blue-700 text-xs font-bold py-1 px-2 rounded-full hover:bg-blue-200" data-name="${item.name}" data-bio="${item.bio}">
+                        ✨ Summarize
+                    </button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+        
+        document.querySelectorAll('.summarize-btn').forEach(button => {
+            button.addEventListener('click', handleSummarizeClick);
+        });
+    }
+
+    async function handleSummarizeClick(event) {
+        const button = event.currentTarget;
+        const projectName = button.dataset.name;
+        const projectBio = button.dataset.bio;
+
+        modalTitle.textContent = `AI-Powered Summary for ${projectName}`;
+        showModal();
+        showLoader(modalBody);
+
+        const prompt = `You are an expert tech analyst. Provide a concise, one-paragraph summary for the following GitHub project. Explain its purpose, key features, and potential impact on the AI ecosystem based on its name and bio.
+        
+        Project Name: ${projectName}
+        Project Bio: ${projectBio}
+        
+        Generate the summary now.`;
+
+        const summary = await callGeminiAPI(prompt);
+        modalBody.innerHTML = summary.replace(/\n/g, '<br>');
+    }
+
+    function showModal() {
+        summaryModal.classList.remove('hidden');
+        setTimeout(() => {
+            summaryModal.classList.remove('opacity-0');
+            summaryModal.querySelector('.modal-content').classList.remove('scale-95');
+        }, 10);
+    }
+
+    function hideModal() {
+        summaryModal.classList.add('opacity-0');
+        summaryModal.querySelector('.modal-content').classList.add('scale-95');
+        setTimeout(() => {
+            summaryModal.classList.add('hidden');
+        }, 300);
+    }
+
+    closeModalBtn.addEventListener('click', hideModal);
+    summaryModal.addEventListener('click', (e) => {
+        if (e.target === summaryModal) {
+            hideModal();
+        }
+    });
+
+    async function handleGenerateInsight() {
+        const category1 = category1Select.value;
+        const category2 = category2Select.value;
+
+        if (category1 === category2) {
+            insightOutput.textContent = "Please select two different categories for a meaningful comparison.";
+            return;
+        }
+
+        showLoader(insightOutput);
+        generateInsightBtn.disabled = true;
+        generateInsightBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+        const prompt = `As a strategic analyst specializing in AI ecosystems, analyze the relationship between two categories of tools within the Model Context Protocol (MCP) ecosystem: "${category1}" and "${category2}".
+        
+        Describe:
+        1.  **Synergies & Collaboration:** How do these two categories work together? What kind of powerful applications could be built by combining them?
+        2.  **Competitive Dynamics or Dependencies:** Are they competitive? Or does one category depend on the other to be effective?
+        3.  **Overall Strategic Importance:** What does the interaction between these two areas tell us about the maturity and future direction of the MCP ecosystem?
+        
+        Provide a concise, insightful analysis.`;
+
+        const insight = await callGeminiAPI(prompt);
+        insightOutput.innerHTML = insight.replace(/\n/g, '<br>');
+        generateInsightBtn.disabled = false;
+        generateInsightBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+
+    generateInsightBtn.addEventListener('click', handleGenerateInsight);
+
+    function updateChart(data) {
+        const ctx = document.getElementById('mcpStarsChart').getContext('2d');
+        const chartData = data.slice(0, 15).sort((a,b) => a.stars - b.stars);
+
+        const labels = chartData.map(d => d.name);
+        const starsData = chartData.map(d => d.stars);
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'GitHub Stars',
+                    data: starsData,
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Top Projects by GitHub Stars (Filtered)', font: { size: 18, weight: 'bold' }, color: '#1e293b', padding: { bottom: 20 } },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ` Stars: ${new Intl.NumberFormat('en-US').format(context.parsed.x)}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { beginAtZero: true, grid: { color: '#e2e8f0' }, ticks: { color: '#475569' } },
+                    y: { grid: { display: false }, ticks: { color: '#475569', autoSkip: false, font: { size: 10 } } }
+                }
+            }
+        });
+    }
+
+    function filterAndSortData() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+
+        let filteredData = mcpData;
+
+        if (activeFilter !== 'all') {
+            filteredData = filteredData.filter(item => item.category === activeFilter);
+        }
+
+        if (searchTerm) {
+            filteredData = filteredData.filter(item => item.name.toLowerCase().includes(searchTerm));
+        }
+
+        filteredData.sort((a, b) => {
+            const valA = a[currentSort.column];
+            const valB = b[currentSort.column];
+            let comparison = (valA > valB) ? 1 : (valA < valB) ? -1 : 0;
+            return currentSort.order === 'desc' ? comparison * -1 : comparison;
+        });
+
+        renderTable(filteredData);
+        updateChart(filteredData);
+    }
+    
+    searchInput.addEventListener('input', filterAndSortData);
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-500', 'text-white');
+                btn.classList.add('bg-slate-200', 'text-slate-700');
+            });
+            button.classList.add('active', 'bg-blue-500', 'text-white');
+            button.classList.remove('bg-slate-200', 'text-slate-700');
+            filterAndSortData();
+        });
+    });
+
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const column = header.dataset.sort;
+            const order = (currentSort.column === column && currentSort.order === 'asc') ? 'desc' : 'asc';
+            currentSort = { column, order };
+            filterAndSortData();
+            headers.forEach(h => h.innerHTML = h.innerHTML.replace(' ▲', '').replace(' ▼', ''));
+            header.innerHTML += order === 'asc' ? ' ▲' : ' ▼';
+        });
+    });
+
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const headerEl = document.getElementById('header');
+    
+    const observerOptions = { root: null, rootMargin: `-${headerEl.offsetHeight}px`, threshold: 0.3 };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    filterAndSortData();
+});
+</script>
+</body>
+</html>

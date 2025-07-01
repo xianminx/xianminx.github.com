@@ -30,6 +30,12 @@ const projectsData: Project[] = [
     imgSrc: '/static/images/aihistory.png',
     href: '/projects/ai/history',
   },
+  {
+    title: 'The Model Context Protocol: An Interactive Analysis',
+    description: `The Model Context Protocol (MCP) is a protocol for building AI agents that can interact with each other and the world.`,
+    imgSrc: '/static/images/mcp-report.png',
+    href: '/projects/mcp-report',
+  },
 ]
 
 export default projectsData
