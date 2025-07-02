@@ -28,7 +28,7 @@
     "mermaid": "^11.7.0",
     "motion": "^12.22.0",
     "next": "15.2.4",
-    "next-contentlayer2": "0.5.4",
+    "next-contentlayer2": "0.5.8",
     "next-themes": "^0.3.0",
     "pliny": "^0.4.1",
     "prism-react-renderer": "^2.4.1",
