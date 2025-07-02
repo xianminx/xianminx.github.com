@@ -4,9 +4,10 @@
     "memory": "8gb"
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn",
-  "postCreateCommand": "",
-  "postAttachCommand": "yarn dev",
+  "updateContentCommand": "yarn install --frozen-lockfile",
+  "postCreateCommand": "yarn build",
+  "postAttachCommand": "",
+  "onCreateCommand": "yarn install --frozen-lockfile && yarn build",
   "customizations": {
     "codespaces": {
       "openFiles": ["data/blog/code-sample.mdx"]
@@ -24,5 +25,8 @@
       "onAutoForward": "openPreview"
     }
   },
-  "forwardPorts": [3000]
+  "forwardPorts": [3000],
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  }
 }
