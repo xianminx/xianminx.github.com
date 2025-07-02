@@ -1559,12 +1559,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentlayer2/cli@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@contentlayer2/cli@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/core": 0.5.8
+    "@contentlayer2/utils": 0.5.8
+    clipanion: ^3.2.1
+    typanion: ^3.12.1
+  checksum: 600313d089f97e78c20809a3863f81ffc6f28e4a774de793ea6e1b24fd78fa63abd2008748610ae5a4d05b7699d2dfd6b1ed52b205eea13b73c4ffb72763a43a
+  languageName: node
+  linkType: hard
+
 "@contentlayer2/client@npm:0.5.4":
   version: 0.5.4
   resolution: "@contentlayer2/client@npm:0.5.4"
   dependencies:
     "@contentlayer2/core": 0.5.4
   checksum: 69c2b45382c2d235eeb492166bdf0b123b997f4c4a0985085406780127c87012e00617a0a771ac65b5674273374926a7df14a279e49cdc136b573f5e67037118
+  languageName: node
+  linkType: hard
+
+"@contentlayer2/client@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@contentlayer2/client@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/core": 0.5.8
+  checksum: bd950de2e7b42a3dda95e8093117dbe93c2a44f81cfafeb8f5e01d6c31a926f831dc1afd2950d9df74d205b9040f7d83d1576d8ca60d3ae750e7ed68c5e7aa7e
   languageName: node
   linkType: hard
 
@@ -1645,6 +1666,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentlayer2/source-files@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@contentlayer2/source-files@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/core": 0.5.8
+    "@contentlayer2/utils": 0.5.8
+    chokidar: ^3.5.3
+    fast-glob: ^3.2.12
+    gray-matter: ^4.0.3
+    imagescript: ^1.2.16
+    micromatch: ^4.0.5
+    ts-pattern: ^5.0.6
+    unified: ^11.0.4
+    yaml: ^2.3.1
+    zod: ^3.22.4
+  checksum: 8a7e13e811f1f60c4b032f431db0473d9be982d65d72998423046c592164b5078198c5ba5aa47cf359a800bf68a64c615ab2a99030d97cc5d6ebb8d8db89505b
+  languageName: node
+  linkType: hard
+
 "@contentlayer2/source-remote-files@npm:0.5.4":
   version: 0.5.4
   resolution: "@contentlayer2/source-remote-files@npm:0.5.4"
@@ -1653,6 +1693,17 @@ __metadata:
     "@contentlayer2/source-files": 0.5.4
     "@contentlayer2/utils": 0.5.4
   checksum: 902242928e1b8dc84e9d52cb14a42cc73628c72990c562865a8f9879057000c39acffca4b5147139e02db4942ed165783c9b3c4be7e69f062875184b7756e6ff
+  languageName: node
+  linkType: hard
+
+"@contentlayer2/source-remote-files@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@contentlayer2/source-remote-files@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/core": 0.5.8
+    "@contentlayer2/source-files": 0.5.8
+    "@contentlayer2/utils": 0.5.8
+  checksum: f6ad5f12b8d0467c7c8cfb86b9ca860640d5f237edbcd965258aa3d90e933b96a0cd29bfad1ca9ad589a5ab73f4306306a70883c4d8c6b0dc489623de0f9acb9
   languageName: node
   linkType: hard
 
@@ -4592,7 +4643,7 @@ __metadata:
     "@typescript-eslint/parser": ^8.12.0
     autoprefixer: ^10.4.13
     body-scroll-lock: ^4.0.0-beta.0
-    contentlayer2: 0.5.4
+    contentlayer2: 0.5.8
     cross-env: ^7.0.3
     esbuild: 0.25.0
     eslint: ^9.14.0
@@ -5116,7 +5167,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentlayer2@npm:0.5.4, contentlayer2@npm:^0.5.3":
+"contentlayer2@npm:0.5.8":
+  version: 0.5.8
+  resolution: "contentlayer2@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/cli": 0.5.8
+    "@contentlayer2/client": 0.5.8
+    "@contentlayer2/core": 0.5.8
+    "@contentlayer2/source-files": 0.5.8
+    "@contentlayer2/source-remote-files": 0.5.8
+    "@contentlayer2/utils": 0.5.8
+  bin:
+    contentlayer2: ./bin/cli.cjs
+  checksum: 4b928868a0e4f8b826bd4b9a0e6af08c62d07ef0064c6426e683b2855d7b23574b775f4037b9d693cdb7bfb5854c12e24671af95449d0513c90d72ba43d38002
+  languageName: node
+  linkType: hard
+
+"contentlayer2@npm:^0.5.3":
   version: 0.5.4
   resolution: "contentlayer2@npm:0.5.4"
   dependencies:
