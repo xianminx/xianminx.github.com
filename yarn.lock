@@ -1597,6 +1597,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentlayer2/core@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@contentlayer2/core@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/utils": 0.5.8
+    camel-case: ^4.1.2
+    comment-json: ^4.2.3
+    esbuild: ">=0.17"
+    gray-matter: ^4.0.3
+    mdx-bundler: ^10.1.1
+    rehype-stringify: ^10.0.0
+    remark-frontmatter: ^5.0.0
+    remark-parse: ^11.0.0
+    remark-rehype: ^11.1.0
+    source-map-support: ^0.5.21
+    type-fest: ^4.10.0
+    unified: ^11.0.4
+  peerDependencies:
+    esbuild: ">=0.17"
+    markdown-wasm: 1.x
+  peerDependenciesMeta:
+    esbuild:
+      optional: true
+    markdown-wasm:
+      optional: true
+  checksum: 70c301fe5160b0cb3ad41ba567c7273be3d7a37d881ba7542cb6d51d5c3aed3f2f6f136bc91b4241e4467a3d8656d1278d64fcfc7fd35e8e5bbfb46e39100ec0
+  languageName: node
+  linkType: hard
+
 "@contentlayer2/source-files@npm:0.5.4":
   version: 0.5.4
   resolution: "@contentlayer2/source-files@npm:0.5.4"
@@ -1657,6 +1686,39 @@ __metadata:
     "@effect-ts/otel-node":
       optional: true
   checksum: bb647b7bf9e9c65a0b3d422d81e6aec84ee256b699829b4d8ed217b7ec6ed4391a8da0f5d39996b7a877b7a0139403609d8d05c57afee84949c59c46fb3b8abe
+  languageName: node
+  linkType: hard
+
+"@contentlayer2/utils@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@contentlayer2/utils@npm:0.5.8"
+  dependencies:
+    "@effect-ts/core": ^0.60.5
+    "@effect-ts/otel": ^0.15.1
+    "@effect-ts/otel-sdk-trace-node": ^0.15.1
+    "@js-temporal/polyfill": ^0.4.4
+    "@opentelemetry/api": ^1.9.0
+    "@opentelemetry/core": ^1.30.1
+    "@opentelemetry/exporter-trace-otlp-grpc": ^0.57.1
+    "@opentelemetry/resources": ^1.30.1
+    "@opentelemetry/sdk-trace-base": ^1.30.1
+    "@opentelemetry/sdk-trace-node": ^1.30.1
+    "@opentelemetry/semantic-conventions": ^1.28.0
+    chokidar: ^3.5.3
+    hash-wasm: ^4.11.0
+    inflection: ^3.0.0
+    memfs: ^4.8.2
+    oo-ascii-tree: ^1.94.0
+    ts-pattern: ^5.0.6
+    type-fest: ^4.10.0
+  peerDependenciesMeta:
+    "@effect-ts/core":
+      optional: true
+    "@effect-ts/otel":
+      optional: true
+    "@effect-ts/otel-node":
+      optional: true
+  checksum: 31bb728d09da7767f19cd6308fc86c8235c076354acaa5d971f9588326c82f401579efa9a2e19b3bbf132525f594cfa94e25c1fce62cdfb9c6d82dd3d641fcfc
   languageName: node
   linkType: hard
 
@@ -4547,7 +4609,7 @@ __metadata:
     mermaid: ^11.4.1
     motion: ^12.22.0
     next: 15.2.4
-    next-contentlayer2: 0.5.4
+    next-contentlayer2: 0.5.8
     next-themes: ^0.3.0
     pliny: ^0.4.1
     postcss: 8.4.49
@@ -9129,6 +9191,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mdx-bundler@npm:^10.1.1":
+  version: 10.1.1
+  resolution: "mdx-bundler@npm:10.1.1"
+  dependencies:
+    "@babel/runtime": ^7.23.2
+    "@esbuild-plugins/node-resolve": ^0.2.2
+    "@fal-works/esbuild-plugin-global-externals": ^2.1.2
+    "@mdx-js/esbuild": ^3.0.0
+    gray-matter: ^4.0.3
+    remark-frontmatter: ^5.0.0
+    remark-mdx-frontmatter: ^4.0.0
+    uuid: ^9.0.1
+    vfile: ^6.0.1
+  peerDependencies:
+    esbuild: 0.*
+  checksum: 305e3db8eed7c4f62438ca9fd18d2f3a472fb042e13828d680abc2d567d22242c058827d53e7052a0b85fd93b28660cb139577078cb3cbe30c2c53223bf6523a
+  languageName: node
+  linkType: hard
+
 "memfs@npm:^4.8.2":
   version: 4.17.0
   resolution: "memfs@npm:4.17.0"
@@ -9964,7 +10045,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-contentlayer2@npm:0.5.4, next-contentlayer2@npm:^0.5.3":
+"next-contentlayer2@npm:0.5.8":
+  version: 0.5.8
+  resolution: "next-contentlayer2@npm:0.5.8"
+  dependencies:
+    "@contentlayer2/core": 0.5.8
+    "@contentlayer2/utils": 0.5.8
+  peerDependencies:
+    contentlayer2: 0.5.8
+    next: ">=12.0.0"
+    react: ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^18 || ^19 || ^19.0.0-rc
+  checksum: 41f9d1cc021e87397e0dcdc89928e7292db775dfcc90850b0b9c6b85cdde8538b65e1ca2ad634a03c6b663f526d955ca11a02eb771e08663420e5254705359de
+  languageName: node
+  linkType: hard
+
+"next-contentlayer2@npm:^0.5.3":
   version: 0.5.4
   resolution: "next-contentlayer2@npm:0.5.4"
   dependencies:
