@@ -52,7 +52,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.16.0",
     "@svgr/webpack": "^8.0.1",
     "@types/mdx": "^2.0.12",
