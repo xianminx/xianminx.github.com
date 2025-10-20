@@ -2715,12 +2715,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:15.1.4":
-  version: 15.1.4
-  resolution: "@next/bundle-analyzer@npm:15.1.4"
+"@next/bundle-analyzer@npm:15.5.6":
+  version: 15.5.6
+  resolution: "@next/bundle-analyzer@npm:15.5.6"
   dependencies:
     webpack-bundle-analyzer: 4.10.1
-  checksum: 9077c64282003f39d33bcab0458a69a3e412f94f84c77ee0f057d31ca3ed79e50f201ecdd4ba9769c2eef504c2da1a753da90c6bad4bf2738dca3cea904c79dd
+  checksum: 44d2450479afdd2ce48ef331ce22a8e0648ca0022d783882a74dde5c39b4c7a0043fc1b7c4d558ab61fcdafcfe0861bbaa45dabb0d7f30fea9245669c5e0dd37
   languageName: node
   linkType: hard
 
@@ -4681,7 +4681,7 @@ __metadata:
     "@eslint/eslintrc": ^3.2.0
     "@eslint/js": ^9.16.0
     "@headlessui/react": 2.2.0
-    "@next/bundle-analyzer": 15.1.4
+    "@next/bundle-analyzer": 15.5.6
     "@svgr/webpack": ^8.0.1
     "@tailwindcss/forms": ^0.5.9
     "@tailwindcss/postcss": ^4.0.9
