@@ -1,0 +1,32 @@
+# Python Version Management on macOS
+
+There are 3 major python version managers available on macOS:
+
+- macOS system framework
+
+- [pyenv](https://github.com/pyenv/pyenv)
+
+- [Homebrew](https://brew.sh/)
+
+## macOS System Framework
+
+macOS comes with a system framework for Python, located at `/Library/Frameworks/Python.framework/Versions`. You can list the installed versions using:  
+🧱 3. Official Python.org Installers
+
+Best for: system-level installations (non-Homebrew users).
+
+When you install from python.org, it places Pythons under
+/Library/Frameworks/Python.framework/Versions/3.x
+
+You can manage them manually:
+
+ls /Library/Frameworks/Python.framework/Versions/
+sudo rm -rf /Library/Frameworks/Python.framework/Versions/3.8
+
+⚠️ But this is not recommended — hard to automate and can conflict with macOS system Python.
+
+```sh
+ls -lah /Library/Frameworks/Python.framework/Versions
+drwxrwxr-x  11 root  admin   352B Jul 21  2024 3.12
+lrwxr-xr-x   1 root  wheel     4B Jul 21  2024 Current -> 3.12
+```

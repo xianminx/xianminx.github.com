@@ -1,0 +1,180 @@
+---
+title: 'Python Package Management'
+summary: 'Compare the classic pip + virtualenv workflow with uv, the new all-in-one tool for Python dependency and packaging management.'
+date: '2025-10-23'
+authors: ['Lukas']
+tags: ['python', 'uv']
+draft: false
+---
+
+Python packaging has historically required juggling multiple tools—`pip`, `virtualenv`, `pyenv`, `hatch`, `build`, and more. Each solves a piece of the puzzle, but stitching them together takes time and leaks complexity into every project. `uv`, a fast Rust-powered tool from Astral (the team behind `ruff`), aims to collapse that toolchain into a single, opinionated workflow. This post explains the underlying mechanics of Python packaging while showing how `uv` streamlines day-to-day development.
+
+## Why uv?
+
+- **Speed:** `uv` resolves and installs dependencies dramatically faster than `pip`, leveraging parallel downloads, aggressive caching, and a deterministic resolver.
+- **Single source of truth:** Projects revolve around `pyproject.toml` plus a generated `uv.lock`, which captures exact versions for reproducible builds.
+- **Integrated tooling:** Virtual environments, dependency resolution, packaging, and Python interpreter management all live behind one CLI.
+- **Interoperability:** You can continue consuming `requirements.txt`, wheels, and sdists so existing projects and CI pipelines keep working.
+
+## Installing uv
+
+`uv` distributes a single static binary that works on macOS, Linux, and Windows. Pick whichever installation method fits your workflow:
+
+```sh
+# macOS/Linux install script
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# With pipx (isolated Python environment)
+pipx install uv
+
+# Homebrew
+brew install uv
+```
+
+On Windows you can use PowerShell:
+
+```powershell
+irm https://astral.sh/uv/install.ps1 | iex
+```
+
+After installation, confirm everything works with `uv --version`.
+
+## Quick start workflow
+
+Get productive in four commands:
+
+```sh
+uv init weather-app
+cd weather-app
+uv add httpx typer
+uv run python main.py
+```
+
+On another machine (or in CI), run `uv sync` to recreate the environment from `uv.lock`.
+
+## uv Cheatsheet
+
+| Task                 | Command                                                   | When to use                                                              |
+| -------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Initialize a project | `uv init my-app`                                          | Scaffold a new app or library with `pyproject.toml` and `.venv/`.        |
+| Add dependencies     | `uv add httpx typer`                                      | Installs packages, updates `pyproject.toml`, and refreshes `uv.lock`.    |
+| Remove dependencies  | `uv remove typer`                                         | Cleans the virtual environment and manifest.                             |
+| Sync environment     | `uv sync`                                                 | Create/update `.venv/` from the lockfile; add `--locked` in CI.          |
+| Re-resolve versions  | `uv lock`                                                 | Update `uv.lock` without touching the environment.                       |
+| Run code             | `uv run python main.py`                                   | Use `-p 3.12` to pick an interpreter or `--with black` for ad-hoc tools. |
+| Install Python       | `uv python install 3.12`                                  | Download and cache interpreters alongside the project.                   |
+| Pin Python version   | `uv python pin 3.12`                                      | Record the required interpreter in `pyproject.toml`.                     |
+| Build artifacts      | `uv build`                                                | Produce wheels and source distributions in `dist/`.                      |
+| Publish              | `uv publish --token $PYPI_TOKEN`                          | Upload to PyPI or a configured package index.                            |
+| Inspect dependencies | `uv tree`                                                 | Visualize the dependency graph; add `--depth 2` to limit output.         |
+| Export requirements  | `uv export --format requirements.txt -o requirements.txt` | Generate files for tooling that expects `pip` inputs.                    |
+| Clean cache          | `uv cache prune`                                          | Drop unused cached wheels and interpreters.                              |
+
+## Package format
+
+Python packages are typically distributed as wheel archives (`*.whl`). Once a wheel is installed you will usually see two directories in `site-packages`:
+
+```sh
+arrow
+arrow-1.3.0.dist-info
+```
+
+- `arrow` holds the importable source code for the package runtime.
+- `arrow-1.3.0.dist-info` stores metadata such as the version, declared dependencies, and entry points.
+
+## How Python resolves imports
+
+When you run `python hello.py`, the interpreter resolves imports like `from foo import bar` by scanning the entries listed in `sys.path`:
+
+```python
+>>> from pprint import pprint;
+>>> pprint(sys.path)
+['',
+ '/Users/lucas/.local/share/uv/python/cpython-3.14.0rc2-macos-x86_64-none/lib/python314.zip',
+ '/Users/lucas/.local/share/uv/python/cpython-3.14.0rc2-macos-x86_64-none/lib/python3.14',
+ '/Users/lucas/.local/share/uv/python/cpython-3.14.0rc2-macos-x86_64-none/lib/python3.14/lib-dynload',
+ '/Users/lucas/dev/workspace/py/scrum/.venv/lib/python3.14/site-packages',
+ '/Users/lucas/dev/workspace/py/scrum']
+
+```
+
+The current working directory appears first, followed by the standard library, any global site-packages, and finally the active virtual environment (`/Users/lucas/dev/workspace/py/scrum/.venv/lib/python3.14/site-packages` in this example).
+
+## Managing dependencies
+
+### Traditional workflow with pip and venv
+
+Running `pip install foo` without preparation installs the package into the global Python site-packages directory. That quickly leads to version conflicts, so most teams create a local `.venv` (`python -m venv .venv`) and activate it before installing dependencies—useful, but still manual work.
+
+### One tool to rule them all: uv
+
+`uv` streamlines those chores by centering the project around `pyproject.toml` and the generated `uv.lock`. Commands like `uv add foo` (see the cheatsheet above) ensure the virtual environment exists, install the dependency, and update both files in one shot. A minimal manifest might look like:
+
+```toml
+[project]
+name = "example"
+version = "0.1.0"
+dependencies = [
+  "django>=5.2,<6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
+To execute code within the managed environment, use `uv run python main.py`. You can also target a specific interpreter version, for example:
+
+```sh
+uv run -p 3.14 python main.py
+```
+
+### Reproducible environments with uv.lock
+
+Every `uv add` or `uv sync` updates `uv.lock`, a lockfile that records exact versions, build hashes, and source URLs. Commit the lockfile and your colleagues (or CI workflows) can reproduce the environment deterministically with `uv sync --locked`. If you need to inspect or edit dependencies temporarily, `uv pip` exposes low-level commands (`uv pip install requests==2.32.3`) while still honoring the active environment.
+
+## Managing Python versions
+
+Another benefit of `uv` is its ability to download and cache Python interpreters:
+
+```sh
+uv python install 3.12
+uv python list
+uv python pin 3.12
+```
+
+`uv python pin` records the requirement in `pyproject.toml`; run your app with `uv run -p 3.12 python main.py` and you no longer need extra tools like `pyenv`.
+
+## Packaging and publishing
+
+To share your project you still need to publish build artifacts (typically to [PyPI](https://pypi.org)). The process has been standardized around the _front-end_/_back-end_ split: tools like `uv` or `build` act as front-ends, while back-ends such as `hatchling` or `setuptools` produce the wheel file.
+
+With the `pyproject.toml` configuration in place, packaging becomes a single command:
+
+```sh
+uv build
+```
+
+The resulting `foo-0.1.0-py3-none-any.whl` is just a ZIP archive containing your `src/foo` code and metadata. After publishing, consumers can install it and import your code with:
+
+```python
+from foo import bar
+```
+
+Inside their environment the wheel expands to `foo/` (your runtime package) and `foo-0.1.0.dist-info/` (metadata), completing the round trip from development to distribution.
+
+When you are ready to push artifacts, `uv publish` uploads wheels and source distributions to PyPI (or a private index) using the same project metadata and your API token:
+
+```sh
+uv publish --token $PYPI_TOKEN
+```
+
+## Interoperability tips
+
+- Existing `requirements.txt` files still work. Run `uv pip install -r requirements.txt` to hydrate a new environment, or `uv export` to generate constraints for tooling that expects a requirements file.
+- Need to audit dependencies? `uv tree` prints a dependency graph, and `uv cache prune` clears unused artifacts.
+- CI pipelines can leverage `uv` without rewriting scripts: wrap commands with `uv run` or call `uv sync --frozen` to verify the lockfile stays consistent.
+
+## Final thoughts
+
+Python finally has an opinionated, batteries-included toolchain that rivals the developer experience of ecosystems like JavaScript or Rust. By understanding the fundamentals—how wheels are structured, how imports resolve, why virtual environments matter—you can appreciate how much friction `uv` removes. Give it a spin on your next project and enjoy faster installs, reproducible builds, and fewer tools to keep in sync.
