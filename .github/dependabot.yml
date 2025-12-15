@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    # Disable security updates for now to reduce noise
+    open-pull-requests-limit: 10
+
+  # Enable version updates for devcontainer
+  - package-ecosystem: 'devcontainers'
+    directory: '/'
+    schedule:
+      interval: 'weekly'

@@ -1,0 +1,28 @@
+# Prebuild configuration for GitHub Codespaces
+# This file configures when and how prebuilds are created
+# See: https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds
+
+# Enable prebuild for main branches
+enabled: true
+
+# Prebuild triggers
+triggers:
+  # Prebuild on push to main/master branches
+  push:
+    branches:
+      - main
+      - master
+
+  # Prebuild on pull request to main/master branches
+  pull_request:
+    branches:
+      - main
+      - master
+# Prebuild schedule (optional)
+# Uncomment to rebuild prebuilds weekly even without code changes
+# schedule: "0 0 * * 1"  # Every Monday at midnight UTC
+
+# Region configuration (optional)
+# regions:
+#   - us-east-1
+#   - eu-west-1
