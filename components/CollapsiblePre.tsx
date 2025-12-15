@@ -15,7 +15,7 @@ const extractTextFromChildren = (children: ReactNode): string => {
   if (typeof children === 'string') return children
   if (Array.isArray(children)) return children.map(extractTextFromChildren).join('')
   if (children && typeof children === 'object' && 'props' in children) {
-    return extractTextFromChildren(children.props.children)
+    return extractTextFromChildren((children as { props: { children: ReactNode } }).props.children)
   }
   return String(children || '')
 }

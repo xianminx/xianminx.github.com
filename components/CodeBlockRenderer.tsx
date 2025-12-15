@@ -9,7 +9,7 @@ const extractTextFromChildren = (children: ReactNode): string => {
   if (typeof children === 'string') return children
   if (Array.isArray(children)) return children.map(extractTextFromChildren).join('')
   if (children && typeof children === 'object' && 'props' in children) {
-    return extractTextFromChildren(children.props.children)
+    return extractTextFromChildren((children as { props: { children: ReactNode } }).props.children)
   }
   return String(children || '')
 }
@@ -21,13 +21,22 @@ interface CodeBlockRendererProps {
 
 const CodeBlockRenderer = ({ children, ...props }: CodeBlockRendererProps) => {
   // Check if children is a code block
-  if (children && typeof children === 'object' && 'props' in children && children.type === 'code') {
-    const { className } = children.props
+  if (
+    children &&
+    typeof children === 'object' &&
+    'props' in children &&
+    'type' in children &&
+    children.type === 'code'
+  ) {
+    const codeElement = children as {
+      props: { className?: string; children: ReactNode }
+    }
+    const { className } = codeElement.props
     const match = /language-(\w+)/.exec(className || '')
 
     // Handle Mermaid diagrams
     if (match && match[1] === 'mermaid') {
-      const rawText = extractTextFromChildren(children.props.children)
+      const rawText = extractTextFromChildren(codeElement.props.children)
       return <Mermaid chart={rawText.trim()} />
     }
   }

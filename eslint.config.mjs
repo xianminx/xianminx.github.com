@@ -10,11 +10,12 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
 })
 
 export default [
   {
-    ignores: [],
+    ignores: ['node_modules', '.next', '.contentlayer', 'out'],
   },
   js.configs.recommended,
   ...compat.extends(
@@ -22,7 +23,6 @@ export default [
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
-    'next',
     'next/core-web-vitals'
   ),
   {
@@ -38,11 +38,11 @@ export default [
       },
 
       parser: tsParser,
-      ecmaVersion: 5,
-      sourceType: 'commonjs',
+      ecmaVersion: 'latest',
+      sourceType: 'module',
 
       parserOptions: {
-        project: true,
+        project: './tsconfig.json',
         tsconfigRootDir: __dirname,
       },
     },
