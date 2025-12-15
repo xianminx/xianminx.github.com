@@ -1,0 +1,30 @@
+---
+title: 'Django Authentication'
+summary: 'Learn how to implement authentication in Django applications using built-in features and third-party packages.'
+date: '2025-10-24'
+authors: ['Lukas']
+tags: ['python', 'django', 'authentication']
+draft: false
+---
+
+- Authentication
+
+  - who the user from the request is:
+    ```python
+    request.user
+    ```
+    This can be based on sessions(cookies), tokens, or other methods.
+
+- Authorization
+  - what the user is allowed to do
+    - Permissions
+    - Groups
+    - Object-level permissions (e.g., Django Guardian)
+
+## Built-in Authentication
+
+`django.contrib.auth` provides a robust authentication system out of the box.
+
+### User Model
+
+Django includes a default User model with fields like username, password, email, first_name, last_name, etc. You can also create a custom user model by extending `AbstractUser` or `AbstractBaseUser`.
