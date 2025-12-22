@@ -3505,14 +3505,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/forms@npm:^0.5.10":
-  version: 0.5.10
-  resolution: "@tailwindcss/forms@npm:0.5.10"
+"@tailwindcss/forms@npm:^0.5.11":
+  version: 0.5.11
+  resolution: "@tailwindcss/forms@npm:0.5.11"
   dependencies:
     mini-svg-data-uri: ^1.2.3
   peerDependencies:
     tailwindcss: ">=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20 || >= 4.0.0-beta.1"
-  checksum: 4526d02edccc4e44599d9588f83e4ac3e9435d137da5638653de2e74d5b612ade449a8c26d075be21692c1ac00a514aaffdb6723e526e3c8314c9a75a9f45979
+  checksum: 7f0f9e87fb0f780066012fc24671a2237f182201b8a9f9ba4b5f3ddff421d22d906172c4d3446ad89dad913bd1a4505afb4522f9d5ecd3b909fd11902157d3d8
   languageName: node
   linkType: hard
 
@@ -4870,7 +4870,7 @@ __metadata:
     "@headlessui/react": 2.2.9
     "@next/bundle-analyzer": 16.0.10
     "@svgr/webpack": ^8.1.0
-    "@tailwindcss/forms": ^0.5.10
+    "@tailwindcss/forms": ^0.5.11
     "@tailwindcss/postcss": ^4.1.18
     "@tailwindcss/typography": ^0.5.19
     "@types/mdx": ^2.0.13
