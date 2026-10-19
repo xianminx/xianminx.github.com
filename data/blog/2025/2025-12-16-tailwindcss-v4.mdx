@@ -1,0 +1,38 @@
+---
+title: TailwindCSS V4.0
+date: 2025-02-16
+summary: This post explores how Tailwind CSS processes styles at compile time, its relationship with PostCSS, and how modern bundlers manage dependencies efficiently.
+tags: [web, css, tailwindcss, postcss, webpack, vite]
+draft: false
+---
+
+<TOCInline toc={props.toc} />
+
+
+## 
+
+
+```
+@import "tailwindcss" prefix(tw);
+```
+
+This grammar is a combination of general CSS and tailwindcss specificity. 
+* `@import` is general css which just load another file content into the current file, as seen in other programming lanuages. `@import "a.css";`
+* ` "tailwindcss"` is not a general file, but provided by tailwindcss. When Vite see this, it will trigger the tailwindcss plugin to process the file, which loads all tailwindcss declared class definition (in fact, genrated in the fly).  
+    ``` vite.config.ts
+    import tailwindcss from '@tailwindcss/vite'`
+    ```
+
+* `prefix(tw)`: when importing tailwindcss class, it will prepend all class with prefix `"tw:"`, for example: `tw:mx-1`
+
+To see the effect, you can manually compile the project and the che comiplied style file, usaully `dist/global.css` or whatever defined by your project.
+
+
+What is css variable 
+
+how does theme work 
+
+variant 
+
+
+what is layer 
