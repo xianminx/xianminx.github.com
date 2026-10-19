@@ -1,13 +1,13 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
   "hostRequirements": {
     "memory": "8gb"
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn install --frozen-lockfile",
-  "postCreateCommand": "yarn build",
+  "updateContentCommand": "bun install --frozen-lockfile",
+  "postCreateCommand": "bun run build",
   "postAttachCommand": "",
-  "onCreateCommand": "yarn install --frozen-lockfile && yarn build",
+  "onCreateCommand": "bun install --frozen-lockfile && bun run build",
   "customizations": {
     "codespaces": {
       "openFiles": ["data/blog/code-sample.mdx"]
@@ -27,6 +27,7 @@
   },
   "forwardPorts": [3000],
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/shyim/devcontainers-features/bun:0": {}
   }
 }

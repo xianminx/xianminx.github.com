@@ -54,12 +54,12 @@ const CollapsiblePre = ({
       >
         <Pre {...props}>{children}</Pre>
         {!isExpanded && (
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t to-transparent dark:from-gray-950" />
+          <div className="absolute right-0 bottom-0 left-0 h-24 bg-gradient-to-t to-transparent dark:from-gray-950" />
         )}
       </div>
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="hover:text-primary-500 dark:hover:text-primary-400 absolute bottom-2 right-2 rounded-md bg-white px-3 py-1 text-sm font-medium text-gray-600 shadow-sm ring-1 ring-gray-300/20 transition-colors dark:bg-gray-800 dark:text-gray-300"
+        className="hover:text-primary-500 dark:hover:text-primary-400 absolute right-2 bottom-2 rounded-md bg-white px-3 py-1 text-sm font-medium text-gray-600 shadow-sm ring-1 ring-gray-300/20 transition-colors dark:bg-gray-800 dark:text-gray-300"
       >
         {isExpanded ? 'Show less' : 'Show more'}
       </button>

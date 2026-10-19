@@ -20,7 +20,6 @@ const initializeMermaid = () => {
         nodeSpacing: 50,
         rankSpacing: 50,
         htmlLabels: true,
-        defaultRenderer: 'dagre-wrapper',
       },
       themeVariables: {
         fontFamily:
@@ -60,7 +59,7 @@ const ErrorDisplay = ({ error, code }: ErrorDisplayProps) => (
         </div>
       </summary>
       <div className="border-b border-red-200 bg-red-50 px-4 py-2">
-        <pre className="whitespace-pre-wrap break-words font-mono text-sm font-medium text-red-700">
+        <pre className="font-mono text-sm font-medium break-words whitespace-pre-wrap text-red-700">
           {typeof error === 'string' ? error : error.message || 'Failed to render diagram'}
         </pre>
       </div>

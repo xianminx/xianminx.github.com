@@ -35,7 +35,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ data }) => {
 
         {/* Back to top button with improved animation */}
         <button
-          className="fixed bottom-8 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:from-purple-600 hover:to-pink-600 hover:shadow-purple-500/25 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:bottom-8 sm:right-8 sm:h-12 sm:w-12 dark:shadow-purple-500/20"
+          className="fixed right-4 bottom-8 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:from-purple-600 hover:to-pink-600 hover:shadow-purple-500/25 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none sm:right-8 sm:bottom-8 sm:h-12 sm:w-12 dark:shadow-purple-500/20"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Scroll to top"
         >

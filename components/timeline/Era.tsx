@@ -57,13 +57,7 @@ const Era: React.FC<EraProps> = ({ era, isEven }) => {
     <div id={eraId} className="group/era mb-10 transition-all duration-500 ease-out">
       {/* Era header */}
       <div
-        className={`
-          ${getEraColor()}
-           mb-6 transform cursor-pointer rounded-r-lg p-4 shadow-sm backdrop-blur-sm
-          transition-all duration-300 ease-out hover:scale-[1.01]
-          hover:shadow-md hover:shadow-blue-500/5
-          dark:shadow-blue-500/5
-        `}
+        className={` ${getEraColor()} mb-6 transform cursor-pointer rounded-r-lg p-4 shadow-sm backdrop-blur-sm transition-all duration-300 ease-out hover:scale-[1.01] hover:shadow-md hover:shadow-blue-500/5 dark:shadow-blue-500/5`}
         onClick={() => setIsExpanded(!isExpanded)}
         role="button"
         tabIndex={0}
@@ -119,10 +113,7 @@ const Era: React.FC<EraProps> = ({ era, isEven }) => {
 
       {/* Events container with animation */}
       <div
-        className={`
-          transform-gpu space-y-6
-          ${isExpanded ? '' : 'max-h-0'}
-        `}
+        className={`transform-gpu space-y-6 ${isExpanded ? '' : 'max-h-0'} `}
         style={{
           overflow: 'hidden',
           transition: 'max-height 500ms ease-out',

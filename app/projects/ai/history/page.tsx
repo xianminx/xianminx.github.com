@@ -54,14 +54,14 @@ export default function AIHistory() {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-br  text-gray-900  dark:text-white">
+    <div className="relative min-h-screen w-full bg-gradient-to-br text-gray-900 dark:text-white">
       {/* Background decoration */}
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,0,255,0.1),rgba(255,0,150,0.05))]"></div>
 
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col">
           {/* Header section with enhanced styling */}
-          <header className="relative pb-12 pt-16">
+          <header className="relative pt-16 pb-12">
             <div className="text-center">
               <h1 className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-6xl">
                 History of Artificial Intelligence

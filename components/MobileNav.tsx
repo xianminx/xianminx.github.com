@@ -54,7 +54,7 @@ const MobileNav = () => {
             leaveTo="opacity-0"
             unmount={false}
           >
-            <div className="z-60 fixed inset-0 bg-black/25" />
+            <div className="fixed inset-0 z-60 bg-black/25" />
           </TransitionChild>
 
           <TransitionChild
@@ -67,10 +67,10 @@ const MobileNav = () => {
             leaveTo="translate-x-full opacity-0"
             unmount={false}
           >
-            <DialogPanel className="z-70 dark:bg-gray-950/98 fixed left-0 top-0 h-full w-full bg-white/95 duration-300">
+            <DialogPanel className="fixed top-0 left-0 z-70 h-full w-full bg-white/95 duration-300 dark:bg-gray-950/98">
               <nav
                 ref={navRef}
-                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-12 pt-2 text-left"
+                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
               >
                 {headerNavLinks.map((link) => (
                   <Link
@@ -85,7 +85,7 @@ const MobileNav = () => {
               </nav>
 
               <button
-                className="hover:text-primary-500 dark:hover:text-primary-400 z-80 fixed right-4 top-7 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
+                className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-7 right-4 z-80 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
                 aria-label="Toggle Menu"
                 onClick={onToggleNav}
               >

@@ -30,7 +30,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isSelected, onClick, categ
     <div className="group relative flex items-start">
       {/* Timeline dot */}
       <div
-        className={`absolute left-2 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-purple-500 bg-white transition-all duration-300 md:left-4 ${
+        className={`absolute top-1/2 left-2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-purple-500 bg-white transition-all duration-300 md:left-4 ${
           isSelected
             ? 'scale-125 border-purple-600 bg-purple-50 dark:bg-purple-900/20'
             : 'group-hover:scale-110 group-hover:border-purple-600 group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20'
@@ -39,19 +39,11 @@ const EventCard: React.FC<EventCardProps> = ({ event, isSelected, onClick, categ
 
       {/* Card */}
       <div
-        className={`
-          mx-8 w-full cursor-pointer rounded-xl border border-gray-200 bg-gradient-to-br from-white
-          to-purple-50/50 p-4 shadow-sm backdrop-blur-sm transition-all duration-300
-          ease-out hover:border-purple-200 hover:shadow-md
-          hover:shadow-purple-500/10 md:mx-12
-          dark:border-gray-800 dark:from-gray-900/80 dark:to-purple-900/20
-          dark:hover:border-purple-900 dark:hover:shadow-purple-500/10
-          ${
-            isSelected
-              ? 'border-purple-200 shadow-lg shadow-purple-500/20 dark:border-purple-900 dark:shadow-purple-500/20'
-              : ''
-          }
-        `}
+        className={`mx-8 w-full cursor-pointer rounded-xl border border-gray-200 bg-gradient-to-br from-white to-purple-50/50 p-4 shadow-sm backdrop-blur-sm transition-all duration-300 ease-out hover:border-purple-200 hover:shadow-md hover:shadow-purple-500/10 md:mx-12 dark:border-gray-800 dark:from-gray-900/80 dark:to-purple-900/20 dark:hover:border-purple-900 dark:hover:shadow-purple-500/10 ${
+          isSelected
+            ? 'border-purple-200 shadow-lg shadow-purple-500/20 dark:border-purple-900 dark:shadow-purple-500/20'
+            : ''
+        } `}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
         onMouseEnter={() => setIsHovered(true)}

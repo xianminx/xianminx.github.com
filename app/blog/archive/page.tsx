@@ -24,14 +24,14 @@ export default function BlogArchive() {
     <>
       <PageTitle>Blog Archive</PageTitle>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-6 pt-4 md:space-y-5">
+        <div className="space-y-2 pt-4 pb-6 md:space-y-5">
           <div className="flex items-center justify-between">
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
               All blog posts listed chronologically
             </p>
             <button
               onClick={() => setIsCompact(!isCompact)}
-              className="bg-primary-500 hover:bg-primary-600 focus:ring-primary-500 dark:hover:bg-primary-400 rounded-md px-3 py-1.5 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="bg-primary-500 hover:bg-primary-600 focus:ring-primary-500 dark:hover:bg-primary-400 rounded-md px-3 py-1.5 text-sm font-medium text-white focus:ring-2 focus:ring-offset-2 focus:outline-none"
             >
               {isCompact ? 'Show Details' : 'Compact View'}
             </button>
@@ -47,7 +47,7 @@ export default function BlogArchive() {
                 // Compact view
                 <div className="flex items-baseline px-2">
                   <time
-                    className="w-20 font-mono text-sm tabular-nums text-gray-500 dark:text-gray-400"
+                    className="w-20 font-mono text-sm text-gray-500 tabular-nums dark:text-gray-400"
                     dateTime={post.date}
                   >
                     {formatDateCompact(post.date)}
@@ -65,7 +65,7 @@ export default function BlogArchive() {
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                       <time
-                        className="font-mono text-sm tabular-nums text-gray-500 dark:text-gray-400"
+                        className="font-mono text-sm text-gray-500 tabular-nums dark:text-gray-400"
                         dateTime={post.date}
                       >
                         {formatDateCompact(post.date)}
@@ -78,7 +78,7 @@ export default function BlogArchive() {
                         </div>
                       )}
                     </div>
-                    <h3 className="mt-2 text-xl font-bold leading-8 tracking-tight">
+                    <h3 className="mt-2 text-xl leading-8 font-bold tracking-tight">
                       <Link
                         href={`/blog/${post.slug}`}
                         className="hover:text-primary-500 dark:hover:text-primary-400 text-gray-900 dark:text-gray-100"
