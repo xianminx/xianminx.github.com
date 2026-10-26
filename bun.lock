@@ -6,7 +6,7 @@
       "name": "blog",
       "dependencies": {
         "@headlessui/react": "2.2.10",
-        "@next/bundle-analyzer": "16.4.2",
+        "@next/bundle-analyzer": "16.4.3",
         "@tailwindcss/forms": "^0.5.11",
         "@tailwindcss/postcss": "^4.3.3",
         "@tailwindcss/typography": "^0.5.20",
@@ -580,7 +580,7 @@
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.2.5", "", { "dependencies": { "@tybys/wasm-util": "^0.10.3" }, "peerDependencies": { "@emnapi/core": "^1.7.1 || ^2.0.0-alpha.4", "@emnapi/runtime": "^1.7.1 || ^2.0.0-alpha.4" } }, "sha512-HshSvXzmBxNzqejd3k/KemgQ3hdREUYFRRrgxOZ+gPljDIsO2SDZrVZMd4Z/HsxudQbE62OVyVFE8z9BCurfjA=="],
 
-    "@next/bundle-analyzer": ["@next/bundle-analyzer@16.4.2", "", { "dependencies": { "webpack-bundle-analyzer": "4.10.1" } }, "sha512-tpNTC/WZYsmmixg3MZfx5JUuTh+Sgryu4eKhe7leQRcXHabztqtTkPCQM1Bk1VsE0trZ3w7NUCC3Zf7SeIBVzg=="],
+    "@next/bundle-analyzer": ["@next/bundle-analyzer@16.4.3", "", { "dependencies": { "webpack-bundle-analyzer": "4.10.1" } }, "sha512-FGcLziT2rqvGZTxZUjnCzwjCANnigN9vrbCm+1hQtzXbbtc1bXBTRmkXohVqyB/ReF5bOjpM2bNJQhz0PfLk9Q=="],
 
     "@next/env": ["@next/env@16.4.2", "", {}, "sha512-nTUTFH7G5/J/fmpkjVLegOkqyKOP0CEsJcMsyO4UCYeN1su+YMW/MfaSErnJskL7XM+UDK6aTvslxsRCyya/sA=="],
 
