@@ -47,7 +47,7 @@
     "@svgr/webpack": "^8.1.0",
     "@types/mdx": "^2.0.14",
     "@types/react": "^19.3.0",
-    "eslint": "^10.13.0",
+    "eslint": "^10.14.0",
     "eslint-config-next": "16.4.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
