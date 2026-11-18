@@ -1,0 +1,156 @@
+---
+title: Using the Composio Python SDK
+date: '2026-11-16'
+authors: ['Lucas']
+tags: ['python', 'composio', 'agents', 'sdk']
+summary: How to call 1000+ apps from Python with the current Composio SDK — sessions, meta tools, and what changed from the old composio-core package.
+draft: false
+---
+
+Composio sits between your code and other people's APIs. You give it a user id and a tool slug; it holds the OAuth tokens, the toolkit versions, and the request shape for GitHub, Gmail, Slack, Linear, and a few hundred others. The Python package you want today is `composio`. The older `composio-core` package still installs, and it calls APIs that sessions do not use.
+
+## Install
+
+The SDK wants Python 3.11 through 3.15.
+
+```bash
+uv add composio python-dotenv
+# or
+pip install composio python-dotenv
+```
+
+`pip install composio` does not give you a `composio` CLI. Login and dashboard work live in a separate CLI install. Your application still needs a project API key, from the dashboard under Settings → API Keys.
+
+```bash
+export COMPOSIO_API_KEY="ak_..."
+```
+
+`Composio()` reads that variable. `Composio(api_key=...)` is the other option. Passing `api_key=None` or `api_key=""` does not fall back to the environment, and a missing key raises `ApiKeyNotProvidedError` before any HTTP request.
+
+## A session is the entry point
+
+A session is scoped to one of your users. Tool discovery, authentication, and toolkit versions hang off it. Individual tool calls in session mode do not take a `user_id`.
+
+```python
+from composio import Composio
+
+composio = Composio()
+
+session = composio.create(user_id="user_123")
+tools = session.tools()  # OpenAI-format tool definitions by default
+```
+
+By default the session exposes a small set of meta tools. Those tools search the catalog, start OAuth, and execute the real app tool. You do not stuff hundreds of GitHub and Slack schemas into the model's context on the first turn.
+
+Keep `session.session_id` and reopen the same session on the next turn:
+
+```python
+session = composio.use(session_id)
+```
+
+`composio.create()` also accepts restrictions: `toolkits`, `tools`, `auth_configs`, and `connected_accounts`. Use those when a session should only see one app, or only accounts the user already connected.
+
+## Execute through the session
+
+Session execution takes `tool_slug`, not the `slug` argument used by the older Tools API.
+
+```python
+result = session.execute(
+    tool_slug="COMPOSIO_SEARCH_TOOLS",
+    arguments={"queries": [{"use_case": "find recent emails"}]},
+)
+
+if result.result_type == "completed":
+    print(result.data)
+else:
+    print(result.result_type, result.error)
+```
+
+`session.execute` returns a Pydantic model with `data`, `error`, `log_id`, and `result_type`. Serialize it with `result.model_dump(mode="json")`. There is no `successful` boolean on this object. A call that returns without raising, an empty `error`, or a `log_id` is not proof the app did the thing. Read `result_type`, then the tool-specific `data`.
+
+Transport errors and requests that need more user input can raise instead of returning a result. Treat auth recovery separately from a tool that ran and failed. Your code owns retry and idempotency.
+
+## Hand the tools to an agent
+
+Provider packages follow the framework, not the model vendor. The OpenAI Agents SDK uses `composio_openai_agents`. `composio_openai` is for the plain Chat Completions API, and mixing the two is the usual failure in generated code.
+
+```python
+from composio import Composio
+from composio_openai_agents import OpenAIAgentsProvider
+from agents import Agent, Runner
+
+composio = Composio(provider=OpenAIAgentsProvider())
+session = composio.create(user_id="user_123")
+
+agent = Agent(
+    name="Assistant",
+    instructions="Use the connected apps to answer the user.",
+    tools=session.tools(),
+)
+
+Runner.run_sync(agent, "List the open issues assigned to me on GitHub")
+```
+
+Agentic providers run the session tools themselves. For non-agentic clients (OpenAI chat completions, Anthropic, Google), pass the session into the helper — `provider.handle_tool_calls(response=response, session=session)`. Binding that helper to a user id takes the old direct-execution path, and session meta tools then fail with "can only be called inside a tool-router session".
+
+Managed auth is the default. The session can start a connection at runtime, so a user does not need a pre-created auth config for every toolkit.
+
+## Direct execution is still there
+
+`composio.tools.get()`, `composio.tools.execute()`, and `provider.handle_tool_calls()` with a user id remain supported. They are the legacy interface. New code should start from `composio.create()`. If the tool list is fixed, pin it with the direct-tools preset on the session instead of dropping back to the user-id API.
+
+Direct execution also returns a different shape: a `ToolExecutionResponse` dict. Check `response["successful"]` and serialize with `json.dumps`. Do not reuse that check on a session result.
+
+Direct execution requires a toolkit version. Sessions pick and pin versions for you.
+
+## The generated client
+
+Under the SDK there is `composio-client`, a typed httpx client generated from the v3.1 OpenAPI spec. Python 3.10 or newer. Use it when you want the REST surface without the session helpers.
+
+```python
+from composio_client import Composio, ProjectAuth
+
+client = Composio(auth=ProjectAuth("ak_..."))
+
+session = client.tool_router.session.create(user_id="user@example.com")
+result = client.tool_router.session.execute(
+    session.session_id,
+    tool_slug="GITHUB_CREATE_ISSUE",
+    arguments={"owner": "composiohq", "repo": "composio", "title": "Example"},
+)
+```
+
+`auth` is required and picks the credential header: `ProjectAuth` sends `x-api-key`, `UserAuth` sends `x-user-api-key`, `OrganizationAuth` sends `x-org-api-key`. `AsyncComposio` mirrors the same methods with `await`.
+
+`execute` can return a completed result, a blocked result, or a result that still needs input. Narrow it before reading `data`:
+
+```python
+from composio_client.types.tool_router.session_execute_response import (
+    SessionExecuteBlockedResponse,
+    SessionExecuteInputRequiredResponse,
+)
+
+def summarize(result) -> str:
+    if isinstance(result, SessionExecuteBlockedResponse):
+        return result.message
+    if isinstance(result, SessionExecuteInputRequiredResponse):
+        return f"Input required: {', '.join(result.input_requests)}"
+    return result.error or "Execution completed"
+```
+
+## What to remember
+
+- Install `composio`, not `composio-core`.
+- Create a session with `composio.create(user_id=...)` and execute with `session.execute(tool_slug=..., arguments=...)`.
+- Check `result_type == "completed"` before trusting `data`.
+- Match the provider package to the framework you are actually calling.
+- Keep the API key in the environment. The session id is the thing you persist between turns.
+
+## Meta functions
+
+- COMPOSIO_GET_TOOL_SCHEMAS
+- COMPOSIO_MANAGE_CONNECTIONS
+- COMPOSIO_MULTI_EXECUTE_TOOL
+- COMPOSIO_REMOTE_BASH_TOOL
+- COMPOSIO_REMOTE_WORKBENCH
+- COMPOSIO_SEARCH_TOOLS

@@ -1,0 +1,91 @@
+---
+title: Tag-based cache invalidation, from Unipile to your stack
+date: '2026-11-18'
+authors: ['Lucas']
+tags: ['cache', 'unipile', 'nextjs', 'fastapi', 'tanstack-query']
+summary: Unipile caches GET responses and drops them when a related write succeeds. The same idea in Next.js, TanStack Query, and a Redis-backed FastAPI cache.
+draft: false
+---
+
+Unipile caches every GET, except message and email attachments. A cache hit does not count toward the rate limit. Entries live for one hour by default and are dropped after 30 days at the latest.
+
+Writes are not cached. A POST, PATCH, or DELETE invalidates the GET responses for the same resource. Adding a chat participant clears the cached participant list for that chat. A message sent from another client clears the cached message list once Unipile notices the change. The read URL and the write URL do not have to match. Both sides refer to the same resource.
+
+You can override this per request with `Cache-Control`:
+
+| Request header | Effect                                                        |
+| -------------- | ------------------------------------------------------------- |
+| `no-store`     | Do not store the response                                     |
+| `no-cache`     | Revalidate with the provider before reuse                     |
+| `max-age=N`    | Accept a stored response only if it is younger than N seconds |
+
+`X-Cache: HIT` or `MISS` says where the body came from. `Age` is how old a hit is. `X-Cache` is omitted when the request used `no-store`.
+
+Unipile does not publish the index behind that invalidation. The behavior is tag-based: a cached GET is labeled with the resource it belongs to, and a successful write deletes every entry with that label. Nothing in the framework infers the label for you. You attach it on read and clear it on write.
+
+## Next.js
+
+`use cache` plus `cacheTag` is the same split. The GET and the POST share a string, not a route.
+
+```ts
+import { cacheTag } from 'next/cache'
+
+async function getParticipants(chatId: string) {
+  'use cache'
+  cacheTag(`chat:${chatId}:participants`)
+  return db.getParticipants(chatId)
+}
+```
+
+```ts
+import { revalidateTag } from 'next/cache'
+
+async function addParticipant(chatId: string, userId: string) {
+  await db.addParticipant(chatId, userId)
+  revalidateTag(`chat:${chatId}:participants`, 'max')
+}
+```
+
+`revalidateTag(tag, 'max')` marks the tag stale and serves the old value while the next request refreshes it. `updateTag(tag)` expires it immediately, and only from a Server Action. `revalidatePath` invalidates a route instead of a resource.
+
+## TanStack Query
+
+On the client the tag is a query key. A prefix match covers every query under that resource.
+
+```ts
+useQuery({
+  queryKey: ['chat', chatId, 'participants'],
+  queryFn: () => getParticipants(chatId),
+})
+
+queryClient.invalidateQueries({ queryKey: ['chat', chatId] })
+```
+
+That second call refreshes participants, messages, and anything else whose key starts with `['chat', chatId]`.
+
+## FastAPI
+
+FastAPI has no persistent response cache and no tags. Redis sets are enough to copy the pattern. On a GET, store the body and add its key to the resource's set. On a successful POST, delete every key in the set, then the set.
+
+```python
+await redis.set(f"cache:chat:{chat_id}:participants", body, ex=3600)
+await redis.sadd(f"tag:chat:{chat_id}", f"cache:chat:{chat_id}:participants")
+
+keys = await redis.smembers(f"tag:chat:{chat_id}")
+if keys:
+    await redis.delete(*keys)
+await redis.delete(f"tag:chat:{chat_id}")
+```
+
+A production version needs one atomic delete of the keys and the tag, a TTL on the tag set, and a rule for a write that lands while a GET is still filling the cache.
+
+## Where each one sits
+
+| Layer          | Tag                                        | Invalidate                                                                       |
+| -------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
+| Unipile        | Hidden resource link between GET and write | Automatic on POST, PATCH, DELETE, and on changes Unipile detects outside the API |
+| Next.js        | `cacheTag`                                 | `revalidateTag`, `updateTag`                                                     |
+| TanStack Query | Query key                                  | `invalidateQueries`                                                              |
+| FastAPI        | Redis set you maintain                     | `DELETE` the members of that set                                                 |
+
+Use Next.js tags for server-rendered data, TanStack Query for the browser, and the Redis sets when the FastAPI process is shared across instances. Each cache only knows what you labeled. A write does not clear a read until both sides name the same tag.
