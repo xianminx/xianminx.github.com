@@ -1,0 +1,72 @@
+---
+title: 'Async file I/O: Python vs Node'
+date: '2026-11-20'
+authors: ['Lucas']
+tags: ['python', 'nodejs', 'asyncio', 'io']
+summary: There is no portable non-blocking disk API, so both Python and Node run file I/O on a thread pool. When that matters, and the calls to use.
+draft: false
+---
+
+Python has no async file API because the operating systems it runs on do not offer a portable non-blocking read for a regular file. `asyncio` is built on readiness: `epoll`, `kqueue`, `select`. A socket becomes ready when bytes are waiting. A regular file is always "ready", and `read()` still blocks until the disk returns. There is nothing for the event loop to wait on.
+
+Every "async file" library is a thread pool. `asyncio.to_thread`, `aiofiles`, `anyio.Path`, and `trio.open_file` all do the same thing: run the blocking call on a worker and hand the result back to the loop. Most of those reads hit the page cache and return in microseconds, so the thread is cheap until the disk or a network filesystem is actually slow.
+
+| OS API                  | What goes wrong                                               |
+| ----------------------- | ------------------------------------------------------------- |
+| POSIX AIO (`aio_read`)  | glibc implements it with userspace threads                    |
+| Linux AIO (`io_submit`) | Needs `O_DIRECT`, and can still block                         |
+| `io_uring` (Linux 5.1+) | Works, but Linux-only and often disabled for security         |
+| Windows IOCP            | Supports files, but it is a completion model and not portable |
+
+## Node does the same split
+
+Node's async reputation comes from networking. File APIs run on libuv's thread pool, the same shape as `asyncio.to_thread`.
+
+| Operation                              | How it runs                                    |
+| -------------------------------------- | ---------------------------------------------- |
+| TCP, UDP, pipes, TTYs, signals         | OS-async: `epoll` / `kqueue` / IOCP, no thread |
+| `fs.*` (`readFile`, `stat`, `readdir`) | libuv thread pool, including Windows           |
+| `dns.lookup()`                         | Thread pool, because `getaddrinfo` blocks      |
+| `dns.resolve*()`                       | Async, via c-ares                              |
+| Async crypto, zlib                     | Thread pool                                    |
+
+The pool has 4 threads by default. `UV_THREADPOOL_SIZE` raises it. A burst of slow `fs` or `dns.lookup` calls shares that pool with crypto, so one can stall the other.
+
+libuv added `io_uring` for some Linux filesystem operations around 2023. Node later turned it off by default for security. `UV_USE_IO_URING=1` opts back in; check the release notes for the version you run.
+
+## When file I/O is the bottleneck
+
+Rarely. The usual order is the database (slow queries, N+1, pool exhaustion), then outbound network (APIs, auth, LLMs), then CPU on the event loop (large JSON, rendering, images), then the disk. The sharper risk is a blocking call that stalls the loop, not the disk latency itself.
+
+File I/O does show up in a few places:
+
+- Static files and large downloads served by the app. Use a CDN, nginx, or a signed object-store URL.
+- Large uploads buffered to local disk. Stream them to object storage.
+- Network filesystems (NFS, EFS, FUSE). Those reads are network calls.
+- Synchronous disk logging at high throughput. Use a buffered handler, or write to stdout.
+- Many concurrent `fs` calls filling Node's thread pool.
+- SQLite and other embedded databases, where disk I/O is the database.
+
+In FastAPI, a blocking read inside `async def` freezes every request on that worker. A plain `def` endpoint is already dispatched to a thread pool. In Next.js, skip `fs.readFileSync` in route handlers and server components that run per request.
+
+## What to call
+
+```python
+import asyncio
+
+def read_file(path):
+    with open(path, "rb") as f:
+        return f.read()
+
+async def main():
+    data = await asyncio.to_thread(read_file, "big.bin")
+```
+
+| Need                                              | Use                                           |
+| ------------------------------------------------- | --------------------------------------------- |
+| Async file read in Python                         | `asyncio.to_thread`, `aiofiles`, `anyio.Path` |
+| File to socket, without copying through userspace | `loop.sendfile()` (`os.sendfile`)             |
+| Find a blocked Python loop                        | `PYTHONASYNCIODEBUG=1`                        |
+| Find a blocked Node loop                          | `perf_hooks.monitorEventLoopDelay()`          |
+| See where request time goes                       | Tracing: Datadog, Sentry, OpenTelemetry       |
+| More Node filesystem or crypto concurrency        | `UV_THREADPOOL_SIZE`                          |
