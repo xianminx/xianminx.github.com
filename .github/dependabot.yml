@@ -5,8 +5,11 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    # Disable security updates for now to reduce noise
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - '*'
 
   # Enable version updates for devcontainer
   - package-ecosystem: 'devcontainers'
